@@ -322,6 +322,58 @@ a:hover{text-decoration:underline;}
 .readybadge.development{background:rgba(180,108,255,.15);color:#c9a6ff;}
 .readybadge.concept{background:rgba(255,91,110,.13);color:#ff8a97;}
 
+/* medium chips */
+.med{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:7px;
+  font-size:10.5px;font-weight:650;background:rgba(123,108,255,.1);color:#a89dff;
+  border:1px solid rgba(123,108,255,.22);white-space:nowrap;}
+.med.perf{background:rgba(46,211,160,.1);color:#5fe0ba;border-color:rgba(46,211,160,.22);}
+.med.tech{background:rgba(61,208,232,.1);color:#7ce0f2;border-color:rgba(61,208,232,.22);}
+.med.obj{background:rgba(240,180,41,.1);color:#f5c65a;border-color:rgba(240,180,41,.22);}
+
+.align{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:11px;
+  background:var(--bg2);border:1px solid var(--border);margin:10px 0;}
+.align .dots{display:flex;gap:3px;flex:0 0 auto;}
+.align .dots i{width:7px;height:7px;border-radius:50%;background:var(--panel3);display:block;}
+.align .dots i.on{background:var(--accent);}
+.align .txt{font-size:12.5px;line-height:1.5;color:var(--text2);}
+.align .txt b{color:var(--text);}
+
+.contact{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;
+  padding:11px 13px;border-radius:11px;background:var(--bg2);border:1px solid var(--border);margin-bottom:7px;}
+.contact .cn{font-size:13.5px;font-weight:640;}
+.contact .cr{font-size:11.5px;color:var(--muted);margin-top:2px;}
+.contact .cnote{font-size:11.5px;color:var(--text2);margin-top:5px;line-height:1.5;font-style:italic;}
+.contact a{font-size:12.5px;word-break:break-all;}
+
+.window{background:linear-gradient(150deg,rgba(240,180,41,.09),rgba(240,180,41,.03));
+  border:1px solid rgba(240,180,41,.26);border-radius:13px;padding:13px 15px;margin:12px 0;}
+.window .wl{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:#f5c65a;
+  font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:6px;}
+.window.now{background:linear-gradient(150deg,rgba(46,211,160,.11),rgba(46,211,160,.03));
+  border-color:rgba(46,211,160,.3);}
+.window.now .wl{color:#5fe0ba;}
+.months{display:flex;gap:3px;margin-top:9px;flex-wrap:wrap;}
+.months span{width:24px;height:20px;line-height:20px;text-align:center;border-radius:5px;
+  font-size:9.5px;font-weight:700;background:var(--panel2);color:var(--muted);border:1px solid var(--border);}
+.months span.on{background:rgba(240,180,41,.2);color:#f5c65a;border-color:rgba(240,180,41,.35);}
+.months span.cur{outline:2px solid var(--accent);outline-offset:1px;}
+
+.advice{border-left:3px solid var(--accent);padding:10px 0 10px 14px;margin:11px 0;}
+.advice .at{font-size:13.5px;font-weight:640;margin-bottom:4px;}
+.advice .aw{font-size:11.5px;color:var(--muted);margin-bottom:6px;}
+.advice .aq{font-style:italic;color:var(--text);font-size:13px;line-height:1.6;margin-bottom:6px;}
+.advice .ab{font-size:12.5px;line-height:1.65;color:var(--text2);}
+
+.bm{cursor:pointer;font-size:17px;color:var(--muted);flex:0 0 auto;line-height:1;padding:2px 4px;}
+.bm.on{color:var(--amber);}
+
+.kit{background:var(--bg2);border:1px solid var(--border);border-radius:11px;
+  padding:12px 14px;margin-bottom:9px;}
+.kit .kl{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+  font-weight:700;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.kit .kv{font-size:13px;line-height:1.65;color:var(--text);white-space:pre-wrap;}
+.kit .kcount{font-size:10px;color:var(--muted);font-weight:600;}
+
 .fab{position:fixed;bottom:calc(22px + var(--safe-b));right:20px;width:52px;height:52px;
   border-radius:17px;background:linear-gradient(145deg,var(--accent),var(--accent2));
   display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;
@@ -354,7 +406,7 @@ footer{text-align:center;color:var(--muted);font-size:11.5px;padding:30px 20px 1
 <main>
   <div class="view active" id="v-dash"></div>
   <div class="view" id="v-opps"></div>
-  <div class="view" id="v-playbook"></div>
+  <div class="view" id="v-insights"></div>
   <div class="view" id="v-projects"></div>
   <div class="view" id="v-info"></div>
   <div class="view" id="v-settings"></div>
@@ -1642,6 +1694,1408 @@ const PITCH_INTEL = [
 ];
 
 
+/* ===== data2.js ===== */
+/* Never Miss Again — opportunities added in v4.
+   Researched 18 August 2026. Self-contained: each entry carries its own spec.
+   Weighted toward circus, performance, street arts, non-festival commissions
+   and funding — the places performance × technology work actually lands.
+*/
+
+const OPPORTUNITIES_V4 = [
+
+/* ═══════════ FUNDING THAT UNLOCKS EVERYTHING ELSE ═══════════ */
+{
+  id:'usartists',
+  name:'USArtists International',
+  org:'Mid Atlantic Arts',
+  city:'Baltimore, MD', country:'USA', region:'Americas',
+  category:'grant', tier:'flagship',
+  website:'https://www.midatlanticarts.org/opportunity/usartists-international/',
+  applyUrl:'https://www.midatlanticarts.org/opportunity/usartists-international/',
+  status:'predicted',
+  predictedDeadline:'2027-02-25', predictedConfidence:'high',
+  basis:'The 2026 round closed 25 February 2026, with invitation letters due 4 March and decisions 20 May. A consistent annual late-February deadline.',
+  eventWindow:'Funds engagements in the following 12 months',
+  money:'Up to $11,000 with a mandatory 1:1 cost match — and the match can be the festival\'s own artist fee.',
+  moneyTier:'medium',
+  fit:5,
+  what:'Funds US performing artists to appear at international festivals and performing arts markets outside the US. Explicitly discipline-agnostic across all performing arts practices.',
+  selection:'Requires a written invitation from the international presenter before the invitation deadline. Land the booking first, then apply.',
+  scale:'The mechanism that makes low-fee international festivals affordable.',
+  requirements:'US artists from any state. Fiscal sponsorship is no longer permitted — individuals apply directly and are liable for tax on the grant.',
+  intel:'This is the highest-leverage item in the entire app. Almost every European festival in your list pays too little to cover a two-person team flying from Austin with drone freight. This closes that gap. The sequence matters: get the invitation, then apply. Pair it with an FCA Emergency Grant, which triggers off the same confirmed booking.',
+  spec:{mediums:['circus','performance','aerial','spectacle'], format:'proposal', env:'either',
+    runDays:1, payMin:11000, payMax:11000, coversCosts:true,
+    themes:['international touring','performing arts'],
+    needs:'A confirmed written invitation from an international presenter, plus a 1:1 match.',
+    gates:{residency:'USA-ok'}},
+  sources:['https://www.midatlanticarts.org/opportunity/usartists-international/']
+},
+{
+  id:'fca-emergency',
+  name:'FCA Emergency Grants',
+  org:'Foundation for Contemporary Arts',
+  city:'New York, NY', country:'USA', region:'Americas',
+  category:'grant', tier:'major',
+  website:'https://www.foundationforcontemporaryarts.org/grants/emergency-grants/guidelines/',
+  applyUrl:'https://foundationforcontemporaryarts.submittable.com/submit',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling. Apply 8–10 weeks before the public presentation date — and no earlier than 10 weeks.',
+  eventWindow:'Tied to your confirmed engagement',
+  money:'Covers artist fees, airfare, accommodation, materials, shipping, fabrication and production. Amount not published — historically low four figures.',
+  moneyTier:'low',
+  fit:4,
+  what:'Fast rolling grants to individual artists who already have a confirmed upcoming public presentation, covering the cost of getting the work made and shown.',
+  selection:'Bias toward experimental work. Performance is a named discipline.',
+  scale:'Small but fast, and repeatable every three years.',
+  requirements:'US-based, valid Tax ID, not enrolled in a degree programme, confirmed dated engagement. Three-year wait after a prior award.',
+  intel:'Pairs directly with USArtists International — same trigger, different money, and you can hold both. The moment any booking is confirmed, check whether it is 8–10 weeks out and file.',
+  spec:{mediums:['performance','circus','installation','newmedia'], format:'proposal', env:'either',
+    runDays:1, payMin:1500, payMax:3000,
+    themes:['experimental','performance'],
+    needs:'A confirmed, dated public presentation 8–10 weeks away.',
+    gates:{residency:'USA-ok'}},
+  sources:['https://www.foundationforcontemporaryarts.org/grants/emergency-grants/guidelines/']
+},
+{
+  id:'texas-touring',
+  name:'Texas Touring Roster',
+  org:'Texas Commission on the Arts',
+  city:'Austin, TX', country:'USA', region:'Americas',
+  category:'roster', tier:'major',
+  website:'https://www.arts.texas.gov/',
+  applyUrl:'https://www.arts.texas.gov/',
+  status:'predicted',
+  predictedDeadline:'2027-01-15', predictedConfidence:'low',
+  basis:'TCA runs a juried Texas Touring Roster with periodic intake; exact dates are published on their grant calendar and Fluxx portal rather than a fixed annual date. Low confidence — check the calendar directly.',
+  eventWindow:'Ongoing once listed',
+  money:'Being on the roster lets Texas presenters draw down TCA Performance Support grants to book you — it subsidises your fee for every in-state buyer.',
+  moneyTier:'medium',
+  fit:5,
+  what:'A juried list of Texas-based touring artists. Communities that hire roster artists can access TCA funding to help pay for it.',
+  selection:'Juried. Texas-based artists only — which you are.',
+  scale:'Every presenter in Texas becomes a subsidised buyer.',
+  requirements:'Texas residency, tour-ready work, documentation.',
+  intel:'Structurally the highest-leverage single action available to you domestically. It converts a $7,000–$66,000 show from an expensive purchase into a part-funded one for every buyer in your home state. Cheap to apply, compounding return.',
+  spec:{mediums:['circus','performance','spectacle','variety'], format:'performance', env:'either',
+    runDays:1, payMin:null, payMax:null,
+    themes:['touring','Texas'],
+    needs:'Tour-ready work and documentation.',
+    gates:{residency:'Texas-ok'}},
+  sources:['https://www.arts.texas.gov/']
+},
+{
+  id:'lacma-lab',
+  name:'LACMA Art + Technology Lab Grant',
+  org:'Los Angeles County Museum of Art',
+  city:'Los Angeles, CA', country:'USA', region:'Americas',
+  category:'grant', tier:'flagship',
+  website:'https://www.lacma.org/art/lab',
+  applyUrl:'https://www.lacma.org/art/lab/grants',
+  status:'predicted',
+  predictedDeadline:'2027-04-22', predictedConfidence:'high',
+  basis:'The 2026 cycle closed 22 April 2026 with decisions in July. Annual — expect the 2027 RFP around February–April 2027.',
+  eventWindow:'Project year following the award',
+  money:'Up to $50,000 per project covering artist fees and direct costs, plus mentorship and in-kind technology access.',
+  moneyTier:'high',
+  fit:5,
+  what:'Open-call grant funding experimental work with emerging technology, with access to partner engineers. Partners include NASA JPL, MIT Media Lab, Snap and Hyundai.',
+  selection:'3–5 open-call projects selected plus up to 2 invitational. Prioritises projects with public demonstration or engagement.',
+  scale:'Major museum credential plus real development money.',
+  requirements:'Submittable: 500-word project description, artistic merit statement, budget, timeline, up to 5 media links.',
+  intel:'Explicitly prioritises public demonstration — a live drone-and-acrobat performance is exactly the profile, not an exception to it. Open worldwide, no prior tech experience required, and $50k is enough to actually build StarBalancer properly.',
+  spec:{mediums:['newmedia','interactive','installation','performance','digital','led'], format:'proposal', env:'either',
+    runDays:1, payMin:50000, payMax:50000,
+    themes:['emerging technology','experimentation','public engagement'],
+    needs:'A project proposal using emerging technology with a public demonstration component.',
+    gates:{}},
+  sources:['https://www.lacma.org/art/lab/grants']
+},
+{
+  id:'creative-capital',
+  name:'Creative Capital Award',
+  org:'Creative Capital',
+  city:'New York, NY', country:'USA', region:'Americas',
+  category:'grant', tier:'flagship',
+  website:'https://creative-capital.org/creative-capital-award/',
+  applyUrl:'https://creative-capital.org/creative-capital-award/award-application/',
+  status:'predicted',
+  predictedDeadline:'2027-04-02', predictedConfidence:'high',
+  basis:'The 2027 cycle closed 2 April 2026. A recurring annual open call — expect the next to run roughly February–April 2027.',
+  eventWindow:'Multi-year project support',
+  money:'Up to $50,000 unrestricted per project, plus multi-year advisory services.',
+  moneyTier:'high',
+  fit:4,
+  what:'National, open, multidisciplinary project grant with career development support. Explicitly names technology, performing arts and multidisciplinary work.',
+  selection:'Open call, no nomination required. 49 awards per cycle across all disciplines.',
+  scale:'One of the most significant unrestricted awards available to a US artist.',
+  requirements:'US-based individual artists, any career stage. Read the published Application Handbook before drafting.',
+  intel:'Their own director of artist initiatives says many awardees applied multiple times before winning. Treat the first application as the start of a sequence, not a lottery ticket.',
+  spec:{mediums:['performance','newmedia','interactive','installation','digital'], format:'proposal', env:'either',
+    runDays:1, payMin:50000, payMax:50000,
+    themes:['risk-taking','experimentation','multidisciplinary'],
+    needs:'A multi-year project proposal.',
+    gates:{residency:'USA-ok'}},
+  sources:['https://creative-capital.org/creative-capital-award/award-application/']
+},
+{
+  id:'knight-arts-tech',
+  name:'Knight Arts + Tech Fellowship',
+  org:'Knight Foundation',
+  city:'Miami, FL', country:'USA', region:'Americas',
+  category:'grant', tier:'major',
+  website:'https://knightfoundation.org/',
+  applyUrl:'https://knightfoundation.org/',
+  status:'uncertain',
+  predictedDeadline:'2027-03-01', predictedConfidence:'low',
+  basis:'Knight has run arts-and-technology fellowships on an irregular cycle. No confirmed 2027 round — monitor rather than plan around it.',
+  eventWindow:'Fellowship year',
+  money:'Substantial fellowship support — amounts vary by round.',
+  moneyTier:'high',
+  fit:4,
+  what:'Fellowship supporting artists working at the intersection of art and technology.',
+  selection:'Varies by round.',
+  scale:'Significant US arts-technology funder.',
+  requirements:'Check the current round.',
+  intel:'Irregular but well funded. Worth a standing alert rather than a diary date.',
+  spec:{mediums:['newmedia','interactive','digital','performance','installation'], format:'proposal', env:'either',
+    runDays:1, payMin:null, payMax:null, themes:['art and technology'],
+    needs:'Varies by round.', gates:{}},
+  sources:['https://knightfoundation.org/']
+},
+
+/* ═══════════ CIRCUS — COMPETITIONS AND MARKETS ═══════════ */
+{
+  id:'young-stage',
+  name:'YOUNG STAGE International Circus Festival',
+  org:'YOUNG STAGE',
+  city:'Basel', country:'Switzerland', region:'Europe',
+  category:'circus', tier:'major',
+  website:'https://www.young-stage.com/',
+  applyUrl:'https://www.young-stage.com/en/ask-young-stage/',
+  status:'predicted',
+  predictedDeadline:'2027-02-28', predictedConfidence:'medium',
+  basis:'Applications open and close in "begin of February of every year" per the festival FAQ. Note StageLync reported an open call for a "Final Edition" — confirm the festival is continuing before investing effort.',
+  eventWindow:'Basel, spring',
+  money:'Not published. The real money is in the bookings that follow — winners get programmed into additional shows.',
+  moneyTier:'prestige',
+  fit:3,
+  what:'Switzerland\'s leading circus competition and a genuine springboard. 13–15 acts and about 30 artists per edition, chosen from 400–450 submissions across ~60 nations.',
+  selection:'Single acts only. Selection criteria explicitly reward innovation, storytelling and audience connection.',
+  scale:'400–450 submissions for 13–15 slots.',
+  requirements:'Single act. Video submission.',
+  intel:'Their stated criteria — innovation, storytelling, audience connection — read almost like a description of Singularity. But check the age gate carefully: maximum 27 during the festival, and for duos the AVERAGE age counts, so the performer-plus-pilot pairing matters.',
+  warning:'Age cap 27 (average age for duos/groups). Festival may be running a final edition — verify it still exists.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:1, payMin:0, payMax:0, coversCosts:true,
+    themes:['innovation','storytelling','audience connection'],
+    needs:'A single competition act.',
+    gates:{maxAge:27, note:'Maximum age 27 during the festival; for duos and groups the average age counts.'}},
+  sources:['https://www.young-stage.com/en/ask-young-stage/']
+},
+{
+  id:'monte-carlo',
+  name:'Festival International du Cirque de Monte-Carlo',
+  org:'Monte-Carlo Festival',
+  city:'Monaco', country:'Monaco', region:'Europe',
+  category:'circus', tier:'flagship',
+  website:'https://www.montecarlofestival.mc/en/',
+  applyUrl:'https://www.montecarlofestival.mc/en/',
+  applyLabel:'No open call — via agent',
+  status:'invitation',
+  predictedDeadline:'2026-09-30', predictedConfidence:'low',
+  basis:'No published open call or application form. The 49th Festival and 14th New Generation run 22–31 January 2027. Selection is invitation and scouting based, typically settled in the autumn before.',
+  eventWindow:'22–31 January 2027',
+  money:'Golden Clown and prizes; amounts not published.',
+  moneyTier:'prestige',
+  fit:3,
+  what:'The most prestigious circus competition in the world. "New Generation" is the parallel young-artist competition.',
+  selection:'No open call. Invitation and scouting — the route is an agent, or being seen at another festival.',
+  scale:'The single most career-defining circus credential there is.',
+  requirements:'Competition acts, typically 6–9 minutes.',
+  intel:'This is the aspirational entry, not the near-term one. A traditional circus ring means indoor drone flight over a seated audience is a hard sell. The realistic path is to win somewhere else first — Monte-Carlo scouts the other festivals, and Chinese scouts watch Monte-Carlo, so a placing here cascades.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:1, payMin:null, payMax:null,
+    themes:['circus excellence','virtuosity'],
+    needs:'A competition act of 6–9 minutes in a traditional circus ring.',
+    gates:{invitation:true}},
+  sources:['https://www.montecarlofestival.mc/en/']
+},
+{
+  id:'budapest-circus',
+  name:'Budapest International Circus Festival',
+  org:'Capital Circus of Budapest',
+  city:'Budapest', country:'Hungary', region:'Europe',
+  category:'circus', tier:'major',
+  website:'https://www.budapestcircusfestival.hu/',
+  applyUrl:'mailto:festival@circus.hu?subject=Act%20submission',
+  applyLabel:'Email submission',
+  status:'predicted',
+  predictedDeadline:'2026-08-26', predictedConfidence:'medium',
+  basis:'The 16th edition ran 7–12 January 2026 with an application deadline of 26 August 2025 — roughly 17 months ahead, closing in late August. Expect a late-August 2026 deadline for the January 2028 edition.',
+  eventWindow:'January, biennial-ish',
+  money:'Gold, Silver and Bronze awards plus special jury prizes. Amounts not published.',
+  moneyTier:'prestige',
+  fit:3,
+  what:'Major Central European competition across multiple show categories, with a V4 conference attached.',
+  selection:'Single competition acts.',
+  scale:'One of the significant European circus competitions.',
+  requirements:'Competition act. Submit via festival@circus.hu.',
+  intel:'The deadline window is roughly now. Traditional big-top ring, so pitch the ground version at modest drone count rather than the full fleet.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:1, payMin:0, payMax:0, coversCosts:true,
+    themes:['circus','virtuosity'],
+    needs:'A single competition act for a traditional ring.',
+    gates:{}},
+  sources:['https://www.budapestcircusfestival.hu/']
+},
+{
+  id:'latina-circus',
+  name:'International Circus Festival of Italy',
+  org:'Festival Circo Italia',
+  city:'Latina', country:'Italy', region:'Europe',
+  category:'circus', tier:'major',
+  website:'https://festivalcircoitalia.com/',
+  applyUrl:'mailto:business@festivalcircoitalia.com?subject=Act%20submission',
+  applyLabel:'Email submission',
+  status:'predicted',
+  predictedDeadline:'2027-05-31', predictedConfidence:'low',
+  basis:'The 27th edition runs 15–19 October 2026. No public application form or published deadline; historically submissions run through spring and summer for an October festival. Low confidence.',
+  eventWindow:'October',
+  money:'Prizes awarded; amounts not published.',
+  moneyTier:'prestige',
+  fit:3,
+  what:'Italy\'s most significant international circus competition, founded 1999. 24 competing acts plus special guests, judged by two juries.',
+  selection:'Single competition acts.',
+  scale:'24 competing acts per edition.',
+  requirements:'Contact business@festivalcircoitalia.com or use the site contact form.',
+  intel:'Sits alongside Salieri as an Italian circus route, but without the classical-music constraint — so Singularity could go in unmodified here.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:1, payMin:0, payMax:0, coversCosts:true,
+    themes:['circus','virtuosity'],
+    needs:'A single competition act.',
+    gates:{}},
+  sources:['https://festivalcircoitalia.com/']
+},
+{
+  id:'micc-montreal',
+  name:'MICC — Marché International de Cirque Contemporain',
+  org:'TOHU / Montréal Complètement Cirque',
+  city:'Montréal', country:'Canada', region:'Americas',
+  category:'circus', tier:'flagship',
+  website:'https://montrealcompletementcirque.com/en',
+  applyUrl:'https://micc.tohu.ca/en/callforprojects',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'low',
+  basis:'Pitch sessions ran 6–9 July 2026 in Montréal. The next call had not opened at time of research — monitor the call page. Low confidence on the exact date.',
+  eventWindow:'Early July, Montréal',
+  money:'Submission is free. Selected projects pay the annual market registration fee. No artist fee for pitching — the value is the room full of programmers.',
+  moneyTier:'prestige',
+  fit:4,
+  what:'North America\'s most important contemporary circus market, attached to the Montréal Complètement Cirque festival. Pitch sessions in front of international programmers.',
+  selection:'Must be an active MICC member to submit. International scope, US applicants eligible.',
+  scale:'The single most relevant booking market for a North America-based circus act.',
+  requirements:'FULL-LENGTH PRODUCTIONS ONLY — minimum 45 minutes indoor or 35 minutes outdoor. Tour-ready or in-development both accepted. Student, amateur and non-touring work excluded.',
+  intel:'Singularity at 4.5 minutes is far too short. This is the clearest statement of the single highest-leverage move available to you: build the 45-minute version. That one decision unlocks MICC, CIRCa, Circusstad and the entire European co-production circuit, which is where touring money actually lives. Montréal is also the most technology-literate circus city on earth.',
+  spec:{mediums:['circus','aerial','performance','newmedia'], format:'performance', env:'either',
+    runDays:1, payMin:0, payMax:0,
+    themes:['contemporary circus','touring'],
+    needs:'A full-length production, minimum 45 minutes indoor or 35 outdoor. MICC membership required to submit.',
+    gates:{}},
+  sources:['https://micc.tohu.ca/en/callforprojects']
+},
+{
+  id:'circa-auch',
+  name:'CIRCa — Présentations de projets',
+  org:'CIRCa Pôle National Cirque',
+  city:'Auch', country:'France', region:'Europe',
+  category:'circus', tier:'major',
+  website:'https://circa.auch.fr/',
+  applyUrl:'https://www.artcena.fr/fil-vie-pro/lancement-de-lappel-a-candidatures-pour-les-presentations-de-projets-de-creation-0',
+  status:'predicted',
+  predictedDeadline:'2027-05-18', predictedConfidence:'high',
+  basis:'The 2026 cycle had a deadline of Monday 18 May 2026 with presentations 20–22 October 2026. Consistent annual pattern: call in spring, deadline mid-May, presentations in October.',
+  eventWindow:'Presentations in October, Auch',
+  money:'No fee and no accommodation — you pay to be there. The value is co-production and residency deals.',
+  moneyTier:'prestige',
+  fit:3,
+  what:'France\'s flagship contemporary circus festival. The créations strand puts 24 French and international companies in front of programmers, producers and co-producers.',
+  selection:'Pitches of works-in-creation, not finished acts. Criteria include artistic quality plus balance of project types, geography and gender parity.',
+  scale:'24 companies in front of the French and European circus establishment.',
+  requirements:'Your premiere must already be scheduled between Nov 2026 and Dec 2027, you must attend all three days, and each project needs a "parrain" — a sponsoring production venue, presenting venue or local authority.',
+  intel:'The sponsor requirement is the real barrier for a US artist with no French partner. Solve that first — a co-producing venue relationship — and this becomes reachable. Worth building toward rather than applying to cold.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'either',
+    runDays:1, payMin:0, payMax:0,
+    themes:['contemporary circus','creation'],
+    needs:'A work in creation with a scheduled premiere and an institutional sponsor.',
+    gates:{note:'Requires a "parrain" — a sponsoring venue or local authority. Hard for a US artist without a French partner.'}},
+  sources:['https://www.artcena.fr/fil-vie-pro/lancement-de-lappel-a-candidatures-pour-les-presentations-de-projets-de-creation-0']
+},
+{
+  id:'chamaeleon',
+  name:'Chamäleon Theatre — Residency & Production',
+  org:'Chamäleon Berlin',
+  city:'Berlin', country:'Germany', region:'Europe',
+  category:'circus', tier:'major',
+  website:'https://chamaeleonberlin.com/en/',
+  applyUrl:'https://chamaeleonberlin.com/en/circus-residency-program/',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'low',
+  basis:'Residency applications are accepted "up to twice a year via an open call" but specific dates are not currently posted. Join their mailing list rather than relying on a predicted date.',
+  eventWindow:'Productions run 3–12 months',
+  money:'The Chamäleon-supported residency is primarily in-kind — free use of "The Cave" studio plus dramaturgical and technical production advice. The Theaterpreis-Residency did include financial support plus travel and accommodation; amounts unpublished.',
+  moneyTier:'medium',
+  fit:4,
+  what:'Berlin\'s contemporary circus house — a commercially viable venue with artistic credibility, running long productions of 3–12 months and producing new work.',
+  selection:'The Theaterpreis-Residency ran in three streams — Berlin-based, Germany-wide, and international. There is a genuine international door.',
+  scale:'A long-run Berlin production is real income, not a one-night fee.',
+  requirements:'Full evening productions for the main stage; residencies for development.',
+  intel:'Design-forward contemporary circus is exactly their brand, so a tech-integrated show is on-message rather than odd. The venue is intimate — pitch the 8-drone indoor version or the sphere, not 150 drones.',
+  spec:{mediums:['circus','aerial','performance','newmedia'], format:'performance', env:'indoor',
+    runDays:90, payMin:null, payMax:null,
+    themes:['contemporary circus','design-forward'],
+    needs:'A full evening production for an intimate indoor stage, or a development project.',
+    gates:{}},
+  sources:['https://chamaeleonberlin.com/en/circus-residency-program/']
+},
+{
+  id:'circusstad',
+  name:'Circusstad Festival',
+  org:'Circusstad Rotterdam',
+  city:'Rotterdam', country:'Netherlands', region:'Europe',
+  category:'circus', tier:'mid',
+  website:'https://circusstad.nl/en/',
+  applyUrl:'https://circusstad.nl/en/open-call/open-call-stadsparade/',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'low',
+  basis:'Runs recurring open calls (Stadsparade and Circunstruction) that refresh annually, but deadlines were not verifiable in detail. The 2026 edition ran 29 April – 3 May. Check the open call pages directly.',
+  eventWindow:'Late April to early May',
+  money:'Varies by call; not published.',
+  moneyTier:'unknown',
+  fit:4,
+  what:'The Netherlands\' main contemporary circus festival, with recurring open calls — Stadsparade (city parade) and Circunstruction (a fast creation lab) — plus a Dutch Circus Showcase for programmers.',
+  selection:'Open calls are for participation in curated formats; the main programme takes full productions.',
+  scale:'The main Dutch circus platform.',
+  requirements:'Varies by call. The Dutch Circus Showcase strand is NL-focused; the general open calls appear open internationally.',
+  intel:'The Stadsparade is an outdoor public-space format where an LED and drone piece reads as a headline rather than a curiosity. Good European entry point that does not require a full-length show.',
+  spec:{mediums:['circus','aerial','performance','streetarts','light'], format:'performance', env:'outdoor',
+    runDays:5, payMin:null, payMax:null,
+    themes:['contemporary circus','public space'],
+    needs:'Participation in a curated outdoor format.',
+    gates:{}},
+  sources:['https://circusstad.nl/en/']
+},
+{
+  id:'jacksons-lane',
+  name:'Jacksons Lane Circus Commissions',
+  org:'Jacksons Lane',
+  city:'London', country:'UK', region:'Europe',
+  category:'circus', tier:'mid',
+  website:'https://www.jacksonslane.org.uk/circus/',
+  applyUrl:'https://www.jacksonslane.org.uk/circus/commissions/',
+  status:'uncertain',
+  predictedDeadline:'2027-03-01', predictedConfidence:'low',
+  basis:'Runs commissions from microcommissions to artist-in-residence, but amounts, deadlines and geographic eligibility are not published. Contact directly.',
+  eventWindow:'Varies',
+  money:'Cash awards plus residency space. Amounts unpublished.',
+  moneyTier:'unknown',
+  fit:3,
+  what:'The UK\'s leading contemporary circus venue and development house. Support includes studio time, technical support, marketing, mentoring, dramaturgy and business planning.',
+  selection:'Not published.',
+  scale:'Central to the UK circus development ecosystem.',
+  requirements:'Contact directly — commissions page does not publish criteria.',
+  intel:'They commissioned Gandini Juggling\'s "meta", so they are comfortable with conceptually and technically complex work. Likely UK-eligibility gated given Arts Council funding — confirm before investing time.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:5, payMin:null, payMax:null,
+    themes:['contemporary circus','development'],
+    needs:'A development project or commission proposal.',
+    gates:{note:'Likely UK-eligibility gated via Arts Council funding — confirm directly.'}},
+  sources:['https://www.jacksonslane.org.uk/circus/commissions/']
+},
+
+/* ═══════════ STREET AND OUTDOOR ARTS ═══════════ */
+{
+  id:'aurillac',
+  name:'Festival d\'Aurillac — Compagnies de Passage',
+  org:'Association Éclat',
+  city:'Aurillac', country:'France', region:'Europe',
+  category:'streetarts', tier:'flagship',
+  website:'https://www.aurillac.net/',
+  applyUrl:'https://cie.aurillac.net/',
+  status:'predicted',
+  predictedDeadline:'2027-03-23', predictedConfidence:'high',
+  basis:'Verified 2026 pattern: individual company registration opens 23 February and closes 23 March as a hard deadline; collective projects due 15 February. Festival runs 19–22 August. Consistent annual cycle.',
+  eventWindow:'Late August, four days',
+  money:'Registration is free; optional catalogue listing €45–€68. THE FESTIVAL DOES NOT PAY — you cover everything and earn from the hat.',
+  moneyTier:'low',
+  fit:4,
+  what:'Europe\'s largest street arts festival. A curated IN programme plus the vast open-access Compagnies de Passage, where hundreds of companies self-programme.',
+  selection:'Open access for Compagnies de Passage — no jury. Professionals and amateurs both. Liability insurance mandatory.',
+  scale:'The most efficient place on earth to be seen by street arts programmers.',
+  requirements:'Self-produced. Amplified contemporary music concerts excluded. Must be technically feasible within festival parameters.',
+  intel:'A pure visibility play, not income. Outdoor drone flight in French airspace needs DGAC authorisation, which is a real hurdle at a chaotic open-access festival — bring the ground version. The value is that every European outdoor programmer walks these streets for four days.',
+  spec:{mediums:['streetarts','circus','performance','spectacle'], format:'performance', env:'outdoor',
+    runDays:4, payMin:0, payMax:0,
+    themes:['street arts','public space'],
+    needs:'A self-produced outdoor show. You fund everything.',
+    gates:{}},
+  sources:['https://www.aurillac.net/en/festival-aurillac-en/compagnies-de-passage/']
+},
+{
+  id:'firatarrega',
+  name:'FiraTàrrega',
+  org:'FiraTàrrega',
+  city:'Tàrrega', country:'Spain', region:'Europe',
+  category:'streetarts', tier:'flagship',
+  website:'https://www.firatarrega.cat/',
+  applyUrl:'https://www.firatarrega.cat/',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'low',
+  basis:'Major annual street arts market held in September. Call timing not verified in detail — check the site directly.',
+  eventWindow:'September',
+  money:'Market model — the value is bookings from attending programmers.',
+  moneyTier:'unknown',
+  fit:4,
+  what:'One of Europe\'s two most important street arts markets, alongside Aurillac. Programmers from across Europe attend to book work.',
+  selection:'Curated programme plus market.',
+  scale:'A major European booking market for outdoor work.',
+  requirements:'Outdoor-capable work.',
+  intel:'Where Aurillac is open-access chaos, Tàrrega is a curated market — being programmed here carries more weight and leads more directly to paid bookings.',
+  spec:{mediums:['streetarts','circus','performance','spectacle'], format:'performance', env:'outdoor',
+    runDays:4, payMin:null, payMax:null,
+    themes:['street arts','public space'],
+    needs:'Outdoor-capable work suited to a professional market context.',
+    gates:{}},
+  sources:['https://www.firatarrega.cat/']
+},
+{
+  id:'la-strada-bremen',
+  name:'LA STRADA International Street Arts Festival',
+  org:'LA STRADA Bremen',
+  city:'Bremen', country:'Germany', region:'Europe',
+  category:'streetarts', tier:'major',
+  website:'https://www.lastrada-bremen.de/',
+  applyUrl:'https://www.lastrada-bremen.de/',
+  status:'open',
+  deadline:'2026-12-31', deadlineConfidence:'medium',
+  basis:'The 2027 application window is open now, running roughly August–December 2026. Confirm the exact closing date on the site.',
+  eventWindow:'Summer, Bremen',
+  money:'Paid festival — fees negotiated per company.',
+  moneyTier:'medium',
+  fit:4,
+  what:'A significant German international street arts festival with a strong reputation for spectacle and large-format outdoor work.',
+  selection:'Curated.',
+  scale:'One of Germany\'s main outdoor arts platforms.',
+  requirements:'Outdoor work. One application per cycle.',
+  intel:'The application window is open right now and it is a single email. Low cost, real fee potential, and Germany has the densest network of paying outdoor festivals in Europe.',
+  spec:{mediums:['streetarts','circus','performance','spectacle','light'], format:'performance', env:'outdoor',
+    runDays:4, payMin:null, payMax:null,
+    themes:['street arts','spectacle'],
+    needs:'Outdoor-capable show.',
+    gates:{}},
+  sources:['https://www.lastrada-bremen.de/']
+},
+{
+  id:'gdif',
+  name:'Greenwich+Docklands International Festival',
+  org:'FESTIVAL.ORG',
+  city:'London', country:'UK', region:'Europe',
+  category:'streetarts', tier:'major',
+  website:'https://festival.org/gdif/',
+  applyUrl:'https://festival.org/',
+  status:'predicted',
+  predictedDeadline:'2026-11-30', predictedConfidence:'low',
+  basis:'GDIF commissions outdoor work annually for a summer festival; call timing not verified in detail.',
+  eventWindow:'Summer, London',
+  money:'Commissions outdoor work; budgets not published.',
+  moneyTier:'unknown',
+  fit:4,
+  what:'London\'s major outdoor arts festival, commissioning large-scale free public work.',
+  selection:'Curated, commission-led.',
+  scale:'A leading UK outdoor arts commissioner.',
+  requirements:'Outdoor work suited to public space.',
+  intel:'Part of the UK outdoor arts network alongside Without Walls — note Without Walls itself requires a UK-based lead applicant, so GDIF direct is the better door for a US artist.',
+  spec:{mediums:['streetarts','circus','performance','spectacle','light'], format:'performance', env:'outdoor',
+    runDays:10, payMin:null, payMax:null,
+    themes:['outdoor arts','public space','accessibility'],
+    needs:'Outdoor work for free public presentation.',
+    gates:{}},
+  sources:['https://festival.org/gdif/']
+},
+{
+  id:'pflasterspektakel',
+  name:'Pflasterspektakel',
+  org:'City of Linz',
+  city:'Linz', country:'Austria', region:'Europe',
+  category:'streetarts', tier:'mid',
+  website:'https://www.pflasterspektakel.at/',
+  applyUrl:'https://www.pflasterspektakel.at/',
+  status:'predicted',
+  predictedDeadline:'2027-02-28', predictedConfidence:'medium',
+  basis:'Annual international street arts festival in July with a winter application window.',
+  eventWindow:'July, Linz',
+  money:'Paid — fees and expenses per company.',
+  moneyTier:'low',
+  fit:3,
+  what:'Austria\'s major international street arts festival, held across Linz city centre.',
+  selection:'Curated from open application.',
+  scale:'Well-established European street arts festival.',
+  requirements:'Outdoor street performance.',
+  intel:'Linz is also the Ars Electronica city — if you are travelling for one, the other is worth building into the same trip.',
+  spec:{mediums:['streetarts','circus','performance'], format:'performance', env:'outdoor',
+    runDays:4, payMin:500, payMax:3000,
+    themes:['street arts'],
+    needs:'Outdoor street performance.',
+    gates:{}},
+  sources:['https://www.pflasterspektakel.at/']
+},
+
+/* ═══════════ VARIETY AND COMMERCIAL — WHERE FEES ARE RELIABLE ═══════════ */
+{
+  id:'gop-variete',
+  name:'GOP Varieté-Theater',
+  org:'GOP Entertainment Group',
+  city:'Multiple', country:'Germany', region:'Europe',
+  category:'variety', tier:'major',
+  website:'https://www.variete.de/',
+  applyUrl:'mailto:casting-gop@variete.de?subject=Act%20submission%20-%20Singularity',
+  applyLabel:'Email casting',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling casting submissions. No deadline — send an EPK when ready.',
+  eventWindow:'Shows run for weeks per venue and tour between them',
+  money:'Not disclosed; negotiated per contract. Weekly or per-show rates across a run of weeks or months — this is where a 4.5-minute act earns real money, because it repeats nightly for a season.',
+  moneyTier:'high',
+  fit:4,
+  what:'Germany\'s largest variety theatre chain — Hannover, Essen, Bad Oeynhausen, Münster, München, Bremen and Bonn. Produces themed ensemble shows that run for weeks per venue then tour.',
+  selection:'Send applications to casting-gop@variete.de. The "Künstlerfragebogen" on their site is only for artists who already hold a contract — do not submit that first.',
+  scale:'The single best volume employer for a specialty act in Europe.',
+  requirements:'EPK with act video, vita, press materials.',
+  intel:'The economics here are different from festivals and better: one booking is a season of nightly shows, not a single fee. Two structural things to pre-answer in your pitch — you are a team of two plus a drone fleet, so negotiate as a production rather than a spot; and indoor drone flight over a paying seated audience raises insurance and venue-safety questions, so lead with a risk assessment and prior-venue references.',
+  spec:{mediums:['variety','circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:30, payMin:8000, payMax:60000,
+    themes:['variety','spectacle'],
+    needs:'A self-contained specialty act suitable for nightly repetition in an intimate indoor theatre.',
+    gates:{}},
+  sources:['https://www.variete.de/das-unternehmen/gop-showconcept/']
+},
+{
+  id:'friedrichsbau',
+  name:'Friedrichsbau Varieté',
+  org:'Friedrichsbau',
+  city:'Stuttgart', country:'Germany', region:'Europe',
+  category:'variety', tier:'mid',
+  website:'https://www.friedrichsbau.de/',
+  applyUrl:'https://www.friedrichsbau.de/artist-application/',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling artist applications via their application page and casting email.',
+  eventWindow:'Seasonal runs',
+  money:'Not published; negotiated per contract.',
+  moneyTier:'medium',
+  fit:4,
+  what:'A leading German variety theatre running themed ensemble seasons.',
+  selection:'Email casting@friedrichsbau.de addressed to artistic director Ralph Sun. Send artist vita, press material, contact details and an EPK. German or English.',
+  scale:'Established Stuttgart variety house.',
+  requirements:'EPK with photos, videos and links.',
+  intel:'They state plainly that they only reply if you are being considered — silence is the default, so do not read it as rejection or chase.',
+  spec:{mediums:['variety','circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:30, payMin:5000, payMax:40000,
+    themes:['variety'],
+    needs:'A specialty act for an indoor variety season.',
+    gates:{}},
+  sources:['https://www.friedrichsbau.de/artist-application/']
+},
+{
+  id:'palazzo',
+  name:'PALAZZO Dinner Shows',
+  org:'PALAZZO',
+  city:'Berlin / Hamburg / Nuremberg / Stuttgart / Vienna', country:'Germany & Austria', region:'Europe',
+  category:'variety', tier:'mid',
+  website:'https://palazzo-casting.org/',
+  applyUrl:'https://palazzo-casting.org/',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling applications via their casting portal.',
+  eventWindow:'Long winter-season runs',
+  money:'Not published. Long winter runs are genuinely well-paid work.',
+  moneyTier:'high',
+  fit:3,
+  what:'Spiegeltent dinner-show operator across five cities, seeking acrobats, comedians, live musicians and circus acts.',
+  selection:'Apply through their casting portal, which has dedicated requirements and conditions pages.',
+  scale:'Multi-city winter seasons.',
+  requirements:'Spiegeltent means intimate, in-the-round, low ceiling.',
+  intel:'The venue shape decides the offer: this is the 8-drone indoor version or the LED sphere, not 150 drones. In-the-round also means the act must read from every angle.',
+  spec:{mediums:['variety','circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:90, payMin:8000, payMax:50000,
+    themes:['variety','dinner show'],
+    needs:'An act that works in-the-round in a low-ceilinged spiegeltent.',
+    gates:{}},
+  sources:['https://palazzo-casting.org/']
+},
+{
+  id:'zinzanni',
+  name:'Teatro ZinZanni',
+  org:'Teatro ZinZanni',
+  city:'Seattle, WA', country:'USA', region:'Americas',
+  category:'variety', tier:'mid',
+  website:'https://zinzanni.com/',
+  applyUrl:'https://zinzanni.com/seattle/about/auditions/',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling casting. All decisions made at Seattle HQ.',
+  eventWindow:'Long runs',
+  money:'Not published.',
+  moneyTier:'medium',
+  fit:4,
+  what:'US spiegeltent dinner-circus, explicitly seeking "a great, unusual act".',
+  selection:'Email name and contact details, full act video, website, resume and publicity photos to the Casting Manager.',
+  scale:'The main US spiegeltent circus operation.',
+  requirements:'Full act video, unedited.',
+  intel:'"A great, unusual act" is close to a literal description of what you have, and this is domestic so there is no visa or freight complication. Note the Chicago venue is listed as temporarily closed — verify current operating status.',
+  spec:{mediums:['variety','circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:60, payMin:5000, payMax:40000,
+    themes:['variety','dinner circus'],
+    needs:'A self-contained unusual act for an intimate spiegeltent.',
+    gates:{}},
+  sources:['https://zinzanni.com/seattle/about/auditions/']
+},
+{
+  id:'spiegelworld',
+  name:'Spiegelworld',
+  org:'Spiegelworld',
+  city:'Las Vegas, NV', country:'USA', region:'Americas',
+  category:'variety', tier:'major',
+  website:'https://spiegelworld.com/',
+  applyUrl:'mailto:casting@spiegelworld.com?subject=Specialty%20act%20submission',
+  applyLabel:'Email casting',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling cold submissions to casting@spiegelworld.com. The only publicly posted call is stale (2021) — the live route is the casting inbox and their contact form\'s Casting Enquiries category.',
+  eventWindow:'Vegas residencies — long runs',
+  money:'Not published. Vegas residencies are the best-paying repeat work in the industry.',
+  moneyTier:'high',
+  fit:5,
+  what:'The highest-profile adult circus-variety producer in Las Vegas — Absinthe, Atomic Saloon Show, DiscoShow. Develops acts in-house at its "Circus Town" facility.',
+  selection:'Cold email with an EPK, or via a Vegas-experienced agent. Their contact form has a dedicated Casting Enquiries category.',
+  scale:'Vegas residency = nightly work at industry-leading rates.',
+  requirements:'EPK with full act video.',
+  intel:'Arguably the single best product-market fit anywhere in this app for StarBalancer. Spiegelworld\'s entire house style is built on exactly this kind of novel speciality apparatus, and a hand balancer on a glowing sphere is precisely their register. Send this one.',
+  spec:{mediums:['variety','circus','aerial','performance','led'], format:'performance', env:'indoor',
+    runDays:180, payMin:15000, payMax:150000,
+    themes:['variety','spectacle','adult circus'],
+    needs:'A novel speciality act for a long Las Vegas residency.',
+    gates:{}},
+  sources:['https://spiegelworld.com/careers/casting-call/']
+},
+{
+  id:'cirque-casting',
+  name:'Cirque du Soleil — Casting',
+  org:'Cirque du Soleil Entertainment Group',
+  city:'Montréal', country:'Canada', region:'Americas',
+  category:'circus', tier:'flagship',
+  website:'https://casting.cirquedusoleil.com/',
+  applyUrl:'https://casting.cirquedusoleil.com/apply',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'A permanent, staffed casting database with published video-demo requirements. Rolling submissions.',
+  eventWindow:'Ongoing',
+  money:'Not published. Cirque contracts are salaried, long-term and well paid.',
+  moneyTier:'high',
+  fit:4,
+  what:'The world\'s largest circus company, maintaining an open casting database across defined disciplines with published video-demo guidance.',
+  selection:'They cast PERFORMERS into their shows, not third-party acts. Submit the act and the artist, not the company.',
+  scale:'The most legitimate unsolicited-submission route in the industry.',
+  requirements:'Follow their video demo guidance exactly — clean, full-body, unedited.',
+  intel:'Relevant precedent: Cirque has already integrated drones into live theatre — the Sparked R&D film with ETH Zurich, and a nightly multi-drone act in the Broadway show Paramour. So the institution already understands this technology. Two plays here: get the acrobatic performer into the database, and separately approach their creation and R&D side about the drone integration as a concept.',
+  spec:{mediums:['circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:365, payMin:null, payMax:null,
+    themes:['circus','virtuosity'],
+    needs:'An individual performer profile with clean unedited demo video.',
+    gates:{}},
+  sources:['https://casting.cirquedusoleil.com/apply']
+},
+{
+  id:'royal-caribbean',
+  name:'Royal Caribbean — Headliner Entertainment',
+  org:'Royal Caribbean',
+  city:'Miami, FL', country:'USA', region:'Americas',
+  category:'variety', tier:'major',
+  website:'https://royalcaribbeanentertainment.com/headliner/',
+  applyUrl:'https://royalcaribbeanentertainment.com/register/',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling casting profile registration, with published audition tour dates.',
+  eventWindow:'Contracts across the fleet',
+  money:'Not published. Cruise specialty-act fees are among the higher reliable rates in the industry.',
+  moneyTier:'high',
+  fit:3,
+  what:'Books comedy, music and variety acts as headline entertainment across the fleet. A real, actively run casting operation.',
+  selection:'Register a casting profile; the Headliner track is the right one for a self-contained speciality act.',
+  scale:'Fleet-wide, repeat contracts.',
+  requirements:'Casting profile with act video.',
+  intel:'Reliable repeat income, but be upfront about the technical question: indoor drone flight on a moving vessel is a genuine safety and engineering issue. Lead with the sphere or the ground act at low drone count, and raise the constraint yourself rather than letting them discover it.',
+  spec:{mediums:['variety','circus','aerial','performance'], format:'performance', env:'indoor',
+    runDays:180, payMin:10000, payMax:80000,
+    themes:['variety','cruise entertainment'],
+    needs:'A self-contained act deliverable on a moving vessel.',
+    gates:{}},
+  sources:['https://royalcaribbeanentertainment.com/headliner/']
+},
+
+/* ═══════════ US LOCAL AND REGIONAL ═══════════ */
+{
+  id:'fusebox',
+  name:'Fusebox Festival',
+  org:'Fusebox',
+  city:'Austin, TX', country:'USA', region:'Americas',
+  category:'performance', tier:'mid',
+  website:'https://fuseboxlive.com/',
+  applyUrl:'https://fuseboxlive.com/local-submission/',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Local submission form with no stated deadline — monitor the page. Festival runs in spring.',
+  eventWindow:'Spring, Austin',
+  money:'Financial and/or in-kind support (marketing, production, venue), tailored per project. Fusebox is typically not the sole funder.',
+  moneyTier:'low',
+  fit:5,
+  what:'Austin\'s flagship interdisciplinary contemporary performance festival, running an explicit Art+Tech Micro-Fest strand.',
+  selection:'Looks for work that invents and reimagines playfully, bridges disciplines, offers fresh perspectives, engages local communities and emphasises live performance.',
+  scale:'Austin\'s main contemporary performance platform.',
+  requirements:'Applicants must be Austin-based, within the ten Austin city council districts.',
+  intel:'The one entry in the whole app where a residency requirement works in your favour. Cheapest, nearest, highest-probability credential available to you — and an Art+Tech Micro-Fest presentation is something you can cite in every European application afterwards. No travel, no freight, no visa.',
+  spec:{mediums:['performance','newmedia','interactive','installation','digital'], format:'either', env:'either',
+    runDays:5, payMin:500, payMax:5000,
+    themes:['interdisciplinary','art and technology','local community','play'],
+    needs:'Interdisciplinary work with a live performance emphasis.',
+    gates:{residency:'Austin-ok'}},
+  sources:['https://fuseboxlive.com/local-submission/']
+},
+{
+  id:'austin-aipp',
+  name:'Austin Art in Public Places',
+  org:'City of Austin Cultural Arts Division',
+  city:'Austin, TX', country:'USA', region:'Americas',
+  category:'publicart', tier:'mid',
+  website:'https://www.austintexas.gov/department/art-public-places',
+  applyUrl:'https://www.austintexas.gov/department/art-public-places',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Recurring RFQs issued through the year for individual capital projects. Watch the AIPP page and CaFÉ.',
+  eventWindow:'Varies by project',
+  money:'Percent-for-art commissions; budgets vary per project, commonly $50,000–$500,000.',
+  moneyTier:'high',
+  fit:4,
+  what:'Austin\'s percent-for-art programme, commissioning permanent public artwork across city capital projects.',
+  selection:'RFQ then shortlist then proposal.',
+  scale:'Home-city public art with recurring budgets.',
+  requirements:'Most calls want prior comparable public art experience — building one documented permanent commission is the gate.',
+  intel:'A permanent commission is the credential that unlocks the whole airport and transit tier, including DFW. Start local where you have standing and relationships.',
+  spec:{mediums:['sculpture','installation','light','led','interactive'], format:'sculpture', env:'outdoor',
+    runDays:3650, payMin:50000, payMax:500000,
+    themes:['public art','Austin','placemaking'],
+    needs:'A permanent, durable public artwork.',
+    gates:{}},
+  sources:['https://www.austintexas.gov/department/art-public-places']
+},
+{
+  id:'dfw-art',
+  name:'DFW Airport Art Program',
+  org:'Dallas Fort Worth International Airport',
+  city:'Dallas, TX', country:'USA', region:'Americas',
+  category:'publicart', tier:'flagship',
+  website:'https://www.dfwairport.com/explore/art/',
+  applyUrl:'https://www.dfwairport.com/explore/art/',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'medium',
+  basis:'A multi-year programme running through roughly 2030 across Terminals C and F, with stage-one deadlines recurring. The 2026 round closed 16 July 2026; further calls are scheduled through 2030.',
+  eventWindow:'Installations through 2030',
+  money:'2026 round: Terminal C North exit canyon $625,000–$725,000; Terminal C North parkette $430,000–$500,000. Shortlisted artists receive $3,500 proposal fees.',
+  moneyTier:'top',
+  fit:4,
+  what:'A multi-year, multi-million-dollar commissioning programme including an explicitly "dynamic digital art program". The Terminal F immersive digital art call is the closest match to kinetic and light work.',
+  selection:'Midcareer or well-established; must have completed at least one comparable large-scale public artwork. International artists welcome.',
+  scale:'The single best recurring Texas opportunity by budget.',
+  requirements:'Prior comparable large-scale public art commission required — this is the gate.',
+  intel:'The suspended-sculpture calls suit a hoisted LED sphere or StarBalancer directly. But note the eligibility gate: you need one documented large permanent commission first. That makes Austin AIPP the logical stepping stone, and this the target it leads to.',
+  spec:{mediums:['sculpture','installation','light','led','interactive','digital'], format:'sculpture', env:'indoor',
+    runDays:3650, payMin:430000, payMax:725000,
+    themes:['public art','airport','digital'],
+    needs:'A permanent large-scale commission, with prior comparable experience documented.',
+    gates:{}},
+  sources:['https://www.dfwairport.com/explore/art/']
+},
+{
+  id:'empac',
+  name:'EMPAC Artist Residencies',
+  org:'Rensselaer Polytechnic Institute',
+  city:'Troy, NY', country:'USA', region:'Americas',
+  category:'residency', tier:'flagship',
+  website:'https://empac.rpi.edu/program/residencies/artist',
+  applyUrl:'https://webforms.rpi.edu/empac-residency-open-call',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Rolling, reviewed four times a year: 14 January, 15 April, 15 July and 15 October. Residencies are scheduled 6–12 months ahead.',
+  eventWindow:'Scheduled 6–12 months after acceptance',
+  money:'Primarily in-kind — facilities, crew and full production support. Whether a cash fee exists is unconfirmed; ask before assuming.',
+  moneyTier:'medium',
+  fit:5,
+  what:'The best-equipped performance-technology residency in the US: a 1,200-seat concert hall, 400-seat theatre, two black boxes, motion capture and audio/video production infrastructure, with staff technical support.',
+  selection:'Four tracks — Audio, Video, Dance/Theater, and Creative Research. Dance/Theater offers two weeks in a 3,300 sq ft black box for groups up to six.',
+  scale:'Purpose-built for exactly the intersection you work in.',
+  requirements:'Letter of intent, project description, collaborator résumés, work samples. Group cap of six on the Dance/Theater track.',
+  intel:'The obvious place to develop StarBalancer properly — motion capture infrastructure is exactly what a movement-driven visual system needs, and they have staff who do this for a living. The six-person cap rules out the full drone crew, so pitch StarBalancer or the solo aerial version. Lowest-friction high-value application in the app: next quarterly deadline is never more than three months away.',
+  spec:{mediums:['performance','newmedia','interactive','digital','led','installation'], format:'either', env:'indoor',
+    runDays:14, payMin:null, payMax:null, coversCosts:true,
+    themes:['experimental media','performance','research'],
+    needs:'A development project for a group of up to six, using their technical infrastructure.',
+    gates:{}},
+  sources:['https://empac.rpi.edu/program/residencies/artist']
+},
+{
+  id:'burning-man',
+  name:'Burning Man — Black Rock City Honoraria',
+  org:'Burning Man Project',
+  city:'Black Rock City, NV', country:'USA', region:'Americas',
+  category:'grant', tier:'major',
+  website:'https://burningman.org/black-rock-city/bring-your-art/art-grants-programs/brc-honoraria/',
+  applyUrl:'https://profiles.burningman.org/art-grants-intro',
+  status:'opens_soon',
+  opensDate:'2026-10-01', opensConfidence:'medium',
+  predictedDeadline:'2026-11-15', predictedConfidence:'medium',
+  basis:'2027 applications open "early Fall" 2026. Historic pattern: letter of intent mid-October to mid-November, notifications before year end, full proposals mid-January.',
+  eventWindow:'Late August, Black Rock City',
+  money:'About $1.45M across roughly 75 projects a year. Grants over $20,000 are rare. Request 40–60% of your total project budget.',
+  moneyTier:'medium',
+  fit:3,
+  what:'The largest recurring open grant programme for large-scale interactive, kinetic and light sculpture in the US.',
+  selection:'Letter of intent, then full proposal. No geographic restriction. Prior attendance recommended but not required.',
+  scale:'~75 funded projects a year.',
+  requirements:'IMPORTANT: the honoraria explicitly DO NOT fund performances, amplified sound or theme camps.',
+  intel:'Pitch the sphere as an interactive sculpture — the drone show is not fundable here, and proposing it would signal you had not read the guidelines. Desktop only, no email submissions, and the LOI window is short. Set a reminder for early October.',
+  spec:{mediums:['installation','sculpture','light','led','interactive','immersive'], format:'installation', env:'outdoor',
+    runDays:8, payMin:5000, payMax:20000,
+    themes:['interactivity','participation','radical self-expression','desert'],
+    needs:'A large-scale interactive sculpture that survives a harsh desert week. Performances are explicitly excluded.',
+    gates:{}},
+  sources:['https://burningman.org/black-rock-city/bring-your-art/art-grants-programs/brc-honoraria/']
+},
+{
+  id:'coachella-art',
+  name:'Coachella Art Program',
+  org:'Goldenvoice',
+  city:'Indio, CA', country:'USA', region:'Americas',
+  category:'installation', tier:'major',
+  website:'https://www.coachella.com/art',
+  applyUrl:'https://www.coachella.com/art',
+  status:'predicted',
+  predictedDeadline:'2026-10-31', predictedConfidence:'low',
+  basis:'Coachella commissions large-scale installations annually with a submission route, but the timing is not consistently published. Monitor the art page from autumn.',
+  eventWindow:'April, two weekends',
+  money:'Large production budgets for monumental work; not published.',
+  moneyTier:'high',
+  fit:4,
+  what:'One of the highest-profile large-scale art commissioning programmes attached to a music festival, funding monumental interactive and kinetic installations.',
+  selection:'Curated from submissions.',
+  scale:'Two weekends, enormous audience and press reach.',
+  requirements:'Monumental outdoor work that survives desert conditions and crowds.',
+  intel:'Music festival art programmes are significantly under-tapped by artists from the circus and performance world, and the budgets are far larger than most art festivals. A hoisted, illuminated sphere at scale is exactly the register.',
+  spec:{mediums:['installation','sculpture','light','led','interactive','immersive'], format:'installation', env:'outdoor',
+    runDays:14, payMin:50000, payMax:400000,
+    themes:['monumental','desert','spectacle','interactivity'],
+    needs:'Monumental outdoor installation withstanding desert conditions and very large crowds.',
+    gates:{}},
+  sources:['https://www.coachella.com/art']
+},
+{
+  id:'artechouse',
+  name:'ARTECHOUSE',
+  org:'ARTECHOUSE',
+  city:'Houston / NYC / DC', country:'USA', region:'Americas',
+  category:'immersive', tier:'major',
+  website:'https://www.artechouse.com/',
+  applyUrl:'https://www.artechouse.com/contact/',
+  applyLabel:'Artist submission form',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Their contact form has explicit categories for "Artist and Creative Submissions" and "Partnerships and Collaborations". Rolling.',
+  eventWindow:'Exhibition runs of several months',
+  money:'Not published; commissioned exhibitions.',
+  moneyTier:'medium',
+  fit:4,
+  what:'Immersive digital art venues in Houston, New York and Washington DC, exhibiting technology-driven work in large gallery spaces.',
+  selection:'Direct artist submission via their contact form categories.',
+  scale:'Three US venues with substantial visitor numbers.',
+  requirements:'Indoor gallery-scale digital work.',
+  intel:'Geographically the closest serious venue to you — Houston is a three-hour drive, so no flights and no freight. The 2m interactive sphere is a direct fit for their gallery context. Use the Artist Submission category and email houston@artechouse.com directly.',
+  spec:{mediums:['immersive','digital','newmedia','interactive','led','installation'], format:'installation', env:'indoor',
+    runDays:90, payMin:null, payMax:null,
+    themes:['immersive','digital art','technology'],
+    needs:'Indoor gallery-scale digital or immersive work.',
+    gates:{}},
+  sources:['https://www.artechouse.com/contact/']
+},
+
+/* ═══════════ EUROPE — PERFORMANCE × TECHNOLOGY ═══════════ */
+{
+  id:'onassis-air',
+  name:'Onassis AiR Residency',
+  org:'Onassis Foundation / Onassis Stegi',
+  city:'Athens', country:'Greece', region:'Europe',
+  category:'residency', tier:'flagship',
+  website:'https://www.onassis.org',
+  applyUrl:'https://www.onassis.org',
+  status:'predicted',
+  predictedDeadline:'2027-03-03', predictedConfidence:'high',
+  basis:'The 2026/27 cycle closed 3 March 2026 for residencies running September 2026 to July 2027. A consistent annual pattern — expect a comparable call around February–March 2027.',
+  eventWindow:'Ten weeks in Athens',
+  money:'Artist fee plus research and production budget, housing, travel to and from Athens, and a collective group-visit budget. Amounts not published.',
+  moneyTier:'medium',
+  fit:5,
+  what:'A ten-week Athens residency with 30 positions, explicitly including Technical Residencies for performing arts and digital productions, supported by Onassis ONX.',
+  selection:'Covers Visual Arts, Theater, Dance, Sound, Art & Advanced Technologies, Filmmaking and "their hybrid iterations". No nationality restriction stated.',
+  scale:'Onassis Stegi is among the most active performance-plus-technology commissioners in Europe.',
+  requirements:'Online application via onassis.org.',
+  intel:'The phrase "and their hybrid iterations" is doing real work here — most residencies force you to pick a discipline, and this one explicitly does not. Onassis is also a commissioner, so the residency is a route into their programming, not just a studio.',
+  spec:{mediums:['performance','circus','newmedia','digital','interactive','installation','sound'], format:'either', env:'either',
+    runDays:70, payMin:null, payMax:null, coversCosts:true,
+    themes:['hybrid practice','performance','advanced technology'],
+    needs:'A research or development project for a ten-week Athens residency.',
+    gates:{}},
+  sources:['https://www.onassis.org']
+},
+{
+  id:'kikk',
+  name:'KIKK Festival',
+  org:'KIKK',
+  city:'Namur', country:'Belgium', region:'Europe',
+  category:'digital', tier:'major',
+  website:'https://kikkfestival.be/',
+  applyUrl:'https://kikkfestival.be/',
+  status:'predicted',
+  predictedDeadline:'2027-02-15', predictedConfidence:'medium',
+  basis:'The Art/Science/Tech residency with Centre Culturel de Namur closed 15 February 2026 for an April–May residency. Annual pattern.',
+  eventWindow:'Festival in autumn; residency in spring',
+  money:'Residency: €5,000 grant covering transport, production materials, meals and incidentals, plus accommodation and studio.',
+  moneyTier:'medium',
+  fit:3,
+  what:'A digital and creative cultures festival in Namur, running an Art/Science/Tech residency alongside the main programme.',
+  selection:'Residency accepts generative art, AI, sound art, bioart, interactive installation, light work, digital fabrication, robotics, kinetic art and XR.',
+  scale:'One of Belgium\'s main digital culture events.',
+  requirements:'Must work in English or French. Two slots — one international, one Wallonia-Brussels.',
+  intel:'Important limit: the residency call explicitly EXCLUDES music, theatre and live performance. So the residency is a sphere route only. The festival itself does present live work, but that is curatorial — approach the curators directly for the performance side rather than applying through the residency.',
+  spec:{mediums:['digital','newmedia','interactive','installation','light','led'], format:'installation', env:'indoor',
+    runDays:4, payMin:5000, payMax:5000, coversCosts:true,
+    themes:['digital culture','art science technology','robotics','kinetic'],
+    needs:'An installation or research project. Live performance is explicitly excluded from the residency call.',
+    gates:{}},
+  sources:['https://kikkfestival.be/']
+},
+{
+  id:'mutek-montreal',
+  name:'MUTEK Montréal',
+  org:'MUTEK',
+  city:'Montréal', country:'Canada', region:'Americas',
+  category:'digital', tier:'major',
+  website:'https://montreal.mutek.org/',
+  applyUrl:'https://montreal.mutek.org/en/news/call-for-projects-2026',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'medium',
+  basis:'Annual call for projects, typically opening in winter for an August festival.',
+  eventWindow:'August, Montréal',
+  money:'Artist fees and technical support; amounts vary.',
+  moneyTier:'medium',
+  fit:4,
+  what:'A long-running electronic music and digital arts festival with strong live audiovisual performance programming.',
+  selection:'Open call for projects; strong emphasis on live A/V performance.',
+  scale:'One of the most respected digital arts platforms in North America, with sister editions worldwide.',
+  requirements:'Live audiovisual performance or installation.',
+  intel:'Montréal is the hub — Moment Factory, Float4 and the whole immersive production industry are here, and MUTEK Forum is where they gather. A Lumen Prize finalist slot also leads here. Going once puts you in front of the commercial immersive sector and the art sector in the same week.',
+  spec:{mediums:['digital','newmedia','sound','led','performance','immersive'], format:'either', env:'indoor',
+    runDays:5, payMin:1000, payMax:8000, coversCosts:true,
+    themes:['audiovisual','electronic','digital creativity'],
+    needs:'Live audiovisual performance or a digital installation.',
+    gates:{}},
+  sources:['https://montreal.mutek.org/']
+},
+{
+  id:'strp',
+  name:'STRP Festival',
+  org:'STRP',
+  city:'Eindhoven', country:'Netherlands', region:'Europe',
+  category:'digital', tier:'major',
+  website:'https://strp.nl/',
+  applyUrl:'https://strp.nl/',
+  status:'predicted',
+  predictedDeadline:'2027-01-31', predictedConfidence:'low',
+  basis:'Annual art and technology festival; open call timing not verified in detail.',
+  eventWindow:'Spring, Eindhoven',
+  money:'Commissions and presentation fees; not published.',
+  moneyTier:'unknown',
+  fit:4,
+  what:'A major Dutch art and technology festival programming installations and live performance at the intersection of art, technology and society.',
+  selection:'Curated with periodic open calls.',
+  scale:'One of the leading European art-technology festivals.',
+  requirements:'Art-technology work.',
+  intel:'Eindhoven also hosts GLOW, so a single trip can serve two very different festivals with two different pieces.',
+  spec:{mediums:['digital','newmedia','interactive','installation','performance','immersive','led'], format:'either', env:'indoor',
+    runDays:5, payMin:null, payMax:null,
+    themes:['art and technology','society','future'],
+    needs:'Art-technology installation or performance.',
+    gates:{}},
+  sources:['https://strp.nl/']
+},
+{
+  id:'biennale-immersive',
+  name:'Biennale College Cinema — Immersive',
+  org:'La Biennale di Venezia',
+  city:'Venice', country:'Italy', region:'Europe',
+  category:'immersive', tier:'flagship',
+  website:'https://www.labiennale.org/en/cinema/2026/bcc-11-immersive-call',
+  applyUrl:'https://www.labiennale.org/en/cinema/2026/bcc-11-immersive-call',
+  status:'predicted',
+  predictedDeadline:'2027-07-06', predictedConfidence:'high',
+  basis:'The 2026 call ran 12 May – 6 July 2026 for exhibition at Venice 2027. Annual, same window expected.',
+  eventWindow:'Venice Immersive, autumn',
+  money:'Up to €75,000 per project. No participation fee. Travel not covered.',
+  moneyTier:'high',
+  fit:4,
+  what:'A production grant plus workshop for immersive works, presented at Venice Immersive.',
+  selection:'Explicitly invites applicants from theatre, dance, opera and visual arts, not just film. Apply as a director-and-producer team.',
+  scale:'Venice is the most prestigious immersive showcase in the world.',
+  requirements:'Work must use immersive technologies and run 30 minutes or less. Must apply as a team of director plus producer.',
+  intel:'Two things line up unusually well: the 30-minute cap suits your formats, and the two-person team structure matches how you already work. €75,000 is genuine production money and the credential is world-class.',
+  spec:{mediums:['immersive','newmedia','digital','interactive','performance'], format:'proposal', env:'indoor',
+    runDays:10, payMin:75000, payMax:75000,
+    themes:['immersive','narrative','experience'],
+    needs:'An immersive work of 30 minutes or less, applied for as a director-producer team.',
+    gates:{}},
+  sources:['https://www.labiennale.org/en/cinema/2026/bcc-11-immersive-call']
+},
+
+/* ═══════════ ASIA ═══════════ */
+{
+  id:'acc-creators',
+  name:'ACC CREATORS — Art & Technology',
+  org:'Asia Culture Center',
+  city:'Gwangju', country:'South Korea', region:'Asia',
+  category:'residency', tier:'major',
+  website:'https://www.acc.go.kr/en',
+  applyUrl:'https://www.acc.go.kr/en',
+  status:'predicted',
+  predictedDeadline:'2027-03-01', predictedConfidence:'medium',
+  basis:'The 2026 cycle closed 1 March 2026 for a residency running 27 June – 30 November 2026. Expect the 2027 call to open around January–February 2027.',
+  eventWindow:'Roughly five months, mid-year',
+  money:'Production budget ₩20,000,000–₩30,000,000 (about $14,500–$22,000) plus a ₩2,500,000 stipend per participant, travel support, workspace and accommodation.',
+  moneyTier:'medium',
+  fit:5,
+  what:'An art-and-technology residency and production programme explicitly welcoming AI, VR/MR/XR, robotics, IoT, motion capture, laser, kinetic media, audiovisual, immersive and spatial audio work.',
+  selection:'Open international call, English-language application.',
+  scale:'The best-funded art-technology residency in Asia that is genuinely open to foreigners.',
+  requirements:'English application via the ACC site.',
+  intel:'The named list of accepted technologies includes motion capture and kinetic media — which is a precise description of StarBalancer. The best fit in Asia for developing that piece, with real production money and English throughout.',
+  spec:{mediums:['newmedia','digital','interactive','immersive','installation','performance','led'], format:'either', env:'indoor',
+    runDays:150, payMin:14500, payMax:22000, coversCosts:true,
+    themes:['art and technology','robotics','motion capture','speculative'],
+    needs:'An art-technology development project for a five-month residency.',
+    gates:{}},
+  sources:['https://www.acc.go.kr/en']
+},
+{
+  id:'wuzhen',
+  name:'Wuzhen Theatre Festival — Ancient Town Carnival',
+  org:'Wuzhen Theatre Festival',
+  city:'Wuzhen, Zhejiang', country:'China', region:'Asia',
+  category:'performance', tier:'flagship',
+  website:'http://www.wuzhenfestival.com/index_en.php',
+  applyUrl:'http://www.wuzhenfestival.com/index_en.php',
+  status:'predicted',
+  predictedDeadline:'2027-09-06', predictedConfidence:'medium',
+  basis:'The 2026 Carnival registration closed 6 September 2026 for the 13th edition running 15–25 October 2026. 2026 was the first year the competition went worldwide. Expect a comparable window opening around May 2027.',
+  eventWindow:'Mid-to-late October',
+  money:'Not specified for the Carnival unit; historically modest. Assume you subsidise travel.',
+  moneyTier:'low',
+  fit:4,
+  what:'A major Chinese theatre festival. The Ancient Town Carnival strand places street theatre, music, installation and physical performance across the town\'s public spaces.',
+  selection:'The Carnival explicitly places no restriction on age, nationality or art form.',
+  scale:'The most internationally visible theatre festival in China.',
+  requirements:'Chinese-language application. Outdoor public-space performance across a protected heritage water town.',
+  intel:'The single most open door into China found anywhere in this research — explicitly no nationality restriction, which is rare. Aerial drone flight over a protected heritage water town is unlikely to be permitted, so pitch the ground version or a StarBalancer set. Budget for translation help on the application.',
+  spec:{mediums:['performance','circus','streetarts','installation','spectacle'], format:'performance', env:'outdoor',
+    runDays:11, payMin:0, payMax:2000,
+    themes:['theatre','public space','carnival'],
+    needs:'Outdoor public-space performance in a heritage water town. Chinese-language application.',
+    gates:{}},
+  sources:['http://www.wuzhenfestival.com/index_en.php']
+},
+{
+  id:'shenzhen-light',
+  name:'Shenzhen Light & Shadow Art Season',
+  org:'Shenzhen Municipal Bureau of Urban Management',
+  city:'Shenzhen', country:'China', region:'Asia',
+  category:'light', tier:'major',
+  website:'https://cgj.sz.gov.cn/',
+  applyUrl:'mailto:glowshenzhen@cgj.sz.gov.cn?subject=Open%20Call%20Submission',
+  applyLabel:'Email submission',
+  status:'predicted',
+  predictedDeadline:'2027-09-13', predictedConfidence:'medium',
+  basis:'The 2026 call ran 26 June – 13 September 2026 for an exhibition running 10 December 2026 – 21 February 2027. Expect a comparable mid-year window in 2027.',
+  eventWindow:'December to February, Houhai Bay and Xiangmi Park',
+  money:'No entry fee, but NO guaranteed production budget. Selected works get a certificate, production support via procurement or sponsorship, promotion, and recommendation onward to international light festivals.',
+  moneyTier:'low',
+  fit:3,
+  what:'A municipal light and shadow art season taking light installations, sculpture, projection, media façades, immersive spaces and moving image.',
+  selection:'Eligibility explicitly includes independent artists, domestic AND overseas.',
+  scale:'A major Chinese city\'s flagship light programme.',
+  requirements:'Email a zipped folder with registration form, ID, renderings, budget and specs.',
+  intel:'One of very few genuinely open doors in China, and it accepts overseas artists in writing. Treat it as a credentialing and positioning play rather than a paying gig — you will need to fund fabrication or find a sponsor. Note it was published on an urban-management bureau site, not an arts portal: that is how Chinese calls actually surface.',
+  spec:{mediums:['light','installation','projection','led','immersive','sculpture'], format:'installation', env:'outdoor',
+    runDays:73, payMin:0, payMax:0,
+    themes:['light','urban','shadow'],
+    needs:'A light installation that survives an outdoor winter run. No guaranteed production budget.',
+    gates:{}},
+  sources:['https://cgj.sz.gov.cn/zwgk/tzgg/content/post_12862909.html']
+},
+{
+  id:'clab-taipei',
+  name:'C-LAB Immersive Labs',
+  org:'Taiwan Contemporary Culture Lab',
+  city:'Taipei', country:'Taiwan', region:'Asia',
+  category:'immersive', tier:'major',
+  website:'https://clab.org.tw/en/',
+  applyUrl:'https://open-call.clab.org.tw/',
+  status:'predicted',
+  predictedDeadline:'2027-08-14', predictedConfidence:'medium',
+  basis:'The 2026 round closed 14 August 2026. Expect a comparable mid-year window in 2027.',
+  eventWindow:'Lab programme, autumn',
+  money:'Participation free; a refundable NT$5,000 deposit.',
+  moneyTier:'low',
+  fit:4,
+  what:'An immersive technology lab explicitly listing cross-disciplinary performance practices alongside Fulldome, XR, projection mapping, TouchDesigner and Unity/Unreal. Also runs Taiwan Sound Lab and the FUTURE VISION LAB dome.',
+  selection:'International artists eligible; up to 16 participants.',
+  scale:'The strongest institutional match in Chinese-speaking Asia, operating in English.',
+  requirements:'English application via their open call portal.',
+  intel:'Explicitly names cross-disciplinary performance practices, which almost no digital art lab does. The FUTURE VISION LAB dome is directly relevant to the sphere and to StarBalancer. English-operating and genuinely open — the easiest serious Asian entry point.',
+  spec:{mediums:['immersive','digital','newmedia','interactive','performance','projection','led'], format:'either', env:'indoor',
+    runDays:30, payMin:0, payMax:0,
+    themes:['immersive','cross-disciplinary','fulldome'],
+    needs:'A cross-disciplinary immersive project.',
+    gates:{}},
+  sources:['https://clab.org.tw/en/']
+},
+
+/* ═══════════ CONTACT-LED, NO OPEN CALL ═══════════ */
+{
+  id:'balich',
+  name:'Balich Wonder Studio',
+  org:'Balich Wonder Studio (Banijay Group)',
+  city:'Milan / Riyadh / Paris / New York / Abu Dhabi', country:'Italy', region:'Europe',
+  category:'spectacle', tier:'flagship',
+  website:'https://www.balichwonderstudio.com/',
+  applyUrl:'mailto:business@balichws.com?subject=Drone%20circus%20act%20-%20Mindworks%20Arts',
+  applyLabel:'Email business dev',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'No open call — but they publish a business development email, which is unusual and meaningful. Approach any time.',
+  eventWindow:'Ongoing production pipeline',
+  money:'They produce Noor Riyadh, Olympic ceremonies and Expo shows. Subcontract fees at spectacle scale.',
+  moneyTier:'top',
+  fit:5,
+  what:'One of the world\'s largest producers of ceremonies and large-scale spectacle. They are a systems integrator of spectacle acts — meaning they subcontract exactly what you make.',
+  selection:'Direct approach to business@balichws.com. Riyadh office for Gulf work: bws.ksa@balichws.com.',
+  scale:'One relationship here reaches Noor Riyadh, Expo 2027 and ceremony work simultaneously.',
+  requirements:'A short, well-cut reel and a clear one-page capability summary.',
+  intel:'The highest-leverage single email available to you. Noor Riyadh has no open call and never has — but Balich produces it, and they publish a business development address. Going through the producer rather than the commissioner is how this sector actually works. Send the 60-second drone circus reel.',
+  spec:{mediums:['spectacle','performance','circus','aerial','drone','light','led'], format:'performance', env:'either',
+    runDays:1, payMin:20000, payMax:500000,
+    themes:['ceremony','spectacle','national celebration'],
+    needs:'A self-contained spectacle act that can be integrated into a larger ceremony.',
+    gates:{}},
+  sources:['https://www.balichwonderstudio.com/contacts']
+},
+{
+  id:'moment-factory',
+  name:'Moment Factory',
+  org:'Moment Factory',
+  city:'Montréal', country:'Canada', region:'Americas',
+  category:'immersive', tier:'flagship',
+  website:'https://momentfactory.com/',
+  applyUrl:'mailto:vendors@momentfactory.com?subject=Artist%20vendor%20registration',
+  applyLabel:'Email vendors',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'A dedicated vendor inbox is an explicit standing invitation. Approach any time.',
+  eventWindow:'Ongoing',
+  money:'Subcontract and collaboration fees at commercial rates.',
+  moneyTier:'high',
+  fit:4,
+  what:'One of the world\'s leading multimedia entertainment studios, producing Expo pavilions, permanent immersive attractions, Vegas work and Gulf projects.',
+  selection:'vendors@momentfactory.com for roster registration; gcc@momentfactory.com for Saudi and UAE work; dev@momentfactory.com for project inquiries.',
+  scale:'Offices in Montréal, New York, Paris, Tokyo, Singapore, Abu Dhabi and Riyadh.',
+  requirements:'Capability materials and reel.',
+  intel:'A dedicated vendors@ address is a rare and explicit invitation — most studios of this size have no route in at all. Their Expo and Gulf footprint overlaps exactly with the buyers you are targeting elsewhere in this app.',
+  spec:{mediums:['immersive','projection','led','light','newmedia','interactive','spectacle'], format:'either', env:'either',
+    runDays:1, payMin:20000, payMax:300000,
+    themes:['immersive','multimedia','experience design'],
+    needs:'Capability as a subcontractor or collaborator on large immersive productions.',
+    gates:{}},
+  sources:['https://momentfactory.com/contact']
+},
+{
+  id:'expo-usa-pavilion',
+  name:'Expo 2027 Belgrade — USA Pavilion',
+  org:'US Department of State, Bureau of Educational and Cultural Affairs',
+  city:'Belgrade', country:'Serbia', region:'Europe',
+  category:'megaevent', tier:'flagship',
+  website:'https://sam.gov/content/opportunities',
+  applyUrl:'https://sam.gov/content/opportunities',
+  applyLabel:'Monitor SAM.gov',
+  status:'predicted',
+  predictedDeadline:'2026-12-31', predictedConfidence:'low',
+  basis:'US Expo participation is run by the State Department, which appoints a private contractor via a public grants.gov / SAM.gov solicitation. Whether the Belgrade solicitation has been issued is unverified — monitor SAM.gov.',
+  eventWindow:'15 May – 15 August 2027',
+  money:'Pavilion contractor budgets are substantial and corporate-sponsored; content subcontracts follow.',
+  moneyTier:'top',
+  fit:5,
+  what:'The United States pavilion at Expo 2027 Belgrade. Unlike every other country\'s pavilion, the US route is a genuine public procurement a US company can bid into or subcontract on.',
+  selection:'Public solicitation on SAM.gov, then subcontracting by the appointed operator.',
+  scale:'93 days of programming, plus a National Day ceremony.',
+  requirements:'US-registered entity, SAM.gov registration, procurement response.',
+  intel:'By far the most accessible route into the entire Expo for an Austin-based US business. Set a standing SAM.gov alert for "Expo 2027 Belgrade" now. The Expo theme is "Play for Humanity — Sport and Music for All", which is an unusually good fit for a drone circus.',
+  spec:{mediums:['spectacle','performance','circus','drone','light','led','immersive'], format:'either', env:'either',
+    runDays:93, payMin:50000, payMax:1000000,
+    themes:['play for humanity','sport','music','nations'],
+    needs:'US-registered entity able to respond to or subcontract on a federal solicitation.',
+    gates:{residency:'USA-ok'}},
+  sources:['https://sam.gov/content/opportunities']
+},
+{
+  id:'la28-supplier',
+  name:'LA28 Supplier Registration',
+  org:'LA28 Olympic & Paralympic Games',
+  city:'Los Angeles, CA', country:'USA', region:'Americas',
+  category:'megaevent', tier:'flagship',
+  website:'https://la28.org/',
+  applyUrl:'https://la28.supplierone.co/',
+  applyLabel:'Register as supplier',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'An open vendor registration portal. Ceremony subcontracting for 2028 will be locked during 2027, so registering now is the correct timing.',
+  eventWindow:'Games July–August 2028',
+  money:'Ceremony production budgets run to hundreds of millions; aerial and drone segments are subcontracted.',
+  moneyTier:'top',
+  fit:5,
+  what:'The formal vendor registration portal for the LA28 Games. Separately, FiveCurrents — half of the FulFive ceremonies JV — runs an open talent submission page covering creative and technical roles.',
+  selection:'Supplier registration at la28.supplierone.co; talent submission at fivecurrents.com/talent.',
+  scale:'Global broadcast audience in the billions.',
+  requirements:'A registered US entity with liability insurance and drone operating credentials is exactly the profile the portal exists to capture.',
+  intel:'Two real doors, both worth using, and the timing window is open right now. Ceremony creative teams staff up 18–24 months out, which is now. Register as a supplier AND submit to FiveCurrents talent under Creative or Technical — one gets you a contract route, the other gets you a person in the room.',
+  spec:{mediums:['spectacle','performance','circus','aerial','drone','light','led'], format:'performance', env:'outdoor',
+    runDays:1, payMin:100000, payMax:2000000,
+    themes:['ceremony','spectacle','Los Angeles'],
+    needs:'Registered US entity with insurance and drone credentials.',
+    gates:{residency:'USA-ok'}},
+  sources:['https://la28.org/','https://fivecurrents.com/talent/']
+},
+{
+  id:'caeg',
+  name:'CAEG — China Arts and Entertainment Group',
+  org:'CAEG',
+  city:'Beijing', country:'China', region:'Asia',
+  category:'circus', tier:'major',
+  website:'https://en.caeg.cn/',
+  applyUrl:'https://en.caeg.cn/',
+  applyLabel:'Direct approach',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'No open call. CAEG is the state performing-arts import/export body and co-hosts the Wuhan circus festival. Direct approach, any time.',
+  eventWindow:'Ongoing',
+  money:'State-brokered engagements; terms negotiated.',
+  moneyTier:'unknown',
+  fit:3,
+  what:'The Chinese state body handling inbound foreign performing arts programming, and co-host of the Wuhan International Acrobatic Art Festival.',
+  selection:'Direct approach. English site exists.',
+  scale:'The gateway to Chinese circus and acrobatics programming.',
+  requirements:'A licensed Chinese performing arts agency is legally required to sponsor any foreign performance in China — confirm any partner holds Category 1 status.',
+  intel:'Wuqiao and Wuhan have no open calls and never have — acts arrive by invitation via the China Acrobats Association and national federations. CAEG is the most legitimate cold-approach target in Chinese performing arts. Frame the offer as technology collaboration WITH a Chinese troupe rather than as a foreign act seeking a slot: they have world-class bodies and weak tech integration, so that inverts the barrier into an asset.',
+  spec:{mediums:['circus','aerial','performance','spectacle'], format:'performance', env:'indoor',
+    runDays:10, payMin:null, payMax:null,
+    themes:['acrobatics','circus','cultural exchange'],
+    needs:'A partnership or programming proposal, sponsored by a licensed Chinese agency.',
+    gates:{note:'Foreign performance in China legally requires sponsorship by a Category 1 licensed Chinese agency. Budget 3–4 months for approvals.'}},
+  sources:['https://en.caeg.cn/']
+}
+];
+
+
+/* ===== taxonomy.js ===== */
+/* Never Miss Again — medium taxonomy and focus alignment.
+
+   The old "does it program drone shows?" flag was the wrong axis. Every project
+   in this catalogue is a PERFORMANCE × TECHNOLOGY hybrid — drones are one
+   implementation, not the thing itself. So opportunities are now classified by
+   what mediums they actually accept, and scored on how well that overlaps the
+   artist's real focus.
+*/
+
+const MEDIUMS = {
+  circus:      {label:'Circus',            short:'Circus',      family:'performance', icon:'⁘'},
+  performance: {label:'Performance art',   short:'Performance', family:'performance', icon:'◈'},
+  aerial:      {label:'Aerial',            short:'Aerial',      family:'performance', icon:'⌇'},
+  light:       {label:'Light art',         short:'Light',       family:'technology',  icon:'☀'},
+  projection:  {label:'Projection mapping',short:'Projection',  family:'technology',  icon:'▣'},
+  led:         {label:'LED / screen media',short:'LED',         family:'technology',  icon:'▦'},
+  newmedia:    {label:'New media',         short:'New media',   family:'technology',  icon:'◉'},
+  digital:     {label:'Digital art',       short:'Digital',     family:'technology',  icon:'◉'},
+  interactive: {label:'Interactive',       short:'Interactive', family:'technology',  icon:'⟳'},
+  immersive:   {label:'Immersive',         short:'Immersive',   family:'technology',  icon:'◍'},
+  installation:{label:'Installation',      short:'Installation',family:'object',      icon:'◧'},
+  sculpture:   {label:'Sculpture',         short:'Sculpture',   family:'object',      icon:'◮'},
+  screen:      {label:'Screen / film',     short:'Screen',      family:'screen',      icon:'▤'},
+  animation:   {label:'Animation',         short:'Animation',   family:'screen',      icon:'▤'},
+  drone:       {label:'Drone show',        short:'Drone',       family:'technology',  icon:'✧'},
+  sound:       {label:'Sound art',         short:'Sound',       family:'technology',  icon:'♫'},
+  streetarts:  {label:'Street / outdoor arts', short:'Street arts', family:'performance', icon:'⁜'},
+  variety:     {label:'Variety / cabaret', short:'Variety',     family:'performance', icon:'✦'},
+  spectacle:   {label:'Large-scale spectacle', short:'Spectacle', family:'performance', icon:'✵'}
+};
+
+const PERFORMANCE_MEDIUMS = ['circus','performance','aerial','streetarts','variety','spectacle'];
+const TECH_MEDIUMS = ['light','projection','led','newmedia','digital','interactive','immersive','drone','sound'];
+const OBJECT_MEDIUMS = ['installation','sculpture'];
+
+/* How well an opportunity's accepted mediums line up with performance × technology.
+   Returns 0–5 plus a plain-language label. */
+function focusAlignment(mediums){
+  const m = mediums || [];
+  const perf = m.filter(x=>PERFORMANCE_MEDIUMS.includes(x)).length;
+  const tech = m.filter(x=>TECH_MEDIUMS.includes(x)).length;
+  const obj  = m.filter(x=>OBJECT_MEDIUMS.includes(x)).length;
+
+  if(perf && tech) return {score:5, label:'Performance × technology', cls:'green',
+    note:'They program both live performance and technology-driven work — the exact intersection you work in.'};
+  if(perf && obj)  return {score:4, label:'Performance, object-friendly', cls:'cyan',
+    note:'Live performance plus physical work. Your tech is the differentiator rather than the entry ticket.'};
+  if(perf)         return {score:3, label:'Performance only', cls:'cyan',
+    note:'They program live performance but not technology per se. Lead with the act; the tech is a bonus.'};
+  if(tech && obj)  return {score:4, label:'Technology & installation', cls:'cyan',
+    note:'Object and technology work. The sphere fits; the live act would need reframing as an activation.'};
+  if(tech)         return {score:3, label:'Technology only', cls:'amber',
+    note:'Technology-driven work, but no live performance strand. The sphere is your route in, not the show.'};
+  if(obj)          return {score:2, label:'Object / sculpture', cls:'amber',
+    note:'They commission physical objects. Your work would need to stand still and last.'};
+  return {score:1, label:'Outside your mediums', cls:'red',
+    note:'What they program sits outside what you make.'};
+}
+
+function mediumChips(mediums, max){
+  const list = (mediums||[]).filter(m=>MEDIUMS[m]);
+  const shown = max ? list.slice(0,max) : list;
+  return shown;
+}
+
+
 /* ===== projects.js ===== */
 /* Never Miss Again — project profiles
    Structured so the match engine can reason about medium, format, budget,
@@ -2251,6 +3705,639 @@ const SPECS = {
 };
 
 
+/* ===== augment.js ===== */
+/* Never Miss Again — contacts, pitch windows, and inline advice.
+
+   THE PITCH WINDOW CONCEPT comes straight from the LUMA finding:
+   LUMA Small Works has never had a published open call. It is a standing
+   "contact us" invitation, invisible to every aggregator and alert in
+   existence. Programming for a September festival locks 6–9 months out,
+   so the real deadline was December–February and nobody ever wrote it down.
+
+   So for targets with no call, we track a PITCH WINDOW instead of a deadline:
+   the months when cold approaches actually land.
+*/
+
+/* Named contact points. Official/business channels only — no personal data. */
+const CONTACTS = {
+  'luma':[
+    {name:'General / artist enquiries', role:'Immersive Artists route', channel:'https://www.lumafestival.com/contact', type:'form',
+     note:'The "Immersive Artists" section has no form and no deadline — it routes here. This IS the application.'},
+    {name:'Joshua', role:'Media contact', channel:'joshua@lumafestival.com', type:'email'},
+    {name:'Vendors', role:'Vendor enquiries', channel:'vendors@lumaarts.org', type:'email'},
+    {name:'Mailing list', role:'Earliest announcement channel', channel:'https://lumafestival.com/mailinglist/', type:'list',
+     note:'Any time-bound announcement appears here first.'},
+    {name:'@lumafestival', role:'Instagram / Facebook / X / YouTube', channel:'https://www.lumafestival.com/', type:'social',
+     note:'All four linked from the homepage. Most likely place a pitch window is ever announced.'}
+  ],
+  'balich':[
+    {name:'Business development', role:'The door to use', channel:'business@balichws.com', type:'email',
+     note:'A published business-dev address at a company this size is rare. This is the highest-leverage email in the app.'},
+    {name:'Saudi office', role:'Gulf / Noor Riyadh work', channel:'bws.ksa@balichws.com', type:'email'},
+    {name:'Riyadh office', role:'Phone', channel:'+966 50 704 8558', type:'phone'},
+    {name:'Milan HQ', role:'Phone', channel:'+39 02 834 386 72', type:'phone'},
+    {name:'UAE office', role:'Abu Dhabi', channel:'bws.uae@balichws.com', type:'email'},
+    {name:'France office', role:'Paris', channel:'bws.france@balichws.com', type:'email'}
+  ],
+  'noor-riyadh':[
+    {name:'Balich Wonder Studio (KSA)', role:'Produces Noor Riyadh — the real route in', channel:'bws.ksa@balichws.com', type:'email',
+     note:'Riyadh Art publishes no contact and no submission route. Go through the producer, not the commissioner.'},
+    {name:'Riyadh Art open calls', role:'Tuwaiq Sculpture and other RCRC streams', channel:'https://riyadhart.sa/en/opencall/', type:'web'},
+    {name:'e-flux announcements', role:'Where Gulf institutions post calls', channel:'https://www.e-flux.com/announcements/', type:'web'}
+  ],
+  'manar':[
+    {name:'DCT Abu Dhabi press office', role:'Discovery route for curatorial team', channel:'https://www.mediaoffice.abudhabi/', type:'web'},
+    {name:'e-flux announcements', role:'Where DCT posts', channel:'https://www.e-flux.com/announcements/', type:'web',
+     note:'Watch for the 3rd-edition curatorial team announcement, expected late 2026 to early 2027.'}
+  ],
+  'desert-x':[
+    {name:'Neville Wakefield', role:'Artistic Director', channel:'https://desertx.org/about/team-board', type:'web'},
+    {name:'Kaitlin Garcia-Maestas', role:'Curator, 2027 edition', channel:'https://desertx.org/about/team-board', type:'web'},
+    {name:'Jenny Gil', role:'Executive Director', channel:'https://desertx.org/about/team-board', type:'web'},
+    {name:'General', role:'Read by a human at this size', channel:'info@desertx.org', type:'email'},
+    {name:'Mailing address', role:'Postal', channel:'PO Box 4050, Palm Springs, CA 92263', type:'post'}
+  ],
+  'la28':[
+    {name:'LA28 Supplier portal', role:'The formal vendor door', channel:'https://la28.supplierone.co/', type:'web'},
+    {name:'FiveCurrents talent submission', role:'Creative & technical intake', channel:'https://fivecurrents.com/talent/', type:'web',
+     note:'A genuine open intake into the ceremonies production org.'},
+    {name:'FiveCurrents', role:'Phone', channel:'+1 831 624 0700', type:'phone'},
+    {name:'FiveCurrents', role:'General', channel:'info@fivecurrents.com', type:'email'},
+    {name:'Fulwell Entertainment', role:'The other half of FulFive', channel:'info@fulwell.com', type:'email'},
+    {name:'LA28 press', role:'General inbox, low yield', channel:'press@la28.org', type:'email'}
+  ],
+  'la28-supplier':[
+    {name:'LA28 Supplier portal', role:'Register here', channel:'https://la28.supplierone.co/', type:'web'},
+    {name:'FiveCurrents talent', role:'Creative & technical roles', channel:'https://fivecurrents.com/talent/', type:'web'},
+    {name:'FiveCurrents', role:'Phone', channel:'+1 831 624 0700', type:'phone'}
+  ],
+  'expo-belgrade':[
+    {name:'EXPO 2027 d.o.o. Beograd', role:'Organising company — general inbox, low yield for cold pitches', channel:'info@expobelgrade2027.org', type:'email'},
+    {name:'International Participants Portal', role:'Where appointed commissioners transact (credential-gated)', channel:'https://ipportal.rs/login', type:'web'},
+    {name:'Jagoda Lazarević', role:'Commissioner General for Expo 2027; Minister of Domestic and Foreign Trade', channel:'Via the Serbian Ministry of Domestic and Foreign Trade', type:'route'},
+    {name:'Danilo Jerinić', role:'Head of EXPO 2027 d.o.o.', channel:'Via the organising company', type:'route'},
+    {name:'BIE Paris', role:'Regulator, not a buyer — monitor for participation announcements', channel:'contact@bie-paris.org', type:'email'},
+    {name:'BIE Paris', role:'Phone', channel:'+33 1 45 00 38 63', type:'phone'},
+    {name:'Participants list', role:'139 confirmed countries = 139 separate buyers', channel:'https://expobelgrade2027.org/en/participants', type:'web',
+     note:'No commissioner names published yet — appointments are announced nationally through each country\'s own ministry, expected late 2026.'},
+    {name:'Expomobilia / MCH Group', role:'Repeat national pavilion builder — approach as a subcontractor', channel:'https://www.expomobilia.ch/', type:'web'},
+    {name:'BRC Imagination Arts', role:'Serial Expo pavilion producer', channel:'brc@brcweb.com', type:'email'},
+    {name:'George P Johnson', role:'Named new-business contact', channel:'Scott.Kellner@gpj.com', type:'email'},
+    {name:'Moment Factory', role:'Pavilion AV and show content', channel:'vendors@momentfactory.com', type:'email'},
+    {name:'Jack Morton', role:'Vendor enquiries', channel:'experience@jackmorton.com', type:'email'}
+  ],
+  'expo-usa-pavilion':[
+    {name:'SAM.gov opportunities', role:'Set a standing alert for "Expo 2027 Belgrade"', channel:'https://sam.gov/content/opportunities', type:'web'},
+    {name:'US State Dept, Bureau of Educational and Cultural Affairs', role:'Appoints the pavilion contractor', channel:'https://eca.state.gov/', type:'web'}
+  ],
+  'moment-factory':[
+    {name:'Vendor enquiries', role:'Explicit standing invitation', channel:'vendors@momentfactory.com', type:'email'},
+    {name:'Gulf office', role:'Abu Dhabi / Riyadh work', channel:'gcc@momentfactory.com', type:'email'},
+    {name:'Project enquiries', role:'New projects', channel:'dev@momentfactory.com', type:'email'},
+    {name:'Montréal HQ', role:'Phone', channel:'+1 514 843-8433', type:'phone'},
+    {name:'New York', role:'Phone', channel:'+1 646 300-8189', type:'phone'}
+  ],
+  'cirque-casting':[
+    {name:'Casting', role:'Staffed, monitored casting database', channel:'casting@cirquedusoleil.com', type:'email'},
+    {name:'Casting portal', role:'Create a profile', channel:'https://casting.cirquedusoleil.com/', type:'web'},
+    {name:'Video demo guidance', role:'Follow this exactly', channel:'https://casting.cirquedusoleil.com/apply/video-demo/circus-performers', type:'web'}
+  ],
+  'spiegelworld':[
+    {name:'Casting', role:'Cold submissions accepted', channel:'casting@spiegelworld.com', type:'email'},
+    {name:'Contact form', role:'Has a Casting Enquiries category', channel:'https://spiegelworld.com/contact/', type:'form'}
+  ],
+  'artechouse':[
+    {name:'Houston', role:'Closest venue — 3hr drive from Austin', channel:'houston@artechouse.com', type:'email'},
+    {name:'New York', role:'NYC venue', channel:'nyc@artechouse.com', type:'email'},
+    {name:'Washington DC', role:'Reopening 2026', channel:'dc@artechouse.com', type:'email'},
+    {name:'Contact form', role:'Has an "Artist and Creative Submissions" category', channel:'https://www.artechouse.com/contact/', type:'form'}
+  ],
+  'meow-wolf':[
+    {name:'Collaboration form', role:'A database, not a commissioning channel — but free to join', channel:'https://meowwolf.com/about/community/want-to-collaborate', type:'form'}
+  ],
+  'gop-variete':[
+    {name:'Casting', role:'Send the EPK here', channel:'casting-gop@variete.de', type:'email',
+     note:'The Künstlerfragebogen on their site is only for artists who already hold a contract — do not send that first.'}
+  ],
+  'friedrichsbau':[
+    {name:'Casting — attn Ralph Sun, Artistic Director', role:'Send vita, press material, EPK', channel:'casting@friedrichsbau.de', type:'email',
+     note:'They only reply if you are being considered. Silence is the default.'}
+  ],
+  'zinzanni':[
+    {name:'Casting Manager', role:'Full act video, resume, photos', channel:'https://zinzanni.com/seattle/about/auditions/', type:'web'},
+    {name:'Postal', role:'DVDs not returned', channel:'Teatro ZinZanni, Attn: Casting Manager, 222 Mercer Street, Seattle, WA 98109', type:'post'}
+  ],
+  'budapest-circus':[
+    {name:'Festival office', role:'Act submissions', channel:'festival@circus.hu', type:'email'}
+  ],
+  'latina-circus':[
+    {name:'Festival business office', role:'Act submissions', channel:'business@festivalcircoitalia.com', type:'email'}
+  ],
+  'monte-carlo':[
+    {name:'Festival office', role:'Reservations line — no artist submission route published', channel:'reservation@montecarlofestival.mc', type:'email'},
+    {name:'Festival office', role:'Phone', channel:'+377 92 05 23 45', type:'phone'}
+  ],
+  'micc-montreal':[
+    {name:'MICC', role:'Membership and submission queries; exceptions negotiable', channel:'micc@tohu.ca', type:'email'}
+  ],
+  'aurillac':[
+    {name:'Compagnies de passage', role:'Registration queries', channel:'cie.passage@aurillac.net', type:'email'},
+    {name:'Festival office', role:'Phone', channel:'+33 4 71 43 43 74', type:'phone'}
+  ],
+  'shenzhen-light':[
+    {name:'Open call submissions', role:'Email a zipped folder', channel:'glowshenzhen@cgj.sz.gov.cn', type:'email'}
+  ],
+  'caeg':[
+    {name:'CAEG', role:'State performing arts import/export body — English site', channel:'https://en.caeg.cn/', type:'web'},
+    {name:'China Acrobats Association', role:'Controls Wuqiao and Wuhan festivals', channel:'https://www.21caa.org.cn/', type:'web',
+     note:'Block B, Building 32, Beisha Beach, Chaoyang District, Beijing 100083.'}
+  ],
+  'empac':[
+    {name:'EMPAC residencies', role:'Quarterly review — 14 Jan / 15 Apr / 15 Jul / 15 Oct', channel:'https://webforms.rpi.edu/empac-residency-open-call', type:'web'},
+    {name:'EMPAC', role:'Phone — ask whether a fee exists before assuming', channel:'+1 518 276 3921', type:'phone'}
+  ],
+  'alf':[
+    {name:'Artists', role:'They accept portfolio emails alongside the formal call', channel:'artists@amsterdamlightfestival.com', type:'email',
+     note:'Even the most formal open call in the field runs a parallel inbox. Use both.'}
+  ],
+  'royal-caribbean':[
+    {name:'Casting profile', role:'Register — Headliner track for speciality acts', channel:'https://royalcaribbeanentertainment.com/register/', type:'web'},
+    {name:'Upcoming auditions', role:'Published audition dates', channel:'https://royalcaribbeanentertainment.com/productions/upcoming-auditions/', type:'web'}
+  ],
+  'chamaeleon':[
+    {name:'Residency programme', role:'Open call up to twice a year', channel:'https://chamaeleonberlin.com/en/circus-residency-program/', type:'web'},
+    {name:'Production partners', role:'Co-production route', channel:'https://chamaeleonberlin.com/en/production-partner/', type:'web'}
+  ]
+};
+
+/* PITCH WINDOWS — for targets with no published call.
+   months: 1–12. The window when cold approaches actually land. */
+const PITCH_WINDOWS = {
+  'luma':        {months:[11,12,1,2], label:'Nov–Feb', why:'LUMA has never published an open call. Programming for a September festival locks 6–9 months out, so a cold pitch through the contact form lands between November and February. This is exactly how you got Small Works — and how to get the main programme next.'},
+  'monte-carlo': {months:[8,9,10], why:'The January festival is cast in the autumn. Approach via an agent or on the back of a placing elsewhere.'},
+  'noor-riyadh': {months:[1,2,3], why:'Curatorial teams are announced early in the year and artists 1–3 months before the November opening. Approach Balich in Q1.'},
+  'manar':       {months:[10,11,12], why:'Biennial, next edition expected late 2027. The curatorial team announcement is the moment to move — watch e-flux from late 2026.'},
+  'desert-x':    {months:[9,10,11], why:'The 2027 edition is being curated now and artists are still being announced. Approach with the sphere, not the drones — light pollution and wildlife constraints in that landscape are real.'},
+  'balich':      {months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'Rolling. They produce continuously, so there is no bad month. Send the reel.'},
+  'expo-belgrade':{months:[9,10,11,12,1,2,3], why:'National Day content is commissioned 6–12 months out, so the buying window for a May 2027 Expo is roughly now through mid-2027. Approach pavilion operators, not the organiser.'},
+  'la28':        {months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'Ceremony creative teams staff up 18–24 months before the Games — which is now. Register as a supplier and submit to FiveCurrents talent in parallel.'},
+  'cirque-casting':{months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'A permanently staffed casting database. Rolling.'},
+  'spiegelworld':{months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'Rolling cold submissions. Their house style is exactly StarBalancer\'s register.'},
+  'gop-variete': {months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'Rolling. Seasons are programmed continuously across seven venues.'},
+  'artechouse':  {months:[1,2,3,4,5,6,7,8,9,10,11,12], why:'Rolling artist submissions. Houston is a three-hour drive.'},
+  'signal':      {months:[11,12,1], why:'The main programme is curated rather than open-called. Approach the curatorial team directly with the sphere in winter, ahead of the October festival.'},
+  'performa':    {months:[1,2,3], why:'Curated with long lead times. A relationship target, not an application.'}
+};
+
+/* Which pitch-playbook insights apply to which opportunity.
+   Advice now lives ON the opportunity rather than in a separate tab. */
+const OPP_ADVICE = {
+  'alf':['image-is-the-filter','feasibility-is-scored','tech-is-argument','pick-right-call'],
+  'glow':['crowd-flow','feasibility-is-scored','pick-right-call','image-is-the-filter'],
+  'vivid':['sense-of-place','feasibility-is-scored','drone-route'],
+  'prix-ars':['tech-is-argument','turn-tech','no-spectacle','research-lineage'],
+  'starts':['tech-is-argument','turn-tech','research-lineage'],
+  'lumen':['no-spectacle','tech-is-argument','image-is-the-filter'],
+  'salieri':['exit-designer','image-is-the-filter'],
+  'cirque-demain':['exit-designer','break-the-loop'],
+  'signal':['sense-of-place','feasibility-is-scored'],
+  'inota':['sense-of-place','feasibility-is-scored'],
+  'copenhagen':['feasibility-is-scored','image-is-the-filter'],
+  'shining-shanghai':['image-is-the-filter','sense-of-place'],
+  'drone-tenders':['drone-route','feasibility-is-scored'],
+  'vivid-drone-tender':['drone-route'],
+  'noor-riyadh':['drone-route','research-lineage','exit-designer'],
+  'luma':['image-is-the-filter','prompt-reply','proof-over-renders'],
+  'micc-montreal':['build-the-evening','touring-frame'],
+  'circa-auch':['build-the-evening'],
+  'usartists':['touring-frame','sequence-booking-then-grant'],
+  'fca-emergency':['sequence-booking-then-grant'],
+  'lacma-lab':['tech-is-argument','proof-over-renders','budget-quotes'],
+  'creative-capital':['budget-quotes','repeat-application','wrong-category'],
+  'empac':['tech-is-argument','proof-over-renders'],
+  'burning-man':['pick-right-call','proof-over-renders'],
+  'gop-variete':['variety-economics','risk-pack'],
+  'spiegelworld':['variety-economics','image-is-the-filter'],
+  'zinzanni':['variety-economics','image-is-the-filter'],
+  'palazzo':['variety-economics','risk-pack'],
+  'royal-caribbean':['variety-economics','risk-pack'],
+  'balich':['proof-over-renders','prompt-reply'],
+  'moment-factory':['proof-over-renders','prompt-reply'],
+  'expo-belgrade':['prompt-reply','proof-over-renders'],
+  'expo-usa-pavilion':['proof-over-renders'],
+  'fusebox':['sense-of-place'],
+  'dfw-art':['proof-over-renders','budget-quotes'],
+  'austin-aipp':['proof-over-renders'],
+  'aurillac':['risk-pack'],
+  'caeg':['exit-designer'],
+  'wuzhen':['sense-of-place'],
+  'acc-creators':['tech-is-argument','research-lineage']
+};
+
+
+/* ===== insights.js ===== */
+/* Never Miss Again — industry insight library.
+   Attributable, sourced advice from curators, jurors, grant officers and
+   consultants. Items are bookmarkable and tagged so the relevant ones surface
+   inside each opportunity as well as in the Insights tab.
+   `added` drives the "new since you last looked" marker.
+*/
+
+const INSIGHTS_UPDATED = '2026-08-18';
+
+const INSIGHTS = [
+
+/* ── The discovery lesson ── */
+{
+  id:'no-call-calls',
+  title:'The best opportunities often have no open call at all',
+  who:'Derived from tracing how LUMA Small Works was actually discoverable',
+  role:'Research finding',
+  quote:null,
+  body:'LUMA Projection Arts Festival has never published an open call for Small Works. Its site carries a standing, undated invitation — "Do you have a spectacular idea involving projection mapping, storytelling or immersive media? We\'re always looking for extraordinary new talent" — routed to a contact form. It appears on no aggregator, no newsletter, and not even on its own county arts council\'s opportunities board. No keyword alert on earth would ever have surfaced it.\n\nThis is not an edge case; it is how a large share of light-festival and outdoor-arts programming works. So monitoring needs two halves. The alert layer catches published calls. The roster layer — a maintained list of every festival and producer in your niche, each with its newsletter subscribed and a diarised reminder to pitch cold in its programming window — catches everything else. The roster layer is the higher-yield half for performance work, because circus and spectacle are almost never solicited by open call. They are booked.',
+  tags:['discovery','strategy'],
+  url:'https://www.lumafestival.com/artists',
+  added:'2026-08-18', pinned:true
+},
+{
+  id:'pitch-window',
+  title:'Work the programming window, not the deadline',
+  who:'Derived from festival programming lead times',
+  role:'Research finding',
+  quote:null,
+  body:'A September festival locks its programme roughly 6–9 months out. So for any festival with no published call, the real deadline is 6–9 months before the event — and nobody writes it down. Each no-call opportunity in this app now carries a Pitch Window showing the months when a cold approach actually lands, and the dashboard surfaces the ones that are open right now.',
+  tags:['discovery','strategy'],
+  url:null,
+  added:'2026-08-18', pinned:true
+},
+
+/* ── Craft: proposals and applications ── */
+{
+  id:'tech-is-argument',
+  title:'Make the technology the argument, not the effect',
+  who:'Prix Ars Electronica jury',
+  role:'2025 jury statement',
+  quote:'every technological choice is integral to the argument',
+  body:'The sharpest test any art jury applies. Ask of every proposal: would this survive being done as a projection instead? If yes, the concept has not earned the medium. Swarm drones have a built-in advantage — a swarm is literally autonomous agents constrained by collective rules, so the engineering IS the metaphor. Studio DRIFT framed Franchise Freedom exactly that way: "An autonomously flying swarm of hundreds of drones questions the human concept of freedom and social construct."',
+  tags:['writing','prizes','concept'],
+  url:'https://ars.electronica.art/prix/en/jurystatements/statements2025/',
+  added:'2026-08-17'
+},
+{
+  id:'turn-tech',
+  title:'Name what the technology was built for — then what you turn it toward',
+  who:'Prix Ars Electronica Interactive Art+ jury',
+  role:'2026 jury statement',
+  quote:'turn advanced technologies toward ends they were not designed for: toward truth, toward memory, toward accountability, and toward justice',
+  body:'Drones are military and advertising hardware. At civic and commercial gigs that is a liability you downplay. At an art jury it is your single best asset — but only if you say it out loud. Naming the origin and stating what you are redirecting it toward is precisely the move these juries reward.',
+  tags:['writing','prizes','concept'],
+  url:'https://ars.electronica.art/prix/en/jurystatements/statements2026/',
+  added:'2026-08-17'
+},
+{
+  id:'no-spectacle',
+  title:'Not one recent Golden Nica went to beauty, scale or spectacle',
+  who:'Prix Ars Electronica winners 2024–2026',
+  role:'Pattern across three years',
+  quote:null,
+  body:'Across three years and every category, each winner has a named political, ecological, epistemic or historical subject: climate denial, genocide, colonial erasure, craft-as-computation, liberation history. A proposal that leads with "500 drones, largest ever, stunning" is invisible to this world. Lead with the subject; let scale be the second sentence. Note also that no Golden Nica has gone to a drone work — treat Ars as a long-game credibility play, not a near-term win.',
+  tags:['prizes','concept'],
+  url:'https://ars.electronica.art/prix/en/winners/',
+  added:'2026-08-17'
+},
+{
+  id:'feasibility-is-scored',
+  title:'Technical feasibility is a scored criterion — and it is where you win',
+  who:'Amsterdam Light Festival & GLOW Eindhoven',
+  role:'Published selection criteria',
+  quote:'the artistic choices, the relevance regarding the theme, and the technical feasibility',
+  body:'ALF names technical feasibility as one of three co-equal criteria. GLOW scores both "practical realizability" AND "feasibility within available budget" as separate line items. That is up to 40% of the rubric sitting in territory where most fine-artist applicants are weak and you are strong. Documented flight planning, aviation permissioning experience, redundancy, weather-abort thresholds and a genuinely costed budget convert a commercial background into a scoring advantage. Make the feasibility section impressive rather than dutiful.',
+  tags:['writing','feasibility'],
+  url:'https://amsterdamlightfestival.com/en/work-method',
+  added:'2026-08-17'
+},
+{
+  id:'crowd-flow',
+  title:'Write a crowd-flow paragraph — almost nobody does',
+  who:'GLOW Eindhoven',
+  role:'Published criteria',
+  quote:'light art quality, visitor capacity, public space appropriateness',
+  body:'"Visitor capacity" is a named, published criterion at GLOW and an implicit one at every walking-route festival. One short paragraph — simultaneous capacity, dwell time, sightline distance, whether the work is a stop or a pass-through — is close to free marks because applicants overwhelmingly ignore it. It also signals that you understand a public festival is a logistics problem, not just an art problem.',
+  tags:['writing','feasibility'],
+  url:'https://gloweindhoven.nl/en/artist-call-2026/',
+  added:'2026-08-17'
+},
+{
+  id:'sense-of-place',
+  title:'Site-specificity is where touring work loses',
+  who:'Brett Sheehy AO',
+  role:'Festival Director, Vivid Sydney',
+  quote:'We are focused on curating work that brings surprise, originality and a strong sense of place to Sydney',
+  body:'Surprise / originality / sense of place is effectively the Vivid rubric, and "sense of place" is the one that kills touring proposals. An EOI that reads as a show which could land in any harbour city competes directly against the festival director\'s stated priority. This applies well beyond Vivid — Signal commissions site-specific work rather than booking touring pieces, and INOTA requires a response to its industrial site.',
+  tags:['writing','concept'],
+  url:'https://www.destinationnsw.com.au/newsroom/vivid-sydney-2027-calls-for-the-world-s-best-creative-visionaries',
+  added:'2026-08-17'
+},
+{
+  id:'image-is-the-filter',
+  title:'At a 3% acceptance rate, the image IS the application',
+  who:'Amsterdam Light Festival',
+  role:'~750 proposals, 20–30 selected',
+  quote:null,
+  body:'ALF reviews roughly 750 proposals per edition and selects 20–30. Assume your round-one submission gets a couple of minutes. The concept must be legible from one image and one sentence. Treat the render as the primary document, not an illustration of the text.',
+  tags:['documentation'],
+  url:'https://amsterdamlightfestival.com/en/news/news-meet-the-jury',
+  added:'2026-08-17'
+},
+{
+  id:'pick-right-call',
+  title:'Applying to the wrong call is a fatal, avoidable error',
+  who:'GLOW Eindhoven; Nuit Blanche Toronto',
+  role:'Published call structures',
+  quote:null,
+  body:'GLOW runs two calls: the Artist Call for professional light artists, and the Talent Call for regional non-professionals (€5–10k production, NO artist fee). Nuit Blanche Toronto runs Open Call Projects (CAD $20,000, City-produced, international) alongside Independent Projects (CAD $1,750, Toronto-only). Same festival, radically different terms. Read which stream you belong in before writing a word.',
+  tags:['strategy'],
+  url:'https://gloweindhoven.nl/en/talent-call-2026/',
+  added:'2026-08-17'
+},
+{
+  id:'wrong-category',
+  title:'Picking the wrong category sends you to a panel that isn\'t looking for you',
+  who:'NYSCA/NYFA Artist Fellowship panelists',
+  role:'Reported by Amy Aronoff, NYFA',
+  quote:'make sure that you are not only showcasing your artistic practice, but that you are also presenting something that is easily digestible',
+  body:'Panelists\' catalogue of common mistakes: selecting the wrong application category; submitting work samples inconsistent with current direction; failing to share contextual information about process; not having statements reviewed by peers beforehand. Three of those four are unforced errors fixable in an afternoon. "Wrong category" is especially live for performance-plus-technology work, which straddles Visual & Media Arts and Presenting & Multidisciplinary Works.',
+  tags:['strategy','writing'],
+  url:'https://www.nyfa.org/news/archive/the-art-of-the-application-key-takeaways-from-the-2021-nysca-nyfa-artist-fellowship-application-cycle/',
+  added:'2026-08-18'
+},
+{
+  id:'metadata-fields',
+  title:'Use the metadata fields — they are wildly underused',
+  who:'NYSCA/NYFA Artist Fellowship panelists',
+  role:'Panel guidance',
+  quote:'Submit work samples that are consistent with your current artistic vision.',
+  body:'Panelists advise using metadata sections to explain processes, techniques, materials and dimensions "that may not be visually apparent." Unusually valuable for this practice: a still of the LED sphere does not communicate that it is 2 metres across, interactive, or that someone is balancing on top of it. The metadata field is where you say so.',
+  tags:['documentation'],
+  url:'https://www.nyfa.org/news/archive/the-art-of-the-application-key-takeaways-from-the-2021-nysca-nyfa-artist-fellowship-application-cycle/',
+  added:'2026-08-18'
+},
+
+/* ── Panels and money ── */
+{
+  id:'twenty-minutes',
+  title:'Panels spend at most 20 minutes on your entire application',
+  who:'National Endowment for the Arts',
+  role:'FY27 GAP application instructions',
+  quote:'Panelists will spend up to 20 minutes per application reviewing work samples.',
+  body:'Twenty minutes, maximum, for everything. Your reel\'s first 30 seconds carry the whole application. Lead with the sphere in motion or the body inside the swarm — not titles, not a logo, not a slow build.',
+  tags:['documentation','grants'],
+  url:'https://www.arts.gov/sites/default/files/fy27-gap-presenting-multidisciplinary-works-instructions-gap2-v2.pdf',
+  added:'2026-08-18'
+},
+{
+  id:'bespoke-reel',
+  title:'Cut a bespoke work sample for every application',
+  who:'National Endowment for the Arts',
+  role:'FY27 GAP guidance',
+  quote:null,
+  body:'Work samples should be "recent, concise, of high quality, and directly relate to the proposed project." That last clause kills the generic showreel. If you are pitching the sphere, a reel that is 60% drone footage reads as an artist without a through-line.',
+  tags:['documentation','grants'],
+  url:'https://www.arts.gov/sites/default/files/fy27-gap-presenting-multidisciplinary-works-instructions-gap2-v2.pdf',
+  added:'2026-08-18'
+},
+{
+  id:'touring-frame',
+  title:'Frame the work as a tour, not a single show',
+  who:'National Endowment for the Arts',
+  role:'FY27 GAP review criteria',
+  quote:'The potential for the project to have regional, national, or artistic field-wide significance.',
+  body:'This is the clause that rewards touring and repeatability. A one-city show scores worse here than the same show framed as a national tour. Your work is inherently repeatable — say so explicitly, with the tour plan attached.',
+  tags:['grants','strategy'],
+  url:'https://www.arts.gov/sites/default/files/FY27-GAP-Program-Guidelines-Final-GAP2-V3.pdf',
+  added:'2026-08-18'
+},
+{
+  id:'pay-your-artists',
+  title:'Show the line items paying your performers',
+  who:'National Endowment for the Arts',
+  role:'FY27 GAP review criteria',
+  quote:'Evidence of direct compensation to artists, makers, art collectives, and/or art workers.',
+  body:'An explicit, scored criterion. Artists routinely zero out their own labour and their collaborators\' to make a budget look lean; here that actively costs you marks. Show the acrobats being paid.',
+  tags:['grants','budget'],
+  url:'https://www.arts.gov/sites/default/files/FY27-GAP-Program-Guidelines-Final-GAP2-V3.pdf',
+  added:'2026-08-18'
+},
+{
+  id:'budget-quotes',
+  title:'Get written vendor quotes — panels cannot intuit drone costs',
+  who:'Marianna Schaffer',
+  role:'Director of Artist Initiatives, Creative Capital',
+  quote:'Be realistic and make sure that you\'ve received quotes or researched pricing ranges for the goods and services you\'ll need.',
+  body:'Your budget is the most scrutinised page in the application, because a panel cannot intuit the cost of a drone fleet, aviation compliance, batteries, or a custom LED sphere. Written quotes convert an unfamiliar-looking number into a verified one. Schaffer also recommends costing your own labour by dividing monthly expenses by 160 hours, then adjusting upward for tax.',
+  tags:['budget','grants'],
+  url:'https://thecreativeindependent.com/guides/how-to-apply-for-grants/',
+  added:'2026-08-18'
+},
+{
+  id:'match-math',
+  title:'Check the cost-share math before you write a word',
+  who:'National Endowment for the Arts',
+  role:'FY27 GAP instructions',
+  quote:null,
+  body:'NEA GAP Presenting & Multidisciplinary Works requests run $10,000–$100,000 with a minimum 1:1 non-federal cost share — so a $10,000 request needs $10,000 matched and $20,000 total project expenses. USArtists International works the same way, except the match can be the festival\'s own artist fee. Both are pure technicalities that disqualify applications. Confirm the match exists first.',
+  tags:['budget','grants'],
+  url:'https://www.arts.gov/sites/default/files/fy27-gap-presenting-multidisciplinary-works-instructions-gap2-v2.pdf',
+  added:'2026-08-18'
+},
+{
+  id:'sequence-booking-then-grant',
+  title:'Sequence matters: get the booking, then the grant',
+  who:'Mid Atlantic Arts / Foundation for Contemporary Arts',
+  role:'Programme structures',
+  quote:null,
+  body:'USArtists International requires a written invitation from the international presenter before its invitation deadline, and FCA Emergency Grants require a confirmed, dated engagement 8–10 weeks out. Both trigger off a booking you already have. So a low-fee European festival is not a bad deal — it is the key that unlocks up to $11,000 plus travel costs. Never turn down a booking on fee alone before checking what it unlocks.',
+  tags:['strategy','grants','budget'],
+  url:'https://www.midatlanticarts.org/opportunity/usartists-international/',
+  added:'2026-08-18'
+},
+{
+  id:'repeat-application',
+  title:'Repeat application is the norm, not a consolation',
+  who:'Marianna Schaffer',
+  role:'Director of Artist Initiatives, Creative Capital',
+  quote:'Many of Creative Capital\'s awardees applied multiple times before finally receiving an award.',
+  body:'Creative Capital makes 49 awards per cycle across all disciplines. Treat the first application as the start of a sequence and reuse the material — most of a strong application is portable between funders.',
+  tags:['strategy','grants'],
+  url:'https://thecreativeindependent.com/guides/how-to-apply-for-grants/',
+  added:'2026-08-18'
+},
+
+/* ── Commercial side ── */
+{
+  id:'proof-over-renders',
+  title:'Documentation of the real thing beats any render',
+  who:'Gavi Wolf',
+  role:'CEO and Co-Founder, Indiewalls',
+  quote:'The more examples we see of that versus conceptual renderings, the more we can trust that you will deliver.',
+  body:'Wolf also says: "Execution is critical. The ability to show you have a deep grasp of your craft and the ability to execute a project can really open doors." This may be the single most useful line here for your practice — you have BUILT and PERFORMED the sphere and the drone show in front of real audiences. Most of your competition is pitching renders. Lead with footage of the real thing working.',
+  tags:['documentation','commercial'],
+  url:'https://www.artworkarchive.com/blog/how-artists-can-get-on-an-art-consultant-s-radar-and-stay-there',
+  added:'2026-08-18'
+},
+{
+  id:'not-flat-work',
+  title:'The market is moving toward dimensionality — say so',
+  who:'Gavi Wolf',
+  role:'CEO and Co-Founder, Indiewalls',
+  quote:'More and more we are seeing clients gravitate toward work with dimensionality, tactility, and any other elements that set a work apart from the traditional flat work on a wall.',
+  body:'A 2-metre interactive LED sphere is about as far from flat-work-on-a-wall as it is possible to get. Lead with that framing when talking to art consultants, developers and corporate buyers — it is the thing they are actively shopping for.',
+  tags:['commercial'],
+  url:'https://www.artworkarchive.com/blog/how-artists-can-get-on-an-art-consultant-s-radar-and-stay-there',
+  added:'2026-08-18'
+},
+{
+  id:'prompt-reply',
+  title:'Reply speed is part of the application',
+  who:'Kate Sweeney',
+  role:'Founder and Director, Perspective',
+  quote:'Being prompt in responding to emails can make a big difference.',
+  body:'The cheapest competitive advantage available. It matters most where the route in IS an inbox — LUMA, Balich, Moment Factory, ARTECHOUSE, the variety theatres. Sweeney also warns that consultants look at your public feed: "the picture of the family dog or the meal they ate the night before can be distracting." A mixed personal/professional Instagram costs you.',
+  tags:['commercial','strategy'],
+  url:'https://www.artworkarchive.com/blog/how-artists-can-get-on-an-art-consultant-s-radar-and-stay-there',
+  added:'2026-08-18'
+},
+{
+  id:'be-concrete',
+  title:'Commercial buyers will not do the conceptual work for you',
+  who:'Kate Sweeney',
+  role:'Founder and Director, Perspective',
+  quote:'The organizations and clients on the other end of the pitch don\'t work well with conceptual. They want to get it right out of the gate.',
+  body:'The inverse of the art-jury advice, and worth holding both in mind. To a Prix jury, lead with the argument. To a producer, developer or agency, lead with what it looks like, how big it is, what it costs and how long it takes to install.',
+  tags:['commercial','writing'],
+  url:'https://www.artworkarchive.com/blog/how-artists-can-get-on-an-art-consultant-s-radar-and-stay-there',
+  added:'2026-08-18'
+},
+
+/* ── Positioning ── */
+{
+  id:'exit-designer',
+  title:'Perform the exit from "lighting designer"',
+  who:'Lonneke Gordijn',
+  role:'Co-founder, Studio DRIFT (interviewed in Dwell)',
+  quote:'Many people think of us as lighting designers, however that was 10 years ago and we\'ve moved on. We want to be part of a global discussion about the challenges facing the earth.',
+  body:'DRIFT actively performed the exit from spectacle into discourse — and then showed at Art Basel, the Stedelijk, LACMA and NASA, represented by Pace Gallery. An artist crossing over from commercial work has to do the same, explicitly, in the bio and statement: name the discussion you are in and your position in it. Note the ORDER — DRIFT built art credentials first, then commercialised.',
+  tags:['positioning','writing'],
+  url:'https://www.dwell.com/article/studio-drift-interview-lonneke-gordijn-42e0ea8a',
+  added:'2026-08-17'
+},
+{
+  id:'break-the-loop',
+  title:'Break the loop — looping structure reads as entertainment',
+  who:'Lonneke Gordijn',
+  role:'Co-founder, Studio DRIFT',
+  quote:'We don\'t want you to be able to say, "Hey—after 15 minutes it starts over again."',
+  body:'Commercial shows are timed, looped, narrative and sponsor-legible. That format signature is the loudest "this is entertainment" tell to an art-world gatekeeper. Non-looping, generative-duration structure is a cheap and highly legible differentiator that costs nothing but a change in how you sequence the work.',
+  tags:['positioning','concept'],
+  url:'https://studiodrift.com/work/franchise-freedom/',
+  added:'2026-08-17'
+},
+{
+  id:'research-lineage',
+  title:'Bring a research object that predates the technology',
+  who:'Studio DRIFT — Franchise Freedom',
+  role:'Precedent case',
+  quote:null,
+  body:'DRIFT grounded Franchise Freedom in "over a decade of research into bird murmuration" — the drones execute an algorithm derived from starling flocking. The swarm is the instrument; something else is the subject. Every proposal to an art jury needs that something-else. If you have no gallery, the alternative legitimation route is research: Ars Electronica\'s own Futurelab swarm practice is validated by patents and published papers rather than representation. Partnering with a lab or university and publishing the method is the reachable version.',
+  tags:['positioning','concept'],
+  url:'https://studiodrift.com/work/franchise-freedom/',
+  added:'2026-08-17'
+},
+{
+  id:'drone-route',
+  title:'The biggest drone money is not in artist open calls',
+  who:'Vivid Sydney procurement + municipal tender research',
+  role:'Structural finding',
+  quote:null,
+  body:'Vivid Sydney ran 1,000 drones across 22 shows in 2026 — none through the artist EOI. It was a NSW government procurement, delivered by a specialist company and underwritten by a Major Partner sponsor. Noor Riyadh\'s record-breaking drone shows were curator-commissioned. Meanwhile municipal tenders post continuously at $30k–$150k a show with almost no art-world competition. Run two tracks: procurement and sponsorship for revenue, open calls and prizes for the credentials that unlock invitation-only commissions.',
+  tags:['strategy','commercial'],
+  url:'https://buy.nsw.gov.au/',
+  added:'2026-08-17'
+},
+
+/* ── Specific to this practice ── */
+{
+  id:'build-the-evening',
+  title:'Build the 45-minute version — it unlocks an entire tier',
+  who:'MICC Montréal, CIRCa Auch, Circusstad',
+  role:'Market entry requirements',
+  quote:null,
+  body:'MICC requires a minimum 45 minutes indoor or 35 outdoor. CIRCa presents works-in-creation. Chamäleon programmes full evenings. Every European co-production route and every serious circus market wants a production, not a 4.5-minute act. Turning Singularity into an evening is the single highest-leverage development decision available — it converts a variety spot into a touring show, and touring is where the money compounds.',
+  tags:['strategy','development'],
+  url:'https://micc.tohu.ca/en/callforprojects',
+  added:'2026-08-18', pinned:true
+},
+{
+  id:'variety-economics',
+  title:'Variety theatres pay per season, not per show',
+  who:'GOP, Friedrichsbau, PALAZZO, Spiegelworld, cruise lines',
+  role:'Sector structure',
+  quote:null,
+  body:'Almost none of these publish rates and almost none run competitive open calls. You send an EPK to a casting inbox and they contact you if interested. But the economics are the best in the industry for a short act: fees are weekly or per-show across a run of weeks or months, so a 4.5-minute piece earns properly because it repeats nightly for a season. Two things to pre-answer: you are a team of two plus a fleet, so negotiate as a production rather than a spot; and match the drone count to the venue — spiegeltents and intimate theatres mean 8 drones, not 150.',
+  tags:['commercial','strategy'],
+  url:'https://www.variete.de/das-unternehmen/gop-showconcept/',
+  added:'2026-08-18'
+},
+{
+  id:'risk-pack',
+  title:'Carry a standing risk-assessment pack — it is worth more than the reel',
+  who:'Derived from aviation and venue requirements across territories',
+  role:'Research finding',
+  quote:null,
+  body:'Every outdoor drone entry in Europe, the UK and Australia carries a civil-aviation authorisation requirement — CAA in the UK, DGAC in France, EASA framework EU-wide, CASA in Australia — and every indoor entry raises venue insurance and audience-overflight questions. Festivals and venues will not solve these for you. Prepare a standing pack: risk assessment, list of prior venues flown, insurance certificates, and named local drone-operator partners per territory. Put it IN the application, not in the follow-up email. In this sector that document is worth more than the show reel, because it is the thing that makes a nervous programmer say yes.',
+  tags:['feasibility','strategy'],
+  url:null,
+  added:'2026-08-18', pinned:true
+},
+{
+  id:'china-licensing',
+  title:'In China, license the show — do not ship the drones',
+  who:'CAAC regulations and Chinese market structure',
+  role:'Research finding',
+  quote:null,
+  body:'Every drone in China must be real-name registered on the UOM platform, swarm flight requires airspace application and regional CAAC approval, and importing drones and transmitters requires customs clearance and SRRC radio type approval. A US artist flying their own swarm in China is not a realistic plan. The route is licensing the narrative, choreography and human performance layer to a Chinese operator who already holds the fleet and the approvals. Usefully, everything you own that is NOT a drone — LED costuming, the prop, the acrobats, the 2m sphere, StarBalancer — travels and clears customs easily and faces no aviation regulation at all. That non-drone half is the viable China product.',
+  tags:['strategy','feasibility','china'],
+  url:'https://www.mct.gov.cn/preview/special/kygz/whhlykjcxcg/202510/t20251016_962793.htm',
+  added:'2026-08-18'
+},
+{
+  id:'china-gap',
+  title:'China has publicly identified artistic content as its drone-show weak link',
+  who:'Ministry of Culture and Tourism, China',
+  role:'July 2025 policy',
+  quote:null,
+  body:'The MCT approved a national Technology Innovation Centre for Drone Swarm Low-Altitude Performance, hosted by a Shenzhen drone-swarm company with Beihang University. It has three departments — technical R&D, artistic creativity, and new-scenario development. The state has formally named artistic content as the sector\'s gap, which is precisely what Singularity supplies. That is a citable argument in any approach to a Chinese operator: they compete on fleet size and price and genuinely lack live human performance synced to the swarm.',
+  tags:['strategy','china'],
+  url:'https://www.mct.gov.cn/preview/special/kygz/whhlykjcxcg/202510/t20251016_962793.htm',
+  added:'2026-08-18'
+},
+{
+  id:'chinese-troupe-framing',
+  title:'Pitch China as technology collaboration, not as a foreign act',
+  who:'Chinese circus sector structure',
+  role:'Research finding',
+  quote:null,
+  body:'Chinese acrobatic troupes export; they do not import. A foreign act seeking a slot is fighting the structure. But those troupes have world-class bodies and weak technology integration — so an offer framed as technology-plus-collaboration WITH a Chinese troupe inverts the barrier into an asset. Wuqiao and Wuhan have no open calls and never have; CAEG, the state import/export body, is the legitimate cold-approach target.',
+  tags:['strategy','china','positioning'],
+  url:'https://en.caeg.cn/',
+  added:'2026-08-18'
+}
+];
+
+const INSIGHT_TAGS = ['discovery','strategy','writing','documentation','budget','grants',
+  'prizes','commercial','positioning','concept','feasibility','development','china'];
+
+
 /* ===== match.js ===== */
 /* Never Miss Again — project ↔ opportunity match engine.
 
@@ -2761,12 +4848,12 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '3.0';
+const APP_VERSION = '4.0';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
   {id:'opps', label:'Opportunities'},
-  {id:'playbook', label:'Pitch Playbook'},
+  {id:'insights', label:'Insights'},
   {id:'projects', label:'Projects'},
   {id:'info', label:'My Info'},
   {id:'settings', label:'Settings'}
@@ -2801,10 +4888,15 @@ if(S.projects.length===1 && S.projects[0].id==='p_singularity'){
   S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS)); save();
 }
 
+/* ---------- merged data sources ---------- */
+// v4 adds a second opportunity file; specs for those live inline on each entry.
+OPPORTUNITIES_V4.forEach(o => { if(o.spec) SPECS[o.id] = o.spec; });
+const ALL_BASE = OPPORTUNITIES.concat(OPPORTUNITIES_V4);
+
 /* ---------- matching ---------- */
 let PREFS = {prefs:{}, signals:0};
 function recomputePrefs(){
-  PREFS = buildPreferences(S, OPPORTUNITIES.concat(S.custom));
+  PREFS = buildPreferences(S, ALL_BASE.concat(S.custom));
 }
 function matchFor(opp){
   return bestMatch(opp, S.projects, S.artist);
@@ -2835,11 +4927,17 @@ function toast(msg){
 
 /* all opportunities = dataset + user custom, merged with user state */
 function allOpps(){
-  const merged = OPPORTUNITIES.concat(S.custom).map(o => {
+  const merged = ALL_BASE.concat(S.custom).map(o => {
     const u = S.user[o.id] || {};
     const m = cachedMatch(o);
     const sug = suggestInterest(o, m && m.best, S, PREFS);
+    const spec = SPECS[o.id] || {};
+    const align = focusAlignment(spec.mediums);
     return Object.assign({}, o, {
+      mediums: spec.mediums || [],
+      align,
+      contacts: CONTACTS[o.id] || [],
+      pitchWindow: PITCH_WINDOWS[o.id] || null,
       interest: (u.interest !== undefined && u.interestManual) ? u.interest : sug.level,
       interestManual: !!u.interestManual,
       suggested: sug,
@@ -2920,7 +5018,7 @@ function go(id){
   $('v-'+id).classList.add('active');
   renderTabs();
   $('fab').style.display = (id==='opps'||id==='projects') ? 'flex' : 'none';
-  ({dash:renderDash,opps:renderOpps,playbook:renderPlaybook,projects:renderProjects,info:renderInfo,settings:renderSettings})[id]();
+  ({dash:renderDash,opps:renderOpps,insights:renderInsights,projects:renderProjects,info:renderInfo,settings:renderSettings})[id]();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -2991,26 +5089,46 @@ function renderDash(){
     });
   }
 
+  // pitch windows open right now — the LUMA lesson made actionable
+  const nm = new Date().getMonth()+1;
+  const windowsOpen = opps.filter(o=>o.pitchWindow && o.pitchWindow.months.includes(nm)
+    && o.pitchWindow.months.length<12 && o.match && o.match.verdict!=='BLOCKED');
+  if(windowsOpen.length){
+    h += `<div class="sect">Pitch windows open this month</div>`;
+    h += `<div class="banner amber"><span>◉</span><div>These have <b>no published open call</b> — but this is the month a cold approach actually lands, because programming locks 6–9 months before the event. This is exactly how LUMA Small Works worked.</div></div>`;
+    windowsOpen.slice(0,6).forEach(o=>{
+      h+=`<div class="card clk" onclick="openDetail('${o.id}')">
+        <div class="row between" style="align-items:flex-start">
+          <div class="grow"><div class="oname" style="font-size:14.5px">${esc(o.name)}</div>
+          <div style="font-size:12.5px;color:var(--text2);margin-top:4px">${esc(o.city)}, ${esc(o.country)} · ${esc(moneyLabel(o))}</div></div>
+          <span class="vd green">◉ open</span>
+        </div></div>`;
+    });
+  }
+
   h += `<div class="sect">Do this now</div>`;
   h += `<div class="card"><ul class="plist">
-    <li><b>Set standing tender alerts</b> for "drone show" on <a href="https://www.instantmarkets.com/q/drone_show" target="_blank">InstantMarkets</a>, <a href="https://www.bidnetdirect.com/" target="_blank">BidNet</a> and <a href="https://www.find-tender.service.gov.uk/" target="_blank">Find a Tender</a>. This is the highest-volume paid drone channel and almost nobody in the art world competes for it.</li>
-    <li><b>Watch the Amsterdam Light Festival open call page</b> — Edition 16 opens early September 2026 and they've said the process is changing.</li>
-    <li><b>Write to FulFive / FiveCurrents about LA28</b> — 2028 ceremony subcontracting decisions get made well before 2027.</li>
-    <li><b>Fill in your project profiles and My Info</b> so application autofill actually saves you time.</li>
-    <li><b>Export the calendar file</b> (📅 button, top right) and import it into Google Calendar to fill the next year with every key date.</li>
+    <li><b>Email business@balichws.com</b> with the 60-second drone circus reel. They produce Noor Riyadh, Olympic ceremonies and Expo shows, and they publish a business-development address — one relationship reaches all three.</li>
+    <li><b>Register at la28.supplierone.co</b> and submit to <b>fivecurrents.com/talent</b>. Ceremony teams staff up 18–24 months out, which is now.</li>
+    <li><b>Apply to the Texas Touring Roster.</b> It turns your show into a part-funded purchase for every presenter in your home state — the highest-leverage domestic move available.</li>
+    <li><b>Send an EPK to casting@spiegelworld.com.</b> Their house style is exactly StarBalancer's register.</li>
+    <li><b>Set a SAM.gov alert</b> for "Expo 2027 Belgrade" — the US Pavilion contractor solicitation is the only genuinely open Expo procurement a US company can bid into.</li>
+    <li><b>Build the 45-minute version of Singularity.</b> MICC Montréal, CIRCa and every European co-production route require a full production. This one decision unlocks the entire touring tier.</li>
+    <li><b>Set standing tender alerts</b> for "drone show" on <a href="https://www.instantmarkets.com/q/drone_show" target="_blank">InstantMarkets</a> and <a href="https://www.bidnetdirect.com/" target="_blank">BidNet</a>.</li>
   </ul></div>`;
 
   $('v-dash').innerHTML = h;
 }
 
 /* ---------- opportunities ---------- */
-let fStatus='all', fRegion='all', fSort='deadline';
+let fStatus='all', fRegion='all', fSort='deadline', fMedium='all';
 function renderOpps(){
   let list = allOpps();
 
   if(fStatus==='open') list=list.filter(o=>o.status==='open');
   else if(fStatus==='confirmed') list=list.filter(o=>!!o.deadline);
-  else if(fStatus==='drone') list=list.filter(o=>(o.drones||'').toLowerCase().startsWith('yes')||o.category==='drone');
+  else if(fStatus==='window') list=list.filter(o=>o.pitchWindow && o.pitchWindow.months.includes(new Date().getMonth()+1));
+  else if(fStatus==='contacts') list=list.filter(o=>o.contacts && o.contacts.length);
   else if(fStatus==='funded') list=list.filter(o=>['top','high'].includes(o.moneyTier));
   else if(fStatus==='ready') list=list.filter(o=>o.match&&o.match.verdict==='READY');
   else if(fStatus==='nobuild') list=list.filter(o=>o.match&&['READY','LIGHT'].includes(o.match.verdict));
@@ -3018,6 +5136,7 @@ function renderOpps(){
   else if(fStatus==='invitation') list=list.filter(o=>o.status==='invitation');
 
   if(fRegion!=='all') list=list.filter(o=>o.region===fRegion);
+  if(fMedium!=='all') list=list.filter(o=>(o.mediums||[]).includes(fMedium));
 
   if(fSort==='deadline'){
     list.sort((a,b)=>{
@@ -3026,6 +5145,7 @@ function renderOpps(){
       return A-B;
     });
   } else if(fSort==='fit') list.sort((a,b)=>(b.match?b.match.score:0)-(a.match?a.match.score:0));
+  else if(fSort==='align') list.sort((a,b)=>(b.align?b.align.score:0)-(a.align?a.align.score:0) || (b.match?b.match.score:0)-(a.match?a.match.score:0));
   else if(fSort==='money'){
     const rank={top:5,high:4,medium:3,prestige:2,low:1,unknown:0};
     list.sort((a,b)=>(rank[b.moneyTier]||0)-(rank[a.moneyTier]||0));
@@ -3033,11 +5153,21 @@ function renderOpps(){
 
   const regions=[...new Set(allOpps().map(o=>o.region))].sort();
   const readyCount = allOpps().filter(o=>o.match&&o.match.verdict==='READY').length;
+  const nowMonth = new Date().getMonth()+1;
+  const windowCount = allOpps().filter(o=>o.pitchWindow&&o.pitchWindow.months.includes(nowMonth)&&o.pitchWindow.months.length<12).length;
 
   let h=`<h2>Opportunities</h2><p class="sub">Each card shows which of your projects fits and how much you'd have to build.</p>`;
   h+=`<div class="filters">
-    ${[['all','All'],['ready',`Ready to pitch${readyCount?' · '+readyCount:''}`],['nobuild','No major build'],['open','Open now'],['confirmed','Confirmed dates'],['funded','Well funded'],['drone','Takes drones'],['eligible','Eligible only'],['invitation','Invitation only']]
+    ${[['all','All'],['ready',`Ready to pitch${readyCount?' · '+readyCount:''}`],['nobuild','No major build'],['open','Open now'],['window',`Pitch window open${windowCount?' · '+windowCount:''}`],['confirmed','Confirmed dates'],['funded','Well funded'],['contacts','Has contacts'],['eligible','Eligible only'],['invitation','Invitation only']]
       .map(([k,l])=>`<div class="fchip ${fStatus===k?'on':''}" onclick="fStatus='${k}';renderOpps()">${l}</div>`).join('')}
+  </div>`;
+  const activeMediums = [...new Set(allOpps().flatMap(o=>o.mediums||[]))].filter(m=>MEDIUMS[m]);
+  const medOrder = ['circus','performance','aerial','streetarts','variety','spectacle','light','projection','led','newmedia','digital','interactive','immersive','installation','sculpture','screen','drone','sound'];
+  activeMediums.sort((a,b)=>medOrder.indexOf(a)-medOrder.indexOf(b));
+  h+=`<div class="filters">
+    <span style="font-size:12px;color:var(--muted);align-self:center;margin-right:2px">Medium:</span>
+    <div class="fchip ${fMedium==='all'?'on':''}" onclick="fMedium='all';renderOpps()">Any</div>
+    ${activeMediums.map(m=>`<div class="fchip ${fMedium===m?'on':''}" onclick="fMedium='${m}';renderOpps()">${MEDIUMS[m].short}</div>`).join('')}
   </div>`;
   h+=`<div class="filters">
     <div class="fchip ${fRegion==='all'?'on':''}" onclick="fRegion='all';renderOpps()">All regions</div>
@@ -3045,7 +5175,7 @@ function renderOpps(){
   </div>`;
   h+=`<div class="filters">
     <span style="font-size:12px;color:var(--muted);align-self:center;margin-right:2px">Sort:</span>
-    ${[['deadline','Soonest'],['fit','Best fit'],['money','Biggest budget'],['interest','My interest']]
+    ${[['deadline','Soonest'],['fit','Best fit'],['align','Focus match'],['money','Biggest budget'],['interest','My interest']]
       .map(([k,l])=>`<div class="fchip ${fSort===k?'on':''}" onclick="fSort='${k}';renderOpps()">${l}</div>`).join('')}
   </div>`;
 
@@ -3061,6 +5191,37 @@ function verdictPill(m, compact){
   return `<span class="vd ${v.cls}">${v.icon} ${compact?v.label:v.label}</span>`;
 }
 function shortProjName(n){ return n.replace(/ — .*$/,'').replace(/\s*\(.*\)$/,''); }
+
+function medClass(m){
+  const f = (MEDIUMS[m]||{}).family;
+  return f==='performance'?'perf':f==='technology'?'tech':f==='object'?'obj':'';
+}
+function medChips(mediums, max){
+  const list = mediumChips(mediums, max);
+  const extra = (mediums||[]).filter(m=>MEDIUMS[m]).length - list.length;
+  return list.map(m=>`<span class="med ${medClass(m)}">${MEDIUMS[m].short}</span>`).join('')
+    + (extra>0?`<span class="med">+${extra}</span>`:'');
+}
+function alignBlock(a){
+  if(!a) return '';
+  let dots='';
+  for(let i=0;i<5;i++) dots+=`<i class="${i<a.score?'on':''}"></i>`;
+  return `<div class="align"><span class="dots">${dots}</span>
+    <span class="txt"><b>${esc(a.label)}</b> — ${esc(a.note)}</span></div>`;
+}
+const MONTH_ABBR=['J','F','M','A','M','J','J','A','S','O','N','D'];
+function windowBlock(w){
+  if(!w) return '';
+  const now = new Date().getMonth()+1;
+  const open = w.months.includes(now);
+  const always = w.months.length===12;
+  return `<div class="window ${open?'now':''}">
+    <div class="wl">${open?'◉ Pitch window is open now':'◷ Pitch window'}${w.label?' · '+esc(w.label):''}</div>
+    <p style="margin:0;font-size:13px;line-height:1.65;color:var(--text2)">${esc(w.why)}</p>
+    ${always?'':`<div class="months">${MONTH_ABBR.map((m,i)=>
+      `<span class="${w.months.includes(i+1)?'on':''} ${i+1===now?'cur':''}">${m}</span>`).join('')}</div>`}
+  </div>`;
+}
 
 function oppCard(o){
   const ds=effDate(o), d=daysTo(ds);
@@ -3078,10 +5239,9 @@ function oppCard(o){
       ${verdictPill(m)}
       <span style="font-size:12px;color:var(--text2)">${esc(shortProjName(m.projectName))}</span>
     </div>`:''}
-    <div class="row wrap" style="margin-top:9px;gap:6px">
+    <div class="row wrap" style="margin-top:9px;gap:5px">
       ${statusChip(o)}
-      <span class="chip">${esc(o.category)}</span>
-      ${(o.drones||'').toLowerCase().startsWith('yes')?'<span class="chip cyan">🚁 drones</span>':''}
+      ${medChips(o.mediums, 4)}
       ${o.warning?'<span class="chip amber">⚠ note</span>':''}
     </div>
     <div class="row between wrap" style="margin-top:10px;gap:8px">
@@ -3172,11 +5332,10 @@ function openDetail(id){
   let h=`<div class="mhead">
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700">${esc(o.org)}</div>
     <h3 style="margin:5px 0 9px;font-size:19px">${esc(o.name)}</h3>
-    <div class="row wrap" style="gap:6px">
+    <div class="row wrap" style="gap:5px">
       ${statusChip(o)}
       <span class="chip">${esc(o.city)}, ${esc(o.country)}</span>
-      <span class="chip">${esc(o.category)}</span>
-      ${(o.drones||'').toLowerCase().startsWith('yes')?'<span class="chip cyan">🚁 programs drones</span>':''}
+      ${medChips(o.mediums)}
     </div>
   </div><div class="mbody">`;
 
@@ -3206,8 +5365,7 @@ function openDetail(id){
   // money & fit
   h+=`<div class="sect">Money & fit</div>`;
   h+=`<div class="drow"><div class="dk">What they pay</div><div class="dv">${esc(o.money)}</div></div>`;
-  h+=`<div class="drow"><div class="dk">Fit for your practice</div><div class="dv">${fitBar(o.fit)} <span style="margin-left:8px">${o.fit}/5</span></div></div>`;
-  h+=`<div class="drow"><div class="dk">Programs drone shows?</div><div class="dv">${esc(o.drones)}</div></div>`;
+  h+=`<div class="drow"><div class="dk">What they accept</div><div class="dv" style="margin-bottom:6px">${medChips(o.mediums)}</div>${alignBlock(o.align)}</div>`;
 
   // about
   h+=`<div class="sect">About the opportunity</div>`;
@@ -3220,6 +5378,47 @@ function openDetail(id){
 
   // match panel
   h += matchPanel(o);
+
+  // pitch window — for targets with no published call
+  if(o.pitchWindow){
+    h += `<div class="sect">When to pitch</div>` + windowBlock(o.pitchWindow);
+  }
+
+  // contact points
+  if(o.contacts && o.contacts.length){
+    h += `<div class="sect">Who to contact</div>`;
+    o.contacts.forEach(c=>{
+      let link;
+      if(c.type==='email') link=`<a href="mailto:${esc(c.channel)}">${esc(c.channel)}</a>`;
+      else if(c.type==='phone') link=`<a href="tel:${esc(c.channel.replace(/[^0-9+]/g,''))}">${esc(c.channel)}</a>`;
+      else if(c.type==='web'||c.type==='form'||c.type==='list'||c.type==='social') link=`<a href="${esc(c.channel)}" target="_blank" rel="noopener">${esc(c.channel)}</a>`;
+      else link=`<span style="font-size:12.5px;color:var(--text2)">${esc(c.channel)}</span>`;
+      h += `<div class="contact"><div class="grow">
+        <div class="cn">${esc(c.name)}</div>
+        <div class="cr">${esc(c.role||'')}</div>
+        <div style="margin-top:5px">${link}</div>
+        ${c.note?`<div class="cnote">${esc(c.note)}</div>`:''}
+      </div></div>`;
+    });
+  }
+
+  // application kit
+  h += `<div class="btnrow"><button class="btn-p btn-full" onclick="openKit('${o.id}')">📋 Build application kit</button></div>`;
+
+  // advice that applies to this specific opportunity
+  const adv = (OPP_ADVICE[o.id]||[]).map(id=>INSIGHTS.find(x=>x.id===id)).filter(Boolean);
+  if(adv.length){
+    h += `<div class="sect">Advice for this application</div>`;
+    adv.forEach(a=>{
+      h += `<div class="advice">
+        <div class="at">${esc(a.title)}</div>
+        <div class="aw">${esc(a.who)}${a.role?' · '+esc(a.role):''}</div>
+        ${a.quote?`<div class="aq">“${esc(a.quote)}”</div>`:''}
+        <div class="ab">${esc(a.body.split('\n\n')[0])}</div>
+        ${a.url?`<div style="margin-top:7px"><a href="${esc(a.url)}" target="_blank" rel="noopener" style="font-size:11.5px">Source ↗</a></div>`:''}
+      </div>`;
+    });
+  }
 
   // your tracking
   h+=`<div class="sect">Your tracking</div>`;
@@ -3267,27 +5466,174 @@ function saveTracking(id){
 function closeModal(){ $('modal').classList.remove('on'); }
 $('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
 
-/* ---------- playbook ---------- */
-function renderPlaybook(){
-  let h=`<h2>Pitch Playbook</h2><p class="sub">What actually wins, drawn from published jury statements, curator quotes and selection data. Quotes are verbatim from the linked sources.</p>`;
-  h+=`<div class="banner violet"><span>◈</span><div><b>The one-line version:</b> lead with the subject, not the scale. Make the technology the argument. Then out-engineer everyone on the feasibility section — that's a scored criterion where you have a real advantage.</div></div>`;
-  PITCH_INTEL.forEach(p=>{
+/* ---------- application kit ---------- */
+function kitField(label, value, note){
+  const words = String(value||'').trim().split(/\s+/).filter(Boolean).length;
+  return `<div class="kit">
+    <div class="kl"><span>${esc(label)}</span><span class="kcount">${words} words</span></div>
+    <div class="kv">${esc(value||'')}</div>
+    ${note?`<div style="font-size:11px;color:var(--muted);margin-top:7px;font-style:italic">${esc(note)}</div>`:''}
+  </div>`;
+}
+
+function openKit(oid, pid){
+  const o = allOpps().find(x=>x.id===oid); if(!o) return;
+  const m = o.match;
+  const projId = pid || (m && m.projectId) || (S.projects[0]||{}).id;
+  const p = S.projects.find(x=>x.id===projId) || S.projects[0];
+  const spec = SPECS[o.id] || {};
+  const prof = S.profile || {};
+
+  // pick media whose tags overlap what the call is about
+  const wanted = (spec.mediums||[]).concat(spec.themes||[]).map(x=>String(x).toLowerCase());
+  const media = (p.media||[]).map(mm=>{
+    const tags=(mm.tags||[]).map(t=>t.toLowerCase());
+    const hits=tags.filter(t=>wanted.some(w=>w.includes(t)||t.includes(w))).length;
+    return {mm, hits};
+  }).sort((a,b)=>b.hits-a.hits);
+
+  const money = spec.payMax!=null ? spec.payMax : spec.payMin;
+  let tier=null;
+  (p.priceTable||[]).forEach(t=>{ if(money==null || t.price<=money){ if(!tier||t.price>tier.price) tier=t; } });
+
+  const why = [
+    o.align ? `${o.name} programs ${(o.mediums||[]).map(x=>(MEDIUMS[x]||{}).short).filter(Boolean).join(', ')}.` : '',
+    (spec.themes||[]).length ? `Their stated themes are ${spec.themes.join(', ')}.` : '',
+    `${p.name} sits at the intersection of live performance and technology: ${p.oneLine||''}`
+  ].filter(Boolean).join(' ');
+
+  let h = `<div class="mhead">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700">Application kit</div>
+    <h3 style="margin:5px 0 8px;font-size:18px">${esc(o.name)}</h3>
+    <div class="row wrap" style="gap:6px">${verdictPill(m)}<span class="chip">${esc(p.name)}</span></div>
+  </div><div class="mbody">`;
+
+  h += `<div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px">Pre-filled from your project profile and My Info, shaped to what this call actually asks for. Review and edit every field before sending — then copy the whole kit.</div>`;
+
+  if(S.projects.length>1){
+    h += `<div class="field"><label>Pitch which project?</label><select onchange="openKit('${oid}', this.value)">
+      ${S.projects.map(x=>`<option value="${x.id}" ${x.id===projId?'selected':''}>${esc(x.name)}</option>`).join('')}
+    </select></div>`;
+  }
+
+  h += kitField('Applicant', prof.name || '(set your name in My Info)', null);
+  h += kitField('Contact', [prof.email,prof.phone,prof.website].filter(Boolean).join(' · ') || '(set contact details in My Info)', null);
+  h += kitField('Project title', p.name, null);
+  h += kitField('Short description', p.oneLine||p.short||'', 'Most calls cap this at 100–150 words. Trim to fit rather than padding.');
+  h += kitField('Full description', p.long||'', null);
+  h += kitField('Why this opportunity', why, 'Site-specificity is the most common failure point for touring work. Replace the generic clause with something only true of this venue or city.');
+
+  if(spec.needs) h += kitField('What they asked for', spec.needs, 'Answer this literally, in their words, near the top of the form.');
+
+  const feas = [
+    p.crew ? `Crew: ${p.crew} people travelling from ${p.originAirport||'Austin, TX'}.` : '',
+    p.transport ? `Transport: ${p.transport}` : '',
+    (p.needs||[]).length ? `Site requirements: ${(p.needs||[]).join('; ')}.` : '',
+    p.showMinutes ? `Runtime: ${p.showMinutes} minutes.` : '',
+    prof.insurance ? `Insurance and credentials: ${prof.insurance}` : '(Add your insurance and aviation credentials in My Info — feasibility is a scored criterion at several of these calls.)'
+  ].filter(Boolean).join('\n');
+  h += kitField('Technical feasibility', feas, 'This section is where you beat the field. Most fine-artist applicants are weak here and you are strong — make it impressive, not dutiful.');
+
+  const budget = [
+    tier ? `Proposed scale: ${tier.label} — $${tier.price.toLocaleString()}.` : (p.priceMin?`Fee range: $${p.priceMin.toLocaleString()}${p.priceMax?'–$'+p.priceMax.toLocaleString():''}.`:''),
+    spec.payNote ? `Their published terms: ${spec.payNote}` : '',
+    prof.pricing ? `Standard terms: ${prof.pricing}` : ''
+  ].filter(Boolean).join('\n');
+  h += kitField('Budget', budget, 'Get written vendor quotes for drone fleet, batteries and fabrication. Panels cannot intuit these costs, and quotes turn an unfamiliar number into a verified one.');
+
+  h += kitField('Artist bio', prof.bioShort || '(set a short bio in My Info)', null);
+
+  if(media.length){
+    const list = media.slice(0,6).map(x=>`• ${x.mm.label} (${x.mm.type})${x.mm.url?' — '+x.mm.url:''}${x.hits?'  ← matches this call':''}`).join('\n');
+    h += kitField('Suggested media', list, 'Ranked by tag overlap with this call. Cut a bespoke sample — a generic showreel reads as an artist without a through-line, and panels give work samples about 20 minutes total.');
+  } else {
+    h += kitField('Suggested media', '(No media in this project yet — add tagged links under Projects and they will be matched to each call automatically.)', null);
+  }
+
+  if(m && m.work.length){
+    h += kitField('Before you submit', m.work.map(w=>'• '+w).join('\n'), 'From the match analysis — these are the gaps between what you have and what they want.');
+  }
+
+  h += `<div class="btnrow">
+    <button class="btn-p" onclick="copyKit('${oid}','${projId}')">Copy entire kit</button>
+    ${o.applyUrl?`<a class="btn btn-s" href="${esc(o.applyUrl)}" target="_blank" rel="noopener">Open application ↗</a>`:''}
+    <button class="btn-g" onclick="openDetail('${oid}')">← Back</button>
+  </div>
+  <div style="font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.6">This builds the answers — it does not submit for you. Nearly every call uses its own portal with logins, file uploads and CAPTCHAs, and auto-submitting into those breaks terms of service and risks sending something you have not read. Copy, paste, edit, send.</div>
+  </div>`;
+
+  $('modalContent').innerHTML = h;
+  $('modal').classList.add('on');
+}
+
+function copyKit(oid, pid){
+  const txt = [...document.querySelectorAll('#modalContent .kit')].map(k=>{
+    const label = k.querySelector('.kl span').textContent;
+    const val = k.querySelector('.kv').textContent;
+    return label.toUpperCase() + '\n' + val;
+  }).join('\n\n');
+  navigator.clipboard.writeText(txt).then(()=>toast('Kit copied to clipboard'))
+    .catch(()=>toast('Could not access clipboard'));
+}
+
+/* ---------- insights ---------- */
+let iTag='all', iBookmarked=false;
+function renderInsights(){
+  S.bookmarks = S.bookmarks || [];
+  let list = INSIGHTS.slice();
+  if(iBookmarked) list = list.filter(x=>S.bookmarks.includes(x.id));
+  if(iTag!=='all') list = list.filter(x=>(x.tags||[]).includes(iTag));
+  list.sort((a,b)=> (b.pinned?1:0)-(a.pinned?1:0) || (b.added||'').localeCompare(a.added||''));
+
+  const tags = INSIGHT_TAGS.filter(t=>INSIGHTS.some(i=>(i.tags||[]).includes(t)));
+  let h=`<h2>Insights</h2><p class="sub">Attributable advice from curators, jurors, grant officers and consultants. Updated ${fmtDate(INSIGHTS_UPDATED)} — the weekly scan adds to this. Bookmark the ones you want to keep.</p>`;
+  h+=`<div class="filters">
+    <div class="fchip ${iTag==='all'&&!iBookmarked?'on':''}" onclick="iTag='all';iBookmarked=false;renderInsights()">All</div>
+    <div class="fchip ${iBookmarked?'on':''}" onclick="iBookmarked=!iBookmarked;renderInsights()">★ Saved${S.bookmarks.length?' · '+S.bookmarks.length:''}</div>
+    ${tags.map(t=>`<div class="fchip ${iTag===t?'on':''}" onclick="iTag='${t}';iBookmarked=false;renderInsights()">${t}</div>`).join('')}
+  </div>`;
+
+  if(!list.length){
+    h+=`<div class="empty"><div class="ic">★</div>${iBookmarked?'No saved insights yet. Tap the star on any insight to keep it here.':'Nothing in this category.'}</div>`;
+  }
+  list.forEach(x=>{
+    const saved = S.bookmarks.includes(x.id);
     h+=`<div class="card">
-      <h3>${esc(p.title)}</h3>
-      <div style="font-size:11.5px;color:var(--muted);margin-bottom:9px">${esc(p.source)}</div>
-      ${p.quote?`<div class="qt">“${esc(p.quote)}”</div>`:''}
-      <div style="font-size:13.5px;line-height:1.7;color:var(--text2)">${esc(p.body)}</div>
-      ${p.url?`<div style="margin-top:11px"><a href="${esc(p.url)}" target="_blank" rel="noopener" style="font-size:12px">Source ↗</a></div>`:''}
+      <div class="row between" style="align-items:flex-start;gap:10px">
+        <div class="grow">
+          ${x.pinned?'<span class="chip violet" style="margin-bottom:7px">Key</span>':''}
+          <h3 style="margin:0 0 5px">${esc(x.title)}</h3>
+          <div style="font-size:11.5px;color:var(--muted)">${esc(x.who)}${x.role?' · '+esc(x.role):''}</div>
+        </div>
+        <span class="bm ${saved?'on':''}" onclick="toggleBookmark('${x.id}')">${saved?'★':'☆'}</span>
+      </div>
+      ${x.quote?`<div class="qt">“${esc(x.quote)}”</div>`:''}
+      <div style="font-size:13.5px;line-height:1.7;color:var(--text2);margin-top:9px;white-space:pre-wrap">${esc(x.body)}</div>
+      <div class="row between" style="margin-top:11px;gap:8px;flex-wrap:wrap">
+        <div>${(x.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+        ${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener" style="font-size:12px">Source ↗</a>`:''}
+      </div>
     </div>`;
   });
-  h+=`<div class="sect">Where new opportunities surface first</div>`;
+
+  if(!iBookmarked && iTag==='all'){
+  h+=`<div class="sect">Where to watch for new opportunities</div>`;
   WATCH_CHANNELS.forEach(c=>{
     h+=`<div class="card"><div class="row between"><div class="grow">
-      <div class="oname" style="font-size:14.5px">${esc(c.name)}</div>
+      <div class="oname" style="font-size:14px">${esc(c.name)}</div>
       <div style="font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.6">${esc(c.note)}</div>
     </div><a class="btn btn-g btn-sm" href="${esc(c.url)}" target="_blank" rel="noopener">Open ↗</a></div></div>`;
   });
-  $('v-playbook').innerHTML=h;
+  }
+
+  $('v-insights').innerHTML=h;
+}
+function toggleBookmark(id){
+  S.bookmarks = S.bookmarks || [];
+  const i = S.bookmarks.indexOf(id);
+  if(i>=0) S.bookmarks.splice(i,1); else S.bookmarks.push(id);
+  save(); renderInsights();
+  toast(i>=0?'Removed from saved':'Saved');
 }
 
 /* ---------- projects ---------- */
@@ -3591,7 +5937,7 @@ function renderSettings(){
 
 function snapshot(){
   const s={};
-  OPPORTUNITIES.forEach(o=>{ s[o.id]={d:o.deadline||null,p:o.predictedDeadline||null,st:o.status}; });
+  ALL_BASE.forEach(o=>{ s[o.id]={d:o.deadline||null,p:o.predictedDeadline||null,st:o.status}; });
   return s;
 }
 function checkRevisions(){
@@ -3601,7 +5947,7 @@ function checkRevisions(){
   const when=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
   Object.keys(now).forEach(id=>{
     const old=S.seenData[id], cur=now[id];
-    const o=OPPORTUNITIES.find(x=>x.id===id);
+    const o=ALL_BASE.find(x=>x.id===id);
     if(!old){ revs.push({name:o.name,change:'New opportunity added to the dataset.',when}); return; }
     if(old.d!==cur.d){
       revs.push({name:o.name,change: !old.d&&cur.d

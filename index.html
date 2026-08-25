@@ -5511,7 +5511,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '6.0';
+const APP_VERSION = '6.1';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -6572,7 +6572,7 @@ function renderInfo(){
   </div>`;
 
   if(sum.unknown){
-    h+=`<div class="banner amber"><span>◷</span><div><b>${sum.unknown} opportunit${sum.unknown===1?'y needs':'ies need'} a detail from you.</b> An unanswered question is never treated as a disqualification — the app warns rather than hiding them. Fill in the fields below and they resolve.</div></div>`;
+    h+=`<div class="banner amber"><span>◷</span><div><b>${sum.unknown} opportunit${sum.unknown===1?'y needs':'ies need'} a detail from you.</b> An unanswered question is never treated as a disqualification — the app warns rather than hiding them. Fill in the fields below and they resolve.<br><br>This count is <b>per device</b>, because your profile lives in this browser's storage. If it differs on your phone and PC, that's why — use the sync code at the bottom of this page to match them up.</div></div>`;
   }
   if(sum.reasons.length){
     h+=`<div class="card"><h3>What's ruling things out</h3>`;
@@ -6625,6 +6625,20 @@ function renderInfo(){
       : `<input type="text" id="if_${k}" value="${esc(S.profile[k]||'')}">`}</div>`;
   });
   h+=`<div class="btnrow"><button class="btn-p" onclick="saveInfo()">Save my info</button></div></div>`;
+
+  h+=`<div class="sect">Sync to your other devices</div><div class="card">
+    <div style="font-size:13.5px;color:var(--text2);line-height:1.65">Your profile is stored in <b>this device's browser</b>, so the eligibility counts differ between your phone, your PC and anywhere else you open the app. Copy the code here and paste it on the other device to bring them into line.<br><br>It carries only what's on this page — no ratings, notes or projects. Small enough to send yourself in a message.</div>
+    <div class="btnrow">
+      <button class="btn-p" onclick="copyProfileCode()">Copy my profile code</button>
+      <button class="btn-s" onclick="document.getElementById('syncPaste').style.display='block'">Paste a code from another device</button>
+    </div>
+    <textarea id="syncOut" style="display:none;margin-top:10px;min-height:70px;font-size:11px" readonly onclick="this.select()"></textarea>
+    <div id="syncPaste" style="display:none;margin-top:12px">
+      <div class="field"><label>Paste the code from your other device</label>
+        <textarea id="syncIn" style="min-height:70px;font-size:11px" placeholder="NMA1:..."></textarea></div>
+      <button class="btn-p" onclick="applyProfileCode()">Apply</button>
+    </div>
+  </div>`;
 
   h+=`<div class="banner violet" style="margin-top:14px"><span>💡</span><div>Aviation credentials and insurance earn their place here twice over: they gate a few opportunities outright, and at Amsterdam Light Festival and GLOW technical feasibility is a <b>scored criterion</b>. Writing them out once means every application kit can drop them straight in.</div></div>`;
 
@@ -6971,6 +6985,58 @@ async function forceUpdate(){
 }
 
 
+
+
+/* ---------- profile sync between devices ---------- */
+/* Your ratings and notes live in each device's own browser storage, so the
+   eligibility counts drift apart if you fill fields in on one device only.
+   This moves just the profile — small enough to paste into a message. */
+
+const PROFILE_SYNC_PREFIX = 'NMA1:';
+
+function buildProfileCode(){
+  const src = S.profile || {};
+  const out = {};
+  Object.keys(src).forEach(k=>{
+    const v = src[k];
+    if(v === null || v === undefined || v === '') return;   // skip unanswered
+    out[k] = v;
+  });
+  const json = JSON.stringify(out);
+  return PROFILE_SYNC_PREFIX + btoa(unescape(encodeURIComponent(json)));
+}
+
+function copyProfileCode(){
+  const code = buildProfileCode();
+  const answered = Object.keys(JSON.parse(decodeURIComponent(escape(atob(code.slice(PROFILE_SYNC_PREFIX.length)))))).length;
+  navigator.clipboard.writeText(code)
+    .then(()=>toast(`Copied — ${answered} field${answered===1?'':'s'}, ${code.length} characters`))
+    .catch(()=>{
+      // clipboard blocked — show it so it can be copied by hand
+      const ta = $('syncOut');
+      if(ta){ ta.value = code; ta.style.display='block'; ta.select(); }
+      toast('Select and copy the code below');
+    });
+}
+
+function applyProfileCode(){
+  const raw = ($('syncIn').value || '').trim();
+  if(!raw){ toast('Paste a sync code first'); return; }
+  if(!raw.startsWith(PROFILE_SYNC_PREFIX)){ toast('That does not look like a sync code'); return; }
+  let obj;
+  try{
+    obj = JSON.parse(decodeURIComponent(escape(atob(raw.slice(PROFILE_SYNC_PREFIX.length)))));
+  }catch(e){ toast('Could not read that code'); return; }
+  if(!obj || typeof obj !== 'object'){ toast('Could not read that code'); return; }
+
+  const before = eligibilitySummary(allOpps());
+  S.profile = Object.assign({}, S.profile, obj);
+  save(); clearMatchCache(); recomputePrefs();
+  const after = eligibilitySummary(allOpps());
+  $('syncIn').value = '';
+  toast(`Profile applied — needs-a-detail ${before.unknown} → ${after.unknown}`);
+  renderInfo(); renderTabs();
+}
 
 /* ---------- update pipeline ---------- */
 function knownIdSet(){ return new Set(BAKED_IN.map(o=>o.id).concat((S.update.newOpps||[]).map(o=>o.id))); }

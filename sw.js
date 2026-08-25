@@ -29,6 +29,15 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
 
+  // The update file must never be served from cache, and its cache-busted
+  // URLs must never accumulate in it. Straight to the network, every time.
+  if (req.url.includes('updates.json')) {
+    e.respondWith(fetch(req).catch(() => new Response('{}', {
+      status: 200, headers: {'Content-Type': 'application/json'}
+    })));
+    return;
+  }
+
   e.respondWith(
     fetch(req)
       .then((res) => {

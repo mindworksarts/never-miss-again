@@ -2523,7 +2523,7 @@ const OPPORTUNITIES_V4 = [
     runDays:3650, payMin:430000, payMax:725000,
     themes:['public art','airport','digital'],
     needs:'A permanent large-scale commission, with prior comparable experience documented.',
-    gates:{}},
+    gates:{requiresPriorPublicCommission:true, note:'Midcareer or established; must have completed at least one comparable large-scale public artwork.'}},
   sources:['https://www.dfwairport.com/explore/art/']
 },
 {
@@ -2967,7 +2967,7 @@ const OPPORTUNITIES_V4 = [
     runDays:93, payMin:50000, payMax:1000000,
     themes:['play for humanity','sport','music','nations'],
     needs:'US-registered entity able to respond to or subcontract on a federal solicitation.',
-    gates:{residency:'USA-ok'}},
+    gates:{residency:'USA-ok', requiresBusinessEntity:true, note:'Federal solicitation — needs SAM.gov registration and a US entity.'}},
   sources:['https://sam.gov/content/opportunities']
 },
 {
@@ -2995,7 +2995,7 @@ const OPPORTUNITIES_V4 = [
     runDays:1, payMin:100000, payMax:2000000,
     themes:['ceremony','spectacle','Los Angeles'],
     needs:'Registered US entity with insurance and drone credentials.',
-    gates:{residency:'USA-ok'}},
+    gates:{residency:'USA-ok', requiresBusinessEntity:true, requiresInsurance:true}},
   sources:['https://la28.org/','https://fivecurrents.com/talent/']
 },
 {
@@ -3963,7 +3963,7 @@ const SPECS = {
   payNote:'Typically $30k–$150k per municipal show; national-day and anniversary contracts run higher.',
   themes:['civic celebration','anniversary','national day','holiday'],
   needs:'Procurement bid, not an artist application — insurance, licensing, safety documentation, references and a costed proposal.',
-  gates:{}
+  gates:{requiresBusinessEntity:true, requiresInsurance:true, note:'Public procurement — you bid as a registered entity with insurance, not as an individual artist.'}
 },
 'vivid-drone-tender':{
   mediums:['drone','performance','light'], format:'performance', env:'outdoor',
@@ -3971,7 +3971,7 @@ const SPECS = {
   payNote:'A substantial government contract — 2026 delivered 1,000 drones across 22 shows over 11 nights.',
   themes:['spectacle','harbour','Sydney'],
   needs:'Sky-scale drone show over water, repeated nightly. Formal NSW government tender.',
-  gates:{}
+  gates:{requiresBusinessEntity:true, requiresInsurance:true, note:'Formal government tender — requires a registered entity, insurance and a safety case.'}
 },
 'drone-show-competition':{
   contentOnly:true,
@@ -4702,6 +4702,182 @@ const INSIGHT_TAGS = ['discovery','strategy','writing','documentation','budget',
   'prizes','commercial','positioning','concept','feasibility','development','china'];
 
 
+/* ===== eligibility.js ===== */
+/* Never Miss Again — eligibility.
+
+   One source of truth: what you enter in My Info drives every eligibility
+   check in the app. Previously there were two disconnected places — free-text
+   "Date of birth" and "Nationality" fields in My Info that did nothing, and a
+   separate structured panel in Settings that did the actual work. This merges
+   them.
+
+   Three outcomes per gate, not two:
+     PASS    — your profile satisfies it
+     BLOCK   — your profile explicitly does not satisfy it
+     UNKNOWN — you haven't told the app yet, so it warns instead of blocking
+
+   That last one matters. An unanswered question is not a disqualification, and
+   the app shouldn't hide an opportunity because a checkbox is empty.
+*/
+
+const ELIGIBILITY_DEFAULTS = {
+  birthYear: null,
+  country: '',            // e.g. "USA"
+  stateRegion: '',        // e.g. "Texas"
+  city: '',               // e.g. "Austin"
+  nationality: '',
+  // Residency flags — used by calls that restrict by where you are based
+  resUK: null, resEU: null, resAsia: null, resNordic: null,
+  resAustralia: null, resCanada: null, resCzechSlovak: null,
+  // Capabilities that some calls require
+  hasBusinessEntity: null,
+  hasInsurance: null,
+  hasDroneCredentials: null,
+  hasPriorPublicCommission: null,
+  hasGalleryRepresentation: null,
+  // Optional self-identification, only ever used to check identity-restricted
+  // calls. Stored on your device, never transmitted anywhere.
+  idBlackPoc: null,
+  idFlinta: null,
+  idFirstNations: null
+};
+
+function currentAge(p){
+  if(!p || !p.birthYear) return null;
+  const y = parseInt(p.birthYear, 10);
+  if(isNaN(y) || y < 1900 || y > new Date().getFullYear()) return null;
+  return new Date().getFullYear() - y;
+}
+
+function isUSBased(p){
+  const c = (p.country||'').trim().toLowerCase();
+  return ['usa','us','united states','united states of america','u.s.','u.s.a.'].includes(c);
+}
+function inRegionText(val, needle){
+  return (val||'').toLowerCase().includes(needle);
+}
+
+/* Returns PASS / BLOCK / UNKNOWN plus a human explanation. */
+function checkResidency(p, gate){
+  const map = {
+    'UK':        {flag:'resUK',        label:'UK-based'},
+    'EU':        {flag:'resEU',        label:'EU-based'},
+    'Asia':      {flag:'resAsia',      label:'based in Asia'},
+    'CZ/SK':     {flag:'resCzechSlovak', label:'based in Czechia or Slovakia'},
+    'Nordic':    {flag:'resNordic',    label:'based in Sweden, Denmark or Finland'},
+    'Australia': {flag:'resAustralia', label:'Australia-based'},
+    'Canada':    {flag:'resCanada',    label:'Canada-based'}
+  };
+
+  if(gate === 'USA-ok'){
+    if(isUSBased(p)) return {state:'PASS', text:'US-based — eligible.'};
+    if(!p.country)   return {state:'UNKNOWN', text:'Open to US artists. Set your country in My Info to confirm.'};
+    return {state:'BLOCK', text:`Restricted to US-based artists; your profile says ${p.country}.`};
+  }
+  if(gate === 'Texas-ok'){
+    if(inRegionText(p.stateRegion,'texas')) return {state:'PASS', text:'Texas-based — eligible.'};
+    if(!p.stateRegion) return {state:'UNKNOWN', text:'Texas residency required. Set your state in My Info.'};
+    return {state:'BLOCK', text:`Texas residency required; your profile says ${p.stateRegion}.`};
+  }
+  if(gate === 'Austin-ok'){
+    if(inRegionText(p.city,'austin')) return {state:'PASS', text:'Austin-based — eligible, and that is an advantage here.'};
+    if(!p.city) return {state:'UNKNOWN', text:'Austin residency required. Set your city in My Info.'};
+    return {state:'BLOCK', text:`Austin residency required; your profile says ${p.city}.`};
+  }
+  if(gate === 'Perm'){
+    return {state:'BLOCK', text:'Restricted to artists based in Perm, Russia. No confirmed route for international applicants.'};
+  }
+
+  const m = map[gate];
+  if(!m) return {state:'UNKNOWN', text:`Residency restricted (${gate}) — check the call.`};
+  const v = p[m.flag];
+  if(v === true)  return {state:'PASS',  text:`You are ${m.label} — eligible.`};
+  if(v === false) return {state:'BLOCK', text:`Requires being ${m.label}.`};
+  return {state:'UNKNOWN', text:`Requires being ${m.label}. Tick it in My Info if that applies to you.`};
+}
+
+const IDENTITY_GATES = {
+  'Black or POC': 'idBlackPoc',
+  'FLINTA*':      'idFlinta',
+  'First Nations':'idFirstNations'
+};
+const CAPABILITY_GATES = {
+  requiresBusinessEntity:        {flag:'hasBusinessEntity',        label:'a registered business entity'},
+  requiresInsurance:             {flag:'hasInsurance',             label:'liability insurance'},
+  requiresPriorPublicCommission: {flag:'hasPriorPublicCommission', label:'a prior comparable large-scale public commission'},
+  requiresDroneCredentials:      {flag:'hasDroneCredentials',      label:'drone operating credentials'}
+};
+
+/* The whole evaluation for one opportunity. */
+function evaluateEligibility(spec, profile){
+  const g = (spec && spec.gates) || {};
+  const p = profile || {};
+  const blockers = [], warnings = [], passes = [];
+
+  if(g.residency){
+    const r = checkResidency(p, g.residency);
+    const line = r.text + (g.note ? ' ' + g.note : '');
+    if(r.state === 'BLOCK') blockers.push(line);
+    else if(r.state === 'UNKNOWN') warnings.push(line);
+    else passes.push(r.text);
+  }
+
+  if(g.identity){
+    const flag = IDENTITY_GATES[g.identity];
+    const v = flag ? p[flag] : null;
+    if(v === true) passes.push(`Meets the ${g.identity} requirement.`);
+    else if(v === false) blockers.push(`Restricted to applicants who identify as ${g.identity}.`);
+    else warnings.push(`Restricted to applicants who identify as ${g.identity} — confirm before applying.`);
+  }
+
+  const age = currentAge(p);
+  if(g.maxAge){
+    if(age === null) warnings.push(`Age cap of ${g.maxAge}. Add your birth year in My Info to check this automatically.`);
+    else if(age > g.maxAge){
+      blockers.push(`Age limit ${g.minAge || 0}–${g.maxAge}; you are ${age}.` +
+        (g.note ? ' Documented exceptions exist — see the notes.' : ''));
+    } else passes.push(`Age ${age} is inside the ${g.minAge || 0}–${g.maxAge} limit.`);
+  }
+  if(g.minAge && !g.maxAge){
+    if(age === null) warnings.push(`Minimum age ${g.minAge}. Add your birth year in My Info.`);
+    else if(age < g.minAge) blockers.push(`Minimum age ${g.minAge}; you are ${age}.`);
+    else passes.push(`Age ${age} meets the ${g.minAge} minimum, and there is no upper limit.`);
+  }
+
+  Object.entries(CAPABILITY_GATES).forEach(([key, meta])=>{
+    if(!g[key]) return;
+    const v = p[meta.flag];
+    if(v === true) passes.push(`You have ${meta.label}.`);
+    else if(v === false) blockers.push(`Requires ${meta.label}.`);
+    else warnings.push(`Requires ${meta.label} — confirm in My Info.`);
+  });
+
+  return {blockers, warnings, passes, invitation: !!g.invitation};
+}
+
+/* Summary across everything, for the My Info page. */
+function eligibilitySummary(opportunities){
+  let eligible=0, blocked=0, unknown=0, invitation=0;
+  const blockedBy = {};
+  opportunities.forEach(o=>{
+    const e = o.elig;
+    if(!e) { eligible++; return; }
+    if(e.blockers.length){
+      blocked++;
+      e.blockers.forEach(b=>{
+        const k = b.split(';')[0].split('.')[0].slice(0,60);
+        blockedBy[k] = (blockedBy[k]||0)+1;
+      });
+    }
+    else if(e.warnings.length) unknown++;
+    else eligible++;
+    if(e.invitation) invitation++;
+  });
+  return {eligible, blocked, unknown, invitation,
+          reasons: Object.entries(blockedBy).sort((a,b)=>b[1]-a[1]).slice(0,6)};
+}
+
+
 /* ===== updater.js ===== */
 /* Never Miss Again — the update pipeline.
 
@@ -5004,24 +5180,10 @@ function themeFit(project, spec){
   return {score:0.3, matched:[]};
 }
 
-function checkGates(project, spec, artist){
-  const g = spec.gates||{}; const blockers=[];
-  if(g.residency){
-    const r=g.residency;
-    const ok = (r==='UK'&&artist.ukResident)||(r==='Asia'&&artist.asiaResident)
-      ||(r==='CZ/SK'&&artist.czechSlovak)||(r==='EU'&&artist.euResident)||(r==='Perm'&&false);
-    if(!ok) blockers.push(`Residency restricted (${r}). ${g.note||''}`.trim());
-  }
-  if(g.identity) blockers.push(`Identity-restricted call: ${g.identity}.`);
-  if(g.maxAge && artist.birthYear){
-    const age = new Date().getFullYear() - artist.birthYear;
-    if(age > g.maxAge) blockers.push(`Age limit ${g.minAge||0}–${g.maxAge}; you would be ${age}. ${g.note?'Exceptions exist — see notes.':''}`);
-  }
-  if(g.minAge && artist.birthYear){
-    const age = new Date().getFullYear() - artist.birthYear;
-    if(age < g.minAge) blockers.push(`Minimum age ${g.minAge}; you would be ${age}.`);
-  }
-  return blockers;
+/* Eligibility now comes from the shared evaluator in eligibility.js, which
+   reads the My Info profile directly. Unknowns warn rather than block. */
+function checkGates(project, spec, profile){
+  return evaluateEligibility(spec, profile).blockers;
 }
 
 /* Opportunity-specific adaptation notes — where generic scoring can't capture the real work */
@@ -5100,7 +5262,8 @@ function matchProject(project, opp, artist){
   const spec = SPECS[opp.id];
   if(!spec) return null;
 
-  const blockers = checkGates(project, spec, artist);
+  const elig = evaluateEligibility(spec, artist);
+  const blockers = elig.blockers.slice();
   const med  = mediumOverlap(project.mediums, spec.mediums);
   const fmt  = formatFit(project.format, spec.format);
   const env  = envFit(project, spec);
@@ -5164,6 +5327,7 @@ function matchProject(project, opp, artist){
   return {
     projectId:project.id, projectName:project.name, oppId:opp.id,
     score, verdict, buildLevel, reasons, work, blockers,
+    eligWarnings: elig.warnings, eligPasses: elig.passes,
     invitation, unfunded: !!bud.unfunded, costGap: !!bud.gap,
     parts:{medium:med.score, format:fmt.score, environment:env.score,
            durability:dur.score, budget:bud.score, theme:thm.score},
@@ -5347,7 +5511,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '5.0';
+const APP_VERSION = '6.0';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -5377,11 +5541,25 @@ function save(){ localStorage.setItem(KEY, JSON.stringify(S)); }
 if(!S.seeded){
   S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS));
   S.profile = {};
-  S.artist = Object.assign({}, ARTIST_DEFAULTS);
   S.seeded = true;
   save();
 }
-if(!S.artist) { S.artist = Object.assign({}, ARTIST_DEFAULTS); save(); }
+// v5 -> v6: eligibility moved from a separate Settings panel into My Info.
+if(!S.profileMigrated){
+  S.profile = Object.assign({}, ELIGIBILITY_DEFAULTS, S.profile || {});
+  if(S.artist){
+    if(S.artist.birthYear && !S.profile.birthYear) S.profile.birthYear = S.artist.birthYear;
+    [['ukResident','resUK'],['euResident','resEU'],['asiaResident','resAsia'],
+     ['czechSlovak','resCzechSlovak']].forEach(([oldK,newK])=>{
+      if(S.artist[oldK] && S.profile[newK]==null) S.profile[newK] = true;
+    });
+  }
+  if(!S.profile.country) S.profile.country = 'USA';
+  if(!S.profile.stateRegion) S.profile.stateRegion = 'Texas';
+  if(!S.profile.city) S.profile.city = 'Austin';
+  S.profileMigrated = true;
+  save();
+}
 // v2→v3 migration: replace the old placeholder project with the real catalogue
 if(S.projects.length===1 && S.projects[0].id==='p_singularity'){
   S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS)); save();
@@ -5416,7 +5594,7 @@ function recomputePrefs(){
   PREFS = buildPreferences(S, ALL_BASE_LIST().concat(S.custom));
 }
 function matchFor(opp){
-  return bestMatch(opp, S.projects, S.artist);
+  return bestMatch(opp, S.projects, S.profile);
 }
 const _matchCache = {};
 function cachedMatch(opp){
@@ -5453,6 +5631,7 @@ function allOpps(){
     return Object.assign({}, o, {
       mediums: spec.mediums || [],
       align,
+      elig: evaluateEligibility(spec, S.profile),
       contacts: CONTACTS[o.id] || [],
       pitchWindow: PITCH_WINDOWS[o.id] || null,
       interest: (u.interest !== undefined && u.interestManual) ? u.interest : sug.level,
@@ -5649,7 +5828,8 @@ function renderOpps(){
   else if(fStatus==='funded') list=list.filter(o=>['top','high'].includes(o.moneyTier));
   else if(fStatus==='ready') list=list.filter(o=>o.match&&o.match.verdict==='READY');
   else if(fStatus==='nobuild') list=list.filter(o=>o.match&&['READY','LIGHT'].includes(o.match.verdict));
-  else if(fStatus==='eligible') list=list.filter(o=>o.match&&o.match.verdict!=='BLOCKED');
+  else if(fStatus==='eligible') list=list.filter(o=>o.elig && !o.elig.blockers.length);
+  else if(fStatus==='needsinfo') list=list.filter(o=>o.elig && !o.elig.blockers.length && o.elig.warnings.length);
   else if(fStatus==='invitation') list=list.filter(o=>o.status==='invitation');
 
   if(fRegion!=='all') list=list.filter(o=>o.region===fRegion);
@@ -5675,7 +5855,7 @@ function renderOpps(){
 
   let h=`<h2>Opportunities</h2><p class="sub">Each card shows which of your projects fits and how much you'd have to build.</p>`;
   h+=`<div class="filters">
-    ${[['all','All'],['ready',`Ready to pitch${readyCount?' · '+readyCount:''}`],['nobuild','No major build'],['open','Open now'],['window',`Pitch window open${windowCount?' · '+windowCount:''}`],['confirmed','Confirmed dates'],['funded','Well funded'],['contacts','Has contacts'],['eligible','Eligible only'],['invitation','Invitation only']]
+    ${[['all','All'],['ready',`Ready to pitch${readyCount?' · '+readyCount:''}`],['nobuild','No major build'],['open','Open now'],['window',`Pitch window open${windowCount?' · '+windowCount:''}`],['confirmed','Confirmed dates'],['funded','Well funded'],['contacts','Has contacts'],['eligible','Eligible only'],['needsinfo','Needs a detail'],['invitation','Invitation only']]
       .map(([k,l])=>`<div class="fchip ${fStatus===k?'on':''}" onclick="fStatus='${k}';renderOpps()">${l}</div>`).join('')}
   </div>`;
   const activeMediums = [...new Set(allOpps().flatMap(o=>o.mediums||[]))].filter(m=>MEDIUMS[m]);
@@ -5857,6 +6037,23 @@ function openDetail(id){
   </div><div class="mbody">`;
 
   if(o.warning) h+=`<div class="warn ${o.status==='at_risk'||/CLOSES|ELIGIBILITY|AGE LIMIT/.test(o.warning)?'red':''}"><b>⚠ ${esc(o.warning)}</b></div>`;
+
+  // eligibility — driven by My Info
+  if(o.elig && (o.elig.blockers.length || o.elig.warnings.length || o.elig.passes.length)){
+    const e = o.elig;
+    const cls = e.blockers.length ? 'red' : e.warnings.length ? 'amber' : 'green';
+    const label = e.blockers.length ? 'Not eligible'
+                : e.warnings.length ? 'Eligibility unconfirmed' : 'You are eligible';
+    h += `<div class="window ${cls==='green'?'now':''}" style="${cls==='red'?'background:linear-gradient(150deg,rgba(255,91,110,.09),rgba(255,91,110,.03));border-color:rgba(255,91,110,.28)':''}">
+      <div class="wl" style="${cls==='red'?'color:#ff8a97':cls==='amber'?'color:#f5c65a':''}">${cls==='red'?'✕':cls==='amber'?'◷':'✓'} ${label}</div>
+      <ul class="worklist" style="margin:0">
+        ${e.blockers.map(x=>`<li class="stop">${esc(x)}</li>`).join('')}
+        ${e.warnings.map(x=>`<li>${esc(x)}</li>`).join('')}
+        ${e.passes.map(x=>`<li class="good">${esc(x)}</li>`).join('')}
+      </ul>
+      ${(e.warnings.length)?`<div style="margin-top:11px"><button class="btn-g btn-sm" onclick="closeModal();go('info')">Fill this in →</button></div>`:''}
+    </div>`;
+  }
 
   // Apply CTA
   const canApply = ['open','rolling'].includes(o.status);
@@ -6321,31 +6518,137 @@ function delProject(id){
 }
 
 /* ---------- my info ---------- */
-const INFO_FIELDS=[
+const INFO_TEXT = [
   ['name','Artist / company name',1],['email','Email',1],['phone','Phone',1],
-  ['website','Website',1],['instagram','Instagram',1],['location','Base location',1],
-  ['nationality','Nationality / country of representation',1],
-  ['dob','Date of birth (some circus calls have age limits)',1],
+  ['website','Website',1],['instagram','Instagram',1],
+  ['nationality','Nationality',1],
   ['bioShort','Short bio (~100 words)',3],['bioLong','Long bio',6],
   ['pricing','Standard pricing overview',4],
-  ['insurance','Insurance, licensing & aviation credentials',3],
+  ['insurance','Insurance, licensing & aviation credentials — written out',3],
   ['legal','Legal entity / VAT / contracting notes',3],
   ['press','Press links & notable coverage',3]
 ];
+
+const RESIDENCY_TOGGLES = [
+  ['resUK','UK'],['resEU','EU'],['resAsia','Asia'],['resNordic','Nordic'],
+  ['resAustralia','Australia'],['resCanada','Canada'],['resCzechSlovak','Czech / Slovak']
+];
+const CAPABILITY_TOGGLES = [
+  ['hasBusinessEntity','Registered business entity','Needed to bid procurement and tenders — municipal drone shows, the Expo USA Pavilion, LA28.'],
+  ['hasInsurance','Liability insurance','Required by most venues, and a scored feasibility item at several festivals.'],
+  ['hasDroneCredentials','Drone operating credentials','Part 107 or equivalent. Converts your commercial background into a scoring advantage.'],
+  ['hasPriorPublicCommission','Prior large-scale public commission','The hard gate on airport and transit commissions — DFW requires at least one comparable completed work.'],
+  ['hasGalleryRepresentation','Gallery or agent representation','Opens invitation-only routes; not required anywhere, but noted.']
+];
+const IDENTITY_TOGGLES = [
+  ['idBlackPoc','Black or POC'],
+  ['idFlinta','FLINTA*'],
+  ['idFirstNations','First Nations / Indigenous']
+];
+
+function triState(key, label, note){
+  const v = S.profile[key];
+  const btn = (val, text) => `<div class="fchip ${v===val?'on':''}" onclick="setProfileFlag('${key}', ${val===null?'null':val})">${text}</div>`;
+  return `<div style="padding:11px 0;border-bottom:1px solid var(--border)">
+    <div style="font-size:13.5px;font-weight:600;margin-bottom:${note?'3':'7'}px">${esc(label)}</div>
+    ${note?`<div style="font-size:11.5px;color:var(--muted);line-height:1.55;margin-bottom:8px">${esc(note)}</div>`:''}
+    <div class="filters" style="margin:0">${btn(true,'Yes')}${btn(false,'No')}${btn(null,'Not set')}</div>
+  </div>`;
+}
+
 function renderInfo(){
-  let h=`<h2>My Info</h2><p class="sub">The standard details every application asks for. Fill once, reuse forever.</p><div class="card">`;
-  INFO_FIELDS.forEach(([k,l,lines])=>{
+  const opps = allOpps();
+  const sum = eligibilitySummary(opps);
+  const age = currentAge(S.profile);
+
+  let h=`<h2>My Info</h2><p class="sub">Everything here is reused across applications — and the location, credentials and identity fields drive eligibility checking on all ${opps.length} opportunities.</p>`;
+
+  // live eligibility summary
+  h+=`<div class="stats" style="margin-bottom:6px">
+    <div class="stat"><div class="v" style="color:var(--green)">${sum.eligible}</div><div class="k">Eligible</div></div>
+    <div class="stat"><div class="v" style="color:var(--amber)">${sum.unknown}</div><div class="k">Needs a detail</div></div>
+    <div class="stat"><div class="v" style="color:var(--red)">${sum.blocked}</div><div class="k">Not eligible</div></div>
+    <div class="stat"><div class="v" style="color:var(--accent)">${sum.invitation}</div><div class="k">Invitation only</div></div>
+  </div>`;
+
+  if(sum.unknown){
+    h+=`<div class="banner amber"><span>◷</span><div><b>${sum.unknown} opportunit${sum.unknown===1?'y needs':'ies need'} a detail from you.</b> An unanswered question is never treated as a disqualification — the app warns rather than hiding them. Fill in the fields below and they resolve.</div></div>`;
+  }
+  if(sum.reasons.length){
+    h+=`<div class="card"><h3>What's ruling things out</h3>`;
+    sum.reasons.forEach(([reason,count])=>{
+      h+=`<div class="row between" style="padding:7px 0;border-bottom:1px solid var(--border)">
+        <span style="font-size:12.5px;color:var(--text2);line-height:1.5">${esc(reason)}</span>
+        <span class="chip red">${count}</span></div>`;
+    });
+    h+=`</div>`;
+  }
+
+  // location & age — the highest-impact fields
+  h+=`<div class="sect">Location & age</div><div class="card">
+    <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px">These drive the most gates. Country decides US-only calls; state and city unlock Texas and Austin programmes; birth year settles the circus age caps.</div>
+    <div class="g2">
+      <div class="field"><label>Country</label><input type="text" id="if_country" value="${esc(S.profile.country||'')}" placeholder="USA"></div>
+      <div class="field"><label>State / region</label><input type="text" id="if_stateRegion" value="${esc(S.profile.stateRegion||'')}" placeholder="Texas"></div>
+    </div>
+    <div class="g2">
+      <div class="field"><label>City</label><input type="text" id="if_city" value="${esc(S.profile.city||'')}" placeholder="Austin"></div>
+      <div class="field"><label>Birth year${age!==null?` · you are ${age}`:''}</label><input type="text" id="if_birthYear" value="${esc(S.profile.birthYear||'')}" placeholder="1988"></div>
+    </div>
+    <div class="btnrow"><button class="btn-p" onclick="saveInfo()">Save</button></div>
+  </div>`;
+
+  // residency
+  h+=`<div class="sect">Other residency</div><div class="card">
+    <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:12px">Tick anything that applies beyond your main base — dual residency, an EU passport, a UK company. Leave the rest unset.</div>
+    <div class="filters" style="margin:0">
+      ${RESIDENCY_TOGGLES.map(([k,l])=>`<div class="fchip ${S.profile[k]===true?'on':''}" onclick="toggleProfileFlag('${k}')">${l}</div>`).join('')}
+    </div>
+  </div>`;
+
+  // capabilities
+  h+=`<div class="sect">Credentials</div><div class="card">
+    ${CAPABILITY_TOGGLES.map(([k,l,n])=>triState(k,l,n)).join('')}
+  </div>`;
+
+  // identity — optional, handled carefully
+  h+=`<div class="sect">Self-identification — optional</div><div class="card">
+    <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:12px">A small number of calls are restricted to specific groups — ILLUMINE is for Black and POC artists, Berlin Circus Open Stage targets FLINTA* artists, Parrtjima is First Nations only. Answer only if you want those checked automatically. Leave everything unset and the app simply flags them for you to confirm.<br><br><b>Stored on this device only.</b> Never transmitted, never included in a backup you share, never sent to any opportunity.</div>
+    ${IDENTITY_TOGGLES.map(([k,l])=>triState(k,l,null)).join('')}
+  </div>`;
+
+  // the rest of the reusable application material
+  h+=`<div class="sect">Application material</div><div class="card">`;
+  INFO_TEXT.forEach(([k,l,lines])=>{
     h+=`<div class="field"><label>${esc(l)}</label>${lines>1
       ? `<textarea id="if_${k}" style="min-height:${lines*24}px">${esc(S.profile[k]||'')}</textarea>`
       : `<input type="text" id="if_${k}" value="${esc(S.profile[k]||'')}">`}</div>`;
   });
   h+=`<div class="btnrow"><button class="btn-p" onclick="saveInfo()">Save my info</button></div></div>`;
-  h+=`<div class="banner violet" style="margin-top:14px"><span>💡</span><div>Aviation credentials, insurance and licensing belong here for a reason — at Amsterdam Light Festival and GLOW, technical feasibility is a <b>scored criterion</b>, not paperwork. Having it written up means you can drop it into the feasibility section of every application instead of rebuilding it each time.</div></div>`;
+
+  h+=`<div class="banner violet" style="margin-top:14px"><span>💡</span><div>Aviation credentials and insurance earn their place here twice over: they gate a few opportunities outright, and at Amsterdam Light Festival and GLOW technical feasibility is a <b>scored criterion</b>. Writing them out once means every application kit can drop them straight in.</div></div>`;
+
   $('v-info').innerHTML=h;
 }
+
 function saveInfo(){
-  INFO_FIELDS.forEach(([k])=>{ S.profile[k]=$('if_'+k).value; });
-  save(); toast('Saved');
+  ['country','stateRegion','city','birthYear'].forEach(k=>{
+    const el = $('if_'+k); if(el) S.profile[k] = el.value.trim();
+  });
+  INFO_TEXT.forEach(([k])=>{ const el=$('if_'+k); if(el) S.profile[k]=el.value; });
+  save(); clearMatchCache(); recomputePrefs();
+  toast('Saved — eligibility recalculated');
+  renderInfo(); renderTabs();
+}
+function setProfileFlag(key, val){
+  S.profile[key] = val;
+  save(); clearMatchCache(); recomputePrefs();
+  renderInfo(); renderTabs();
+}
+function toggleProfileFlag(key){
+  S.profile[key] = S.profile[key] === true ? null : true;
+  save(); clearMatchCache(); recomputePrefs();
+  renderInfo(); renderTabs();
 }
 
 /* ---------- settings & revision tracking ---------- */
@@ -6422,16 +6725,9 @@ function renderSettings(){
   }
   h+=`</div>`;
 
-  // artist profile for eligibility gating
-  h+=`<div class="sect">Eligibility profile</div><div class="card">
-    <div style="font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:14px">Used to hard-gate opportunities you cannot enter — age caps at circus competitions, residency-restricted calls, and identity-restricted commissions.</div>
-    <div class="field"><label>Birth year (for circus age limits)</label><input type="text" id="ar_birth" value="${esc(S.artist.birthYear||'')}" placeholder="e.g. 1988"></div>
-    <div class="field"><label>Residency — tick what applies</label>
-      <div class="filters" style="margin:0">
-        ${[['ukResident','UK resident'],['euResident','EU resident'],['asiaResident','Asia resident'],['czechSlovak','Czech/Slovak based']]
-          .map(([k,l])=>`<div class="fchip ${S.artist[k]?'on':''}" onclick="toggleArtist('${k}')">${l}</div>`).join('')}
-      </div></div>
-    <div class="btnrow"><button class="btn-p" onclick="saveArtist()">Save eligibility profile</button></div>
+  h+=`<div class="sect">Eligibility</div><div class="card">
+    <div style="font-size:13.5px;color:var(--text2);line-height:1.65">Eligibility now lives in <b>My Info</b>, alongside everything else about you — one place, one source of truth. Location, credentials and optional self-identification there drive the checks on every opportunity.</div>
+    <div class="btnrow"><button class="btn-s" onclick="go('info')">Open My Info</button></div>
   </div>`;
 
   h+=`<div class="sect">Backup</div><div class="card">
@@ -6674,13 +6970,6 @@ async function forceUpdate(){
   setTimeout(()=>location.reload(true), 600);
 }
 
-function toggleArtist(k){ S.artist[k]=!S.artist[k]; save(); clearMatchCache(); renderSettings(); }
-function saveArtist(){
-  const b=parseInt($('ar_birth').value,10);
-  S.artist.birthYear = isNaN(b)?null:b;
-  save(); clearMatchCache(); recomputePrefs();
-  toast('Eligibility updated — matches recalculated'); renderSettings();
-}
 
 
 /* ---------- update pipeline ---------- */

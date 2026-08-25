@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "version": "2026-08-25",
+  "generated": "2026-08-25T03:00:00Z",
+  "note": "Baseline. v7.0 folded 112 new opportunities directly into the app, so this patch file starts empty — scheduled scans merge their findings in from here."
+}

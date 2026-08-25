@@ -191,6 +191,8 @@ textarea{min-height:84px;resize:vertical;line-height:1.55;}
 .mbd{position:fixed;inset:0;background:rgba(3,5,9,.78);backdrop-filter:blur(6px);
   display:none;align-items:flex-end;justify-content:center;z-index:100;}
 .mbd.on{display:flex;}
+/* stop the page behind a modal from scrolling under it on mobile */
+body.modal-open{overflow:hidden;}
 .modal{background:linear-gradient(175deg,var(--panel),var(--bg2));width:100%;max-width:720px;
   max-height:92vh;overflow-y:auto;border-radius:22px 22px 0 0;border:1px solid var(--border2);
   border-bottom:none;animation:up .28s cubic-bezier(.2,.9,.3,1);position:relative;}
@@ -9106,7 +9108,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '7.0';
+const APP_VERSION = '7.1';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -9761,7 +9763,7 @@ function openDetail(id){
 
   h+=`</div>`;
   $('modalContent').innerHTML=h;
-  $('modal').classList.add('on');
+  showModal();
 }
 function setInterest(id, lvl){
   setUser(id,{interest:lvl, interestManual:true});
@@ -9773,7 +9775,37 @@ function saveTracking(id){
   clearMatchCache();
   toast('Saved'); closeModal(); renderOpps();
 }
-function closeModal(){ $('modal').classList.remove('on'); }
+/* ---------- modal open/close + Android back button ----------
+   On Android the hardware or gesture back button exits the installed PWA
+   outright unless there is something on the history stack to pop. So opening
+   a modal pushes a history entry; back pops it and we intercept the popstate
+   to close the modal instead of leaving the app. Closing by any other route
+   (the X, the backdrop, an action button) consumes that same entry so the
+   stack never accumulates. */
+function showModal(){
+  const el = $('modal');
+  if(!el.classList.contains('on')){
+    try { history.pushState({nmaModal:true}, ''); } catch(e){}
+    document.body.classList.add('modal-open');
+  }
+  el.classList.add('on');
+}
+function closeModal(fromPop){
+  const el = $('modal');
+  const wasOpen = el.classList.contains('on');
+  el.classList.remove('on');
+  document.body.classList.remove('modal-open');
+  if(!wasOpen) return;
+  if(!fromPop && history.state && history.state.nmaModal){
+    try { history.back(); } catch(e){}
+  }
+}
+window.addEventListener('popstate', function(){
+  if($('modal').classList.contains('on')) closeModal(true);
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && $('modal').classList.contains('on')) closeModal();
+});
 $('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
 
 /* ---------- application kit ---------- */
@@ -9873,7 +9905,7 @@ function openKit(oid, pid){
   </div>`;
 
   $('modalContent').innerHTML = h;
-  $('modal').classList.add('on');
+  showModal();
 }
 
 function copyKit(oid, pid){
@@ -10030,7 +10062,7 @@ function openProjectFits(pid){
   });
 
   h+=`<div class="btnrow"><button class="btn-s" onclick="openProject('${pid}')">Edit this project</button></div></div>`;
-  $('modalContent').innerHTML=h; $('modal').classList.add('on');
+  $('modalContent').innerHTML=h; showModal();
 }
 let curProj=null, curMedia=[];
 function openProject(id){
@@ -10074,7 +10106,7 @@ function openProject(id){
       ${id?`<button class="btn-d" onclick="delProject('${id}')">Delete</button>`:''}
     </div>
   </div>`;
-  $('modalContent').innerHTML=h; $('modal').classList.add('on'); renderMedia();
+  $('modalContent').innerHTML=h; showModal(); renderMedia();
 }
 function renderMedia(){
   $('mediaList').innerHTML = curMedia.length ? curMedia.map((m,i)=>`
@@ -10523,7 +10555,7 @@ function openOpp(){
     <div class="field"><label>What it is</label><textarea id="c_what"></textarea></div>
     <div class="btnrow"><button class="btn-p" onclick="saveCustom()">Add opportunity</button></div>
   </div>`;
-  $('modalContent').innerHTML=h; $('modal').classList.add('on');
+  $('modalContent').innerHTML=h; showModal();
 }
 function saveCustom(){
   const n=$('c_name').value.trim(); if(!n){toast('Name required');return;}

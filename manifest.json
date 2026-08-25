@@ -1,13 +1,34 @@
 {
   "name": "Never Miss Again",
   "short_name": "Never Miss Again",
-  "description": "Track open calls for light, performance, and installation art festivals \u2014 never miss a deadline again.",
+  "description": "Track open calls for light, performance, and installation art festivals — never miss a deadline again.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0b0f14",
   "theme_color": "#7c5cff",
   "orientation": "portrait-primary",
+  "share_target": {
+    "action": "./share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "files": [
+        {
+          "name": "updatefile",
+          "accept": ["application/json", ".json", "text/plain"]
+        }
+      ]
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "./index.html",
+      "accept": { "application/json": [".json"] }
+    }
+  ],
   "icons": [
     {
       "src": "icon-192.png",

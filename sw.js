@@ -25,8 +25,37 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+const SHARE_KEY = './__shared-update';
+
 self.addEventListener('fetch', (e) => {
   const req = e.request;
+  const url = new URL(req.url);
+
+  // ── Android share target ─────────────────────────────────────────────
+  // Sharing a .json into the app POSTs here. Stash the file, then bounce
+  // to the app, which picks it up and imports it. Two taps, no menus.
+  if (req.method === 'POST' && url.pathname.endsWith('/share-target')) {
+    e.respondWith((async () => {
+      try {
+        const form = await req.formData();
+        const file = form.get('updatefile');
+        let text = '';
+        if (file && typeof file.text === 'function') text = await file.text();
+        else if (typeof file === 'string') text = file;
+        else text = form.get('text') || '';
+
+        const cache = await caches.open(CACHE);
+        await cache.put(SHARE_KEY, new Response(text, {
+          headers: { 'Content-Type': 'application/json' }
+        }));
+        return Response.redirect('./index.html?shared=1', 303);
+      } catch (err) {
+        return Response.redirect('./index.html?shared=error', 303);
+      }
+    })());
+    return;
+  }
+
   if (req.method !== 'GET') return;
 
   // The update file must never be served from cache, and its cache-busted
@@ -63,5 +92,9 @@ self.addEventListener('fetch', (e) => {
 self.addEventListener('message', (e) => {
   if (e.data === 'nuke-cache') {
     caches.keys().then((keys) => Promise.all(keys.map((k) => caches.delete(k))));
+  }
+  // The page has consumed a shared file — drop it so it can't re-apply
+  if (e.data === 'clear-shared') {
+    caches.open(CACHE).then((c) => c.delete(SHARE_KEY));
   }
 });

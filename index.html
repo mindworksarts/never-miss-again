@@ -6707,6 +6707,35 @@ function ingestUpdate(u, sourceLabel){
   return log.length;
 }
 
+/* Android share target: a .json shared into the app lands in the SW cache,
+   which then bounces here. Pick it up, apply it, tidy the URL. */
+async function consumeSharedUpdate(){
+  const params = new URLSearchParams(location.search);
+  if(!params.has('shared')) return false;
+  const clean = () => history.replaceState({}, '', location.pathname);
+
+  if(params.get('shared') === 'error'){
+    clean(); toast('Could not read the shared file'); return true;
+  }
+  try{
+    const cache = await caches.open('nma-runtime');
+    const res = await cache.match('./__shared-update');
+    if(!res){ clean(); toast('Nothing was shared'); return true; }
+    const u = await res.json();
+    const r = ingestUpdate(u, 'the file you shared');
+    if(navigator.serviceWorker && navigator.serviceWorker.controller)
+      navigator.serviceWorker.controller.postMessage('clear-shared');
+    await cache.delete('./__shared-update');
+    clean();
+    if(r === 'same') toast('That version is already applied');
+    else if(r !== false) toast(`${r} change${r===1?'':'s'} applied`);
+    renderTabs(); if(activeTab==='dash') renderDash();
+    return true;
+  }catch(e){
+    clean(); toast('Shared file was not valid JSON'); return true;
+  }
+}
+
 async function checkForUpdates(manual){
   try{
     const res = await fetch('./updates.json?t=' + Date.now(), {cache:'no-store'});
@@ -6760,7 +6789,7 @@ if(!S.seenData){ S.seenData=snapshot(); save(); }
 renderTabs(); go('dash');
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 setTimeout(fireAlerts,1500);
-setTimeout(()=>checkForUpdates(false), 900);
+setTimeout(async()=>{ const handled = await consumeSharedUpdate(); if(!handled) checkForUpdates(false); }, 900);
 setInterval(fireAlerts,1000*60*60*12);
 
 </script>

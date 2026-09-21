@@ -193,6 +193,17 @@ textarea{min-height:84px;resize:vertical;line-height:1.55;}
 .mbd.on{display:flex;}
 /* stop the page behind a modal from scrolling under it on mobile */
 body.modal-open{overflow:hidden;}
+/* drag-and-drop update import (desktop) */
+#dropzone{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  background:rgba(3,5,9,.82);backdrop-filter:blur(5px);}
+#dropzone.on{display:flex;}
+#dropzone .dz-inner{border:2px dashed var(--accent,#7c5cff);border-radius:18px;padding:34px 40px;
+  text-align:center;background:rgba(124,92,255,.08);max-width:88vw;}
+#dropzone .dz-ic{font-size:34px;line-height:1;margin-bottom:10px;color:var(--accent,#7c5cff);}
+#dropzone .dz-t{font-size:16px;font-weight:650;color:var(--text,#e8ecf3);}
+#dropzone .dz-s{font-size:12.5px;color:var(--muted,#8b94a7);margin-top:6px;}
+.vnote{margin:0 0 10px;padding:9px 11px;border-radius:9px;font-size:12.5px;line-height:1.55;
+  background:rgba(245,178,74,.09);border:1px solid rgba(245,178,74,.28);color:var(--text2);}
 .modal{background:linear-gradient(175deg,var(--panel),var(--bg2));width:100%;max-width:720px;
   max-height:92vh;overflow-y:auto;border-radius:22px 22px 0 0;border:1px solid var(--border2);
   border-bottom:none;animation:up .28s cubic-bezier(.2,.9,.3,1);position:relative;}
@@ -4254,7 +4265,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://culture360.asef.org/opportunities/','https://culture360.asef.org/']
 },
 {
-  id:'nordics-cee-001',
+  id:'atmospheric-waves-open',
   name:'Atmospheric Waves — Open Call for Artists (Liepāja 2027)',
   org:'Liepāja — European Capital of Culture 2027 / ASTE Gallery',
   city:'Liepāja', country:'Latvia', region:'Baltics',
@@ -4283,7 +4294,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://liepaja2027.lv/en/news/open-call-for-artists-to-participate-in-the-festival-atmospheric-waves-as-part-of-liepaja-european-capital-of-culture-2027/','https://liepaja2027.lv/en/participation/']
 },
 {
-  id:'nordics-cee-002',
+  id:'liepaja-2027-european',
   name:'Liepāja 2027 — European Capital of Culture (commissioning office)',
   org:'Foundation \'Liepāja 2027\'',
   city:'Liepāja', country:'Latvia', region:'Baltics',
@@ -4313,7 +4324,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://liepaja2027.lv/en/participation/','https://liepaja2027.lv/en/news/first-insight-into-the-liepaja-european-capital-of-culture-2027-unrest-highlights-programme/']
 },
 {
-  id:'nordics-cee-003',
+  id:'vilnius-light-open',
   name:'Vilnius Light Festival — Open Call',
   org:'Vilnius Culture Centre (Vilniaus kultūros centras)',
   city:'Vilnius', country:'Lithuania', region:'Baltics',
@@ -4342,7 +4353,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://lightfestival.lt/open-call/','https://lightfestival.lt/en/']
 },
 {
-  id:'nordics-cee-004',
+  id:'lumo-light-oulu',
   name:'Lumo Light Festival Oulu — Call for Proposals',
   org:'City of Oulu / Oulu2026 European Capital of Culture',
   city:'Oulu', country:'Finland', region:'Nordics',
@@ -4371,7 +4382,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://lumo.ouka.fi/en/current/','https://www.ouka.fi/en/news/lumo-light-festival-2026-call-proposals-now-open','https://oulu2026.eu/en/the-lumo-light-festival-2026-call-for-proposals-is-now-open/']
 },
 {
-  id:'nordics-cee-005',
+  id:'reykjavik-winter-lights',
   name:'Reykjavík Winter Lights Festival — Light Art Competition',
   org:'City of Reykjavík (Vetrarhátíð)',
   city:'Reykjavík', country:'Iceland', region:'Nordics',
@@ -4400,7 +4411,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://reykjavik.is/en/news/2025/light-art-competition-winter-lights-festival','https://reykjavik.is/en/winter-lights-festival/about-the-festival','https://reykjavik.is/en/news/2024/competition-light-art-winter-lights-festival-2025']
 },
 {
-  id:'nordics-cee-006',
+  id:'light-move-lmf',
   name:'Light.Move.Festival (LMF) Łódź — Open Call',
   org:'Light Move Festival Foundation / City of Łódź',
   city:'Łódź', country:'Poland', region:'Central/Eastern Europe',
@@ -4429,7 +4440,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://lmf.com.pl/open-call/','https://lmf.com.pl/','https://on-the-move.org/news/lightmovefestival-open-call-projects-poland','https://op.europa.eu/en/web/public-procurement/procurement-details/-/procurement/2c834149-9faa-4486-9f39-13b034dac686']
 },
 {
-  id:'nordics-cee-007',
+  id:'bella-skyway-open',
   name:'Bella Skyway Festival — Open Call',
   org:'Toruńska Agenda Kulturalna (Toruń Cultural Agency) / City of Toruń',
   city:'Toruń', country:'Poland', region:'Central/Eastern Europe',
@@ -4458,7 +4469,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://www.tak.torun.pl/open_call/en/','https://bellaskyway.pl/en/','https://bellaskyway.pl/en/about-the-festival']
 },
 {
-  id:'nordics-cee-008',
+  id:'nobel-week-lights',
   name:'Nobel Week Lights Stockholm',
   org:'Troika Art (producers) for Nobel Prize Museum',
   city:'Stockholm', country:'Sweden', region:'Nordics',
@@ -4468,15 +4479,16 @@ const OPPORTUNITIES_V7 = [
   applyLabel:'Direct pitch — no open call',
   status:'invitation',
   deadlineConfidence:'unknown',
+  eventWindow:'5-13 December 2026, nine nights. Free admission. City centre plus Tensta.',
   basis:'Nobel Prize Museum \'About\' page and Troika Art site both fetched 2026-08-25 — the museum confirms the festival \'invites both international and local artists\' and gives 2026 dates of 5–13 December, but neither site publishes an open call, submission route or budget. Curated by invitation.',
   money:'Not disclosed. Corporate- and foundation-backed festival at the highest end of Nordic prestige; commissions are negotiated privately.',
   moneyTier:'unknown',
   fit:4,
   what:'Nine-night citywide light art festival staged during Nobel Week, built around large-scale public light artworks that connect to Nobel Prize science and literature. Produced by Troika Art (Annika Levin, Alexandra Manson, Lara Szabo Greisman).',
   selection:'Invitation only — producers commission international and local artists directly. No published open call.',
-  scale:'Citywide Stockholm during Nobel Week; the single highest-visibility light art platform in the Nordics, with global press attached to the Nobel brand.',
+  scale:'19 illuminated artworks in the 2025 edition, across the city centre and Tensta, free to the public over nine nights. The single highest-visibility light art platform in the Nordics, with global press attached to the Nobel brand. Verified 12 Sept 2026: 2026 dates confirmed as 5-13 December, still no open call.',
   requirements:'Relationship-led. Expect to pitch a treatment tied to a Nobel-adjacent scientific or literary idea.',
-  intel:'The highest-prestige target in this whole territory and worth a patient, well-crafted approach to Troika rather than a generic portfolio blast. The festival\'s whole conceit is art that translates Nobel-winning science for the public — which is precisely the frame that sells a drone swarm plus acrobats (\'Singularity\' as emergence, collective behaviour, or a physics-of-flight piece). Pitch in spring, well before the December edition locks. A Stockholm credit unlocks the rest of the Nordic circuit.',
+  intel:'The highest-prestige target in this whole territory and worth a patient, well-crafted approach to Troika rather than a generic portfolio blast. The festival\'s whole conceit is art that translates Nobel-winning science for the public — which is precisely the frame that sells a drone swarm plus acrobats (\'Singularity\' as emergence, collective behaviour, or a physics-of-flight piece). Pitch in spring, well before the December edition locks. A Stockholm credit unlocks the rest of the Nordic circuit. It is also an ILO (International Light Festivals Organisation) member, which the app already tracks as a directory - so a Troika relationship is a door into that whole network, not one festival.',
   warning:'No open call means no deadline, no guaranteed read, and a slow relationship build — do not expect a first-contact commission. Nobel-brand association also means heavy sponsor and safety scrutiny on anything flying over a crowd in a dense city centre in December.',
   spec:{mediums:['light','installation','drone','projection','interactive','aerial'],
     format:'either', env:'outdoor', runDays:9,
@@ -4488,7 +4500,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://www.nobelprizemuseum.se/en/nobel-week-lights/about-nobel-week-lights/','https://troika-art.se/','https://www.nobelprize.org/press-release/the-light-art-festival-nobel-week-lights-is-expanding/']
 },
 {
-  id:'nordics-cee-009',
+  id:'lux-helsinki',
   name:'Lux Helsinki',
   org:'City of Helsinki / Events Helsinki',
   city:'Helsinki', country:'Finland', region:'Nordics',
@@ -4518,7 +4530,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://luxhelsinki.fi/en/info-3/','https://luxhelsinki.fi/en/contact-information/','https://luxhelsinki.fi/en/2025/12/09/lux-helsinki-extended-to-six-days-bringing-permanent-light-art-to-the-city/','https://www.hel.fi/en/news/this-years-lux-helsinki-attracted-450000-visitors-and-next-year-the-festival-will-be-celebrated-over']
 },
 {
-  id:'nordics-cee-010',
+  id:'fjord-oslo-light',
   name:'Fjord Oslo — Light Art Festival',
   org:'Fjord Oslo',
   city:'Oslo', country:'Norway', region:'Nordics',
@@ -4548,7 +4560,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://fjordoslo.com/about-fjord/','https://fjordoslo.com/','https://on-the-move.org/news/fjord-oslo-open-call-light-works-norway']
 },
 {
-  id:'nordics-cee-011',
+  id:'meta-morf-trondheim',
   name:'Meta.Morf — Trondheim International Biennale for Art & Technology',
   org:'TEKS (Trondheim Electronic Arts Centre)',
   city:'Trondheim', country:'Norway', region:'Nordics',
@@ -4577,7 +4589,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://teks.no/metamorf-call/','https://metamorf.art/','https://metamorf.art/meta-morf/','https://metamorf.art/exhibitions-meta-morf-2026/']
 },
 {
-  id:'nordics-cee-012',
+  id:'wro-media-art',
   name:'WRO Media Art Biennale 2027 — \'Friction\'',
   org:'WRO Art Center',
   city:'Wrocław', country:'Poland', region:'Central/Eastern Europe',
@@ -4606,7 +4618,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://wrocenter.pl/en/biennale-wro/','https://wrocenter.pl/en/','https://call.emap.eu/locations/wro','https://biennialfoundation.org/biennials/wro-media-art-biennale-poland/']
 },
 {
-  id:'nordics-cee-013',
+  id:'imapp-bucharest-winners',
   name:'iMapp Bucharest — Winners League',
   org:'CREART (Centre for Creation, Art and Tradition) / Bucharest City Hall',
   city:'Bucharest', country:'Romania', region:'Central/Eastern Europe',
@@ -4637,7 +4649,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://imapp.ro/imapp/','https://imapp.ro/ro/','https://www.internationallightfestivals.org/members/ilo-members/ad/imapp-bucharest-winners-league,3','https://www.luciassociation.org/enter-the-imapp-bucharest-international-video-mapping-contest/']
 },
 {
-  id:'nordics-cee-014',
+  id:'spotlight-festivalul-al',
   name:'Spotlight — Festivalul Internațional al Luminii',
   org:'ARCUB — Cultural Centre of Bucharest / Bucharest City Hall',
   city:'Bucharest', country:'Romania', region:'Central/Eastern Europe',
@@ -4667,7 +4679,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://spotlightfestival.ro/en/about','https://arcub.ro/festival/spotlight-festivalul-international-al-luminii']
 },
 {
-  id:'nordics-cee-015',
+  id:'lighting-guerrilla-svetlobna',
   name:'Lighting Guerrilla (Svetlobna gverila)',
   org:'Strip Core / Forum Ljubljana',
   city:'Ljubljana', country:'Slovenia', region:'Central/Eastern Europe',
@@ -4697,7 +4709,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://www.svetlobnagverila.net/en/about-the-festival/','https://www.svetlobnagverila.net/en/home/','https://www.culture.si/en/Lighting_Guerrilla_Festival']
 },
 {
-  id:'nordics-cee-016',
+  id:'lights-zagreb-artist',
   name:'Festival of Lights Zagreb — Artist Call',
   org:'Festival of Lights (Zagreb edition)',
   city:'Zagreb', country:'Croatia', region:'Central/Eastern Europe',
@@ -4726,7 +4738,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://festival-of-lights.de/en/zagreb-festival-of-lights/','https://festival-of-lights.de/en/artist-call/','https://www.croatiaweek.com/festival-of-lights-zagreb-2026/']
 },
 {
-  id:'nordics-cee-017',
+  id:'carnaval-sztukmistrzow-carnival',
   name:'Carnaval Sztukmistrzów (Carnival of Magicians)',
   org:'Warsztaty Kultury w Lublinie (Workshops of Culture)',
   city:'Lublin', country:'Poland', region:'Central/Eastern Europe',
@@ -4756,7 +4768,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://carnavallublin.eu/en/practical-information/','https://carnavallublin.eu/en/programme-2026/','https://warsztatykultury.pl/en/wydarzenia/carnaval-sztukmistrzow-2026/','https://carnavallublin.eu/en/busking-contest-2025-open-call-for-performers/']
 },
 {
-  id:'nordics-cee-018',
+  id:'letni-letna-contemporary',
   name:'Letní Letná — International Festival of Contemporary Circus and Theatre',
   org:'Společnost Gaspard z.s.',
   city:'Prague', country:'Czechia', region:'Central/Eastern Europe',
@@ -4786,7 +4798,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://letniletna.cz/en/international-festival-of-contemporary-circus-and-theatre/','https://letniletna.cz/en/contacts/','https://www.circostrada.org/en/members/letni-letna']
 },
 {
-  id:'nordics-cee-019',
+  id:'ted-tenders-electronic',
   name:'TED — Tenders Electronic Daily (EU public procurement)',
   org:'Publications Office of the European Union',
   city:'Luxembourg', country:'EU-wide', region:'Nordics / Baltics / Central & Eastern Europe',
@@ -4815,7 +4827,7 @@ const OPPORTUNITIES_V7 = [
   sources:['https://ted.europa.eu/en/','https://ted.europa.eu/en/about-ted','https://ted.europa.eu/en/advanced-search','https://op.europa.eu/en/web/public-procurement/procurement-details/-/procurement/2c834149-9faa-4486-9f39-13b034dac686']
 },
 {
-  id:'nordics-cee-020',
+  id:'istanbul-digital-art',
   name:'Istanbul Digital Art Festival (IDAF)',
   org:'MEZO, with the Republic of Türkiye Ministry of Culture and Tourism',
   city:'Istanbul', country:'Turkey', region:'Turkey',
@@ -5465,33 +5477,36 @@ const OPPORTUNITIES_V7 = [
 },
 {
   id:'us-sxsw-xr-experience',
-  name:'SXSW XR Experience / SXSW Exhibitions',
+  name:'SXSW XR Experience — Film & TV Festival',
   org:'SXSW',
   city:'Austin, TX', country:'USA', region:'North America',
-  category:'digital', tier:'flagship',
+  category:'immersive', tier:'flagship',
   website:'https://sxsw.com/exhibitions/',
   applyUrl:'https://cart.sxsw.com/products/filmapp-vr',
-  status:'uncertain',
-  predictedDeadline:'2026-11-01', predictedConfidence:'low',
-  basis:'Official SXSW Exhibitions page confirms SXSW 2027 runs March 15–19, 2027 in Austin, lists Expo, Flatstock and XR Experience as exhibition programs, and states 30 XR projects will be accepted for 2027. An XR Experience application product page exists at cart.sxsw.com/products/filmapp-vr. The exhibitions page publishes no deadline, no fee and no compensation information, and the art-application product page returned no usable detail — the predicted deadline is a low-confidence inference from SXSW\'s usual autumn film/XR submission cycle.',
-  money:'Unconfirmed. SXSW submission tracks generally carry an entry FEE rather than paying artists; exhibition space in the Expo is a paid sponsorship. Assume pay-to-play unless confirmed otherwise.',
-  moneyTier:'unknown',
-  fit:4,
-  what:'SXSW\'s exhibition and installation programs — the XR Experience (30 projects accepted for 2027), the Expo trade floor, and adjacent art/installation programming — inside the world\'s largest tech-and-culture convergence festival, in Austin.',
-  selection:'Juried application for XR Experience; Expo space is purchased.',
-  scale:'SXSW 2027: March 15–19, Austin; 56,000 sq ft of exhibit space and 8,000+ public participants cited for the exhibitions program alone.',
-  requirements:'Not published on the exhibitions page; XR Experience applies through the SXSW film/XR application system.',
-  intel:'This is the hometown flagship and the highest-leverage BUYER room in the territory — festival directors, brand agencies, immersive producers and casino/theme-park buyers all walk that floor. The honest framing is that SXSW is a marketing and business-development investment rather than a fee-paying commission: entry fees and exhibit space cost money. Two low-cost angles worth more than an Expo booth: apply to XR Experience with a documented Singularity or sphere piece, and pitch an outdoor drone or LED-costume activation to brands and venues who are already buying activations that week. Deadlines are not posted on the exhibitions page — confirm the XR/film submission window directly, historically autumn.',
-  warning:'LIKELY PAY-TO-PLAY. Submission fees are standard across SXSW tracks and Expo space is a purchase, not a commission. No artist compensation is published anywhere on the exhibitions page. Deadline is a low-confidence prediction — verify before relying on it.',
-  spec:{mediums:['immersive','interactive','light','installation','projection','drone','sculpture'],
-    format:'either', env:'either', runDays:5,
+  applyLabel:'Apply — XR Experience',
+  status:'open',
+  deadline:'2026-10-01', deadlineConfidence:'confirmed',
+  basis:'Verified on the official application page 8 Sept 2026. Tiered deadlines, all 11:59pm PT: Early Bird 25 Aug 2026 ($55, passed), Regular 15 Sept 2026 ($70), Final 1 Oct 2026 ($90). Decisions by 9 Feb 2027. SXSW 2027 runs 15-21 March 2027 in Austin.',
+  eventWindow:'15-21 March 2027, Austin. Film & TV Festival runs the full seven days.',
+  money:'NO artist fee. This is a paid submission: $70 to 15 Sept, $90 to 1 Oct. Accepted projects may additionally be required to supply their own docents and technical installation for the run of the exhibition. Treat it as a marketing and business-development spend, not income.',
+  moneyTier:'prestige',
+  fit:5,
+  what:'The XR Experience is SXSW\'s immersive exhibition, and its published scope is far wider than the name suggests. The application states it accepts "virtual/mixed reality, augmented reality, immersive performance, projection based installations, immersive audio, AI based installations, and generally anywhere technology and art converge." Immersive performance and projection-based installation are named categories — this is not a headset-only programme.',
+  selection:'Juried through the Film & TV Festival submission system. Only the initial submission is reviewed — no revised versions. Work-in-progress cuts are accepted; trailers are not.',
+  scale:'SXSW 2027, 15-21 March, Austin. Roughly 30 XR projects accepted; the exhibitions programme cites 56,000 sq ft and 8,000+ public participants.',
+  requirements:'A link to a streamable 360 version or 2D playthrough of the project, ideally plus a downloadable build. Every link must stay live through March 2027. Accepted projects may need to provide docents and their own technical installation on site.',
+  intel:'The hometown flagship, and the buyer room matters more than the badge — festival directors, brand agencies, immersive producers and themed-entertainment buyers all walk that floor, and you can work it without a hotel bill. The strategic read is that "immersive performance" and "projection based installations" sit in the published category list, so the sphere and a StarBalancer-style piece can be entered on their own terms rather than reframed as VR. The documentation requirement is the real gate: they want a streamable playthrough, so the sphere with its interactive camera-tracking layer documents far better than a drone show, which does not read on a 2D link. Enter at the 15 Sept tier and save $20 — the extra fortnight buys nothing, since decisions do not come until February.',
+  warning:'Pay-to-play submission with no artist fee, and accepted projects may have to cover docents and installation themselves. Budget the entry as marketing. The separate SXSW Art Program has published no 2027 open call — the art and installation route now runs through this application.',
+  spec:{mediums:['immersive','interactive','projection','light','installation','led','newmedia','digital','performance','sculpture'],
+    format:'either', env:'indoor', runDays:7,
     payMin:null, payMax:null,
     coversCosts:false,
-    themes:['technology','innovation','immersive storytelling'],
-    needs:'convention-floor or venue siting; high-throughput public demo',
-    gates:{residency:'Austin-ok',requiresBusinessEntity:true,requiresInsurance:true}},
-  sources:['https://sxsw.com/exhibitions/','https://sxsw.com/exhibitions/sxsw-xr-experience/','https://cart.sxsw.com/products/art_app']
+    themes:['technology and art converge','immersive performance','projection installation','interactive'],
+    needs:'A streamable 360 or 2D playthrough link live through March 2027, an indoor exhibition-floor siting, and willingness to staff docents and install yourself.',
+    gates:{}},
+  sources:['https://cart.sxsw.com/products/filmapp-vr','https://cart.sxsw.com/participate','https://sxsw.com/exhibitions/','https://sxsw.com/2026/south-by-southwest-2027-dates-announced/','https://support.sxsw.com/hc/en-us/articles/210311226-How-do-I-submit-a-Virtual-Reality-Augmented-Reality-or-Mixed-Reality-Project']
 },
+
 {
   id:'us-virgin-voyages-entertainment',
   name:'Virgin Voyages Entertainment — Submissions',
@@ -6696,39 +6711,39 @@ const CONTACTS_V7 = {
   'bangkok-art-biennale':[{name:'Bangkok Art Biennale Foundation', role:'General and open call enquiries', channel:'info@bkkartbiennale.com', type:'email'}],
   'serendipity-arts-foundation':[{name:'Serendipity Arts Foundation', role:'Open calls administration', channel:'https://serendipityarts.org/open-calls/', type:'form'}],
   'asef-culture360-opportunities':[{name:'ASEF culture360', role:'Platform of the Asia-Europe Foundation', channel:'https://culture360.asef.org/', type:'form'}],
-  'nordics-cee-001':[{name:'Krista Dintere', role:'Curator / project lead, Atmospheric Waves', channel:'krista@aste.gallery', type:'email'},
+  'atmospheric-waves-open':[{name:'Krista Dintere', role:'Curator / project lead, Atmospheric Waves', channel:'krista@aste.gallery', type:'email'},
    {name:'Krista Dintere', role:'Curator / project lead, Atmospheric Waves', channel:'https://forms.gle/mkMd3MpiaV54a27E6', type:'form'}],
-  'nordics-cee-002':[{name:'Business contact', role:'General office, Foundation Liepāja 2027', channel:'birojs@liepaja2027.lv', type:'email'},
+  'liepaja-2027-european':[{name:'Business contact', role:'General office, Foundation Liepāja 2027', channel:'birojs@liepaja2027.lv', type:'email'},
    {name:'Enquiry form', role:'General office, Foundation Liepāja 2027', channel:'https://liepaja2027.lv/en/participation/', type:'form'}],
-  'nordics-cee-003':[{name:'Business contact', role:'Festival office, Vilnius Light Festival', channel:'lightfestival@vilniuskc.lt', type:'email'},
+  'vilnius-light-open':[{name:'Business contact', role:'Festival office, Vilnius Light Festival', channel:'lightfestival@vilniuskc.lt', type:'email'},
    {name:'Enquiry form', role:'Festival office, Vilnius Light Festival', channel:'https://lightfestival.lt/open-call/', type:'form'}],
-  'nordics-cee-004':[{name:'Business contact', role:'Lumo Light Festival office, City of Oulu', channel:'lumolightfestival@ouka.fi', type:'email'},
+  'lumo-light-oulu':[{name:'Business contact', role:'Lumo Light Festival office, City of Oulu', channel:'lumolightfestival@ouka.fi', type:'email'},
    {name:'Enquiry form', role:'Lumo Light Festival office, City of Oulu', channel:'https://lumo.ouka.fi/en/current/', type:'form'}],
-  'nordics-cee-005':[{name:'Business contact', role:'Winter Lights Festival office, City of Reykjavík', channel:'vetrarhatid@reykjavik.is', type:'email'}],
-  'nordics-cee-006':[{name:'Business contact', role:'Festival office (email published on the open-call page; obfuscated in the fetched render)', channel:'unconfirmed', type:'email'},
+  'reykjavik-winter-lights':[{name:'Business contact', role:'Winter Lights Festival office, City of Reykjavík', channel:'vetrarhatid@reykjavik.is', type:'email'}],
+  'light-move-lmf':[{name:'Business contact', role:'Festival office (email published on the open-call page; obfuscated in the fetched render)', channel:'unconfirmed', type:'email'},
    {name:'Enquiry form', role:'Festival office (email published on the open-call page; obfuscated in the fetched render)', channel:'https://lmf.com.pl/en/open-call/', type:'form'}],
-  'nordics-cee-007':[{name:'A. Grajek', role:'Open call contact, Toruńska Agenda Kulturalna', channel:'a.grajek@tak.torun.pl', type:'email'},
+  'bella-skyway-open':[{name:'A. Grajek', role:'Open call contact, Toruńska Agenda Kulturalna', channel:'a.grajek@tak.torun.pl', type:'email'},
    {name:'A. Grajek', role:'Open call contact, Toruńska Agenda Kulturalna', channel:'https://www.tak.torun.pl/open_call/en/', type:'form'}],
-  'nordics-cee-008':[{name:'Business contact', role:'Troika Art — festival producers', channel:'info@troika-art.se', type:'email'}],
-  'nordics-cee-009':[{name:'Juha Rouhikoski', role:'Artistic Director, Lux Helsinki', channel:'juha.rouhikoski@luxhelsinki.fi', type:'email'},
+  'nobel-week-lights':[{name:'Business contact', role:'Troika Art — festival producers', channel:'info@troika-art.se', type:'email'}],
+  'lux-helsinki':[{name:'Juha Rouhikoski', role:'Artistic Director, Lux Helsinki', channel:'juha.rouhikoski@luxhelsinki.fi', type:'email'},
    {name:'Juha Rouhikoski', role:'Artistic Director, Lux Helsinki', channel:'https://luxhelsinki.fi/en/contact-information/', type:'form'}],
-  'nordics-cee-010':[{name:'Anastasia Isachsen', role:'Artistic Director / Founder (general festival address)', channel:'contact@fjordoslo.com', type:'email'}],
-  'nordics-cee-011':[{name:'Business contact', role:'TEKS — Trondheim Electronic Arts Centre (organiser)', channel:'teks@teks.no', type:'email'},
+  'fjord-oslo-light':[{name:'Anastasia Isachsen', role:'Artistic Director / Founder (general festival address)', channel:'contact@fjordoslo.com', type:'email'}],
+  'meta-morf-trondheim':[{name:'Business contact', role:'TEKS — Trondheim Electronic Arts Centre (organiser)', channel:'teks@teks.no', type:'email'},
    {name:'Enquiry form', role:'TEKS — Trondheim Electronic Arts Centre (organiser)', channel:'https://teks.no/metamorf-call/', type:'form'}],
-  'nordics-cee-012':[{name:'Business contact', role:'WRO Art Center (contact details via main site; the /en/contact/ path returns 404)', channel:'unconfirmed', type:'email'},
+  'wro-media-art':[{name:'Business contact', role:'WRO Art Center (contact details via main site; the /en/contact/ path returns 404)', channel:'unconfirmed', type:'email'},
    {name:'Enquiry form', role:'WRO Art Center (contact details via main site; the /en/contact/ path returns 404)', channel:'https://wrocenter.pl/en/', type:'form'}],
-  'nordics-cee-013':[{name:'Business contact', role:'CREART / Bucharest City Hall (organiser; no programming email published on the official site)', channel:'unconfirmed', type:'email'},
+  'imapp-bucharest-winners':[{name:'Business contact', role:'CREART / Bucharest City Hall (organiser; no programming email published on the official site)', channel:'unconfirmed', type:'email'},
    {name:'Enquiry form', role:'CREART / Bucharest City Hall (organiser; no programming email published on the official site)', channel:'https://imapp.ro/', type:'form'}],
-  'nordics-cee-014':[{name:'Business contact', role:'Spotlight festival office, ARCUB — Cultural Centre of Bucharest', channel:'contact@spotlightfestival.ro', type:'email'},
+  'spotlight-festivalul-al':[{name:'Business contact', role:'Spotlight festival office, ARCUB — Cultural Centre of Bucharest', channel:'contact@spotlightfestival.ro', type:'email'},
    {name:'Enquiry form', role:'Spotlight festival office, ARCUB — Cultural Centre of Bucharest', channel:'https://arcub.ro/festival/spotlight-festivalul-international-al-luminii', type:'form'}],
-  'nordics-cee-015':[{name:'Business contact', role:'Strip Core / Forum Ljubljana — festival organisers', channel:'core@mail.ljudmila.org', type:'email'}],
-  'nordics-cee-016':[{name:'Business contact', role:'Artist call submissions, Festival of Lights', channel:'call@festival-of-lights.de', type:'email'},
+  'lighting-guerrilla-svetlobna':[{name:'Business contact', role:'Strip Core / Forum Ljubljana — festival organisers', channel:'core@mail.ljudmila.org', type:'email'}],
+  'lights-zagreb-artist':[{name:'Business contact', role:'Artist call submissions, Festival of Lights', channel:'call@festival-of-lights.de', type:'email'},
    {name:'Enquiry form', role:'Artist call submissions, Festival of Lights', channel:'https://festival-of-lights.de/en/artist-call/', type:'form'}],
-  'nordics-cee-017':[{name:'Business contact', role:'Festival office, Warsztaty Kultury w Lublinie', channel:'info@carnavallublin.eu', type:'email'},
+  'carnaval-sztukmistrzow-carnival':[{name:'Business contact', role:'Festival office, Warsztaty Kultury w Lublinie', channel:'info@carnavallublin.eu', type:'email'},
    {name:'Enquiry form', role:'Festival office, Warsztaty Kultury w Lublinie', channel:'https://carnavallublin.eu/en/practical-information/', type:'form'}],
-  'nordics-cee-018':[{name:'Anna Šmat', role:'Head of Production, Letní Letná', channel:'anna.smat@letniletna.cz', type:'email'},
+  'letni-letna-contemporary':[{name:'Anna Šmat', role:'Head of Production, Letní Letná', channel:'anna.smat@letniletna.cz', type:'email'},
    {name:'Anna Šmat', role:'Head of Production, Letní Letná', channel:'https://letniletna.cz/en/contacts/', type:'form'}],
-  'nordics-cee-019':[{name:'Enquiry form', role:'Publications Office of the EU — TED helpdesk (via site contact form)', channel:'https://ted.europa.eu/en/about-ted', type:'form'}],
+  'ted-tenders-electronic':[{name:'Enquiry form', role:'Publications Office of the EU — TED helpdesk (via site contact form)', channel:'https://ted.europa.eu/en/about-ted', type:'form'}],
   'us-pdxwlf-2027':[{name:'Chris Herring / Misty Post', role:'Festival producers (named on the official call page; email addresses redacted in retrieved page)', channel:'https://pdxwlf.com/contact/', type:'form'}],
   'us-creek-show-austin':[{name:'Enquiry form', role:'Waterloo Greenway Conservancy — general', channel:'https://waterloogreenway.org/contact/', type:'form'}],
   'us-maaa-artistic-innovations':[{name:'Enquiry form', role:'M-AAA Grants team', channel:'https://www.maaa.org/contact/', type:'form'}],
@@ -6809,113 +6824,113 @@ const CONTACTS_V7 = {
 
 /* Pitch windows for the v7 no-call targets. */
 const PITCH_WINDOWS_V7 = {
-  'llum-bcn':{months:[4, 5, 6, 9], why:'15th edition ran 6-8 Feb 2026 (official site + ICUB press release Dec 2025); festival is annual in the first weekend of February, so curatorial decisions are locked around Sept-Oct. No public convocatoria for the main programme was found on barcelona.cat — the only published open call in the Llum ecosystem is the parallel \'Off Llum BCN\' run by Poblenou Urban District (6th edition call closed Oct 2024).'},
-  'luzmadrid':{months:[4, 5, 6], why:'1st edition Oct 2023 (29-31 Oct), 2nd edition 2024/25, 3rd edition confirmed 12-14 March 2026 with 15 light interventions in 12 locations (Ayuntamiento de Madrid news + official festival site). No open call published on the official site or the city\'s convocatorias page; the 4th edition is signposted on esmadrid.com.'},
-  'medialab-matadero-situated':{months:[7, 8, 9], why:'The 25-26 call closed 17 Sept 2025 with a €14,950 (+VAT) endowment per project, 3 projects, 12 months, international applicants explicitly welcome. Matadero\'s live convocatorias page currently lists \'Medialab Matadero — Situated Research Projects 2027\' with deadline 27 Sept 2026, 23:59. Annual September pattern.'},
-  'concentrico-logrono':{months:[10, 11, 12, 1], why:'Concéntrico 2026 ran 18-23 June in Logroño with three international open calls: \'Ephemeral Agents\' (existing-projects track closed 28 Nov 2025; speculative track 13 Jan 2026), \'Urban Ecologies\' (13 Jan 2026) and \'Identity and Fiction\' (13 Jan 2026). The pattern is calls announced ~Oct-Nov, closing mid-January, built in June.'},
-  'tac-valladolid':{months:[9, 10, 11], why:'27th edition ran 20-24 May 2026 with 194 performances by 44 companies and 4 world premieres; the 28th edition is already dated 19-23 May 2027 on the official site. No open call for companies is published on tacva.org — programming email is listed instead.'},
-  'lumina-cascais-ocubo':{months:[6, 7, 8], why:'The 2025 international video mapping open call opened 12 July 2025, closed 31 Aug 2025, selection announced 8 Sept, public vote result 22 Sept, €1,000 prize. The call recurs annually alongside the festival, which is produced each autumn in Cascais.'},
-  'prisma-aveiro':{months:[5, 6, 7], why:'First edition Oct 2021 (15-16 Oct, 18 sites, theme \'Equilíbrio\'), launched with an open call for video mapping creation and a second call for light works in public space; the festival returns each October as part of Aveiro Tech Week. Exact current-cycle call dates could not be confirmed — the municipal news pages returned only metadata.'},
-  'evora-2027-ecoc':{months:[9, 10, 11, 1], why:'Official open-calls page: \'Our Lab\' — the international call open to European and international artists/organisations outside Portugal — carried €2,000,000 and closed 31 Jan 2026; 34 projects from 19 countries were selected (RTP). The national \'Vagar Line\' call (€1M, 12 projects) closed 22 Mar 2026. Two community calls remain open until 07 Oct 2026 but are restricted to Évora / Alentejo Central residents.'},
-  'filux-mexico':{months:[6, 7, 8, 9], why:'Official site: founded 2013, editions 2013-2025 across five Mexican cities; the 2026 edition \'Solo la luz, primavera\' ran 20-29 March 2026 on Paseo de la Reforma, Mexico City. No open call is published anywhere on filux.info — programming is curator-led.'},
-  'cervantino-postulaciones':{months:[1, 2, 3, 4, 5, 6, 7], why:'Official postulaciones portal states proposals received before 31 July 2026 are considered for the 55th edition (2027) and later submissions for the 56th (2028); the 54th edition (Oct 2026) is already programmed with artists from 28 countries and France as guest country.'},
-  'mutek-mx':{months:[1, 2, 3, 11, 12], why:'Official MUTEK MX site shows the 20th edition completed and MUTEK MX 21 upcoming; venues include MUAC and Teatro de la Ciudad, with AV Live performances and long-run audiovisual exhibitions (e.g. Tim Hecker \'Wastelands\', 25 Apr – 27 Sept). A national open call (\'Frente Nacional\') existed for edition 19; no current international call was found on the MX site.'},
-  'file-sao-paulo':{months:[12, 1, 2], why:'FILE 2026 call for entries ran 19 Dec 2025 – 19 Feb 2026 (23:59), with the exhibition at Centro Cultural FIESP, São Paulo, 18 Aug – 11 Oct 2026. The December-to-February window repeats annually.'},
-  'festa-da-luz-bh':{months:[9, 10, 11], why:'5th edition ran 25-28 June 2026 (18:00-23:00) at Praça Rui Barbosa / Praça da Estação in central Belo Horizonte, theme \'O Brasil é América Latina\', with 12 artistic installations, a Latin American video mapping showcase curated by SSA Mapping, and international artists including Spectaculaires (France) and Ocote (Mexico). Organising body listed as Belotur. No edital found.'},
-  'riotur-editais':{months:[8, 9, 10], why:'Riotur\'s Editais e Avisos page carries rolling procurement notices: Réveillon 2024/2025 barge and fireworks equipment rentals, multiple Carnival 2025 production and logistics lots, and building services, each with an email submission route and a stated proposal window. Réveillon production notices historically appear in the second half of the year for the 31 December event. Rio\'s Réveillon 2026 included a large...'},
-  'bog27-bienal-bogota':{months:[7, 8, 9], why:'SCRD invitation page 1125 (\'Instalación Efímera In Situ\'): 3 awards of COP $110,000,000 each, closing 05-10-2026 17:00, results 20-11-2026. Companion calls: Bogotá Inédita (40 x COP $4M) and Intervenciones Barriales (4 x COP $40M), both closing 21-08-2026; Curadurías Independientes (COP $75-100M) closing 05-10-2026. Total COP 1,000 million across 51 incentives. Biennial takes place September-October 2027 with São...'},
-  'teatro-a-mil':{months:[3, 4, 5, 6], why:'Official postulación page for the 34th festival (January 2027, four cities) states the call is for performing-arts companies of Chilean nationals resident in Chile, open 08 Sept 2025 – 31 July 2026, judged by autonomous city juries. International programming is handled separately through the foundation\'s \'convenios internacionales\' and direct curation.'},
-  'hk-mega-arts-cultural-events-fund':{months:[2, 3, 6, 7, 10, 11], why:'Jan 2026 Guide to Application (fetched) states applications close at 6:00pm on the last working day of April, August and December each year. Last working day of Aug 2026 = Mon 31 Aug 2026; next round Dec 2026. Event must be at least 6 months after submission.'},
-  'hktb-procurement-supplier':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'HKTB procurement page (fetched Aug 2026) states suppliers must register by emailing supplier@hktb.com before bidding; tender notices are posted continuously on the e-Procurement platform with rolling close dates (examples seen: Global Creative Agency Services closing 9 Feb 2026, Chinese New Year Night Parade services closing Dec 2025).'},
-  'seoul-street-arts-festival':{months:[3, 4, 5], why:'SFAC English open call page (fetched) gives the 2026 cycle: applications closed 31 May 2026 24:00 KST, results 12 June 2026, festival 19–20 Sept 2026 at Han River Parks. Same spring-deadline / September-festival rhythm in prior editions, so a late-May 2027 close is the working assumption.'},
-  'tokyo-biennale-2027-social-dive':{months:[7, 8, 9], why:'Official socialdive.jp/en page fetched Aug 2026: applications close 30 September 2026, 23:59 JST; residency/production period 1 Oct – 11 Dec 2027.'},
-  'lcsd-festivals-office-hk':{months:[8, 9, 10, 11], why:'LCSD \'Arts Festivals under the Festivals Office\' page (fetched Aug 2026): proposals accepted on a rolling basis, must be submitted at least ten months before the target festival. Asia+ Festival runs Sept–Nov; International Arts Carnival runs July–Aug. Ten-month lead therefore means roughly Nov of the prior year for Asia+, and Sept of the prior year for the Carnival.'},
-  'sentosa-tender-notices':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'The July 2026 Greater Sentosa master plan announcement is the signal to act on — new icons and reimagined beaches means new nightly-attraction procurement in the 2026–28 window, and the island\'s recent history (Sensoryscape, the retired Wings of Time) shows it buys permanent, technology-driven, repeat-performance experiences rather than one-off festival pieces. That is a different product from a festival...'},
-  'digital-art-center-taipei':{months:[1, 2, 3, 4, 5], why:'Taiwan is the most accessible East Asian new-media ecosystem for a US artist — English-workable, publicly funded, and actively courting international participation through the city\'s Digital Arts Nexus programme and AIR Taipei residencies. DAC is small and reachable: a direct email to info@dac.taipei with documentation is realistically read, which is not true of larger Japanese or Korean institutions. Treat this...'},
-  'taoyuan-land-art-festival':{months:[12, 1, 2], why:'Official 2026 open-call PDF (fetched) gives submission deadline 23 February 2026 for a July–August 2026 exhibition. Annual festival; assuming a comparable late-February call close for the 2027 cycle. 2027 dates not yet published.'},
-  'ypam-yokohama':{months:[5, 6, 7, 8], why:'YPAM\'s official About page (fetched) confirms YPAM Fringe is \'an open-call festival that anyone can take part in\' but publishes no deadline. IETM reported YPAM2025 as the 30th edition running 28 Nov – 14 Dec 2025 with registration opening mid-year. Prior editions have opened Fringe registration around mid-year for a late-November start, so a late-summer 2026 registration window is inferred, not confirmed.'},
-  'pams-seoul':{months:[2, 3, 4], why:'KAMS English site (fetched) shows the pattern: \'[Open Call] PAMS Pitching for PAMS 2024\' posted 11 March 2024, results announced 25 April 2024, for an autumn market. The pams.or.kr 2026 site blocks automated fetching (robots.txt), so 2026/2027 dates could not be verified — the March window is inferred from the 2024 cycle only.'},
-  'bangkok-art-biennale':{months:[9, 10, 11, 12], why:'BAB 2026 open call page (fetched) confirms a performance open call under the theme \'Angels & Mara\' that closed 14 December 2025 — but it is restricted to \'performance artists of Southeast Asian nationalities only\'. Main-exhibition artists are curator-invited with no published call, so there is no open route for a US artist and no date to cite.'},
-  'serendipity-arts-foundation':{months:[3, 4, 5, 6], why:'serendipityarts.org/open-calls (fetched) confirms the Foundation is \'accepting applications from artists across various disciplines to participate in the Festival\' via written and video/audio Google Forms, but the page gates all deadline, eligibility and funding detail behind a free login, so none of it could be verified. Festival dates confirmed on the festival site as 13–20 December 2026 in Panjim, Goa.'},
-  'nordics-cee-001':{months:[7, 8], why:'Deadline, fee and production budget stated verbatim on the Liepāja2027 official open-call page, fetched 2026-08-25.'},
-  'nordics-cee-002':{months:[9, 10, 11, 1, 2], why:'Participation page fetched 2026-08-25 lists five live calls with 2026 deadlines and states EUR 352,793 recently allocated across nine supported projects; new calls are clearly being issued on a rolling basis through the run-up year.'},
-  'nordics-cee-003':{months:[4, 5], why:'Open-call page fetched 2026-08-25 shows the 2027-edition call with a 1 June 2026 deadline (now passed) and confirms the next festival as 22–24 January 2027; the festival has run an annual spring open call for a January edition for several years.'},
-  'nordics-cee-004':{months:[10, 11, 12, 1], why:'City of Oulu news page fetched 2026-08-25 gives the 2026 call deadline as 13 March 2026 16:00 and festival dates 19–22 November 2026; the call has opened in late January each year.'},
-  'nordics-cee-005':{months:[9, 10, 11], why:'Reykjavík city competition announcement fetched 2026-08-25: deadline 23 Nov 2025, two winners at ISK 1,000,000 each, festival 5–8 Feb 2026. The competition has been announced in successive years (2024 announcement for the 2025 edition also found).'},
-  'nordics-cee-006':{months:[12, 1, 2], why:'Open-call page fetched 2026-08-25: submission deadline 2 March 2026, results 15 April 2026, theme \'Marzenia\' (Dreams). An EU procurement notice covering LMF editions 2025–2028 confirms the festival is funded and contracted through 2028.'},
-  'nordics-cee-007':{months:[2, 3, 4], why:'Open-call site fetched 2026-08-25 still shows the 15th-edition call (deadline 12 May 2024, theme \'Overflow\') and the festival site still shows August 2024 dates — the public web presence has not been updated in two years, so current status genuinely cannot be confirmed.'},
-  'nordics-cee-008':{months:[2, 3, 4], why:'Nobel Prize Museum \'About\' page and Troika Art site both fetched 2026-08-25 — the museum confirms the festival \'invites both international and local artists\' and gives 2026 dates of 5–13 December, but neither site publishes an open call, submission route or budget. Curated by invitation.'},
-  'nordics-cee-009':{months:[3, 4, 5], why:'Info and contact pages fetched 2026-08-25. No open call or submission process is published anywhere on the site; the festival is curated. Contact details taken directly from the official contact page.'},
-  'nordics-cee-010':{months:[1, 2, 3, 4], why:'About page fetched 2026-08-25 gives contact and leadership but no live call. An archived On the Move listing confirms Fjord Oslo has run a genuine international open call in the past (2022 edition, deadline 4 May 2022, international applicants welcome) — so a call format exists but is not currently published.'},
-  'nordics-cee-011':{months:[10, 11, 12, 1], why:'TEKS open-call page fetched 2026-08-25: deadline 31 January 2025 for the 9th edition (\'Future Manifestos\', spring 2026). Biennale runs on a two-year cycle, so the next call should land around January 2027 for a 2028 edition.'},
-  'nordics-cee-012':{months:[10, 11, 12, 1], why:'WRO Art Center biennale page fetched 2026-08-25 confirms the 22nd edition, themed \'Friction\', with opening events 12–16 May 2027 and exhibitions through end of May 2027. No call is published yet; WRO has historically opened submissions in the winter preceding a May biennale.'},
-  'nordics-cee-014':{months:[11, 12, 1], why:'Official about page fetched 2026-08-25: confirms ARCUB as organiser, launch in 2015, 300,000+ annual visitors, and gives a general festival email. No open call or submission process is published.'},
-  'nordics-cee-015':{months:[10, 11, 12, 1], why:'Official \'About the Festival\' page fetched 2026-08-25: confirms organiser Strip Core / Forum Ljubljana, the 2026 edition running 26 May – 20 June, and the contact email. No open call or selection process is published.'},
-  'nordics-cee-016':{months:[6, 7, 8, 9, 10], why:'Zagreb festival page and the organisation\'s artist-call page both fetched 2026-08-25. The artist call is live with a submission email and technical rider requirement but publishes no deadline — it reads as a standing rolling call. The 2026 Zagreb edition ran 18–22 March with 26 installations at 21 locations, including ten international artists.'},
-  'nordics-cee-017':{months:[10, 11, 12, 1, 2], why:'Official FAQ/practical information page fetched 2026-08-25 states that artists should apply by email with a video link, country of origin and transport method, and that the festival \'announces open calls on an ad hoc basis, depending on the needs and programme objectives for a given year\'. The 17th edition ran 23–26 July 2026.'},
-  'nordics-cee-018':{months:[9, 10, 11, 12], why:'Festival about page and full contacts page both fetched 2026-08-25. Contacts, roles and emails are published directly on the official site. No open call is published — programming is by curatorial invitation. 2024 edition: 254 performances over 19 days, 65,000 spectators.'},
-  'nordics-cee-020':{months:[1, 2, 3], why:'Official site fetched 2026-08-25: confirms the 2026 edition ran 3–7 June, that the 2027 edition is in preparation with details marked \'COMING SOON\', and that the festival is organised by MEZO with Ministry of Culture and Tourism support, founded 2020 by Dr Nabat Garakhanova. No call, deadline or contact email could be verified — the /en/contact/ path returns 404.'},
-  'us-pdxwlf-2027':{months:[6, 7, 8], why:'Official call page states applications close 5PM August 28, 2026; festival Feb 5–13, 2027; theme \'In Other Words\'; acceptances notified Oct 19–30, 2026.'},
-  'us-canal-convergence-scottsdale':{months:[2, 3, 4], why:'Official Scottsdale Arts page states the 2026 RFP is closed and that \'the RFP typically opens between February and March.\' Third-party listing (artdeadline.com) for the 2026 cycle recorded a Phase I deadline of April 9, 2026 and budgets of $5,000–$35,000 USD, festival Nov 6–15, 2026, no application fee.'},
-  'us-creek-show-austin':{months:[2, 3, 4], why:'Official Waterloo Greenway announcement for Creek Show 2026 lists a submission deadline of midnight Friday April 17, 2026, exhibition Nov 13–21, 2026, and a $20,000 installation budget. Prior editions (2022, 2023) followed the same spring-call / November-show pattern.'},
-  'us-maaa-artistic-innovations':{months:[7, 8, 9], why:'Official M-AAA program page: deadline September 24, 2026 at 5:00 p.m. CT; project period Jan 1 – Jun 30, 2027; up to $15,000; individual artists eligible with no cost share.'},
-  'us-maaa-regional-touring':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Official M-AAA program page: rolling applications July 1, 2026 – June 30, 2027 for projects in that same period; up to $5,000; presenters apply, not artists.'},
-  'us-npn-creation-development-fund':{months:[1, 2, 3, 4, 5], why:'Official NPN program page: Spring 2026 Creation Fund deadline was May 18, 2026 for projects premiering Jan 1, 2027 – Dec 31, 2029. Development Fund is rolling (apply 60+ days before activity). Next Creation Fund cycle date not yet posted — predicted from the spring pattern.'},
-  'us-aurora-dallas':{months:[11, 12, 1], why:'Official site confirms AURORA Biennial Nov 1–21, 2026 and Video Art Night Apr 17 (Dallas) & Jun 12 (Denton) 2026. TCA-hosted open call confirms the Video Art Night 2026 call closed Jan 30, 2026, US-based artists 18+, contact corey@dallasaurora.com. Next-cycle deadline predicted from that pattern.'},
-  'us-luminaria-san-antonio':{months:[3, 4, 5], why:'Official site confirms the 2026 festival is Saturday Nov 14, 2026 on Houston Street, downtown San Antonio, and that the 2026 Open Call for Artists is closed. No next-cycle date is posted; the predicted date is a low-confidence inference from a November festival needing a spring call.'},
-  'ca-lumiere-vancouver':{months:[5, 6, 7], why:'Official artist submission page states a July 30, 2026 submission deadline and lists five budget tiers from Spark ($500–$1,999) to Beacon ($20,000+). Prior edition ran Nov 13–16, 2025. Next-cycle deadline predicted from the same July pattern.'},
-  'ca-winter-stations-toronto':{months:[9, 10, 11], why:'Official competition page (retrieved) describes the cycle with theme \'Monument\' and a deadline of November 3 at 11:59pm EST; free to enter; 4–6 winning proposals; budgets of $5,000 CAD materials + $10,000 CAD labour + $2,000 CAD honorarium (winners) / $500 CAD (runners-up); contact info@winterstations.com. The annual early-November deadline is a stable multi-year pattern.'},
-  'us-art-on-themart':{months:[1, 2, 3, 9, 10], why:'Official site shows an active 2026 commissioning slate (Wills Glasspiegel & Alan Medina Jul 2–Sep 6, 2026; Argonne National Laboratory & EVL and the Adler Planetarium Sep 10–Nov 15, 2026; Joffrey Ballet Nutcracker Nov 19–Dec 27, 2026) but publishes NO open call. An archived RFQ listing documents the historic commission structure: $10,000 on delivery of approved artwork, $1,000 to artists invited to the proposal...'},
-  'us-luna-fete-nola':{months:[1, 2, 3], why:'Official site confirms the 12th edition runs Nov 13–15, 2026 in downtown New Orleans (Gallier Hall to Piazza d\'Italia) and names Joycelyn Reynolds as Arts New Orleans President & CEO. No artist call or fee information is published; the festival was postponed from 2025 to 2026 amid funding shifts, per multiple local news outlets.'},
-  'us-illuminus-boston':{months:[2, 3, 4, 5], why:'Official ILLUMINUS About page: founded 2014, 200,000+ visitors, 350+ artists supported, 250+ site-specific installations, neighborhood activations in Roxbury and Dorchester; no open call published, only an \'INQUIRE\' form. Partner org LuminArtz names Lyn Burke (Director), Jeff Grantz (Founder & Executive Director), Vanessa Till Hooper (Creative Director).'},
-  'us-night-lights-denver':{months:[1, 2, 3, 9], why:'Denver Digerati\'s official site describes the org as a non-profit for digital motion art and animation offering \'classes, commissions, and awards to artists\', lists Residencies and the Supernova Digital Animation Festival as programs, and gives info@denverdigerati.org / 720-352-7389. The Night Lights Denver 2024 page confirms a commissioned cohort (Chanee Choi, Dev Harlan, Iván Casís Jr., Nero Chenxuan He,...'},
-  'us-borealis-seattle':{months:[4, 5, 6, 7], why:'Official festival page: produced by Sea-King Media Group, a 501(c)3; inaugural edition 2018 drew \'over 120,000 people\'; showcases projection mapping and light art; winners have gone on to be featured at international competitions including iMapp in Romania. No dates, artist call, fee schedule or email are published — only a contact form.'},
-  'us-buffalo-bayou-cistern':{months:[1, 4, 7, 10], why:'Official Cistern page states \'Local and national advisors assist Buffalo Bayou Partnership in developing programming\' and that ideas and suggestions for artistic programming may be submitted to publicart@buffalobayou.org, reviewed QUARTERLY with 30–90 day response times. General org contact info@buffalobayou.org; admin office 1019 Commerce St, Suite 200, Houston.'},
-  'us-area15-vegas':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Official AREA15 art exhibitions page publishes curator@area15.com, framed for purchase/rental of installations (\'Contact our curator to learn more about bringing a piece of the extraordinary to your space\'). No formal artist submission process is published. General contact at area15.com/contact.'},
-  'us-superblue-miami':{months:[9, 10, 11], why:'Official site: 50,000+ sq ft immersive art venue at 1101 NW 23 St, Miami; phone 1-786-697-3405; currently featuring Es Devlin, Studio Lemercier, James Turrell, Random International, teamLab, Rafael Lozano-Hemmer and JR. No artist submission process, commission terms or email address are published on the site.'},
-  'us-wonderspaces':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Official Wonderspaces Arizona site confirms venue at Scottsdale Fashion Square (7014 E Camelback Rd, Suite 584), publishes hello-az@wonderspaces.com for inquiries and a partnerships anchor on its contact page. wonderspaces.com redirects to the Arizona location site. No dedicated artist submission page was found and no artist terms are published.'},
-  'us-no-vacancy-miami-beach':{months:[3, 4, 5], why:'Official City of Miami Beach page: each selected artist receives $10,000 to create site-specific work at an assigned hotel; $35,000 total in prizes ($10,000 Public Prize from the Greater Miami Convention & Visitors Bureau, $25,000 Juried Prize); 2026 installations on view Nov 12 – Dec 19, 2026; applications via the city\'s Submittable platform; contact 305.673.7577 / FernandoPestana@miamibeachfl.gov. Submission...'},
-  'us-miamidade-public-art':{months:[1, 4, 7, 10], why:'Official Miami-Dade public art commissions page confirms an active commissioning program (upcoming: Hugh Hayden at MSC Cruise Terminal PortMiami; Edouard Duval-Carrié at the Civil and Probate Courthouse) and directs artists to a dedicated Calls to Artists page. Contact PublicArt@miamidade.gov, 305-375-4634. Individual open calls with budgets and deadlines were not enumerated on the page retrieved.'},
-  'us-sxsw-xr-experience':{months:[9, 10, 11], why:'Official SXSW Exhibitions page confirms SXSW 2027 runs March 15–19, 2027 in Austin, lists Expo, Flatstock and XR Experience as exhibition programs, and states 30 XR projects will be accepted for 2027. An XR Experience application product page exists at cart.sxsw.com/products/filmapp-vr. The exhibitions page publishes no deadline, no fee and no compensation information, and the art-application product page...'},
-  'us-virgin-voyages-entertainment':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Official Virgin Voyages entertainment site states it is \'currently accepting submissions for the roles below\', with an auditions page and a submissions page. Retrieved page highlighted \'Happenings\' talent; the casting site references singers, dancers, comedic hosts and specialty acts. No compensation details, contact email or specialty-act specifics were published on the submissions page.'},
-  'us-esbd-texas':{months:[9, 10, 11, 12, 1], why:'The Texas Department of Information Resources publishes an ESBD resource item and a \'Navigating the Electronic State Business Daily (ESBD) Bid Opportunities\' guidance event, confirming the ESBD as the state\'s official bid-posting portal, hosted at txsmartbuy.gov/esbd. The ESBD site itself blocks automated retrieval (robots.txt), so posting volume, registration mechanics and vendor cost could NOT be directly verified.'},
-  'us-cafe-callforentry':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Structurally the most important omission from the tracked list: several already-tracked targets and most of the US city public art programs in this brief funnel their applications through CaFÉ, so a maintained CaFÉ portfolio is prerequisite infrastructure rather than one more opportunity. Build the profile once with sphere, Singularity and StarBalancer documentation, then set saved searches for \'temporary\',...'},
-  'culture-creative-artists-call':{months:[1, 2, 3, 4], why:'Verified on 25 Aug 2026: the Artists Call page states the deadline for 2026 proposals has closed but artists may still email work for future consideration. Exact opening/closing dates for the 2027 round are not published, so the predicted deadline is inferred from the 9-14 month seasonal buying cycle (trails installed Nov-Jan are contracted the preceding winter/spring).'},
-  'rg-live-light-trails':{months:[1, 2, 3, 4], why:'Verified on 25 Aug 2026 via rg.live and Kew\'s own 2026 press release: RG Live (a division of Sony Music, trading as Raymond Gubbay Limited) co-produces Christmas at Kew with Culture Creative. No public artist open call exists; commissioning is by direct approach.'},
-  'enchant-christmas-entertainment':{months:[2, 3, 4, 5, 6], why:'Verified 25 Aug 2026 on enchantchristmas.com and their help desk: 2026 runs 20 Nov - 27 Dec at four US sites; the help desk lists a dedicated Performers & Entertainment intake requiring video clips, resume, references and salary requirements. The email address itself was masked by the page renderer — see warning.'},
-  'luminocity-lumis-lab':{months:[1, 2, 3, 4], why:'Verified 25 Aug 2026 on luminocityfestival.com/about: LuminoCity Inc., founded 2018, operates 16 venues across 8 US states and runs an artist collaboration initiative called \'Lumi\'s Lab\' with named artist partners (Jocelyn Tsai, Chiaozza). A search for a public Lumi\'s Lab open call returned nothing — the collaboration route appears to be by direct approach, so treat it as no-call/rolling.'},
-  'tait-thinkwell':{months:[1, 2, 3, 9, 10, 11], why:'This is the highest-leverage single relationship in the whole territory: TAIT is simultaneously a kinetic-object fabricator (relevant to the kinetic light object in development), a show designer via Thinkwell (relevant to drone/aerial spectaculars) and a route into Disney/Universal/Merlin projects as a tier-1 vendor. The realistic entry is in person — TAIT exhibits at both IAAPA Expo and LDI, and TAIT people run...'},
-  'universal-udx-procurement':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified 25 Aug 2026: the Universal Creative page on corporate.universaldestinationsandexperiences.com carries a \'Suppliers & Business Partners\' link resolving to the email UDXProcurement@uniparks.com.'},
-  'merlin-new-business':{months:[1, 2, 3, 9, 10], why:'Verified 25 Aug 2026: merlinentertainments.biz/supplier-registration-form is in fact a \'New business development\' page describing partnership structures (fully owned, JV, management contract, franchise, licensing, acquisition) and routing all enquiries to the general Contact Us form. There is NO standalone supplier registration form despite the URL slug.'},
-  'dollywood-contracted-entertainment':{months:[1, 2, 3, 4, 5], why:'The realistic fit here is the aerial/LED-costume act at Smoky Mountain Christmas, not the sphere. Herschend is a family-owned operator that repeat-books acts it likes for years — a single successful season becomes recurring revenue, which is unusually valuable for a two-person team. Silver Dollar City runs a parallel entertainment department; a single approach can be pitched to both under the Herschend umbrella.'},
-  'sky-elements-drones':{months:[1, 2, 3, 4, 9, 10], why:'The most actionable partnership in the whole list because of geography: same metro region as Austin, so joint site visits and rehearsals are cheap. The pitch writes itself — Singularity\'s acrobats and LED costuming turn their sky-only show into a ground-plus-air spectacle, letting them upsell existing clients without buying new capability. Approach as a revenue-add for their sales team, with a fixed per-show...'},
-  'nova-sky-stories':{months:[1, 2, 3, 4, 9, 10], why:'Verified 25 Aug 2026: novaskystories.com/contact-us/ is a live inquiry form (\'Contact us to launch your Sky Story\') collecting name, company, location and project details. NO public email address is published — the form is the only route. Backed by Kimbal Musk with investment from Jeffrey Katzenberg/WndrCo (Variety, businesswire, Aug 2025).'},
-  'pixmob':{months:[1, 2, 3, 4, 9, 10], why:'Verified 25 Aug 2026 on pixmob.com/contact: address 103 rue de Louvain Ouest, Montreal QC H2N 1A3, phone 514 510-5777, contact form only; they explicitly decline personal/small private events. No public partnership email published.'},
-  'hovercraft-studio':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified 25 Aug 2026 on hovercraftstudio.com/contact: new business/partnerships biz@hovercraftstudio.com, general hello@hovercraftstudio.com, HQ 2859 Umatilla St, Denver CO 80215, plus LA, NY, Portland and London offices.'},
-  'local-projects':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified 25 Aug 2026 on localprojects.com/contact: info@localprojects.com, jobs@localprojects.com, 123 William Street Suite 801, New York NY 10038, phone 212.480.0479; now part of MTM.'},
-  'outernet-london':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified 25 Aug 2026 on outernet.com/contact: address 19 Denmark Street, London WC2H 8NE; phone 0204 526 7000; a B2B route at outernet.com/b2b for advertising, partnerships and venue hire; separate venue enquiries for HERE at Outernet and The Lower Third. Public email addresses on the page were masked by the site — see warning.'},
-  'iaapa-expo-2026':{months:[8, 9, 10], why:'Verified 25 Aug 2026 on iaapa.org: IAAPA Expo 2026 runs Education 16-19 Nov and Show Floor 17-20 Nov 2026 at the Orange County Convention Center, Orlando. Registration is open; 1,100+ exhibitors and 170+ education sessions. Booth pricing is quoted via their own calculator (linked from the site) — I did not confirm a specific rate.'},
-  'tea-membership':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'The member directory is the practical asset — it gives named contacts at exactly the studios and operators that are otherwise gated behind info@ addresses. TEA also runs mixers and behind-the-scenes tours where the actual introductions happen, and its SATE conference is where nighttime-spectacular producers speak. Combine with IAAPA Expo (TEA has a presence there) for a single November trip that covers both. Join...'},
-  'ldi-show-2026':{months:[3, 4, 5, 6], why:'Verified 25 Aug 2026 on ldishow.com/ldishowcom/show-overview: Pro Training 2-8 December 2026, Expo 6-8 December 2026, Las Vegas Convention Center West Hall; 300+ vendors, 215+ speakers, 14,000+ attendees from 76+ countries.'},
-  'ilea-austin':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified 25 Aug 2026 on ileahub.com/joinilea: Annual Membership $375, Annual Student Membership $50, valid one year from join date; membership explicitly open to entertainers; info@ileahub.com, 571.685.8010, 400 E. Randolph St. Suite 315, Chicago IL 60601. An Austin chapter exists at ileaaustin.com.'},
-  'uk-lightpool-festival':{months:[1, 2, 3, 4], why:'Site confirms 2026 festival runs 21–31 Oct 2026 and that the 2026 Open Call, Lucent, Tower Projection, Wedding Chapel Projection, Digilab, SHINE and SPARK strands are all now CLOSED. No published date for the 2027 cycle; spring window inferred from a late-October festival needing summer pre-production.'},
-  'uk-light-up-the-north':{months:[2, 3, 4, 5], why:'Site visited and verified: LUTN describes itself as a network founded 2014, now listing 16 Northern English light festivals, explicitly working on \'international partnerships\' and touring commissions.'},
-  'uk-bristol-light-festival':{months:[4, 5, 6], why:'Call-for-artists page visited: the 2027 callout closed 8 June 2026 at noon, festival runs 18–27 Feb 2027, and the page itself states the next open call is expected spring 2027. The festival has run an annual spring callout for a February festival across multiple editions, so an early-June 2027 deadline for the 2028 edition is a strong pattern read.'},
-  'uk-out-there-arts':{months:[9, 10, 11, 12], why:'Both the festival page and professional programme page visited. Confirmed: 2026 festival 28–30 May 2026, 2027 festival 3–5 June 2027, 60,000+ audience, 40+ shows, Arts Council England NPO. No public open call is published — programming is by direct invitation/scouting.'},
-  'uk-outdoor-arts-uk':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Site visited: membership is open on a rolling basis with a published join page. Membership benefits confirmed on site include a digital brochure of bookable shows, a member directory, festival/performance listings, regional meetings, webinars and discounted professional events.'},
-  'uk-freedom-festival-hull':{months:[10, 11, 12, 1], why:'Site visited. Confirmed 2025 impact metrics published on the homepage: 60,000+ audience, 148 performances, 250 community participants, 9 countries represented. An \'Opportunities\' section exists but current listings are community-cast callouts, not company programming calls.'},
-  'uk-river-of-light-liverpool':{months:[1, 2, 3, 4, 5], why:'Culture Liverpool page visited: 2026 edition confirmed 23 Oct – 1 Nov 2026, described as \'an outdoor illuminated gallery on Liverpool Waterfront, featuring light and sound from local, national and international artists.\' Page explicitly states \'more information coming soon\' and publishes no open call or EOI.'},
-  'uk-factory-international':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Contact page visited and verified: Factory International accepts unsolicited project proposals by email, reviews them twice monthly, and commits to responding within 8 weeks. Verbatim from the site: \'While there are a lot more proposals than we can support, we review every proposal that meets our guidelines for ambitious new work.\''},
-  'uk-sirf-stockton':{months:[9, 10, 11, 12], why:'Site visited: SIRF runs annually in early August, is organised by Stockton-on-Tees Borough Council with Arts Council England support, celebrated its 39th year in 2026 (founded 1988), and publishes no artist submission process. Contact page confirmed to carry phone numbers and a form only — no email address.'},
-  'ie-galway-international-arts-festival':{months:[10, 11, 12, 1], why:'Submissions page visited: GIAF runs a formal annual submissions round, currently showing the last cycle as closed. Verbatim from the site: \'a curated Festival and participation is by invitation only with submissions and projects selected by the Festival\'s Artistic Director.\' 2026 festival dates confirmed as 13–26 July 2026. The next submissions window is NOT published — the autumn prediction is a low-confidence...'},
-  'uk-edinburghs-hogmanay':{months:[2, 3, 4, 5], why:'Site visited: edinburghshogmanay.com now redirects to edwinterfest.com/hogmanay, which states \'Created & Produced by Unique Assembly Ltd.\' with Edinburgh City Council as Principal Funding Partner. No open call is published. Contact page confirmed to carry a press email and a general form only.'},
-  'sa-etimad-procurement':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Verified via procurement guidance sources. Confirmed: etimad.sa is the official Saudi government e-procurement portal; it is free to search and register; it publishes public tenders (open competition, contracts above SAR 500,000), limited tenders, direct purchase framework agreements, reverse auctions and contract awards. Foreign vendors CAN register and bid, with conditions.'},
-  'sa-sela-riyadh-season':{months:[1, 2, 3, 4, 5, 6], why:'Site visited and verified: Sela produces Riyadh Season (stated as attracting over 8 million visitors), Jeddah Season (multiple entertainment zones), the Jeddah Superdome, and Outlet 2022 (145,000 sqm). Services confirmed as event management, experience creation and media production. No open call exists — the site runs a \'Let\'s Connect\' business-development contact route only.'},
-  'ae-sharjah-art-foundation-opencalls':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], why:'Listing page visited and verified. SAF publishes a monthly compilation of \'arts and culture opportunities in the UAE and beyond,\' combining its own calls with curated external ones. The August 2026 edition listed 11 opportunities with deadlines. Contact confirmed: info@sharjahart.org, +971 6 548 1381.'},
-  'sa-diriyah-biennale-foundation':{months:[3, 4, 5, 6], why:'Site visited: the Foundation runs two biennales — the Diriyah Contemporary Art Biennale (JAX District, Diriyah/Riyadh) and the Islamic Arts Biennale (Western Hajj Terminal, Jeddah). The 2026 Diriyah Contemporary Art Biennale is confirmed as 30 January – 2 May 2026. Artist lists are announced by the curatorial team; no open call process is published on the site.'},
-  'qa-qatar-museums-public-art':{months:[9, 10, 11], why:'Worth tracking but requires manual verification: open the qm.org.qa Competitions & Open Calls hub in a real browser, because the JS gate defeats automated checks and this is exactly the kind of page that will not surface in Western aggregators. The temporary public art strand appears to be emerging-artist oriented, so the higher-value route is Qatar\'s event-side commissioning (Qatar National Day, Doha waterfront...'},
-  'za-ica-live-art-festival':{months:[1, 2, 3, 4], why:'The honest read: this is a low-money, high-credibility entry that opens the African continent. The call welcomes \'artists, performers and interdisciplinary practitioners,\' emerging and established, and states no explicit geographic restriction — though the festival historically programmes from across Africa and the Global South, so a US company is swimming against the curatorial current and should lead with...'},
-  'eg-art-degypte-forever-is-now':{months:[2, 3, 4, 5], why:'Site visited and verified: Forever Is Now .05 ran 11 Nov – 6 Dec 2025; Forever Is Now 06 is confirmed for 4–28 November 2026. Founded and run by Nadine Abdel Ghaffar, French-Egyptian curator. Contact confirmed as info@artdegypte.com. The site does NOT publish an open call — selection process is curator-led.'},
+  'llum-bcn':{months:[4, 5, 6, 9], label:'Apr-Sep', why:'Llum BCN — Festival d\'Arts Lumíniques publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'luzmadrid':{months:[4, 5, 6], label:'Apr-Jun', why:'LuzMadrid — Festival Internacional de Luz de Madrid publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'medialab-matadero-situated':{months:[7, 8, 9], label:'Jul-Sep', why:'Medialab Matadero — Situated Research Residency has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'concentrico-logrono':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Concéntrico — International Festival of Architecture and Design has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'tac-valladolid':{months:[9, 10, 11], label:'Sep-Nov', why:'TAC — Festival Internacional de Teatro y Artes de Calle de Valladolid publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lumina-cascais-ocubo':{months:[6, 7, 8], label:'Jun-Aug', why:'LUMINA Festival da Luz — International Video Mapping Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for June\u2013August: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'prisma-aveiro':{months:[5, 6, 7], label:'May-Jul', why:'PRISMA — Art Light Tech has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for May\u2013July: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'evora-2027-ecoc':{months:[9, 10, 11, 1], label:'Sep-Jan', why:'Évora 2027 — European Capital of Culture has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'filux-mexico':{months:[6, 7, 8, 9], label:'Jun-Sep', why:'FILUX — Festival Internacional de la Luz publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for June\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'cervantino-postulaciones':{months:[1, 2, 3, 4, 5, 6, 7], label:'Jan-Jul', why:'Festival Internacional Cervantino — Sistema de Recepción de Postulaciones has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013July: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'mutek-mx':{months:[1, 2, 3, 11, 12], label:'Jan-Dec', why:'MUTEK MX publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'file-sao-paulo':{months:[12, 1, 2], label:'Dec-Feb', why:'FILE — Electronic Language International Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for December\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'festa-da-luz-bh':{months:[9, 10, 11], label:'Sep-Nov', why:'Festa da Luz publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'riotur-editais':{months:[8, 9, 10], label:'Aug-Oct', why:'Riotur — Editais e Avisos (Réveillon and Carnival production tenders) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for August\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'bog27-bienal-bogota':{months:[7, 8, 9], label:'Jul-Sep', why:'BOG27 — Bienal Internacional de Arte y Ciudad de Bogotá has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'teatro-a-mil':{months:[3, 4, 5, 6], label:'Mar-Jun', why:'Festival Internacional Teatro a Mil (Santiago a Mil) publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'hk-mega-arts-cultural-events-fund':{months:[2, 3, 6, 7, 10, 11], label:'Feb-Nov', why:'Mega Arts and Cultural Events Fund has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'hktb-procurement-supplier':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Hong Kong Tourism Board — Supplier Registration & Event Tenders has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'seoul-street-arts-festival':{months:[3, 4, 5], label:'Mar-May', why:'Seoul Street Arts Festival — International Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'tokyo-biennale-2027-social-dive':{months:[7, 8, 9], label:'Jul-Sep', why:'Tokyo Biennale 2027 "SOCIAL DIVE" — Open Call for Artists/Curators has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lcsd-festivals-office-hk':{months:[8, 9, 10, 11], label:'Aug-Nov', why:'LCSD Festivals Office — Programme Proposals (Asia+ Festival, International Arts Carnival) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for August\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'sentosa-tender-notices':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'The July 2026 Greater Sentosa master plan announcement is the signal to act on — new icons and reimagined beaches means new nightly-attraction procurement in the 2026–28 window, and the island\'s recent history (Sensoryscape, the retired Wings of Time) shows it buys permanent, technology-driven, repeat-performance experiences rather than one-off festival pieces. That is a different product from a festival...'},
+  'digital-art-center-taipei':{months:[1, 2, 3, 4, 5], label:'Jan-May', why:'Taiwan is the most accessible East Asian new-media ecosystem for a US artist — English-workable, publicly funded, and actively courting international participation through the city\'s Digital Arts Nexus programme and AIR Taipei residencies. DAC is small and reachable: a direct email to info@dac.taipei with documentation is realistically read, which is not true of larger Japanese or Korean institutions. Treat this...'},
+  'taoyuan-land-art-festival':{months:[12, 1, 2], label:'Dec-Feb', why:'Taoyuan Land Art Festival — Open Call for Artists has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for December\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ypam-yokohama':{months:[5, 6, 7, 8], label:'May-Aug', why:'YPAM — Yokohama International Performing Arts Meeting (Fringe & Exchange) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for May\u2013August: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'pams-seoul':{months:[2, 3, 4], label:'Feb-Apr', why:'PAMS — Performing Arts Market in Seoul has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'bangkok-art-biennale':{months:[9, 10, 11, 12], label:'Sep-Dec', why:'Bangkok Art Biennale (BAB) publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'serendipity-arts-foundation':{months:[3, 4, 5, 6], label:'Mar-Jun', why:'Serendipity Arts Festival — Open Calls has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'atmospheric-waves-open':{months:[7, 8], label:'Jul-Aug', why:'Atmospheric Waves — Open Call for Artists (Liepāja 2027) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013August: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'liepaja-2027-european':{months:[9, 10, 11, 1, 2], label:'Sep-Feb', why:'Liepāja 2027 — European Capital of Culture (commissioning office) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'vilnius-light-open':{months:[4, 5], label:'Apr-May', why:'Vilnius Light Festival — Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lumo-light-oulu':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Lumo Light Festival Oulu — Call for Proposals has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'reykjavik-winter-lights':{months:[9, 10, 11], label:'Sep-Nov', why:'Reykjavík Winter Lights Festival — Light Art Competition has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'light-move-lmf':{months:[12, 1, 2], label:'Dec-Feb', why:'Light.Move.Festival (LMF) Łódź — Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for December\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'bella-skyway-open':{months:[2, 3, 4], label:'Feb-Apr', why:'Bella Skyway Festival — Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'nobel-week-lights':{months:[2, 3, 4], label:'Feb-Apr', why:'Nobel Week Lights Stockholm publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lux-helsinki':{months:[3, 4, 5], label:'Mar-May', why:'Lux Helsinki publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'fjord-oslo-light':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'Fjord Oslo — Light Art Festival publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'meta-morf-trondheim':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Meta.Morf — Trondheim International Biennale for Art & Technology has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'wro-media-art':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'WRO Media Art Biennale 2027 — \'Friction\' has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'spotlight-festivalul-al':{months:[11, 12, 1], label:'Nov-Jan', why:'Spotlight — Festivalul Internațional al Luminii publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for November\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lighting-guerrilla-svetlobna':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Lighting Guerrilla (Svetlobna gverila) publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'lights-zagreb-artist':{months:[6, 7, 8, 9, 10], label:'Jun-Oct', why:'Festival of Lights Zagreb — Artist Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for June\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'carnaval-sztukmistrzow-carnival':{months:[10, 11, 12, 1, 2], label:'Oct-Feb', why:'Carnaval Sztukmistrzów (Carnival of Magicians) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'letni-letna-contemporary':{months:[9, 10, 11, 12], label:'Sep-Dec', why:'Letní Letná — International Festival of Contemporary Circus and Theatre publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'istanbul-digital-art':{months:[1, 2, 3], label:'Jan-Mar', why:'Istanbul Digital Art Festival (IDAF) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013March: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-pdxwlf-2027':{months:[6, 7, 8], label:'Jun-Aug', why:'Portland Winter Light Festival 2027 — Call for Art & Performance has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for June\u2013August: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-canal-convergence-scottsdale':{months:[2, 3, 4], label:'Feb-Apr', why:'Canal Convergence — Request for Temporary Public Art Proposals has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-creek-show-austin':{months:[2, 3, 4], label:'Feb-Apr', why:'Creek Show (Waterloo Greenway) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-maaa-artistic-innovations':{months:[7, 8, 9], label:'Jul-Sep', why:'Artistic Innovations Grant has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-maaa-regional-touring':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Regional Touring Program (RTP) Grants has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-npn-creation-development-fund':{months:[1, 2, 3, 4, 5], label:'Jan-May', why:'Creation & Development Fund has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-aurora-dallas':{months:[11, 12, 1], label:'Nov-Jan', why:'AURORA Dallas — Biennial & Video Art Night has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for November\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-luminaria-san-antonio':{months:[3, 4, 5], label:'Mar-May', why:'Luminaria Contemporary Arts Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ca-lumiere-vancouver':{months:[5, 6, 7], label:'May-Jul', why:'Lumière Festival Vancouver — Artist Submission has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for May\u2013July: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ca-winter-stations-toronto':{months:[9, 10, 11], label:'Sep-Nov', why:'Winter Stations International Design Competition has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-art-on-themart':{months:[1, 2, 3, 9, 10], label:'Jan-Oct', why:'ART on THE MART publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-luna-fete-nola':{months:[1, 2, 3], label:'Jan-Mar', why:'LUNA Fête publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013March: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-illuminus-boston':{months:[2, 3, 4, 5], label:'Feb-May', why:'ILLUMINUS publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-night-lights-denver':{months:[1, 2, 3, 9], label:'Jan-Sep', why:'Night Lights Denver publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-borealis-seattle':{months:[4, 5, 6, 7], label:'Apr-Jul', why:'BOREALIS: A Festival of Light publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013July: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-buffalo-bayou-cistern':{months:[1, 4, 7, 10], label:'Jan-Oct', why:'Buffalo Bayou Park Cistern — Art Commissions publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-area15-vegas':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'AREA15 publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-superblue-miami':{months:[9, 10, 11], label:'Sep-Nov', why:'Superblue Miami publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-wonderspaces':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Wonderspaces publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-no-vacancy-miami-beach':{months:[3, 4, 5], label:'Mar-May', why:'No Vacancy, Miami Beach has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-miamidade-public-art':{months:[1, 4, 7, 10], label:'Jan-Oct', why:'Art in Public Places — Calls to Artists has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-sxsw-xr-experience':{months:[9, 10, 11], label:'Sep-Nov', why:'Official SXSW Exhibitions page confirms SXSW 2027 runs March 15–19, 2027 in Austin, lists Expo, Flatstock and XR Experience as exhibition programs, and states 30 XR projects will be accepted for 2027. An XR Experience application product page exists at cart.sxsw.com/products/filmapp-vr. The exhibitions page publishes no deadline, no fee and no compensation information, and the art-application product page...'},
+  'us-virgin-voyages-entertainment':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Virgin Voyages Entertainment — Submissions has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-esbd-texas':{months:[9, 10, 11, 12, 1], label:'Sep-Jan', why:'Electronic State Business Daily (ESBD) / TxSmartBuy has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'us-cafe-callforentry':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Structurally the most important omission from the tracked list: several already-tracked targets and most of the US city public art programs in this brief funnel their applications through CaFÉ, so a maintained CaFÉ portfolio is prerequisite infrastructure rather than one more opportunity. Build the profile once with sphere, Singularity and StarBalancer documentation, then set saved searches for \'temporary\',...'},
+  'culture-creative-artists-call':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'Artists Call — illuminated trail commissions has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'rg-live-light-trails':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'RG Live — light trails & immersive commissions publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'enchant-christmas-entertainment':{months:[2, 3, 4, 5, 6], label:'Feb-Jun', why:'Enchant Christmas — performers & entertainment booking has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'luminocity-lumis-lab':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'LuminoCity Festival — artist collaboration (Lumi\'s Lab) publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'tait-thinkwell':{months:[1, 2, 3, 9, 10, 11], label:'Jan-Nov', why:'This is the highest-leverage single relationship in the whole territory: TAIT is simultaneously a kinetic-object fabricator (relevant to the kinetic light object in development), a show designer via Thinkwell (relevant to drone/aerial spectaculars) and a route into Disney/Universal/Merlin projects as a tier-1 vendor. The realistic entry is in person — TAIT exhibits at both IAAPA Expo and LDI, and TAIT people run...'},
+  'universal-udx-procurement':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Universal Destinations & Experiences — Suppliers & Business Partners has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'merlin-new-business':{months:[1, 2, 3, 9, 10], label:'Jan-Oct', why:'Merlin Entertainments — new business & partnerships has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'dollywood-contracted-entertainment':{months:[1, 2, 3, 4, 5], label:'Jan-May', why:'The realistic fit here is the aerial/LED-costume act at Smoky Mountain Christmas, not the sphere. Herschend is a family-owned operator that repeat-books acts it likes for years — a single successful season becomes recurring revenue, which is unusually valuable for a two-person team. Silver Dollar City runs a parallel entertainment department; a single approach can be pitched to both under the Herschend umbrella.'},
+  'sky-elements-drones':{months:[1, 2, 3, 4, 9, 10], label:'Jan-Oct', why:'The most actionable partnership in the whole list because of geography: same metro region as Austin, so joint site visits and rehearsals are cheap. The pitch writes itself — Singularity\'s acrobats and LED costuming turn their sky-only show into a ground-plus-air spectacle, letting them upsell existing clients without buying new capability. Approach as a revenue-add for their sales team, with a fixed per-show...'},
+  'nova-sky-stories':{months:[1, 2, 3, 4, 9, 10], label:'Jan-Oct', why:'Nova Sky Stories — creative collaboration publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'pixmob':{months:[1, 2, 3, 4, 9, 10], label:'Jan-Oct', why:'PixMob — audience LED collaboration publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'hovercraft-studio':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Hovercraft — new business / creative partnerships publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'local-projects':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Local Projects — collaborator roster publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'outernet-london':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Outernet London — content & venue partnerships publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'iaapa-expo-2026':{months:[8, 9, 10], label:'Aug-Oct', why:'IAAPA Expo 2026 has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for August\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'tea-membership':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'The member directory is the practical asset — it gives named contacts at exactly the studios and operators that are otherwise gated behind info@ addresses. TEA also runs mixers and behind-the-scenes tours where the actual introductions happen, and its SATE conference is where nighttime-spectacular producers speak. Combine with IAAPA Expo (TEA has a presence there) for a single November trip that covers both. Join...'},
+  'ldi-show-2026':{months:[3, 4, 5, 6], label:'Mar-Jun', why:'LDI Show 2026 (Live Design International) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ilea-austin':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'ILEA — International Live Events Association (Austin chapter) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-lightpool-festival':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'Lightpool Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013April: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-light-up-the-north':{months:[2, 3, 4, 5], label:'Feb-May', why:'Light Up the North publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-bristol-light-festival':{months:[4, 5, 6], label:'Apr-Jun', why:'Bristol Light Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-out-there-arts':{months:[9, 10, 11, 12], label:'Sep-Dec', why:'Out There Festival publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-outdoor-arts-uk':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Outdoor Arts UK has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-freedom-festival-hull':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Freedom Festival publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-river-of-light-liverpool':{months:[1, 2, 3, 4, 5], label:'Jan-May', why:'River of Light publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-factory-international':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Factory International / Manchester International Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-sirf-stockton':{months:[9, 10, 11, 12], label:'Sep-Dec', why:'Stockton International Riverside Festival (SIRF) publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ie-galway-international-arts-festival':{months:[10, 11, 12, 1], label:'Oct-Jan', why:'Galway International Arts Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for October\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'uk-edinburghs-hogmanay':{months:[2, 3, 4, 5], label:'Feb-May', why:'Edinburgh\'s Hogmanay publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for February\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'sa-etimad-procurement':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Verified via procurement guidance sources. Confirmed: etimad.sa is the official Saudi government e-procurement portal; it is free to search and register; it publishes public tenders (open competition, contracts above SAR 500,000), limited tenders, direct purchase framework agreements, reverse auctions and contract awards. Foreign vendors CAN register and bid, with conditions.'},
+  'sa-sela-riyadh-season':{months:[1, 2, 3, 4, 5, 6], label:'Jan-Jun', why:'Site visited and verified: Sela produces Riyadh Season (stated as attracting over 8 million visitors), Jeddah Season (multiple entertainment zones), the Jeddah Superdome, and Outlet 2022 (145,000 sqm). Services confirmed as event management, experience creation and media production. No open call exists — the site runs a \'Let\'s Connect\' business-development contact route only.'},
+  'ae-sharjah-art-foundation-opencalls':{months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], label:'Year-round', why:'Sharjah Art Foundation — Monthly Open Calls Listing has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013December: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'sa-diriyah-biennale-foundation':{months:[3, 4, 5, 6], label:'Mar-Jun', why:'Diriyah Biennale Foundation publishes no open call, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'qa-qatar-museums-public-art':{months:[9, 10, 11], label:'Sep-Nov', why:'Worth tracking but requires manual verification: open the qm.org.qa Competitions & Open Calls hub in a real browser, because the JS gate defeats automated checks and this is exactly the kind of page that will not surface in Western aggregators. The temporary public art strand appears to be emerging-artist oriented, so the higher-value route is Qatar\'s event-side commissioning (Qatar National Day, Doha waterfront...'},
+  'za-ica-live-art-festival':{months:[1, 2, 3, 4], label:'Jan-Apr', why:'The honest read: this is a low-money, high-credibility entry that opens the African continent. The call welcomes \'artists, performers and interdisciplinary practitioners,\' emerging and established, and states no explicit geographic restriction — though the festival historically programmes from across Africa and the Global South, so a US company is swimming against the curatorial current and should lead with...'},
+  'eg-art-degypte-forever-is-now':{months:[2, 3, 4, 5], label:'Feb-May', why:'Site visited and verified: Forever Is Now .05 ran 11 Nov – 6 Dec 2025; Forever Is Now 06 is confirmed for 4–28 November 2026. Founded and run by Nadine Abdel Ghaffar, French-Egyptian curator. Contact confirmed as info@artdegypte.com. The site does NOT publish an open call — selection process is curator-led.'},
 };
 
 
@@ -7463,11 +7478,156 @@ const OPPORTUNITIES_V8 = [
     needs:'Calgary-based entity; on-site programming delivery',
     gates:{}},
   sources:['https://www.chinookblast.ca/chinook-blast-2027-programming-partner-call-for-proposals/','https://www.chinookblast.ca/calling-all-installation-visual-artists-transform-our-winter-landscape/','https://calgaryartsdevelopment.com/classified-ads/calling-all-installation-visual-artists-chinook-blast-2025/','https://www.chinookblast.ca/']
+},
+{
+  id:'biela-noc',
+  name:'Biela noc (White Night)',
+  org:'Biela noc — medzinárodný festival súčasného umenia',
+  city:'Bratislava, Košice & Banská Štiavnica', country:'Slovakia', region:'Europe',
+  category:'light', tier:'major',
+  website:'https://www.bielanoc.sk/',
+  applyUrl:'https://www.bielanoc.sk/',
+  applyLabel:'Direct pitch — no open call found',
+  status:'invitation',
+  predictedDeadline:'2027-03-31', predictedConfidence:'low',
+  basis:'No open call or artist submission route is published anywhere on bielanoc.sk — the programme is curated. The 2026 edition is the 12th, running Bratislava 2-4 October, Košice 9-11 October, plus Banska Stiavnica. Programming for an early-October festival realistically locks six to nine months out, which puts the cold-pitch window in the first quarter. The date is inferred from that cycle, not published — treat it as guidance, not a deadline.',
+  eventWindow:'Early-to-mid October, three evenings per city, 19:00-24:00. 2026: Bratislava 2-4 Oct, Kosice 9-11 Oct.',
+  money:'Not published. Unusually for a white-night festival it is TICKETED at EUR 5-20, so unlike most Nuit Blanche events it has box-office revenue on top of public funding — which means there is a real budget to ask about. Ask directly; nothing is posted.',
+  moneyTier:'unknown',
+  fit:5,
+  what:'Slovakia\'s largest and most-visited international contemporary art festival, now in its 12th edition, running across three cities. It turns the streets into a night-time gallery of light installations, digital art, music and interactive experiences — the mix, rather than a pure light-art remit, is what makes it fit: they programme technology-driven work and live performance in the same event.',
+  selection:'Curated. No open call, no EOI form, no published submission route — artists are invited. Part of the Nuit Blanche Europe network.',
+  scale:'12th edition in 2026. Billed as the largest and most-visited international contemporary art festival in Slovakia, across three cities on consecutive weekends. Ticketed, EUR 5-20. Uses both street sites and indoor venues — Stara trznica (Old Market Hall) hosted a full-interior laser installation in 2025.',
+  requirements:'A direct curatorial pitch. Outdoor night-time work that reads across a city trail, and that survives an early-October Central European evening.',
+  intel:'The reason to pursue this above its size: it is part of the NUIT BLANCHE EUROPE network, so one accepted work is a credential that travels across the whole European white-night circuit — Nuit Blanche Toronto and Paris, KIKK, Signal and the rest all read each other\'s programmes. It is also the rare white-night festival that sells tickets, which means box-office money rather than pure grant funding, so it is worth asking about a fee rather than assuming honorarium-grade. Three cities on consecutive weekends is the other angle: pitch the sphere as a touring piece that moves Bratislava to Kosice, which spreads your freight cost across two showings and is far more attractive to them than a single-city install. Crucially they programme INDOOR venues as well as streets — Stara trznica (Old Market Hall) carried a full-interior laser installation by BN Label in 2025 — so the indoor-only sphere is viable here, which is not true of most white-night festivals. Note that neighbouring Signal Festival in Prague restricts its open call to Czech and Slovak creators — Biela noc has no such restriction because it has no open call at all, so the door here is a curator, not a form.',
+  warning:'No open call has been found and none appears to have existed — this is a relationship play, not an application. I could not retrieve a named curatorial contact from their site; the contact page did not resolve. Confirm the route before pitching.',
+  spec:{mediums:['light','installation','projection','interactive','digital','newmedia','led','sound','performance','immersive'],
+    format:'either', env:'either', runDays:3,
+    payMin:null, payMax:null,
+    coversCosts:null,
+    themes:['white night','nuit blanche','city trail','contemporary art','digital art'],
+    needs:'Night-time work for a ticketed city trail across three Slovak cities. Outdoor pieces must survive early-October Central European weather; indoor venues such as Stara trznica (Old Market Hall) are also programmed, which is where an indoor-only piece would sit.',
+    gates:{invitation:true}},
+  sources:['https://www.bielanoc.sk/','https://bielanoc.sk/y2026/ba/info','https://www.visitbratislava.com/events/biela-noc-bratislava-2026/','https://www.bielanoc.sk/y2026/bs/artists']
+},
+{
+  id:'peru-bienal-avoid',
+  name:'Peru Bienal — DO NOT PURSUE',
+  org:'perubienal.com (organiser not named anywhere on the site)',
+  city:'Peru (no venue ever named)', country:'Peru', region:'Americas',
+  category:'digital', tier:'small',
+  website:'https://perubienal.com/en/',
+  applyUrl:'https://perubienal.com/en/',
+  applyLabel:'Checked and rejected — see the warning',
+  status:'uncertain',
+  deadlineConfidence:'unknown',
+  basis:'Checked 11 September 2026 at Dalton\'s request. Recorded here deliberately as a NEGATIVE result so it is never researched again, and so an automated scan cannot resurface it as a find.',
+  money:'None to you — the flow runs the other way. No fee, stipend or production budget is published anywhere. Residency pricing is not posted at all; the site instructs you to email for a quote, which is the structure of a product being sold to artists rather than a commission being offered to them.',
+  moneyTier:'none',
+  fit:1,
+  what:'Presents itself as a biennial with open international calls, but the shape does not hold up. Its own page reports 22,256 applications and 560 works "selected" for a single edition, with no venue, no dates, no named institution and no press coverage of any kind outside its own website. The category list spans painting, sculpture, packaging design, typography, lettering, posters, theatre and dance — a spread no curated biennial has, and the spread of a business maximising applicants.',
+  selection:'Unclear. No jury, no curator and no organising body is named. Selected artists are notified by email; nothing establishes that a physical exhibition follows.',
+  scale:'Claims 22,256 applications and 560 selected works across 100+ countries. No independent source corroborates any of it — every search result for this organisation is its own site.',
+  requirements:'An application form, a portfolio, and — for the residencies — a price quote obtained by emailing them.',
+  intel:'The honest read: this is a pay-to-participate operation, not a commissioning biennial, and it fails every test that matters to you. There is no fee, no production budget, no named venue and no curatorial credential at the end of it. A biennial exhibiting 560 works from 100 countries would generate reviews, institutional partners and a Biennial Foundation listing; this one generates only its own marketing. Separately, the genuine Bienal de Lima — Peru\'s real biennial — ran three editions from 1997 to 2002 and was deactivated; its failure is the subject of published academic study. So there is currently no major active Peruvian biennial to pursue. For Latin America, put the effort into BOG27 in Bogota, FILUX in Mexico, Riotur in Rio and Santiago a Mil in Chile instead — all already tracked, all real.',
+  warning:'DO NOT PURSUE. Pay-to-participate: no artist fee, no production budget, no named venue, no named organiser, no independent coverage. Residency pricing is quoted only by email. Money flows from the artist. Logged so it is never re-researched.',
+  spec:{mediums:['digital','installation'],
+    format:'proposal', env:'either', runDays:null,
+    payMin:null, payMax:null,
+    coversCosts:false,
+    themes:['open call','biennial'],
+    needs:'Not applicable — recorded as a negative result.',
+    gates:{doNotPursue:true}},
+  sources:['https://perubienal.com/en/','https://perubienal.com/en/2024-selected/','https://perubienal.com/en/art-residencies/','https://caiana.caiana.com.ar/dossier/2017-2-11-d07/']
 }
+,
+{
+  id:'us-by-night',
+  name:'Us By Night',
+  org:'Us By Night (founded by Rizon Parein)',
+  city:'Antwerp', country:'Belgium', region:'Europe',
+  category:'digital', tier:'major',
+  website:'https://usbynight.be/',
+  applyUrl:'https://usbynight.be/speaking',
+  applyLabel:'Apply as speaker — the only published route',
+  status:'rolling',
+  deadlineConfidence:'rolling',
+  basis:'Verified 17 Sept 2026. The 2026 edition runs 24-26 September at Rijnkaai 150, Antwerp. The ONLY published submission route is a standing "Apply as speaker" form with no deadline, no fee and no stated compensation. No open call exists for installations, sculptures or Nightmarket participation — searched and not found.',
+  eventWindow:'Late September, three nights. 2026: 24-26 September, Rijnkaai 150, Antwerp waterfront. Talks run into a club night until 1am, 4am on Saturday.',
+  money:'Unconfirmed, and probably not the point. Nothing about speaker fees, travel or exhibitor terms is published. There is no commissioning budget on display anywhere. Treat this as audience access rather than income, and ask about fees and travel only once they are interested.',
+  moneyTier:'unknown',
+  fit:3,
+  verdictNote:'The match engine rates this READY because the mediums, format and indoor setting genuinely line up with Singularity. Read that as \'the work would fit the room\', not \'there is a commission here\' — there is no budget and no route to propose one. The value is the audience.',
+  what:'A design and creativity festival that calls itself "the design conference masquerading as one huge party" — 45 talks across two stages in an industrial warehouse, plus the Nightmarket of containers, installations, sculptures, arcade games and galleries, then the XYZ Club after midnight. Roughly 3,500 visitors over three nights from about 50 countries.',
+  selection:'Speakers are chosen by the organisers from a standing form plus direct curation. The Nightmarket and its installations have no published call — those appear to be invited or partner-led.',
+  scale:'3,500+ visitors over three nights, from around 50 countries. 45 talks, two stages. Founded and led by Rizon Parein, a 3D designer and illustrator.',
+  requirements:'The speaker form asks only for name, email, profession, location, Instagram handle and whether you represent a studio. Low effort, high leverage — but it is a single-shot form, so the Instagram handle is effectively doing the pitching.',
+  intel:'Be honest about what this is: it is not a commission and there is no evidence of a production budget. What it is, is a ROOM. The audience is designers, studios, motion and 3D people, and the brand and experiential agencies who buy activations — which is the same buyer pool as the commercial spectacle targets already tracked here, gathered in one warehouse. The realistic play is the talk, not an installation. Singularity is a genuinely unusual conference story for this crowd: drones, acrobats and LED costume as a design problem, told by someone who actually builds it. The founder is a 3D designer, so the taste runs toward craft and spectacle rather than fine art, which favours you. One correction worth holding onto: Singularity runs indoors at 8-150 drones, and this is a warehouse, so a show here is not physically impossible the way it would be in a low-ceilinged venue — the obstacle is commercial, not technical. There is simply no performance programme and no production budget to say yes with. The Nightmarket likewise has no route you can apply to. Send the speaker form, make the Instagram grid carry the argument, and treat any Nightmarket placement as something that follows a relationship rather than precedes it. The 2026 edition is 24-26 September, so this year is already cast — aim at 2027.',
+  warning:'No commission, no published fee, and no open call for installations or the Nightmarket — the speaker form is the only door. Networking and visibility play, not income. The card may show a high match score: that reflects medium and venue fit, not the existence of money.',
+  spec:{mediums:['digital','newmedia','installation','interactive','immersive','led','sculpture','light'],
+    format:'either', env:'indoor', runDays:3,
+    payMin:null, payMax:null,
+    coversCosts:null, contentOnly:false,
+    themes:['design','creativity','craft','visual culture','spectacle'],
+    needs:'A speaker proposal carried mostly by your public work. An indoor warehouse setting; no airspace for flight.',
+    gates:{}},
+  sources:['https://usbynight.be/','https://usbynight.be/general-info','https://usbynight.be/speaking','https://usbynight.be/lineup']
+}
+,
+{
+  id:'focasa-circus',
+  name:'FOCASA Circus Arts Festival (FOCASA 馬戲藝術節)',
+  org:'FOCA / Formosa Circus Art (福爾摩沙馬戲團), with city government backing',
+  city:'Kaohsiung (previously Tainan)', country:'Taiwan', region:'Asia',
+  category:'circus', tier:'major',
+  website:'https://www.focasa.art/',
+  applyUrl:'https://www.focasa.art/contact/',
+  applyLabel:'Direct pitch — contact form, no open call',
+  status:'invitation',
+  predictedDeadline:'2027-02-28', predictedConfidence:'low',
+  basis:'Verified 18 Sept 2026. No 2027 edition has been announced and no open call has ever been published — the festival programmes by direct invitation. The date here is a LOW-confidence placeholder, and the reason it is low is that the calendar has genuinely moved: the 2022 warm-up ran 19-20 March in Tainan, the 2023 inaugural edition ran 22-28 February in Tainan, and the 2025 edition ran 3-12 October in Kaohsiung. A festival that has shifted city and season cannot be extrapolated safely. Confirm directly rather than trusting this date.',
+  eventWindow:'Unstable. 2022 warm-up: 19-20 March, Tainan. 2023 first edition: 22-28 February, Tainan Shueijiaoshe Cultural Park. 2025: 3-12 October, the large lawn by Kaohsiung Exhibition Center. No 2027 dates published.',
+  money:'Not published. But the economics are real rather than honorarium-grade: the festival is co-organised with city government culture departments (Tainan, then Kaohsiung), the outdoor site is free while the three big circus tents are ticketed, and they programme international companies who do not tour for free. Ask for the fee and the freight position in the first exchange.',
+  moneyTier:'unknown',
+  fit:5,
+  what:'Taiwan\'s flagship circus festival, built by FOCA — the country\'s largest circus troupe, founded 2011, around 40 performers — and billed by Kaohsiung City as Asia\'s largest circus arts festival. A circus village format: a main big-top (the V-13 tent), further ticketed tents, an outdoor Popping Stage running many short sets, plus aerial experiences, slacklining and a market. The 2022 warm-up alone drew over 50,000 visitors across two days.',
+  selection:'Direct invitation by the curatorial team. No open call, no submission form, no EOI. Chief Curator Zhang Youwen (張又文) programmes alongside founder and director Lin Chih-wei (林智偉).',
+  scale:'50,000+ visitors over two days at the 2022 warm-up. The 2023 inaugural edition brought companies from Taiwan, France, Australia, South Korea, Japan, Hong Kong and Cambodia, with 14 teams on the outdoor stage alone. The 2025 Kaohsiung edition ran ten days with 12 ticketed programmes.',
+  requirements:'A direct curatorial pitch with touring-ready documentation. Work needs to survive a tent or open-air Taiwanese site and read to a large family audience across short repeated sets as well as full shows.',
+  intel:'The strongest circus-side fit in Asia for you, and the reason is the company itself rather than the festival brand. FOCA trains generalists rather than specialists — Lin Chih-wei says plainly that Western circus performers specialise in one move, "but we do it all" — which is a culture that reads a drone-plus-acrobat hybrid as craft rather than as a gimmick. Their international bookings confirm the register: they have programmed Gravity & Other Myths from Australia, Phare from Cambodia and Circus D.Lab from Korea, so they book serious contemporary circus and pay to fly it in. Two angles beyond a straight booking. First, FOCA is itself a CO-PRODUCER — it co-produced with Jimmy Liao for the Hong Kong Arts Festival — which makes it one of the few realistic homes for StarBalancer as a co-commission rather than a finished piece you arrive with. Second, the outdoor Popping Stage is a lower-risk way in than the main tent: short repeated sets suit the ground version of Singularity, and a Popping Stage credit is the argument for a main-stage commission the following cycle. Approach through the festival contact form, but say in the first line which of their programmed companies you sit alongside — that is the sentence that gets you read.',
+  warning:'No 2027 edition or dates have been announced, and no open call has ever existed — this is a relationship play, not an application, and the predicted date in this record is deliberately low confidence because the festival has changed both city and season. No named programming email is published either; the site offers only a contact form. Separately, budget real time for Taiwanese drone regulation and for getting batteries through freight and customs.',
+  spec:{mediums:['circus','aerial','performance','spectacle','streetarts','drone','led','light'],
+    format:'performance', env:'either', runDays:10,
+    payMin:null, payMax:null,
+    coversCosts:null, contentOnly:false,
+    themes:['contemporary circus','circus village','family audience','big top','Asia touring'],
+    needs:'Touring-ready circus work for tents and open-air sites, able to run as short repeated sets on the outdoor stage as well as a full show. Drone flight in Taiwan needs regulatory lead time.',
+    gates:{invitation:true}},
+  sources:['https://www.focasa.art/','https://www.focasa.art/contact/','https://www.moc.gov.tw/global_outreach/News_Content2.aspx?n=530&s=99664','https://khh.travel/en/event/calendardetail/6908/','https://www.designwant.com/article/8243','https://news.artsfestival.org/en/articles/focasa/']
+}
+
 ];
 
 /* Contacts discovered in the v7 sweep — merged into CONTACTS at load. */
 const CONTACTS_V8 = {
+  'focasa-circus':[
+    {name:'Festival contact form', role:'The only published route — no programming email is listed anywhere', channel:'https://www.focasa.art/contact/', type:'form'},
+    {name:'Zhang Youwen (張又文)', role:'Chief Curator of the festival — the person who decides the programme', channel:'https://www.focasa.art/contact/', type:'route'},
+    {name:'Lin Chih-wei (林智偉)', role:'Founder and Director of FOCA — sets the artistic culture; trains generalists over specialists', channel:'https://www.focasa.art/contact/', type:'route'},
+    {name:'@focasa.art', role:'Instagram and Facebook — worth warming before the form, since there is no named inbox', channel:'https://www.instagram.com/focasa.art/', type:'social'}
+  ],
+  'us-by-night':[
+    {name:'Apply as speaker', role:'The only published submission route — standing form, no deadline', channel:'https://usbynight.be/speaking', type:'form'},
+    {name:'Laetitia', role:'Groups and student enquiries — the one published named address on the site', channel:'Laetitia@usbynight.be', type:'email',
+     note:'Published for group bookings rather than programming. Use only if the speaker form goes unanswered, and keep it brief.'},
+    {name:'Rizon Parein', role:'Founder, 3D designer and illustrator — sets the taste', channel:'https://usbynight.be/', type:'route'}
+  ],
+  'biela-noc':[
+    {name:'Festival website — contact page', role:'The only route found. No open call exists; approach the curatorial team directly', channel:'https://www.bielanoc.sk/', type:'web',
+     note:'Their contact page did not resolve when checked on 9 Sept 2026. Find the current link from the homepage before writing — do not guess an address.'},
+    {name:'@bielanoc', role:'Instagram / Facebook — most responsive channel for a festival with no published call', channel:'https://www.instagram.com/bielanoc/', type:'social'},
+    {name:'Nuit Blanche Europe network', role:'Indirect route — a credential from any member festival travels here', channel:'https://www.bielanoc.sk/', type:'route'}
+  ],
   'immerse-orlando':[{name:'Artist enquiries', role:'Official channel', channel:'info@immersefest.com', type:'email'},
    {name:'Artist enquiries', role:'Official channel', channel:'https://www.immersefest.com/artists', type:'form'}],
   'warming-huts-2027':[{name:'Peter Hargraves', role:'Competition organiser', channel:'https://www.warminghuts.com/competition', type:'form'}],
@@ -7489,24 +7649,27 @@ const CONTACTS_V8 = {
 
 /* Pitch windows for the v7 no-call targets. */
 const PITCH_WINDOWS_V8 = {
-  'immerse-orlando':{months:[7, 8, 9], why:'immersefest.com/artists states the application closes Saturday 12 September 2026 at 11:59pm EST for a festival on 19-21 February 2027. The cycle is stable: the 2026 edition closed 1 September 2025 for a 20-22 February 2026 festival, so expect early-September closes every year.'},
-  'charlotte-shout-2027':{months:[6, 7, 8], why:'charlotteshout.com homepage states \'2027 INVITATION TO CREATIVE PARTICIPATION IS NOW LIVE!\' with a 4 Sept 2026 application deadline and festival dates 2–18 April 2027; the /call-to-artists/ page served a cached 2026-cycle version at time of check.'},
-  'warming-huts-2027':{months:[7, 8, 9], why:'Official call-for-proposals page and the wh-v2027-call-for-proposals.pdf on warminghuts.com state submissions close Tuesday 6 Oct 2026 at 2:00pm CST, winners announced Dec 2026, install 27–30 Jan 2027.'},
-  'designto-yonge-stclair-2027':{months:[7, 8, 9], why:'yongestclair.ca call page states deadline 13 Sept 2026 11:59pm, budget CAD 5,000–7,000 inclusive, exhibition 22–31 Jan 2027, theme \'Intersections\', seven available sites.'},
-  'ingenuityfest-cleveland':{months:[1, 2, 3, 4, 5, 6], why:'ingenuitycleveland.org/programs/ingenuityfest/ lists 2026 festival dates 25–27 Sept 2026 and a live Google Forms application covering Exhibiting Artist, Performer, Vendor and Exhibitor; no deadline date is published on the page.'},
-  'nyc-dot-art-signature-events':{months:[11, 12, 1], why:'The nyc.gov \'event-art-installation-rfp-2026.pdf\' set a 8 Feb 2026 11:59pm EST deadline via Submittable for the 2026 cycle; the RFP is issued annually on the same rhythm, so a comparable early-February 2027 deadline is expected. The 2027 RFP itself is not yet posted — deadline is predicted, not confirmed.'},
-  'nocturne-halifax-2027':{months:[12, 1, 2], why:'Explicitly open to local, regional, national AND international artists across all disciplines — an unusually welcoming Canadian festival for a US applicant, and one of very few that separately budgets travel and accessibility. The performance-plus-installation-plus-media framing is close to IMMERSE\'s. Nocturne also runs a separate, lighter-touch Community Groups & Galleries call.'},
-  'world-of-winter-grand-rapids':{months:[3, 4, 5], why:'DGRI\'s own announcement (April 2026) set a 7 May 2026 11:59pm deadline for World of Winter 2027 (festival 8 Jan – 28 Feb 2027). DGRI has issued the identical RFP each April since at least 2021 (2021, 2024, 2025, 2026 announcements all on downtowngr.org), so an April–May 2027 call for WOW 2028 is a high-confidence prediction.'},
-  'art-shanty-projects':{months:[5, 6, 7], why:'The 2027 call on artshantyprojects.org states a 9 July 2026 11:59pm CST deadline for a festival running Saturdays and Sundays 16 Jan – 7 Feb 2027 on Bdé Umáŋ (Lake Harriet). The 2026 call ran the same July-deadline cycle, so a July 2027 deadline for the 2028 edition is high-confidence.'},
-  'artscape-baltimore':{months:[11, 12, 1], why:'artscape.org/artscape-applications/ (checked Aug 2026) lists Temporary Public Art, Echoes of the City and Pop Up Performer as CLOSED for the 23–24 May 2026 festival, while Baltimore Onstage and Beyond the Reel remain open via Eventeny. Applications for the following edition have historically opened in late autumn/winter; exact 2027 dates are not yet published, so the December date is an estimate only.'},
-  'currents-new-media-santa-fe':{months:[9, 10, 11], why:'The published CURRENTS 2026 open call set a 5 Dec 2025 submission deadline for a 12–21 June 2026 festival at 555 Camino de la Familia, Santa Fe. CURRENTS runs an annual December-deadline / June-festival cycle, so an early-December 2026 deadline for CURRENTS 2027 is high-confidence but not yet posted.'},
-  'bentway-transform-the-trail':{months:[12, 1, 2], why:'thebentway.ca posted a Call for Expressions of Interest with a 6 Feb 2026 11:59pm EST deadline for site-specific work installed Dec 2026 – Feb 2027, with a public information session held 15 Jan 2026. The Bentway runs this winter-season commission annually, so an early-February 2027 EOI is expected but not yet posted.'},
-  'nuit-blanche-winnipeg':{months:[3, 4, 5], why:'nuitblanchewinnipeg.ca/open-call/ states the 2026 call deadline was extended to 12 June 2026 for a 26 Sept 2026 event, with a CAD 2,500 honorarium and four opportunities. The base (pre-extension) deadline was earlier in spring, so the 2027 timing is estimated rather than confirmed.'},
-  'seattle-downtown-activations':{months:[4, 5], why:'Seattle Office of Arts & Culture guidelines PDF (2025_4_22-WeStillDreamAFuture-Guidelines) set a 3 June 2025 5pm PT deadline for activations delivered in 2026, with exhibition awards of USD 10,000 and activation awards of USD 20,000–50,000. The programme\'s recurrence is not confirmed by the city, so the 2027 prediction is medium confidence.'},
-  'art-in-the-open-charlottetown':{months:[4, 5, 6], why:'Notable for wording its call around \'interactive art projects in any medium or size\' and \'public encounters\' rather than object-based public art — the participatory framing that the IMMERSE class shares. No geographic restriction is stated, which usually means international applicants are accepted. Small budgets and a long trip from Texas make this a lower priority than the Winnipeg and Halifax Canadian options.'},
-  'three-rivers-arts-festival':{months:[12, 1, 2], why:'The Pittsburgh Cultural Trust\'s artist page lists five standing opportunity tracks including Special Project and Collaborations and Performing Arts, but publishes no dates. Associated Artists of Pittsburgh listed a Special Projects deadline of 27 Feb for a prior cycle, which is the basis for the late-February prediction. Neither the deadline nor current-cycle status is confirmed on the Trust\'s own site.'},
-  'illuminate-slc':{months:[9, 10, 11], why:'utaharts.org/en/illuminate/ confirms a free public festival on 6–7 March 2026, 5–10pm, in Salt Lake City featuring installations, projection mapping, interactive experiences, live performances and drone shows. The page is sponsorship-facing; NO artist call, deadline, fee schedule or eligibility statement is published. The predicted deadline is inferred from the March festival date only.'},
-  'chinook-blast-calgary':{months:[8, 9, 10], why:'chinookblast.ca\'s 2027 Programming Partner call confirms funding of up to CAD 5,000 per partner, festival dates 29 Jan – 15 Feb 2027, hub sites at Eau Claire Plaza and Prince\'s Island Park, and a Fillout application form. No deadline date is stated on the page; the October prediction is inferred from the festival timeline only.'},
+  'focasa-circus':{months:[1,2,3,4,5], label:'Jan-May', why:'Deliberately wide, because their calendar is not stable — February in Tainan for the first edition, October in Kaohsiung by 2025. A big-top festival with international companies locks travel and freight six to nine months out whichever season it lands in, so the first half of the year covers both an autumn edition that year and an early-spring edition the next. Ask for the next edition\'s dates in your first message; it is the fastest way to turn this window into a real one.'},
+  'us-by-night':{months:[11,12,1,2,3], label:'Nov-Mar', why:'The speaker form is a standing channel with no deadline, so this is about when a submission is actually read rather than when it is allowed. A late-September festival announces its lineup across spring and summer, which means the programme is being assembled over the preceding winter. Send it November to March and you land while they are still choosing; send it in summer and you are pitching a bill that is already full.'},
+  'biela-noc':{months:[1,2,3,4], label:'Jan-Apr', why:'An early-October festival across three cities, curated with no open call. Programming and production for that scale locks six to nine months ahead, so a cold approach lands in the first quarter for the same year. Pitching in autumn means you are aiming at the following edition — which is fine, but say so, because it reads as planned rather than late.'},
+  'immerse-orlando':{months:[7, 8, 9], label:'Jul-Sep', why:'IMMERSE — Creative City Project has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'charlotte-shout-2027':{months:[6, 7, 8], label:'Jun-Aug', why:'Charlotte SHOUT! 2027 — Interactive Art + Creative Participation Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for June\u2013August: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'warming-huts-2027':{months:[7, 8, 9], label:'Jul-Sep', why:'Warming Huts v.2027 — An Arts + Architecture Competition on Ice has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'designto-yonge-stclair-2027':{months:[7, 8, 9], label:'Jul-Sep', why:'Activate Yonge + St. Clair During DesignTO Festival 2027 has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for July\u2013September: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'ingenuityfest-cleveland':{months:[1, 2, 3, 4, 5, 6], label:'Jan-Jun', why:'IngenuityFest — Art, Technology & Performance Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for January\u2013June: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'nyc-dot-art-signature-events':{months:[11, 12, 1], label:'Nov-Jan', why:'NYC DOT Art — Signature Events Installations (Car-Free Earth Day + Summer Streets) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for November\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'nocturne-halifax-2027':{months:[12, 1, 2], label:'Dec-Feb', why:'Explicitly open to local, regional, national AND international artists across all disciplines — an unusually welcoming Canadian festival for a US applicant, and one of very few that separately budgets travel and accessibility. The performance-plus-installation-plus-media framing is close to IMMERSE\'s. Nocturne also runs a separate, lighter-touch Community Groups & Galleries call.'},
+  'world-of-winter-grand-rapids':{months:[3, 4, 5], label:'Mar-May', why:'World of Winter — Large-Scale Installations RFP has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'art-shanty-projects':{months:[5, 6, 7], label:'May-Jul', why:'Art Shanty Projects — Call for Performances + Art Actions (and Shanty Artists) has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for May\u2013July: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'artscape-baltimore':{months:[11, 12, 1], label:'Nov-Jan', why:'Artscape — Temporary Public Art, Echoes of the City & Pop Up Performer calls has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for November\u2013January: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'currents-new-media-santa-fe':{months:[9, 10, 11], label:'Sep-Nov', why:'CURRENTS New Media Festival — Open Call has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'bentway-transform-the-trail':{months:[12, 1, 2], label:'Dec-Feb', why:'Transform the Trail — Temporary Public Art Commission has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for December\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'nuit-blanche-winnipeg':{months:[3, 4, 5], label:'Mar-May', why:'Nuit Blanche Winnipeg — Illuminate the Night has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for March\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'seattle-downtown-activations':{months:[4, 5], label:'Apr-May', why:'Downtown Activations & Exhibitions ("We Still Dream a Future") has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for April\u2013May: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'art-in-the-open-charlottetown':{months:[4, 5, 6], label:'Apr-Jun', why:'Notable for wording its call around \'interactive art projects in any medium or size\' and \'public encounters\' rather than object-based public art — the participatory framing that the IMMERSE class shares. No geographic restriction is stated, which usually means international applicants are accepted. Small budgets and a long trip from Texas make this a lower priority than the Winnipeg and Halifax Canadian options.'},
+  'three-rivers-arts-festival':{months:[12, 1, 2], label:'Dec-Feb', why:'Three Rivers Arts Festival — Special Projects & Collaborations / Performing Arts has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for December\u2013February: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'illuminate-slc':{months:[9, 10, 11], label:'Sep-Nov', why:'ILLUMINATE — Art, Light & Creative Technology Festival has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for September\u2013November: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
+  'chinook-blast-calgary':{months:[8, 9, 10], label:'Aug-Oct', why:'Chinook Blast 2027 — Programming Partner & Installation Artist Calls has no live call right now, so there is no deadline to hit \u2014 only a moment when a cold approach lands. Aim for August\u2013October: a curated programme of this size is locked roughly six to nine months before it opens, and after that the money is committed. This window is inferred from their cycle rather than published, so treat it as timing guidance, not a date.'},
 };
 
 
@@ -9009,6 +9172,13 @@ function evaluateEligibility(spec, profile){
   const p = profile || {};
   const blockers = [], warnings = [], passes = [];
 
+  /* A hard "checked and rejected" state. Used for operations we have verified
+     are pay-to-participate or otherwise not worth pursuing. Recorded rather than
+     deleted so neither Dalton nor an automated scan researches them twice. */
+  if(g.doNotPursue){
+    blockers.push('Checked and rejected — read the warning on this card before spending anything here.');
+  }
+
   if(g.residency){
     const r = checkResidency(p, g.residency);
     const line = r.text + (g.note ? ' ' + g.note : '');
@@ -9706,7 +9876,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '7.2';
+const APP_VERSION = '7.9';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -9758,6 +9928,51 @@ if(!S.profileMigrated){
 // v2→v3 migration: replace the old placeholder project with the real catalogue
 if(S.projects.length===1 && S.projects[0].id==='p_singularity'){
   S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS)); save();
+}
+
+/* ---------- id migration ----------
+   The v7 sweep generated machine ids like 'nordics-cee-008'. They are unreadable
+   in a catalogue you actually search, so they were renamed to real slugs. Any
+   interest level, note, rating or submission state already saved against an old
+   id is carried across here, once, on load. Harmless to run every time. */
+const ID_MIGRATIONS = {
+  'nordics-cee-001':'atmospheric-waves-open',
+  'nordics-cee-002':'liepaja-2027-european',
+  'nordics-cee-003':'vilnius-light-open',
+  'nordics-cee-004':'lumo-light-oulu',
+  'nordics-cee-005':'reykjavik-winter-lights',
+  'nordics-cee-006':'light-move-lmf',
+  'nordics-cee-007':'bella-skyway-open',
+  'nordics-cee-008':'nobel-week-lights',
+  'nordics-cee-009':'lux-helsinki',
+  'nordics-cee-010':'fjord-oslo-light',
+  'nordics-cee-011':'meta-morf-trondheim',
+  'nordics-cee-012':'wro-media-art',
+  'nordics-cee-013':'imapp-bucharest-winners',
+  'nordics-cee-014':'spotlight-festivalul-al',
+  'nordics-cee-015':'lighting-guerrilla-svetlobna',
+  'nordics-cee-016':'lights-zagreb-artist',
+  'nordics-cee-017':'carnaval-sztukmistrzow-carnival',
+  'nordics-cee-018':'letni-letna-contemporary',
+  'nordics-cee-019':'ted-tenders-electronic',
+  'nordics-cee-020':'istanbul-digital-art'
+};
+function migrateIds(){
+  let moved = 0;
+  ['user','revisions'].forEach(key=>{
+    const bag = S[key];
+    if(!bag) return;
+    if(Array.isArray(bag)){
+      bag.forEach(r=>{ if(r && ID_MIGRATIONS[r.id]){ r.id = ID_MIGRATIONS[r.id]; moved++; } });
+    } else {
+      Object.keys(ID_MIGRATIONS).forEach(oldId=>{
+        const newId = ID_MIGRATIONS[oldId];
+        if(bag[oldId] && !bag[newId]){ bag[newId] = bag[oldId]; delete bag[oldId]; moved++; }
+      });
+    }
+  });
+  if(moved) save();
+  return moved;
 }
 
 /* ---------- merged data sources ---------- */
@@ -10162,6 +10377,12 @@ function matchPanel(o){
   const m = o.match; if(!m) return '';
   const v = VERDICT_META[m.verdict];
   let h = `<div class="sect">Do you already have something for this?</div>`;
+  /* Some opportunities score well on medium and venue fit while having no money
+     or no route behind them. Where that gap exists the entry carries a note, so
+     a high number is never read as a green light on its own. */
+  if(o.verdictNote){
+    h += `<div class="vnote">${esc(o.verdictNote)}</div>`;
+  }
   h += `<div class="matchbox">
     <div class="top">
       <div class="grow">
@@ -10914,7 +11135,11 @@ function renderSettings(){
 
   h+=`<div class="card">
     <h3>Manual import</h3>
-    <div style="font-size:13.5px;color:var(--text2);line-height:1.65">The weekly and monthly scans send an update file to your chat. If nothing is hosted yet, download it on your phone and import it here — two taps, no GitHub needed.</div>
+    <div style="font-size:13.5px;color:var(--text2);line-height:1.65">The weekly and monthly scans send an update file to your chat. Any of these apply it:<br><br>
+    <b>On a computer:</b> drag the file anywhere onto this window. That is the whole thing. You can also right-click the file and choose <b>Open with &rarr; Never Miss Again</b>.<br>
+    <b>On Android:</b> share the file to Never Miss Again, or use the button below.<br>
+    <b>Anywhere:</b> the button below.<br><br>
+    <span style="color:var(--muted)">Windows has no &ldquo;Share&rdquo; option for installed web apps &mdash; that feature is Android-only, so it will never appear in the PC right-click menu however the app is installed. Drag and drop is the desktop equivalent.</span></div>
     <div class="btnrow">
       <button class="btn-p" onclick="document.getElementById('updImp').click()">Import update file</button>
       <input type="file" id="updImp" accept="application/json,.json" style="display:none" onchange="importUpdateFile(event)">
@@ -11356,6 +11581,80 @@ function importUpdateFile(evt){
   evt.target.value = '';
 }
 
+/* ---------- desktop import routes ----------
+   Windows has no Web Share Target. That API is Android and ChromeOS only, so
+   "right-click a file > Share > Never Miss Again" will NEVER appear on a PC no
+   matter how the app is installed. These are the two routes that do work there.
+
+   1. Drag and drop the .json anywhere onto the window. Works in any browser,
+      installed or not, no OS integration required. This is the good one.
+   2. File handlers: the manifest already claimed .json, but nothing ever read
+      the launch queue, so "Open with > Never Miss Again" opened the app and
+      silently did nothing. Consuming launchQueue here makes it actually import. */
+
+function applyUpdateText(text, source){
+  let u;
+  try { u = JSON.parse(text); }
+  catch { toast('That file is not valid JSON'); return; }
+  const res = ingestUpdate(u, source || 'that file');
+  if(res === 'same'){ toast('That version is already applied'); return; }
+  if(res === false) return;
+  toast(`${res} change${res===1?'':'s'} applied`);
+  renderSettings(); renderTabs();
+}
+
+function readUpdateFile(file, source){
+  if(!file) return;
+  if(file.size > 8 * 1024 * 1024){ toast('That file is too large to be an update'); return; }
+  const r = new FileReader();
+  r.onload = () => applyUpdateText(r.result, source);
+  r.onerror = () => toast('Could not read that file');
+  r.readAsText(file);
+}
+
+/* --- drag and drop --- */
+let _dragDepth = 0;
+function dropOverlay(on){
+  let el = $('dropzone');
+  if(!el){
+    el = document.createElement('div');
+    el.id = 'dropzone';
+    el.innerHTML = '<div class="dz-inner"><div class="dz-ic">⤓</div>' +
+      '<div class="dz-t">Drop the update file to apply it</div>' +
+      '<div class="dz-s">updates.json — nothing else is read</div></div>';
+    document.body.appendChild(el);
+  }
+  el.classList.toggle('on', !!on);
+}
+window.addEventListener('dragenter', e=>{
+  if(!e.dataTransfer || !Array.from(e.dataTransfer.types||[]).includes('Files')) return;
+  e.preventDefault(); _dragDepth++; dropOverlay(true);
+});
+window.addEventListener('dragover', e=>{
+  if(!e.dataTransfer || !Array.from(e.dataTransfer.types||[]).includes('Files')) return;
+  e.preventDefault(); e.dataTransfer.dropEffect = 'copy';
+});
+window.addEventListener('dragleave', e=>{
+  if(_dragDepth > 0) _dragDepth--;
+  if(_dragDepth === 0) dropOverlay(false);
+});
+window.addEventListener('drop', e=>{
+  if(!e.dataTransfer || !e.dataTransfer.files || !e.dataTransfer.files.length) return;
+  e.preventDefault(); _dragDepth = 0; dropOverlay(false);
+  readUpdateFile(e.dataTransfer.files[0], 'the file you dropped');
+});
+
+/* --- file handlers: "Open with > Never Miss Again", double-click a .json --- */
+if('launchQueue' in window && 'files' in LaunchParams.prototype){
+  launchQueue.setConsumer(async (params)=>{
+    if(!params || !params.files || !params.files.length) return;
+    try{
+      const file = await params.files[0].getFile();
+      readUpdateFile(file, 'the file you opened');
+    } catch(err){ toast('Could not open that file'); }
+  });
+}
+
 function revertUpdates(){
   if(!confirm('Remove all applied updates and go back to the data built into this version? Your ratings, notes and projects are not affected.')) return;
   S.update = emptyUpdateState();
@@ -11365,6 +11664,7 @@ function revertUpdates(){
 
 /* ---------- init ---------- */
 $('compiledDate').textContent=fmtDate(DATA_COMPILED);
+migrateIds();
 recomputePrefs();
 if('Notification' in window && Notification.permission==='granted') $('notifBtn').textContent='Alerts on ✓';
 if(!S.seenData){ S.seenData=snapshot(); save(); }

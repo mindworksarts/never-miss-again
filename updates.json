@@ -1,6 +1,1086 @@
 {
   "schema": 1,
-  "version": "2026-08-25",
-  "generated": "2026-08-25T03:00:00Z",
-  "note": "Baseline. v7.0 folded 112 new opportunities directly into the app, so this patch file starts empty — scheduled scans merge their findings in from here."
+  "version": "2026-09-14",
+  "generated": "2026-09-14T00:00:00Z",
+  "note": "10 dates confirmed/corrected, 19 new opportunities (CEE, India/S.Asia, US South/Texas, Canada), 1 insight",
+  "dateChanges": [
+    {
+      "id": "alf",
+      "name": "Amsterdam Light Festival — Edition 16",
+      "status": "predicted",
+      "basis": "Organiser FAQ (amsterdamlightfestival.com), checked 2026-09-14: Edition 15 open call already closed; Edition 16 call details 'will follow end of Feb / early Mar 2027'.",
+      "note": "No deadline published yet — still a prediction, not due for months."
+    },
+    {
+      "id": "berlin-circus",
+      "name": "Berlin Circus Festival",
+      "status": "at_risk",
+      "basis": "Official site: 12th festival's deadline was 12 Apr 2026 (already passed, festival already happened Aug 2026); no 13th-edition/2027 call posted yet.",
+      "note": "Predicted 15 Nov 2026 was wrong — real cycle already closed months ago with no next call announced."
+    },
+    {
+      "id": "nuit-blanche-to",
+      "name": "Nuit Blanche Toronto",
+      "status": "at_risk",
+      "basis": "City of Toronto page, checked 2026-09-14: 2026 applications closed, no 2027 call posted.",
+      "note": "2026 cycle closed; 2027 call not yet open."
+    },
+    {
+      "id": "brixen",
+      "name": "Brixen Water Light Festival",
+      "status": "at_risk",
+      "basis": "Official Brixen tourism page: festival is biennial, next edition was Apr-May 2026; next would be 2028, not 2026/2027.",
+      "note": "Biennial — next edition is 2028, no near-term deadline exists."
+    },
+    {
+      "id": "budapest-circus",
+      "name": "Budapest International Circus Festival",
+      "status": "at_risk",
+      "basis": "Official site: 2026 deadline (26 Aug 2025) already passed; organiser states next edition is 2028.",
+      "note": "Confirmed next edition is 2028, not 2026/2027 — remove from near-term watch."
+    },
+    {
+      "id": "la-strada-bremen",
+      "name": "LA STRADA International Street Arts Festival",
+      "status": "open",
+      "basis": "Official site (lastrada-bremen.de/en/festival/application): 2027 applications accepted Aug-Dec 2026, sent to programm@lastrada-bremen.de.",
+      "note": "Application window confirmed (Aug-Dec 2026); no single hard deadline date published yet."
+    },
+    {
+      "id": "ca-winter-stations-toronto",
+      "name": "Winter Stations International Design Competition",
+      "deadline": "2026-10-15",
+      "deadlineConfidence": "confirmed",
+      "status": "open",
+      "basis": "Official site (winterstations.com/competition/): 'deadline for submissions is October 15th, 2026 at 11:59pm EST.'",
+      "note": "Predicted 2 Nov 2026 -> CONFIRMED earlier, 15 Oct 2026 (about 1 month away)."
+    },
+    {
+      "id": "us-sxsw-xr-experience",
+      "name": "SXSW XR Experience / SXSW Exhibitions",
+      "deadline": "2026-10-01",
+      "deadlineConfidence": "confirmed",
+      "status": "open",
+      "basis": "Official SXSW application page (cart.sxsw.com/products/filmapp-vr): tiered deadlines Aug 25, Sept 15, final Oct 1 2026 (11:59pm PT) for SXSW 2027.",
+      "note": "Predicted 1 Nov 2026 -> CONFIRMED earlier final deadline, 1 Oct 2026 (about 2.5 weeks away)."
+    },
+    {
+      "id": "currents-new-media-santa-fe",
+      "name": "CURRENTS New Media Festival — Open Call",
+      "deadline": "2026-12-08",
+      "deadlineConfidence": "confirmed",
+      "status": "open",
+      "basis": "Official site (currentsnewmedia.org): submissions now open, deadline December 8, 2026.",
+      "note": "Predicted 4 Dec 2026 -> CONFIRMED 8 Dec 2026."
+    },
+    {
+      "id": "illuminate-slc",
+      "name": "ILLUMINATE — Art, Light & Creative Technology Festival",
+      "deadline": "2026-09-30",
+      "deadlineConfidence": "confirmed",
+      "status": "open",
+      "basis": "Official Utah Arts Alliance page (utaharts.org/en/illuminate/): submission deadline September 30, 2026 for the Nov 21-22, 2026 festival.",
+      "note": "Predicted 30 Nov 2026 was far too late -> CONFIRMED real deadline is 30 Sept 2026, about 2 weeks away."
+    }
+  ],
+  "statusChanges": [
+    {
+      "id": "nordics-cee-002",
+      "name": "Liepāja 2027 — European Capital of Culture (commissioning office)",
+      "status": "open",
+      "warning": "Official open-calls page (liepaja2027.lv/en/category/open-calls-en/) lists no single Nov-30 generic deadline; instead multiple specific rolling calls are live, e.g. 'Atmospheric Waves' (deadline 4 Sep 2026) and 'Midsummer on the Farm' co-funding (deadline 5 Oct 2026).",
+      "note": "Re-check which specific Liepāja 2027 call the tracker is pointing to — the generic Nov-30 date does not match any single published deadline."
+    },
+    {
+      "id": "chinook-blast-calgary",
+      "name": "Chinook Blast 2027 — Programming Partner & Installation Artist Calls",
+      "status": "open",
+      "note": "Confirmed the 2027 call is live on official site (chinookblast.ca) but exact deadline date is not stated on the accessible pages — predicted 31 Oct 2026 neither confirmed nor contradicted."
+    }
+  ],
+  "newOpportunities": [
+    {
+      "id": "cee-staro-riga-light-festival",
+      "name": "Staro Rīga (Beaming Riga) Light Festival",
+      "org": "Riga City Council",
+      "city": "Riga",
+      "country": "Latvia",
+      "region": "Europe",
+      "category": "light",
+      "tier": "major",
+      "website": "https://www.riga.lv/en/article/staro-riga-visitors-will-be-delighted-light-installations-created-both-local-and-foreign-artists",
+      "status": "invitation",
+      "eventWindow": "mid-November (annual, ~4 days)",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "City-wide light installation festival across Riga's Old Town and public spaces, curated with local and international light artists — 40+ light objects from 10+ countries in a recent edition.",
+      "selection": "Curator-led (Diāna Čivle named as festival curator in city press materials); no public open call found.",
+      "scale": "40+ light objects, city-wide, 10+ countries represented",
+      "requirements": "Site-specific light installation proposal rated for Baltic winter conditions.",
+      "intel": "No public application page exists. Approach via Riga City Council's communications office and ask to be routed to curator Diāna Čivle — no direct curator email is published. Pitch in spring (Mar-Jun) for the following November's edition.",
+      "warning": "Could not confirm a direct curator email — municipal press contact only.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": 4,
+        "themes": [
+          "light art",
+          "winter darkness",
+          "public space"
+        ],
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://www.riga.lv/en/article/staro-riga-visitors-will-be-delighted-light-installations-created-both-local-and-foreign-artists"
+      ]
+    },
+    {
+      "id": "cee-lunar-urbanpulse-sofia",
+      "name": "LUNAR Festival of Lights — Urban Pulse International Video Mapping Competition",
+      "org": "LUNAR Festival of Lights",
+      "city": "Sofia",
+      "country": "Bulgaria",
+      "region": "Europe",
+      "category": "projection",
+      "tier": "mid",
+      "website": "https://lunarlights.eu/the-festival-2/",
+      "applyUrl": "https://lunarlights.eu/international-competition-urbanpulse-open-call/",
+      "status": "predicted",
+      "predictedDeadline": "2027-07-25",
+      "predictedConfidence": "medium",
+      "basis": "2026 edition's confirmed deadline was 26 Jul 2026 23:59 CET, per organiser's own open-call page; predicting a similar late-July date for 2027.",
+      "eventWindow": "September 17-20 (2026 dates), nightly projections",
+      "money": "Jury Prize €10,000; Audience Choice €10,000; Finalist Award €3,000; entry free",
+      "moneyTier": "high",
+      "fit": 3,
+      "what": "International video-mapping competition on Largo facades in central Sofia, part of wider LUNAR Festival of Lights citywide programming.",
+      "selection": "Open call, jury-reviewed; 7 finalists project live for jury + audience prizes.",
+      "scale": "22+ light works citywide in a recent edition",
+      "requirements": "Application, signed agreement, portfolio, moodboard/storyboard, 120-180s piece.",
+      "intel": "Explicitly open to 'artists from around the world', real prize money (€23k pool), but travel/accommodation not covered. Projection-mapping-only format — fits the digital/projection side of the practice more than drone/sphere work directly.",
+      "warning": "2027 deadline is predicted, not yet published — confirm closer to spring 2027.",
+      "spec": {
+        "mediums": [
+          "projection",
+          "digital",
+          "newmedia",
+          "screen"
+        ],
+        "format": "screen",
+        "env": "outdoor",
+        "runDays": 4,
+        "payMin": 3000,
+        "payMax": 10000,
+        "coversCosts": false,
+        "contentOnly": true,
+        "payNote": "Prize-based; travel/accommodation not covered.",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": false
+        }
+      },
+      "sources": [
+        "https://lunarlights.eu/international-competition-urbanpulse-open-call/"
+      ]
+    },
+    {
+      "id": "cee-light-move-festival-lodz",
+      "name": "Light.Move.Festival.",
+      "org": "Fundacja Sztuki Światła / City of Łódź",
+      "city": "Łódź",
+      "country": "Poland",
+      "region": "Europe",
+      "category": "light",
+      "tier": "mid",
+      "website": "https://lmf.com.pl/",
+      "applyUrl": "https://lmf.com.pl/open-call/",
+      "status": "predicted",
+      "predictedDeadline": "2027-03-01",
+      "predictedConfidence": "medium",
+      "basis": "2026 edition's confirmed open-call deadline was 2 Mar 2026, per organiser's own page; predicting similar early-March date for the 2027 (17th) edition.",
+      "eventWindow": "three evenings, typically May/June, downtown Łódź",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "16th-edition (2026) light festival with dedicated categories for large-format projection/mapping, spatial/interactive light installations, and a Debut/Experiment track.",
+      "selection": "Open call, category-specific submission form.",
+      "scale": "City-center route through main streets, passages, parks, squares.",
+      "requirements": "Category-specific proposal form.",
+      "intel": "'Spatial/interactive light installations' category is the best fit for kinetic/LED-sphere work; no fee data published so treat as visibility/relationship-building rather than a primary revenue target.",
+      "warning": "Deadline predicted from 2026 pattern; fee levels unconfirmed.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "interactive",
+          "projection"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "runDays": 3,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": false
+        }
+      },
+      "sources": [
+        "https://lmf.com.pl/open-call/"
+      ]
+    },
+    {
+      "id": "cee-biela-noc-bratislava",
+      "name": "Biela noc (White Night) Bratislava",
+      "org": "Biela noc o.z. / BKIS",
+      "city": "Bratislava",
+      "country": "Slovakia",
+      "region": "Europe",
+      "category": "light",
+      "tier": "major",
+      "website": "https://www.bkis.sk/",
+      "status": "uncertain",
+      "eventWindow": "early October (annual, ~3 days)",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "City-wide Nuit-Blanche-style contemporary art and light festival across dozens of Bratislava venues — 200+ artists, 12+ countries, 50+ locations in recent editions.",
+      "selection": "Unconfirmed — a 2022 source named an artistic director not reconfirmed for 2026.",
+      "scale": "200+ artists, 50+ locations",
+      "requirements": "Unconfirmed.",
+      "intel": "Multi-source public funding (Slovak Arts Council, city, Visegrad Fund) suggests real budget, but needs direct verification before pitching — contact BKIS (city culture/info centre) rather than assuming any named 2022 contact still holds.",
+      "warning": "No current named contact confirmed; do not cite the 2022 artistic director without verifying directly.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "digital",
+          "performance"
+        ],
+        "format": "either",
+        "env": "either",
+        "runDays": 3,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://www.bkis.sk/udalost/biela-noc/68c02259a23cda488692d6bb/49/"
+      ]
+    },
+    {
+      "id": "kochi-muziris-biennale-2027",
+      "name": "Kochi-Muziris Biennale — 7th Edition",
+      "org": "Kochi Biennale Foundation",
+      "city": "Kochi (Fort Kochi)",
+      "country": "India",
+      "region": "Asia",
+      "category": "installation",
+      "tier": "flagship",
+      "website": "https://www.kochimuzirisbiennale.org/",
+      "status": "invitation",
+      "eventWindow": "7th edition 2027-28 (dates not yet published)",
+      "predictedConfidence": "low",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Large-scale, multi-venue contemporary art biennale across historic Fort Kochi warehouses and public sites; past editions hosted major kinetic/technology installation work.",
+      "selection": "Invitation-only, curator-driven (7th edition curated by Kader Attia, currently in early curatorial research phase).",
+      "scale": "City-wide, multiple large heritage/industrial venues.",
+      "requirements": "Invitation only — approach curator or foundation directly with portfolio.",
+      "intel": "Attia's practice centers on repair, colonial history, collective memory — frame a proposal against those themes rather than pure spectacle. Foundation's general contact form is the only public channel.",
+      "warning": "No public submission process; cold approaches via the general form unlikely to reach the curator directly.",
+      "spec": {
+        "mediums": [
+          "installation",
+          "led",
+          "newmedia",
+          "digital",
+          "interactive",
+          "immersive",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "either",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true,
+          "note": "Curator: Kader Attia"
+        }
+      },
+      "sources": [
+        "https://www.kochimuzirisbiennale.org/"
+      ]
+    },
+    {
+      "id": "lahore-biennale-lb04",
+      "name": "Lahore Biennale 04",
+      "org": "Lahore Biennale Foundation",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "region": "Asia",
+      "category": "installation",
+      "tier": "major",
+      "website": "https://www.lahorebiennale.org/",
+      "applyUrl": "mailto:info@lbf.org.pk",
+      "applyLabel": "Foundation inquiry email",
+      "status": "invitation",
+      "opensDate": "2027-03-27",
+      "deadlineConfidence": "confirmed",
+      "basis": "Confirmed on lahorebiennale.org: LB04 opens 27 Mar 2027 ('The Shape of Coexistence'), coinciding with the International Biennial Association's General Assembly in Lahore.",
+      "eventWindow": "Opens 27 Mar 2027",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Pakistan's international contemporary art biennial, curated by Nav Haq, opening alongside the IBA General Assembly — a historic first for Pakistan.",
+      "selection": "Curator-invited; no open call published.",
+      "scale": "City-wide across heritage and public sites in Lahore.",
+      "requirements": "Invitation only.",
+      "intel": "Foundation is actively building international curatorial relationships now (Sept 2026) ahead of the March 2027 opening — reach out to curator Nav Haq's institution and the foundation together.",
+      "warning": "Check current US State Dept travel guidance for Pakistan; drone/rigging logistics need long lead times.",
+      "spec": {
+        "mediums": [
+          "installation",
+          "led",
+          "newmedia",
+          "digital",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "either",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true,
+          "note": "Curator: Nav Haq"
+        }
+      },
+      "sources": [
+        "https://www.lahorebiennale.org/"
+      ]
+    },
+    {
+      "id": "up-tourism-deepotsav-dev-deepawali",
+      "name": "Ayodhya Deepotsav & Varanasi Dev Deepawali — Drone & Light Spectacles",
+      "org": "Uttar Pradesh Tourism Dept (via BotLab Dynamics)",
+      "city": "Ayodhya / Varanasi",
+      "country": "India",
+      "region": "Asia",
+      "category": "drone",
+      "tier": "flagship",
+      "website": "https://uptourism.gov.in/",
+      "status": "invitation",
+      "eventWindow": "Annually around Diwali (Oct-Nov)",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "UP Tourism stages record-attempting annual drone light shows (500-1000+ drones) at Ayodhya and Varanasi's river ghats, drawing hundreds of thousands of spectators.",
+      "selection": "Government-commissioned, produced through incumbent contractor BotLab Dynamics. No open call.",
+      "scale": "Riverfront ghats, hundreds of thousands of attendees.",
+      "requirements": "No direct artist submission path — realistic entry is as creative subcontractor via BotLab Dynamics.",
+      "intel": "Practical entry point is pitching a hybrid drone-plus-live-performer segment to BotLab, India's dominant drone-show company, not to the state government directly.",
+      "warning": "Fast-moving state-government cycle; planning details often finalized only 2-3 months ahead.",
+      "spec": {
+        "mediums": [
+          "drone",
+          "led",
+          "performance",
+          "aerial",
+          "circus",
+          "spectacle"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://botlabdynamics.com/blogs/ayodhya-deepotsav-2025-with-biggest-drone-show"
+      ]
+    },
+    {
+      "id": "botlab-dynamics-creative-partner",
+      "name": "BotLab Dynamics — Creative Subcontract Partner",
+      "org": "BotLab Dynamics",
+      "city": "New Delhi",
+      "country": "India",
+      "region": "Asia",
+      "category": "drone",
+      "tier": "major",
+      "website": "https://botlabdynamics.com/",
+      "applyUrl": "mailto:business@botlabdynamics.com",
+      "applyLabel": "Business development email",
+      "status": "invitation",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "India's dominant drone-show company (IIT Delhi spinout), multiple Guinness records, now expanding into Oman and Sri Lanka; default contractor for major Indian government/municipal drone shows.",
+      "selection": "Direct business-development contact.",
+      "scale": "500-2000+ drone shows for government/corporate clients across India and expanding S. Asia/Gulf footprint.",
+      "requirements": "Business email with a hybrid drone + live-performance/LED-costuming concept and credits.",
+      "intel": "Highest-leverage contact in this territory — holds major government drone contracts but has no in-house acrobatic/LED-costume performance capability, a real gap for a subcontracted creative partner.",
+      "warning": "No named individual contact beyond the general business inbox.",
+      "spec": {
+        "mediums": [
+          "drone",
+          "led",
+          "performance",
+          "aerial"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://botlabdynamics.com/about-us"
+      ]
+    },
+    {
+      "id": "crystal-bridges-light-commission",
+      "name": "Forest/Grounds Immersive Light Experience Commission",
+      "org": "Crystal Bridges Museum of American Art",
+      "city": "Bentonville, AR",
+      "country": "US",
+      "region": "Americas",
+      "category": "light",
+      "tier": "flagship",
+      "website": "https://crystalbridges.org",
+      "status": "invitation",
+      "moneyTier": "high",
+      "money": "Fee undisclosed; museum (Walton Family Foundation-funded) ran a full Sept-Jan season commission in 2024-25 ('Time Loop' by Klip Collective).",
+      "fit": 4,
+      "what": "Museum periodically commissions a major touring studio to build a large-scale immersive light/projection experience across its wooded trails, open multi-month.",
+      "selection": "Invitation/curated by contemporary art curator; no submission portal or RFQ found.",
+      "scale": "Museum-wide outdoor trail installation, multi-month ticketed run.",
+      "requirements": "Track record producing large-scale weatherproof multi-month outdoor immersive light experiences.",
+      "intel": "Exactly the 'never posted an open call' profile — approach the curatorial team directly with a reel; short flight from Austin.",
+      "warning": "Could not confirm program cadence (annual/biennial/one-off) — only one cycle verified.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "immersive",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "coversCosts": true,
+        "payNote": "Budget undisclosed; past commission implies six-figure production budget.",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://crystalbridges.org/news-room/crystal-bridges-museum-of-american-art-announces-time-loop-by-klip-collective-a-forest-light-experience/"
+      ]
+    },
+    {
+      "id": "pulse-telfair-savannah",
+      "name": "PULSE Art + Technology Festival",
+      "org": "Telfair Museums (Jepson Center)",
+      "city": "Savannah, GA",
+      "country": "US",
+      "region": "Americas",
+      "category": "newmedia",
+      "tier": "mid",
+      "website": "https://www.telfair.org",
+      "status": "invitation",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "19-year-running annual art-and-technology festival at the Jepson Center (late January) — video, AI, interactivity, sensor-based installation.",
+      "selection": "Curated by Telfair's contemporary art curator; no open call found for any past edition.",
+      "scale": "Museum-wide exhibition + multi-day public festival programming.",
+      "requirements": "Interdisciplinary tech/media practice.",
+      "intel": "Genuinely under-the-radar invitation-only tech-art festival — never surfaces on open-call aggregators. Approach 9-12 months ahead of the January edition.",
+      "warning": "No specific curator email confirmed — only a general programs contact published.",
+      "spec": {
+        "mediums": [
+          "digital",
+          "interactive",
+          "led",
+          "installation",
+          "newmedia"
+        ],
+        "format": "installation",
+        "env": "indoor",
+        "coversCosts": true,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://www.telfair.org/event/pulse26/"
+      ]
+    },
+    {
+      "id": "bna-arts-airport",
+      "name": "Arts at the Airport — Nashville International Airport",
+      "org": "Metropolitan Nashville Airport Authority",
+      "city": "Nashville, TN",
+      "country": "US",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "major",
+      "website": "https://flynashville.com",
+      "applyLabel": "Watch flynashville.com/opportunity for the next call",
+      "status": "rolling",
+      "deadline": "2026-09-04",
+      "deadlineConfidence": "confirmed",
+      "basis": "Most recent commission (suspended-sculpture, Concourse A) closed 2026-09-04 per flynashville.com; MNAA runs a recurring commissioning program.",
+      "money": "$900,000 total budget for the most recent commission; $2,500 design fee for shortlisted finalists.",
+      "moneyTier": "high",
+      "fit": 3,
+      "what": "MNAA runs a recurring public-art commissioning program for BNA concourses, individual commissions in the high six figures.",
+      "selection": "Open RFQ via CodaWorx portal, juried by MNAA's Arts at the Airport program.",
+      "scale": "Large architectural-scale works, 25-year durability requirement.",
+      "requirements": "US-resident artist/team with a completed public or private commission in the past 5 years.",
+      "intel": "Current cycle just closed — highest-value move is a direct introduction now, ahead of the next RFQ, referencing kinetic/light work.",
+      "spec": {
+        "mediums": [
+          "sculpture",
+          "installation",
+          "led",
+          "light"
+        ],
+        "format": "installation",
+        "env": "indoor",
+        "payMin": 900000,
+        "coversCosts": true,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": false
+        }
+      },
+      "sources": [
+        "https://flynashville.com/opportunity/call-for-artists-public-art-commission-for-suspended-sculpture-concourse-a-concessions-node"
+      ]
+    },
+    {
+      "id": "tampa-airport-public-art",
+      "name": "Tampa International Airport Public Art Program",
+      "org": "Hillsborough County Aviation Authority",
+      "city": "Tampa, FL",
+      "country": "US",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "flagship",
+      "website": "https://www.tampaairport.com",
+      "applyUrl": "https://www.tampaairport.com/call-for-artists",
+      "status": "uncertain",
+      "basis": "2026 cycle (Phase 2) deadline 2026-03-19 already passed; program runs in phases so a future phase is plausible but undated.",
+      "money": "$5.28M total for the 2026 cycle; individual commissions $200,000-$1,200,000.",
+      "moneyTier": "top",
+      "fit": 4,
+      "what": "One of the best-funded airport public-art programs in the US; most recent RFQ explicitly solicited technology-based art for 8 new locations.",
+      "selection": "Open RFQ via CaFE (CallForEntry.org).",
+      "scale": "Commissions up to $1.2M, airside/checkpoint locations.",
+      "requirements": "Public-art execution experience; at least one prior commission valued $15,000+.",
+      "intel": "Explicit call-out for technology-based art — worth a direct letter of interest to procurement now for the next phase.",
+      "warning": "Named contact (Rayesha Cotton, Senior Procurement Agent) confirmed by title; direct email not independently verified.",
+      "spec": {
+        "mediums": [
+          "digital",
+          "interactive",
+          "led",
+          "sculpture",
+          "newmedia"
+        ],
+        "format": "installation",
+        "env": "indoor",
+        "payMin": 200000,
+        "payMax": 1200000,
+        "coversCosts": true,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": false
+        }
+      },
+      "sources": [
+        "https://www.tampaairport.com/call-for-artists"
+      ]
+    },
+    {
+      "id": "iii-points-miami",
+      "name": "III Points Festival — Art Installations Program",
+      "org": "III Points (Insomniac Holdings)",
+      "city": "Miami, FL",
+      "country": "US",
+      "region": "Americas",
+      "category": "immersive",
+      "tier": "major",
+      "website": "https://www.iiipoints.com",
+      "status": "invitation",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Miami's flagship 'music, art and technology' festival (Wynwood, October) with a dedicated large-scale art-installations program billed as 'immersive, glowing environments.'",
+      "selection": "Curated internally; festival produced under Insomniac Holdings.",
+      "scale": "Multi-stage festival grounds in Wynwood, ~50,000 attendees.",
+      "requirements": "Large-scale immersive/glowing installation experience.",
+      "intel": "The festival's own language ('immersive, glowing environments') closely matches this practice. Named production contact (Michelle Concilio, Festival Producer) is a plausible entry point, but expect a longer corporate path via Insomniac/Live Nation.",
+      "warning": "No confirmed email for any named staffer.",
+      "spec": {
+        "mediums": [
+          "led",
+          "light",
+          "immersive",
+          "installation",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "coversCosts": true,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://www.iiipoints.com/experience/art-installations/"
+      ]
+    },
+    {
+      "id": "discovery-green-fall-installation",
+      "name": "Fall Art Installation — Sarofim Picnic Lawn",
+      "org": "Discovery Green Conservancy (via Weingarten Art Group)",
+      "city": "Houston, TX",
+      "country": "US",
+      "region": "Americas",
+      "category": "installation",
+      "tier": "small",
+      "website": "https://discoverygreen.com",
+      "applyLabel": "Watch discoverygreen.com and Weingarten Art Group's Submittable for the next RFP",
+      "status": "uncertain",
+      "basis": "One confirmed cycle: 2025 RFP deadline 2025-02-21 via Submittable, $80,000 budget, national eligibility. Recurrence not confirmed.",
+      "money": "$80,000 total project budget (most recent cycle).",
+      "moneyTier": "medium",
+      "fit": 3,
+      "what": "Downtown Houston's flagship public park periodically issues an RFP for a temporary 4-6 week outdoor installation wanting work engaging day and night with interactive components.",
+      "selection": "Open RFP via Submittable, national eligibility.",
+      "scale": "Single outdoor lawn installation, 4-6 week run, must withstand 70mph gusts.",
+      "requirements": "Outdoor public-art experience; day/night visual interest.",
+      "intel": "Smaller budget but low-friction national RFP, good relationship-building entry into Houston's downtown-park ecosystem.",
+      "spec": {
+        "mediums": [
+          "led",
+          "light",
+          "interactive",
+          "installation",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "payMin": 80000,
+        "payMax": 80000,
+        "coversCosts": true,
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": false
+        }
+      },
+      "sources": [
+        "https://artcallentry.com/calls/2025-Fall-Art-Installation-at-Discovery-Green"
+      ]
+    },
+    {
+      "id": "ca-mtl-winter-downtown-activation",
+      "name": "Winter Downtown Activation Program",
+      "org": "Ville de Montréal — Service de la culture",
+      "city": "Montreal",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "grant",
+      "tier": "major",
+      "website": "https://montreal.ca/programmes/appel-projets-activites-hivernales-exterieures-au-centre-ville-de-montreal",
+      "applyUrl": "https://serviceculturevilledemontreal.wiin.io/fr/applications/hiver_centre_ville_2027?programId=690cbe43338301a55e74b86c",
+      "status": "restricted",
+      "deadline": "2026-03-16",
+      "deadlineConfidence": "confirmed",
+      "basis": "Deadline, funding cap and event window stated on montreal.ca program page, verified 2026-09-14.",
+      "eventWindow": "Jan 1 - Mar 7, 2027",
+      "money": "Up to $150,000 CAD per project (max 80% of total cost).",
+      "moneyTier": "high",
+      "fit": 3,
+      "what": "City of Montreal funding call for large-scale winter outdoor activations downtown, part of the Downtown Strategy 2030, seeking immersive tech-forward experiences.",
+      "selection": "Reviewed by the City's culture service; results announced May 2026.",
+      "scale": "Downtown Montreal (Ville-Marie); large installations over a 2+ month run.",
+      "requirements": "Lead applicant must be a Quebec/Canadian non-profit or public institution active 6+ months — a foreign or individual artist cannot apply solo.",
+      "intel": "Find a Montreal-based non-profit or public institution willing to be the formal applicant/fiscal sponsor and co-apply before 16 Mar 2026 — start outreach now.",
+      "warning": "Not directly open to a US sole proprietor — requires a Canadian non-profit/public institution as lead applicant.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "interactive",
+          "immersive"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": 66,
+        "payMax": 150000,
+        "coversCosts": true,
+        "contentOnly": false,
+        "gates": {
+          "residency": "Canada-nonprofit-lead",
+          "invitation": false,
+          "note": "Individual/foreign artists must partner with a qualifying Canadian non-profit as lead applicant."
+        }
+      },
+      "sources": [
+        "https://montreal.ca/programmes/appel-projets-activites-hivernales-exterieures-au-centre-ville-de-montreal"
+      ]
+    },
+    {
+      "id": "ca-sankofa-square-toronto",
+      "name": "Sankofa Square Public Art Commission",
+      "org": "Sankofa Square (formerly Yonge-Dundas Square)",
+      "city": "Toronto",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "major",
+      "website": "https://www.sankofasquare.ca/public-art",
+      "status": "invitation",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Toronto's highest-traffic civic square periodically co-commissions large-scale illuminated/kinetic public art — most recent example a forest of glowing interactive orbs by Montreal studio Kleis, co-commissioned with Quartier des Spectacles and ExpoCité, installed March 2025.",
+      "selection": "Past commission chosen via competitive jury process spanning industrial design, public art, literature experts, run jointly with partner institutions.",
+      "scale": "Major downtown Toronto plaza; large-scale, high-footfall installation.",
+      "requirements": "No open call currently posted — cold-pitch/invitation target based on precedent.",
+      "intel": "Reference the Kleis 'Conversations Célestes' precedent directly — frame this as a touring/co-commission candidate in the same vein, proposed to the square's management rather than waiting for a public call.",
+      "warning": "No public application mechanism confirmed.",
+      "spec": {
+        "mediums": [
+          "led",
+          "light",
+          "installation",
+          "interactive",
+          "sculpture"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true,
+          "note": "Approach the General Manager's office directly."
+        }
+      },
+      "sources": [
+        "https://www.sankofasquare.ca/public-art"
+      ]
+    },
+    {
+      "id": "ca-montreal-en-lumiere-lumino",
+      "name": "LUMINO (Montréal en Lumière)",
+      "org": "L'Équipe Spectra (Evenko)",
+      "city": "Montreal",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "light",
+      "tier": "flagship",
+      "website": "https://montrealenlumiere.com/en",
+      "status": "invitation",
+      "eventWindow": "Feb 18-28, 2027",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Montréal en Lumière's outdoor nightly light-art trail through downtown (dusk-11pm), described by the producer as sitting 'at the intersection of creativity and technology.'",
+      "selection": "No public open call found — appears producer/curator-commissioned directly.",
+      "scale": "Downtown Montreal, multi-block outdoor trail, major corporate sponsorship.",
+      "requirements": "Unconfirmed.",
+      "intel": "L'Équipe Spectra/Evenko is a large commercial producer with deep programming relationships — likely commissions light/tech designers directly. Approach via general contact and reference LUMINO by name.",
+      "warning": "No named programming contact could be confirmed despite multiple searches.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "interactive",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://montrealenlumiere.com/en"
+      ]
+    },
+    {
+      "id": "ca-flying-canoe-volant-edmonton",
+      "name": "Flying Canoë Volant — Illumination Program",
+      "org": "La Cité francophone",
+      "city": "Edmonton",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "light",
+      "tier": "small",
+      "website": "https://www.lacitefranco.ca/",
+      "status": "invitation",
+      "eventWindow": "Late Jan-early Feb",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "Annual bilingual winter festival blending Franco-Métis-Indigenous storytelling with an illuminated night trail; current light identity (incl. a 16-foot interactive donation tower) is directly commissioned from a single outside light artist.",
+      "selection": "Direct commission by festival organizers, not open call.",
+      "scale": "Bois Cardinal / Mill Creek Ravine area; community-scale winter night walk.",
+      "requirements": "Unconfirmed.",
+      "intel": "Small budget but a genuine direct commissioner of kinetic/interactive light art with a track record of hiring outside artists — treat as relationship-building rather than a flagship gig.",
+      "warning": "Festival reportedly shifting from free-admission to donation-supported model — likely funding constraints.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "interactive"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://edmonton.taproot.news/news/2025/01/28/flying-cano-volant-wants-to-transition-to-a-culture-of-contribution"
+      ]
+    },
+    {
+      "id": "ca-illuminate-yaletown-vancouver",
+      "name": "Illuminate Yaletown",
+      "org": "Yaletown Business Improvement Association",
+      "city": "Vancouver",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "light",
+      "tier": "small",
+      "website": "https://heyyaletown.com/",
+      "status": "invitation",
+      "eventWindow": "Late Feb-March weekend",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "Annual public light-art exhibition/weekend festival across Yaletown, produced by the BIA; past editions built by Vancouver studio Tangible Interaction.",
+      "selection": "No open call found — commissioned directly by the BIA, historically via one recurring local partner.",
+      "scale": "Yaletown neighbourhood, multi-block outdoor light walk.",
+      "requirements": "Unconfirmed.",
+      "intel": "Pitch Mindworks as a marquee out-of-town commission distinct from the returning local vendor, framed around neighbourhood placemaking/rebrand goals. Contact: Sarah Vallely, Executive Director.",
+      "warning": "No confirmed budget or open submission process — likely a modest BIA marketing budget relative to typical fees.",
+      "spec": {
+        "mediums": [
+          "light",
+          "led",
+          "installation",
+          "interactive"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "gates": {
+          "residency": "USA-ok",
+          "invitation": true
+        }
+      },
+      "sources": [
+        "https://heyyaletown.com/pages/contact"
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "id": "ravitz-public-art-relationship",
+      "title": "Develop a relationship with the public art administrator before you apply",
+      "who": "Beth Ravitz",
+      "role": "Public Artist and Public Art Consultant (South Florida)",
+      "quote": "artists should make every effort to contact the Public Art administrator and develop a relationship",
+      "body": "Directly applicable to the airport/museum/park commissioners in this scan (Nashville BNA, Tampa airport, Discovery Green) — cold outreach to the named program contact before a call even opens is a real advantage, not a formality.",
+      "tags": [
+        "strategy"
+      ],
+      "url": "https://www.callforentry.org/better-your-chances-at-landing-a-public-art-commission-advice-from-the-field/",
+      "added": "2026-09-14"
+    }
+  ],
+  "contacts": {
+    "cee-staro-riga-light-festival": [
+      {
+        "name": "Riga City Council communications office",
+        "role": "Routes inquiries to curator Diāna Čivle",
+        "channel": "https://www.riga.lv/en",
+        "type": "web",
+        "note": "No direct curator email published."
+      }
+    ],
+    "kochi-muziris-biennale-2027": [
+      {
+        "name": "Kochi Biennale Foundation",
+        "role": "General inquiry (curator: Kader Attia)",
+        "channel": "https://www.kochimuzirisbiennale.org/",
+        "type": "web"
+      }
+    ],
+    "lahore-biennale-lb04": [
+      {
+        "name": "Lahore Biennale Foundation",
+        "role": "General foundation inbox (curator: Nav Haq)",
+        "channel": "info@lbf.org.pk",
+        "type": "email"
+      }
+    ],
+    "botlab-dynamics-creative-partner": [
+      {
+        "name": "BotLab Dynamics Business Development",
+        "role": "Partnerships",
+        "channel": "business@botlabdynamics.com",
+        "type": "email"
+      }
+    ],
+    "crystal-bridges-light-commission": [
+      {
+        "name": "Crystal Bridges Museum",
+        "role": "General institutional contact; request routing to curatorial/exhibitions team",
+        "channel": "media@crystalbridges.org",
+        "type": "email"
+      }
+    ],
+    "bna-arts-airport": [
+      {
+        "name": "Tre Hardin",
+        "role": "Art Curator, Metropolitan Nashville Airport Authority",
+        "channel": "Tre.Hardin@flynashville.com",
+        "type": "email"
+      }
+    ],
+    "tampa-airport-public-art": [
+      {
+        "name": "Rayesha Cotton",
+        "role": "Senior Procurement Agent, Tampa International Airport",
+        "channel": "https://www.tampaairport.com/contact-procurement",
+        "type": "web",
+        "note": "Direct email unconfirmed."
+      }
+    ],
+    "ca-sankofa-square-toronto": [
+      {
+        "name": "Sankofa Square management office",
+        "role": "General manager's office",
+        "channel": "info@sankofasquare.ca",
+        "type": "email"
+      }
+    ],
+    "ca-illuminate-yaletown-vancouver": [
+      {
+        "name": "Sarah Vallely",
+        "role": "Executive Director, Yaletown BIA",
+        "channel": "info@yaletownbia.com",
+        "type": "email"
+      }
+    ],
+    "ca-flying-canoe-volant-edmonton": [
+      {
+        "name": "La Cité francophone Cultural Manager",
+        "role": "Program contact",
+        "channel": "https://www.lacitefranco.ca/",
+        "type": "web"
+      }
+    ]
+  },
+  "pitchWindows": {
+    "cee-staro-riga-light-festival": {
+      "months": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "label": "Mar-Jun",
+      "why": "6-9 months ahead of the mid-November festival."
+    },
+    "kochi-muziris-biennale-2027": {
+      "months": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "label": "Now, curatorial research phase",
+      "why": "7th edition still in early curatorial research — outreach now is timely regardless of a fixed pre-opening lead."
+    },
+    "lahore-biennale-lb04": {
+      "months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "label": "Mid-late 2026",
+      "why": "LB04 opens 27 Mar 2027; a 6-9 month lead lands mid-2026."
+    },
+    "botlab-dynamics-creative-partner": {
+      "months": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "label": "Jan-Apr",
+      "why": "Ahead of India's Oct/Nov festival-season show cycle when creative concepts for major commissions are finalized."
+    },
+    "crystal-bridges-light-commission": {
+      "months": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "label": "Jan-Apr",
+      "why": "Past commission opened in September; museum exhibition planning typically locks 8-12 months ahead."
+    },
+    "bna-arts-airport": {
+      "months": [
+        6,
+        7,
+        8
+      ],
+      "label": "Jun-Aug",
+      "why": "Ahead of a new public-agency fiscal year, timed to catch the next capital-funded art RFQ."
+    },
+    "ca-sankofa-square-toronto": {
+      "months": [
+        3,
+        4,
+        5
+      ],
+      "label": "Spring",
+      "why": "The one confirmed precedent installed in March 2025 after a jury process; comparable civic commissions select 9-12 months ahead."
+    },
+    "ca-illuminate-yaletown-vancouver": {
+      "months": [
+        8,
+        9,
+        10
+      ],
+      "label": "Late summer/early fall",
+      "why": "For a late-Feb/early-Mar activation, a 5-7 month lead lands before the BIA finalizes its winter creative partner."
+    },
+    "ca-flying-canoe-volant-edmonton": {
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "label": "Spring",
+      "why": "7-9 month lead before a late-Jan/early-Feb event, ahead of the festival's fall planning crunch."
+    }
+  }
 }

@@ -9471,7 +9471,11 @@ function durabilityFit(project, spec){
 
 function budgetFit(project, spec){
   const pMin = project.priceMin, pMax = project.priceMax;
-  const oMin = spec.payMin, oMax = spec.payMax;
+  /* Patch data from the scheduled scans may omit these keys entirely. undefined
+     is not null, so the null check below used to fall through and we would call
+     .toLocaleString() on undefined — which threw and blanked the whole list. */
+  const oMin = (spec.payMin === undefined || spec.payMin === '') ? null : spec.payMin;
+  const oMax = (spec.payMax === undefined || spec.payMax === '') ? null : spec.payMax;
   const prizeLike = spec.format==='proposal' || spec.contentOnly;
 
   if(oMin===null && oMax===null){
@@ -9623,7 +9627,18 @@ const SPECIFIC_WORK = {
   }
 };
 
+/* One malformed entry must never take down the catalogue. Scan-produced patches
+   arrive weekly and cannot be trusted to be well-formed, so a failure here
+   degrades that single card to "no match computed" instead of throwing all the
+   way up through allOpps() and leaving the user with an empty screen. */
 function matchProject(project, opp, artist){
+  try { return matchProjectCore(project, opp, artist); }
+  catch(err){
+    try { console.error('Match failed for', opp && opp.id, err); } catch(e){}
+    return null;
+  }
+}
+function matchProjectCore(project, opp, artist){
   const spec = SPECS[opp.id];
   if(!spec) return null;
 
@@ -9876,7 +9891,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '7.9';
+const APP_VERSION = '7.9.1';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -9984,8 +9999,32 @@ OPPORTUNITIES_V8.forEach(o => { if(o.spec) SPECS[o.id] = o.spec; });
 const BAKED_IN = OPPORTUNITIES.concat(OPPORTUNITIES_V4).concat(OPPORTUNITIES_V5).concat(OPPORTUNITIES_V7).concat(OPPORTUNITIES_V8);
 
 if(!S.update) S.update = emptyUpdateState();
+/* Specs arriving from a scheduled scan are not guaranteed to be complete — the
+   14 Sept 2026 patch omitted payMin/payMax on 16 of its 19 entries, and an
+   absent key is undefined rather than null, which broke budget matching hard
+   enough to blank the whole list. Normalise on the way in so the rest of the
+   app can assume the shape it expects. */
+function normaliseSpec(spec){
+  if(!spec || typeof spec !== 'object') return null;
+  const s = Object.assign({}, spec);
+  ['payMin','payMax','runDays'].forEach(k=>{
+    if(s[k] === undefined || s[k] === '') s[k] = null;
+    else if(s[k] !== null && typeof s[k] !== 'number'){
+      const n = Number(String(s[k]).replace(/[^0-9.\-]/g,''));
+      s[k] = isNaN(n) ? null : n;
+    }
+  });
+  if(!Array.isArray(s.mediums)) s.mediums = [];
+  if(!Array.isArray(s.themes)) s.themes = s.themes ? [String(s.themes)] : [];
+  if(s.gates === undefined || s.gates === null || typeof s.gates !== 'object') s.gates = {};
+  if(Array.isArray(s.needs)) s.needs = s.needs.join('; ');
+  return s;
+}
 function registerUpdateSpecs(){
-  (S.update.newOpps||[]).forEach(o => { if(o.spec) SPECS[o.id] = o.spec; });
+  (S.update.newOpps||[]).forEach(o => {
+    const sp = normaliseSpec(o.spec);
+    if(sp){ o.spec = sp; SPECS[o.id] = sp; }
+  });
   if(S.update.contacts) Object.assign(CONTACTS, S.update.contacts);
   if(S.update.windows) Object.assign(PITCH_WINDOWS, S.update.windows);
 }
@@ -11645,15 +11684,22 @@ window.addEventListener('drop', e=>{
 });
 
 /* --- file handlers: "Open with > Never Miss Again", double-click a .json --- */
-if('launchQueue' in window && 'files' in LaunchParams.prototype){
-  launchQueue.setConsumer(async (params)=>{
-    if(!params || !params.files || !params.files.length) return;
-    try{
-      const file = await params.files[0].getFile();
-      readUpdateFile(file, 'the file you opened');
-    } catch(err){ toast('Could not open that file'); }
-  });
-}
+/* Feature-detect defensively. Android Chrome exposes launchQueue but NOT
+   LaunchParams, so touching LaunchParams bare threw a ReferenceError at the top
+   level and aborted the rest of this file — the app painted its shell and then
+   nothing else ran. Never let an optional-feature probe take the app down. */
+try {
+  if('launchQueue' in window && typeof LaunchParams !== 'undefined'
+     && LaunchParams.prototype && ('files' in LaunchParams.prototype)){
+    launchQueue.setConsumer(async (params)=>{
+      if(!params || !params.files || !params.files.length) return;
+      try{
+        const file = await params.files[0].getFile();
+        readUpdateFile(file, 'the file you opened');
+      } catch(err){ toast('Could not open that file'); }
+    });
+  }
+} catch(err){ /* file handling unsupported here — the other import routes still work */ }
 
 function revertUpdates(){
   if(!confirm('Remove all applied updates and go back to the data built into this version? Your ratings, notes and projects are not affected.')) return;

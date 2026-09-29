@@ -11466,7 +11466,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '8.7';
+const APP_VERSION = '8.7.2';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -11597,8 +11597,36 @@ function normaliseSpec(spec){
   if(Array.isArray(s.needs)) s.needs = s.needs.join('; ');
   return s;
 }
+/* The same defect twice running: a scan publishes a record missing a field the
+   renderer assumes is a string. 14 Sept it was spec.payMin; 28 Sept it was
+   `money` absent on 50 of 56 entries while 10 still claimed moneyTier top/high,
+   so `o.money.split()` threw and blanked the dashboard. Backfill the top-level
+   string fields too, so absence degrades to a blank rather than an exception. */
+const OPP_STRINGS = ['money','basis','what','org','city','country','eventWindow',
+                     'selection','requirements','notes','url','applyUrl'];
+function normaliseOpp(o){
+  if(!o || typeof o !== 'object') return o;
+  OPP_STRINGS.forEach(k=>{
+    if(o[k] === undefined || o[k] === null) o[k] = '';
+    else if(typeof o[k] !== 'string') o[k] = String(o[k]);
+  });
+  if(typeof o.fit !== 'number') o.fit = Number(o.fit) || 0;
+  if(!o.moneyTier) o.moneyTier = 'unknown';
+  if(!o.status) o.status = 'unknown';
+  return o;
+}
+/* Renders the budget aside on the dashboard banner. Returns nothing at all when
+   the scan gave us a tier but no figure to put beside it. Deliberately NOT named
+   moneyLabel() — that name is already taken by the tier-name helper below. */
+function moneyAside(o){
+  if(!o || (o.moneyTier!=='top' && o.moneyTier!=='high')) return '';
+  const m = (o.money == null) ? '' : String(o.money).trim();
+  if(!m) return '';
+  return ' \u00b7 ' + esc(m.split('.')[0]);
+}
 function registerUpdateSpecs(){
   (S.update.newOpps||[]).forEach(o => {
+    normaliseOpp(o);
     const sp = normaliseSpec(o.spec);
     if(sp){ o.spec = sp; SPECS[o.id] = sp; }
   });
@@ -11771,7 +11799,7 @@ function renderDash(){
     h += `<div class="banner ${d<=7?'red':'amber'}" onclick="openDetail('${o.id}')" style="cursor:pointer">
       <span>${d<=7?'🚨':'⏰'}</span>
       <div><b>${esc(o.name)}</b> — ${d===0?'closes TODAY':d===1?'closes tomorrow':`${d} days left`}
-      ${o.moneyTier==='top'||o.moneyTier==='high'?` · ${esc(o.money.split('.')[0])}`:''}</div></div>`;
+      ${moneyAside(o)}</div></div>`;
   });
 
   h += `<div class="stats" style="margin-top:16px">
@@ -13723,6 +13751,28 @@ function revertUpdates(){
   save(); clearMatchCache(); recomputePrefs();
   toast('Reverted to built-in data'); renderSettings(); renderTabs();
 }
+
+/* One malformed record has now taken the whole app down twice. Each tab renders
+   behind a guard: if it throws, that tab shows what went wrong and the rest of
+   the app stays usable, instead of presenting an empty screen with no clue. */
+['renderDash','renderOpps','renderClients','renderInsights','renderProjects','renderInfo','renderSettings']
+.forEach(name=>{
+  const inner = window[name];
+  if(typeof inner !== 'function') return;
+  window[name] = function(){
+    try { return inner.apply(this, arguments); }
+    catch(err){
+      try { console.error(name + ' failed', err); } catch(e){}
+      const view = $('v-' + name.replace('render','').toLowerCase());
+      if(view) view.innerHTML = `<h2>Something went wrong here</h2>
+        <p class="sub">A record in the latest update is malformed, so this tab could not draw.
+        Your saved data is untouched and the other tabs still work.</p>
+        <div class="banner red"><span>\u26a0\ufe0f</span><div><b>${esc(String(err && err.message || err))}</b></div></div>
+        <p class="sub">Settings \u2192 Revert updates will take you back to the built-in data.</p>`;
+      return null;
+    }
+  };
+});
 
 /* ---------- init ---------- */
 $('compiledDate').textContent=fmtDate(DATA_COMPILED);

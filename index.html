@@ -9488,6 +9488,33 @@ const SEED_PROJECTS = [
   strengths:'The most art-world-legible work in the catalogue. The movement-to-visual link means the technology is doing conceptual work rather than decorating — which is exactly the test media-art juries apply. A body balanced on a glowing planet is also a strong single image, and single images are what survive a 3% acceptance rate.',
   limits:'Still in development — do not commit it to a near-term hard deadline until the reactive content system and platform rig are proven. The aerial/winch version is a further step beyond that.',
   tags:['circus','hand balancing','LED','sphere','reactive','performance','installation','in development']
+},
+
+{
+  id:'p_alice_mechafluora',
+  name:'A.L.I.C.E. \u2014 Mechafluora',
+  family:'alice',
+  readiness:'development',
+  oneLine:'A large-scale animatronic flower: six independently articulated five-foot petals, each skinned in soft foam and lit from within by a circuit-trace vein pattern that reads as both botany and electronics.',
+  long:'Articulated Luminous Interactive Corolla Engine. A mobile animatronic flower prop with six petals, each roughly five feet long and driven by four servos through a 3D-printed joint assembly on a central spine. The petal surfaces are 2mm EVA foam supported by hand-shaped armature wire, so the skin stays soft and flexes as the petal moves. Each petal carries 600 addressable WS2812B LEDs behind custom 3D-printed diffusers laid out as a biomimicry vein pattern with 45-degree branching and round leaf-nodes \u2014 3,600 pixels in total. Sequenced in xLights and driven by a Falcon F16V5 and Falcon Player on a Raspberry Pi, clock-synced over Art-Net Timecode to a LightToys FT Remote Pro so the flower can run alongside existing LightToys-controlled costume and prop lighting. Self-powered from parallel 12.8V 100Ah LiFePO4 packs, making it fully mobile.',
+  mediums:['installation','sculpture','led','light','newmedia','digital','interactive','performance'],
+  format:'hybrid',
+  env:'either',
+  weatherproof:false,
+  showMinutes:null,
+  runDays:null,
+  repeatable:true,
+  priceMin:35000, priceMax:120000,
+  priceNote:'Estimated and not yet validated by a completed build. The control and sync rig alone is roughly $1,150\u20131,320 before LEDs, servos, batteries, filament or fabrication labour. Treat any figure as provisional until one petal is finished and its true cost is known.',
+  crew:3,
+  originAirport:'Austin-Bergstrom (AUS)',
+  transport:'Not yet solved, and the hardest open question. Six five-foot petals plus spine and base is freight, not checked baggage, and the LiFePO4 packs fall under UN3480/3481 air-transport restrictions \u2014 they cannot travel as ordinary luggage and many carriers refuse them outright. Any touring or overseas exhibition needs either ground freight, batteries sourced locally, or a mains-powered variant.',
+  needs:['power or onboard battery','floor space for a six-petal spread','rigging only if suspended','local drone-free indoor or outdoor siting','transport by freight'],
+  rigging:false,
+  themes:['biomimicry','nature and technology','the handmade digital','growth','bloom','soft machines','circuitry as botany','organic geometry','artificial life'],
+  strengths:'The strongest single idea in the catalogue for art-world and media-art audiences, because the concept lives in the material rather than in the spectacle. A vein pattern that doubles as a circuit trace is a genuine visual argument about nature and technology, not a decorative gloss, and juries respond to work whose form carries its own thesis. It is also soft \u2014 foam, flexible skin, TPU fasteners \u2014 which sets it apart from the hard-surface robotics that dominate this field. And unlike the drone work it needs no airspace clearance, which removes the single biggest booking obstacle in the rest of the catalogue.',
+  limits:'Not built. Six of the seven open engineering questions are unresolved: the connector cannot be confirmed to survive the bending moment at the petal root, servo overcurrent behaviour is untested against the battery peak window, the per-servo current cutoff is a recommendation rather than a circuit, the linear-actuator force curve through the hinge range is unsolved, the diffuser corner-bend is Blender theory that has never been printed, and the foam snap-fit fastener has never been prototyped. It is also currently a prop that an audience watches, with no participation or reactivity built in. Do not commit it to a hard deadline until at least one complete petal has been built, lit and cycled.',
+  tags:['animatronic','LED','biomimicry','installation','sculpture','kinetic','foam','soft robotics','in development','not built']
 }
 ];
 
@@ -11466,7 +11493,7 @@ const DIM_LABEL = {region:'Region', category:'Category', moneyTier:'Budget level
 /* ===== app.js ===== */
 /* Never Miss Again — app logic */
 
-const APP_VERSION = '8.7.2';
+const APP_VERSION = '8.8.1';
 const KEY = 'nma_v2';
 const TABS = [
   {id:'dash', label:'Dashboard'},
@@ -11521,6 +11548,37 @@ if(!S.profileMigrated){
 if(S.projects.length===1 && S.projects[0].id==='p_singularity'){
   S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS)); save();
 }
+
+/* Seed projects are copied into saved state on first run, which means anyone who
+   already has the app never receives a project added to the catalogue later.
+   Adopt any seed project missing by id, and leave every existing entry exactly as
+   it is — edits made in My Projects, and projects added by hand, must survive. */
+(function adoptNewSeedProjects(){
+  if(!Array.isArray(S.projects)) { S.projects = JSON.parse(JSON.stringify(SEED_PROJECTS)); save(); return; }
+  const have = {};
+  S.projects.forEach(p=>{ if(p && p.id) have[p.id] = true; });
+  const added = SEED_PROJECTS.filter(p=>!have[p.id]);
+  if(!added.length) return;
+  S.projects = S.projects.concat(JSON.parse(JSON.stringify(added)));
+  save();
+  try { console.log('Added ' + added.length + ' new project(s) to your catalogue:',
+                    added.map(p=>p.name).join(', ')); } catch(e){}
+})();
+
+/* Withdrawing a seed project has to reach saved state too, or it lingers forever
+   on any device that already adopted it. Only an untouched copy is removed — if
+   it was renamed or given notes, it is treated as the user's own and kept. */
+const RETIRED_SEED_PROJECTS = { 'p_alice_petal': 'A.L.I.C.E. \u2014 Single Petal Prototype' };
+(function retireSeedProjects(){
+  if(!Array.isArray(S.projects)) return;
+  const before = S.projects.length;
+  S.projects = S.projects.filter(p=>{
+    if(!p || !RETIRED_SEED_PROJECTS[p.id]) return true;
+    const untouched = p.name === RETIRED_SEED_PROJECTS[p.id] && !p.notes && !p.userEdited;
+    return !untouched;
+  });
+  if(S.projects.length !== before) save();
+})();
 
 /* ---------- id migration ----------
    The v7 sweep generated machine ids like 'nordics-cee-008'. They are unreadable

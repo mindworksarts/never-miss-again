@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "2026-09-28",
-  "generated": "2026-09-28T00:00:00Z",
-  "note": "37 new opportunities (France/Benelux/Italy, Taiwan/Hong Kong/Macau, US Midwest, Africa), 23 new client prospects (Texas & Sun Belt DMCs, corporate & brand experiential) - first client scan. 2 deadlines confirmed, 3 predictions corrected.",
+  "version": "2026-10-01",
+  "generated": "2026-10-01T14:30:00Z",
+  "note": "Monthly deep sweep: China govt bureaus, no-call invitation roster, commercial spectacle industry, circus/PAM markets, public money & Expo 2027 Belgrade watch, field press + 2 insight quotes, city-scale festivals.",
   "dateChanges": [
     {
       "id": "alf",
@@ -165,7 +165,11 @@
       },
       "sources": [
         "https://www.riga.lv/en/article/staro-riga-visitors-will-be-delighted-light-installations-created-both-local-and-foreign-artists"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "cee-lunar-urbanpulse-sofia",
@@ -214,7 +218,8 @@
       },
       "sources": [
         "https://lunarlights.eu/international-competition-urbanpulse-open-call/"
-      ]
+      ],
+      "applyLabel": ""
     },
     {
       "id": "cee-light-move-festival-lodz",
@@ -260,7 +265,9 @@
       },
       "sources": [
         "https://lmf.com.pl/open-call/"
-      ]
+      ],
+      "money": "",
+      "applyLabel": ""
     },
     {
       "id": "cee-biela-noc-bratislava",
@@ -302,7 +309,11 @@
       },
       "sources": [
         "https://www.bkis.sk/udalost/biela-noc/68c02259a23cda488692d6bb/49/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "kochi-muziris-biennale-2027",
@@ -348,7 +359,11 @@
       },
       "sources": [
         "https://www.kochimuzirisbiennale.org/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "lahore-biennale-lb04",
@@ -396,7 +411,8 @@
       },
       "sources": [
         "https://www.lahorebiennale.org/"
-      ]
+      ],
+      "money": ""
     },
     {
       "id": "up-tourism-deepotsav-dev-deepawali",
@@ -439,7 +455,11 @@
       },
       "sources": [
         "https://botlabdynamics.com/blogs/ayodhya-deepotsav-2025-with-biggest-drone-show"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "botlab-dynamics-creative-partner",
@@ -481,7 +501,10 @@
       },
       "sources": [
         "https://botlabdynamics.com/about-us"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "eventWindow": ""
     },
     {
       "id": "crystal-bridges-light-commission",
@@ -525,7 +548,11 @@
       },
       "sources": [
         "https://crystalbridges.org/news-room/crystal-bridges-museum-of-american-art-announces-time-loop-by-klip-collective-a-forest-light-experience/"
-      ]
+      ],
+      "basis": "",
+      "eventWindow": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "pulse-telfair-savannah",
@@ -567,7 +594,12 @@
       },
       "sources": [
         "https://www.telfair.org/event/pulse26/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "eventWindow": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "bna-arts-airport",
@@ -612,7 +644,10 @@
       },
       "sources": [
         "https://flynashville.com/opportunity/call-for-artists-public-art-commission-for-suspended-sculpture-concourse-a-concessions-node"
-      ]
+      ],
+      "eventWindow": "",
+      "warning": "",
+      "applyUrl": ""
     },
     {
       "id": "tampa-airport-public-art",
@@ -657,7 +692,9 @@
       },
       "sources": [
         "https://www.tampaairport.com/call-for-artists"
-      ]
+      ],
+      "eventWindow": "",
+      "applyLabel": ""
     },
     {
       "id": "iii-points-miami",
@@ -699,7 +736,12 @@
       },
       "sources": [
         "https://www.iiipoints.com/experience/art-installations/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "eventWindow": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "discovery-green-fall-installation",
@@ -743,7 +785,10 @@
       },
       "sources": [
         "https://artcallentry.com/calls/2025-Fall-Art-Installation-at-Discovery-Green"
-      ]
+      ],
+      "eventWindow": "",
+      "warning": "",
+      "applyUrl": ""
     },
     {
       "id": "ca-mtl-winter-downtown-activation",
@@ -793,7 +838,8 @@
       },
       "sources": [
         "https://montreal.ca/programmes/appel-projets-activites-hivernales-exterieures-au-centre-ville-de-montreal"
-      ]
+      ],
+      "applyLabel": ""
     },
     {
       "id": "ca-sankofa-square-toronto",
@@ -835,7 +881,12 @@
       },
       "sources": [
         "https://www.sankofasquare.ca/public-art"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "eventWindow": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "ca-montreal-en-lumiere-lumino",
@@ -877,7 +928,11 @@
       },
       "sources": [
         "https://montrealenlumiere.com/en"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "ca-flying-canoe-volant-edmonton",
@@ -918,7 +973,11 @@
       },
       "sources": [
         "https://edmonton.taproot.news/news/2025/01/28/flying-cano-volant-wants-to-transition-to-a-culture-of-contribution"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "ca-illuminate-yaletown-vancouver",
@@ -959,7 +1018,11 @@
       },
       "sources": [
         "https://heyyaletown.com/pages/contact"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-bourges-2028-ecoc",
@@ -974,7 +1037,7 @@
       "status": "open",
       "deadline": "2026-09-30",
       "eventWindow": "Programme year 2028; large works enter production from Sept 2026",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 5,
       "what": "France's next European Capital of Culture is assembling its 2028 programme now. Their site states creators wanting to be in the 2028 programming must apply by 30 September 2026, and that large exhibitions enter production in September 2026. ECoC years are the biggest commissioning events in European public culture — opening ceremonies, night trails, waterfront spectacles. Drone+acrobat+LED and the 2m sphere both map onto the opening-weekend and parcours formats ECoCs build.",
       "selection": "Rolling appel à projets reviewed by the Bourges 2028 programming team; marquee pieces commissioned by the délégué général's team.",
@@ -1013,7 +1076,11 @@
       "sources": [
         "https://bourges2028.org/?lang=en",
         "https://www.touteleurope.eu/societe/capitale-europeenne-de-la-culture-avec-un-premier-appel-a-projets-bourges-2028-lance-deja-les-preparatifs/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-oerol-terschelling",
@@ -1035,7 +1102,7 @@
       "scale": "Ten-day festival, island-wide, tens of thousands of visitors",
       "requirements": "Works must respond to the island landscape — a generic touring show will be declined. Terschelling is a UNESCO Wadden Sea area, so drone flight needs early conversation about nature restrictions and bird-nesting windows; raise this yourself, it signals seriousness. Logistics by ferry.",
       "intel": "Write to programma@oerol.nl no later than spring for the festival 18 months out — the only door, and their page warns they cannot answer everything, so make the first 200 words work: one line on the piece, a 60-90 second edit, a clear power/rigging/airspace note, a realistic budget. Address the drone/acrobat work to Sabine Pater (artistic director, site-specific performance) and the sphere to Marin de Boer (visual arts). Simon Tubb is business/international — copy him for a co-production conversation. Do not pitch Jan-May for that June; the programme is closed.",
-      "warning": null,
+      "warning": "",
       "spec": {
         "mediums": [
           "drone",
@@ -1068,7 +1135,11 @@
       "sources": [
         "https://oerol.nl/en/artists-and-makers/performing-at-oerol-festival/",
         "https://oerol.nl/en/professionals/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-le-voyage-a-nantes",
@@ -1083,7 +1154,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Annual summer trail, late June to late August; permanent works year-round",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 4,
       "what": "A publicly-owned company (SPL) that commissions a new set of artworks along a painted green line through Nantes every summer, plus permanent pieces, and runs Les Machines de l'île and the Château des ducs de Bretagne. In-house programming and artistic production team of three, no public open call — commissions negotiated directly. A serious, well-funded commissioner that never advertises. The sphere fits the trail's appetite for objects people gather around; drone-and-aerial fits their evening estival events.",
       "selection": "Invitation and direct negotiation, curated by the artistic programming team under the Director General.",
@@ -1123,7 +1194,11 @@
       "sources": [
         "https://www.levoyageanantes.fr/qui-sommes-nous/",
         "https://www.levoyageanantes.fr/evenements/le-voyage-estival/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-luci-dartista-torino",
@@ -1138,7 +1213,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Late October to mid-January annually; 28th edition ran 2025-26",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 4,
       "what": "The original European artist-led city light programme, running since 1998, with a permanent collection reinstalled each winter plus a handful of newly commissioned pieces each edition (four new works in the 28th). Commissioned by the City of Turin, curated through Fondazione Torino Musei's Ufficio arte e design, funded long-term by Fondazione Arte CRT. It has never run a public artist open call — the only public procedure they publish is the tender for the curator post itself, which tells you the curator is the gatekeeper.",
       "selection": "Curator-led invitation. Fondazione Torino Musei appoints a curator by public notice for a two-edition term; that curator proposes artists to the City and Fondazione Arte CRT.",
@@ -1175,7 +1250,11 @@
         "https://www.lucidartistatorino.org/en/",
         "https://www.comune.torino.it/schede-informative/luci-dartista",
         "https://www.fondazionetorinomusei.it/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-videocitta-roma",
@@ -1229,7 +1308,11 @@
       "sources": [
         "https://www.videocitta.com/",
         "https://www.videocitta.com/corporate-governance/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-constellations-metz",
@@ -1281,7 +1364,11 @@
       "sources": [
         "https://www.constellations-metz.fr/en/homepage/",
         "https://metz.fr/actus/2025/250103_festival_constellations_appel_a_projets_concours_mapping.php"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-mons-en-lumieres",
@@ -1334,7 +1421,11 @@
         "https://monsenlumieres.be/",
         "https://monsenlumieres.be/contact/",
         "https://www.monasbl.be/appels-a-projets/mons-en-lumieres-2027-appel-candidatures-artistiques"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-lichtfestival-gent",
@@ -1387,7 +1478,11 @@
       "sources": [
         "https://lichtfestival.stad.gent/en",
         "https://persruimte.stad.gent/232026-van-ai-tot-glas-in-lood-lichtfestival-stelt-32-kunstwerken-voor"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "fbi-ddw-grand-projects",
@@ -1439,7 +1534,11 @@
       "sources": [
         "https://ddw.nl/en/open-call-grand-projects",
         "https://site.ddw.nl/en/participation/participants-faq"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-yuejin-supernova-tainan",
@@ -1491,7 +1590,11 @@
         "https://www.yuejinlanternfestival.com/opencall",
         "https://news.ltn.com.tw/news/life/breakingnews/5471056",
         "https://yuejinartmuseum.tainan.gov.tw/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-taiwan-lantern-festival-miaoli-2027",
@@ -1506,7 +1609,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Feb-Mar 2027, approx. two weeks around Lantern Festival",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 5,
       "what": "Taiwan's national-scale roving lantern festival — a different county hosts each year (2026 Chiayi, 2027 Miaoli, theme Between Mountain and Sea, Slow City Glow). Millions of visitors. Content is bought as separately tendered packages: main lantern, themed lantern zones, friendship-city zone, light-environment design, art installations, nightly drone shows and stage performance. The single largest concentration of drone-show and large light-object money in Taiwan.",
       "selection": "Public procurement via the government e-procurement site and the county bidding portal, best-value evaluation by a nine-member committee weighing concept, prior experience and price — not lowest bid.",
@@ -1545,7 +1648,11 @@
         "https://www.miaoli.gov.tw/bidding/News_Content.aspx?n=1093&s=974887",
         "https://admin.taiwan.net.tw/News/NewsTravel?a=35&id=32864",
         "https://lantern2027.utk.com.tw/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-christmasland-new-taipei",
@@ -1600,7 +1707,11 @@
         "https://christmasland.ntpc.gov.tw/",
         "https://udn.com/news/story/7323/9137358",
         "https://www.cop.ntpc.gov.tw/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-light-up-macao-mgto",
@@ -1653,7 +1764,11 @@
         "https://www.gov.mo/en/news/375212/",
         "https://www.dst.gov.mo/en/about-us/press-release/290f3ba9207c426da1027b146907163a.html",
         "https://www.macaotourism.gov.mo/en/events/whatson/12480/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-macao-international-parade-icm",
@@ -1705,7 +1820,11 @@
         "https://www.icm.gov.mo/cn/events/76",
         "https://www.icm.gov.mo/macaoparade/12/",
         "https://www.gov.mo/en/news/394650/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-galaxyart-macau",
@@ -1720,7 +1839,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Year-round, exhibitions typically 2-4 months; heaviest around Art Macao (Jul-Oct in biennale years) and Lunar New Year",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 5,
       "what": "A permanent 6,500+ sq ft free-admission contemporary art venue on the Galaxy Promenade, open since 2021, programming digital and immersive installations, large-scale sculptural work and media art. Galaxy also mounts pavilion exhibitions for Art Macao, where the integrated resorts each stage a major international commission.",
       "selection": "Pure curatorial invitation and direct commission. No open call has ever been published. Works arrive through the venue's curatorial team, through galleries and producers Galaxy already works with, and through the Art Macao resort-pavilion programme coordinated with the Cultural Affairs Bureau.",
@@ -1758,7 +1877,11 @@
         "https://www.galaxymacau.com/galaxy-art/",
         "https://www.macauculture.gov.mo/en/events/detail/10974",
         "https://www.mgm.mo/en/art"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-swire-arts-month-hk",
@@ -1773,7 +1896,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "March annually, timed to Art Basel Hong Kong; individual works often run longer",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 4,
       "what": "A citywide March commissioning programme across Swire's Hong Kong portfolio — Taikoo Place and ArtisTree, Cityplaza, Pacific Place, Starstreet Precinct, One Island East, EAST Hong Kong and the Upper House. The 2026 edition commissioned nine works including Liam Gillick at Cityplaza and Christine Sun Kim at Pacific Place, described by Swire as mixed-media and multisensory. Interactive, sensor-driven and light-based objects sit squarely inside what they buy.",
       "selection": "Curatorial invitation, commissioned directly by Swire Properties' arts and culture team, often with guest curators and galleries. No open call has ever been published.",
@@ -1810,7 +1933,11 @@
       "sources": [
         "https://www.swireproperties.com/en/media/press-releases/2026/20260305_arts-month-2026/",
         "https://www.swireproperties.com/en/art-and-culture/arts-month/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-harbour-city-art-hk",
@@ -1863,7 +1990,11 @@
       "sources": [
         "https://www.harbourcity.com.hk/en/genre/art-culture/",
         "https://www.harbourcity.com.hk/en/explore-hc/about/contact-us/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-westk-freespace-artpark",
@@ -1878,7 +2009,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Year-round; outdoor Art Park programming clusters Oct-Dec and Mar-May; Freespace seasons announced twice yearly",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 4,
       "what": "Hong Kong's flagship cultural district — a 23-hectare harbourfront site with M+, the Hong Kong Palace Museum, the Freespace performance venue and a large outdoor Art Park with a harbour-facing lawn used for festivals and large outdoor works. Freespace Tech Lab and the Creation for Freespace series show an explicit institutional appetite for scenography, stage technology and technically ambitious performance. The Art Park lawn is one of very few Hong Kong sites where an outdoor drone show over water is institutionally plausible.",
       "selection": "Two channels. Artistic programming is curated by WestK's performing arts and visual arts teams by invitation and through producer relationships. Production, design and technical services are bought through published tender notices and an expression-of-interest process under Business Opportunities.",
@@ -1918,7 +2049,11 @@
       "sources": [
         "https://www.westk.hk/en/business-opportunities",
         "https://www.westkowloon.hk/en/press-release/west-kowloon-cultural-district-authority-launches-three-year-project-freespace-tech-lab-in-collaboration-with-experimental-theatre-company-zuni-icosahedron"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "twhk-keelung-ciao-harbour-arts",
@@ -1969,7 +2104,11 @@
       "sources": [
         "https://keelung-for-a-walk.com/zh/opencall2026/",
         "https://artres.moc.gov.tw/en/calls/list"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-gleam-olbrich-madison",
@@ -2023,7 +2162,11 @@
         "https://www.olbrichgleam.org/submit-a-proposal",
         "https://www.olbrich.org/calendar/gleam",
         "https://app.entrythingy.com/calls/external/gleam-art-in-a-new-light/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-morton-arboretum-illumination",
@@ -2039,7 +2182,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Mid-Nov to early Jan (2026 run: Nov 14, 2026 - Jan 2, 2027)",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 5,
       "what": "A one-mile ticketed night trail in its 14th season, now 22 discrete displays, in the Chicago metro. Each season the Arboretum commissions four or more brand-new large-scale installations — the 2026 additions include a 400+ foot aurora canopy, a chrome sphere tunnel, and a hillside of glowing orbs. That glowing-orb and sphere-tunnel language is the clearest signal in the Midwest that this buyer is actively purchasing exactly the LED-sphere and kinetic-light vocabulary. Runs alongside a separate daytime sculpture exhibition, so the Arboretum is a repeat commissioner of outdoor art objects, not just a lighting client.",
       "selection": "No open call has ever been published. Work is custom-designed in partnership with media and exhibit designers Lightswitch; the Arboretum's exhibitions team and Lightswitch jointly decide what gets built each season.",
@@ -2075,7 +2218,11 @@
         "https://mortonarb.org/news/illumination-at-the-morton-arboretum-returns-nov-14-with-boldest-most-captivating-winter-wonderland-holiday-lights-experience/",
         "https://mortonarb.org/explore/activities/exhibitions/illumination/",
         "https://www.lightswitch.net/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-exploration-place-drone-festival",
@@ -2129,7 +2276,11 @@
         "https://exploration.org/event/drone-light-show/",
         "https://exploration.org/staff/",
         "https://www.visitwichita.com/events/annual-events/drone-light-festival/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-gateway-arch-park-foundation",
@@ -2183,7 +2334,11 @@
       "sources": [
         "https://www.archpark.org/impact/marquee-events",
         "https://www.archpark.org/events/winterfest"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-minnesota-state-fair-entertainment",
@@ -2235,7 +2390,11 @@
       "sources": [
         "https://www.mnstatefair.org/get-involved/entertainers",
         "https://www.mnstatefair.org/free-live-music-and-shows/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-saint-paul-winter-carnival",
@@ -2288,7 +2447,11 @@
       "sources": [
         "https://www.wintercarnival.com/p/about/contact-us",
         "https://www.wintercarnival.com/p/about/2027-winter-carnival-dates"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-winterapolis-minneapolis",
@@ -2343,7 +2506,11 @@
         "https://www.minneapolis.org/media/news-releases/winterapolis-2025-26/",
         "https://www.minneapolis.org/winter-apolis/winterapolis/",
         "https://www.cbsnews.com/minnesota/news/holidazzle-evolves-into-winterapolis/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-spark-on-the-circle-indy",
@@ -2397,7 +2564,11 @@
         "http://circlespark.org/about/",
         "https://downtownindy.org/do/spark-on-the-circle",
         "https://www.bigcar.org/project/spark-on-the-circle/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "mw-dlectricity-midtown-detroit",
@@ -2453,7 +2624,11 @@
         "https://dlectricity.com/about/",
         "https://midtowndetroitinc.org/",
         "https://www.metrotimes.com/arts/the-return-of-the-dlectricity-festival-shines-a-light-on-new-plans-for-detroits-cultural-center-district-28107461/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-caf-afcon2027-ceremony-tenders",
@@ -2468,7 +2643,7 @@
       "status": "open",
       "deadline": null,
       "eventWindow": "AFCON 2027 finals mid-2027; CAF tender cycle runs through 2026",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 5,
       "what": "CAF runs a live, continuously refreshed public tender portal. Verified live listings include CAF-RFP2026-515 AFCON 2027 Prematch Ceremony, CAF-RFP2026-568 Audiovisual and Creative Content Production Services, CAF-RFQ2026-558 (AFCON 2027 Communication & PR) plus a package block for the CAF Awards in Nigeria (Lead Creative and Design Agency, Event Design and Coordination, Event Set-Up, Award Ceremony Branding). Opening and prematch ceremonies at AFCON are exactly where drone + aerial + LED-costume content is bought, and the CAF President has publicly trailed a special opening ceremony for the three-nation Pamoja edition.",
       "selection": "Formal RFP/RFQ response against published tender documents; CAF vendor registration first, then bid per package. No artistic jury — this is procurement.",
@@ -2504,7 +2679,11 @@
       "sources": [
         "https://www.cafonline.com/inside-caf/about-us/tenders/",
         "https://www.independent.co.ug/billions-in-afcon-2027-contracts-up-for-grabs-as-uganda-invites-suppliers/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-misr-sound-light-egypt",
@@ -2519,7 +2698,7 @@
       "status": "invitation",
       "deadline": null,
       "eventWindow": "Year-round permanent installations; new-site commissioning ongoing (Edfu and Hurghada in establishment, with Western Luxor, Salah El-Din Citadel and El Moez Street announced as next sites)",
-      "moneyTier": "high",
+      "moneyTier": "unknown",
       "fit": 4,
       "what": "The Egyptian state operator of every monumental sound-and-light show in the country — Giza Pyramids/Sphinx (running since 1960), Karnak, Philae, Abu Simbel, Edfu, Qaitbay Citadel. It is actively expanding to new landmarks and states on its own site that investment and partnership opportunities are detailed in a projects document. A commissioning body for permanent light and kinetic-light work that has never run an artist open call in 60+ years.",
       "selection": "Direct negotiation with the company's chairman/CEO office, usually via a partnership or investment proposal; heritage sites additionally require Ministry of Tourism & Antiquities sign-off.",
@@ -2556,7 +2735,11 @@
       "sources": [
         "https://www.soundandlight.show/en/about-us",
         "https://lumasky.show/projects/5000-drone-light-show-opened-the-grand-egyptian-museum/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-casablanca-events-animation",
@@ -2608,7 +2791,11 @@
       "sources": [
         "https://casaevents.ma/en/carte-de-visite/",
         "https://wecasablanca.com/we/evenements"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-va-waterfront-capetown",
@@ -2660,7 +2847,11 @@
         "https://www.waterfront.co.za/blogs/art-in-public-places/",
         "https://www.waterfront.co.za/contact-us",
         "https://www.waterfront.co.za/artist-alliance-application-process/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-rdb-kwita-izina-rwanda",
@@ -2712,7 +2903,11 @@
       "sources": [
         "https://kwitaizina.rw/our-events/",
         "https://rdb.rw/rema-to-headline-kwita-izina-concert-at-bk-arena/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-lagos-state-tourism-fiesta",
@@ -2764,7 +2959,11 @@
         "https://tourismartandculture.lagosstate.gov.ng/",
         "https://guardian.ng/saturday-magazine/greater-lagos-fiesta-mode-activated/",
         "https://nairametrics.com/2025/12/30/lagos-cancels-greater-lagos-fiesta-2025-urges-prayers-to-usher-in-2026/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-fakugesi-johannesburg",
@@ -2817,7 +3016,11 @@
       "sources": [
         "https://www.fakugesi.co.za/about.html",
         "https://www.wits.ac.za/news/latest-news/research-news/2026/-2026-07/fakugesi-2026-african-imaginaries-the-signal-is-live.html"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-national-arts-festival-makhanda",
@@ -2870,7 +3073,11 @@
       "sources": [
         "https://nationalartsfestival.co.za/",
         "https://musicinafrica.net/magazine/open-call-national-arts-festival-opens-applications-for-2027-curated-programme/"
-      ]
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
     },
     {
       "id": "af-sa-etenders-festive-lighting",
@@ -2920,6 +3127,1937 @@
       },
       "sources": [
         "https://www.etenders.gov.za/"
+      ],
+      "money": "",
+      "basis": "",
+      "applyUrl": "",
+      "applyLabel": ""
+    },
+    {
+      "id": "cn-shanghai-intl-light-festival",
+      "name": "Shanghai International Light Festival — Light & Shadow Art Installation / Projection Open Call (上海国际光影节)",
+      "org": "Shanghai Greening and City Appearance Administration Bureau (上海市绿化和市容管理局), with Shanghai Culture and Tourism Bureau, Shanghai Commerce Commission, Shanghai Radio & Television Station",
+      "city": "Shanghai",
+      "country": "China",
+      "region": "Asia",
+      "category": "light",
+      "tier": "major",
+      "website": "https://lhsr.sh.gov.cn/gyj25/",
+      "applyUrl": "https://lhsr.sh.gov.cn/gyj25/20251011/0f71f3e9aea148a4839d5727320fc4e8.html",
+      "applyLabel": "Email proposal packet to shilf@lhsr.sh.gov.cn",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "",
+      "predictedDeadline": "2027-06-25",
+      "predictedConfidence": "high",
+      "basis": "2nd edition (2025) deadline was 2025-07-20; 3rd edition (2026) deadline was 2026-06-25, confirmed via the organizing bureau's own site for the 2025 cycle. Both already passed as of 2026-10-01; 4th edition call expected on the same annual pattern.",
+      "opensDate": "",
+      "eventWindow": "Unconfirmed; prior editions' main exhibition period was autumn/winter following the summer deadline",
+      "money": "Cash prizes only: 1st prize RMB 30,000 (~$4,200), 2nd prize RMB 20,000 x2, 3rd prize RMB 10,000 x3; selected installations separately receive unspecified production/landing funding support.",
+      "moneyTier": "low",
+      "fit": 4,
+      "what": "Open call for building-projection shows and light/shadow art installations at the festival's main venue and district sub-venues; explicitly open to international and domestic artists. Works must be national/world premieres, full English documentation accepted.",
+      "selection": "Email submission with registration form, ID documentation, design concept, technical drawings and budget; reviewed by a named jury.",
+      "scale": "City flagship festival; outstanding works have historically toured to Shenzhen, Guangzhou and Chongqing light festivals.",
+      "requirements": "English project documentation, technical/budget package, willingness to premiere in China.",
+      "intel": "Real government-run annual pipeline with a track record of touring winning works to multiple Chinese cities. Worth treating as a gateway even though the cash prize is modest. Approach shilf@lhsr.sh.gov.cn ~March-April 2027 to ask when the 4th-edition call opens; English materials are explicitly accepted. The LED sphere (installation) fits better than Singularity (drones aren't the focus here).",
+      "warning": "Deadline for the most recent edition has already passed; this is a prediction for the next cycle.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "newmedia",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": 4200,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Cash prize is minor; undisclosed separate production/landing funding for selected works.",
+        "themes": [],
+        "needs": "English-language proposal, technical drawings, budget, world/national-premiere work",
+        "gates": {
+          "residency": "USA-ok (international artists explicitly welcomed)",
+          "note": "Work must not have been publicly shown before"
+        }
+      },
+      "sources": [
+        "https://lhsr.sh.gov.cn/gyj25/20251011/0f71f3e9aea148a4839d5727320fc4e8.html",
+        "https://lhsr.sh.gov.cn/gyj25/20251011/a3d48e01b53442c98d90ae5a15ddd891.html",
+        "https://www.shejijingsai.com/2026/04/1533785.html"
+      ]
+    },
+    {
+      "id": "cn-guangzhou-intl-light-festival",
+      "name": "Guangzhou International Light Festival — Open Call for Works (广州国际灯光节 作品征集)",
+      "org": "Guangzhou Municipal Housing and Urban-Rural Development Bureau (广州市住房和城乡建设局), with Guangzhou Urban Construction Investment Group and Guangzhou Cultural Development Group",
+      "city": "Guangzhou",
+      "country": "China",
+      "region": "Asia",
+      "category": "light",
+      "tier": "major",
+      "website": "https://zfcj.gz.gov.cn/",
+      "applyUrl": "https://www.shejijingsai.com/2025/05/1316311.html",
+      "applyLabel": "Email proposal packet to gz_lights@163.com",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "",
+      "predictedDeadline": "2027-06-30",
+      "predictedConfidence": "medium",
+      "basis": "2025 edition deadline was 2025-06-30, confirmed via a repost of the official call text consistent with Guangzhou municipal press releases. A 2026 edition (with a new international creative-youth track) followed the same annual window. Both closed as of today; 2027 call not yet published.",
+      "opensDate": "",
+      "eventWindow": "Main festival opens early-to-mid November each year",
+      "money": "No entry fee. No fixed cash prize disclosed; winners get honor certificates and festival committee exhibition/procurement assistance. A 'brand co-creation' sponsorship track can fully fund selected proposals.",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Open call for light-art works (including building projection and large sculptural/interactive installations) at Haixinsha and other main venues during the November festival; explicitly open to domestic and international artists.",
+      "selection": "Email submission with signed registration PDF, ID documentation, design proposal and cost budget.",
+      "scale": "One of China's largest annual light festivals, citywide.",
+      "requirements": "Design proposal plus detailed cost budget; no stated nationality restriction.",
+      "intel": "Lower administrative friction than drone-tender routes since this is an artist open call, not a procurement bid, but documentation is in Chinese with no confirmed English track. Best approached a few months ahead of the typical June deadline by emailing gz_lights@163.com to ask about the next cycle and English submissions.",
+      "warning": "Most recent call deadline has passed; prediction for 2027. Contact sourced via a secondary aggregator reposting the official text, not the bureau's own domain directly.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "newmedia"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Budget not published; sponsorship-based funding model for some tracks.",
+        "themes": [],
+        "needs": "Chinese-language proposal and budget (no confirmed English track)",
+        "gates": {
+          "residency": "USA-ok (stated open to international artists)",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://www.shejijingsai.com/2025/05/1316311.html",
+        "https://news.dayoo.com/guangzhou/202606/08/139995_54967881.htm",
+        "https://zfcj.gz.gov.cn/zjdt/xwfyr/content/post_9960873.html"
+      ]
+    },
+    {
+      "id": "cn-chongqing-xian-oct-drone-tender",
+      "name": "Chongqing/Xi'an Annual Drone Performance Services Tender (重庆/西安 无人机表演服务招标)",
+      "org": "Chongqing Happy Valley Cultural Tourism Development Co., Ltd. (重庆欢乐谷文化旅游发展有限公司), an OCT subsidiary",
+      "city": "Chongqing / Xi'an",
+      "country": "China",
+      "region": "Asia",
+      "category": "drone",
+      "tier": "mid",
+      "website": "https://skyfamily.com.cn/",
+      "applyUrl": "https://skyfamily.com.cn/mobile/buy/4/16150.html",
+      "applyLabel": "Tender listing (domestic bidders only)",
+      "status": "restricted",
+      "deadline": "",
+      "deadlineConfidence": "",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Tender states the solicitation is ongoing/long-term with no fixed closing date; found via a drone-industry tender aggregator, not the procuring entity's own site.",
+      "opensDate": "",
+      "eventWindow": "392-day service period covering theme-park drone shows in both Chongqing and Xi'an",
+      "money": "Budget not published ('see requirements document'); contract covers site surveys, airspace permits, equipment rental, choreography and production over a 392-day term.",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "Annual/ongoing drone performance services tender for OCT's Happy Valley theme parks in Chongqing and Xi'an.",
+      "selection": "Competitive tender restricted to legally registered Chinese entities.",
+      "scale": "392-day service contract, two cities, theme-park-scale recurring shows.",
+      "requirements": "Chinese-registered legal entity with valid business license and a documented track record of 2+ drone-show projects in the last 3 years including at least one 800+-aircraft show. No bankruptcy/corruption/blacklist history.",
+      "intel": "Not directly biddable by a US company — domestic-bidder-only, and the 800+-drone track-record requirement is well above Singularity's current 8-150 drone range. Included as market intelligence only: shows OCT buys drone shows recurrently; a US studio could in principle subcontract under a Chinese prime bidder.",
+      "warning": "Domestic-bidder-only; excludes foreign/unregistered entities; requires a drone-show scale far larger than MindWorks' current range. Do not pursue as a direct bid.",
+      "spec": {
+        "mediums": [
+          "drone"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "runDays": 392,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Budget not published.",
+        "themes": [],
+        "needs": "Chinese business registration; 800+ drone single-show track record",
+        "gates": {
+          "residency": "China-registered entity required",
+          "note": "Explicitly domestic-bidder-only"
+        }
+      },
+      "sources": [
+        "https://skyfamily.com.cn/mobile/buy/4/16150.html"
+      ]
+    },
+    {
+      "id": "artichoke-lumiere",
+      "name": "Lumiere (Artichoke Trust)",
+      "org": "Artichoke",
+      "city": "Durham / London",
+      "country": "UK",
+      "region": "Europe",
+      "category": "light",
+      "tier": "flagship",
+      "website": "https://www.artichoke.uk.com/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, curator-led commissioning",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Lumiere Durham runs biennially, typically mid-November",
+      "money": "Budget not published; Lumiere Durham has historically commissioned 30-40 large-scale light works across a UK city center",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "The UK's largest light-art festival (plus occasional London edition and related Artichoke projects), staging dozens of large-scale light installations and projections across historic city streets, with international touring artists invited to adapt or create site-specific work.",
+      "selection": "invitation-only, no open call",
+      "scale": "City-wide, 30+ installations, hundreds of thousands of visitors",
+      "requirements": "Touring-scale light/projection work adaptable to UK heritage sites and outdoor city routes",
+      "intel": "Artichoke has never run a public call for Lumiere artists — programming is built by scouting work at other festivals (Vivid Sydney, Amsterdam Light Festival, GLOW Eindhoven, Fête des Lumières) and word of mouth. Dalton's LUMA Small Works credential plus festival-circuit visibility is the realistic path in. Best pitch window is 9-12 months before an edition.",
+      "warning": "Lumiere Durham is biennial, so timing a pitch around an edition year matters; the London edition has been dormant/irregular recently. Unconfirmed whether a 2027 edition is scheduled.",
+      "spec": {
+        "mediums": [
+          "light",
+          "projection",
+          "installation"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "runDays": 4,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed; large UK light festivals typically cover fees, travel and production costs",
+        "themes": [],
+        "needs": "Site-adaptable light/projection work rated for UK outdoor conditions in November",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists regularly commissioned"
+        }
+      },
+      "sources": [
+        "https://www.artichoke.uk.com/",
+        "https://en.wikipedia.org/wiki/Artichoke_(company)",
+        "https://www.lumiere-festival.com/"
+      ]
+    },
+    {
+      "id": "mona-dark-mofo",
+      "name": "Dark Mofo",
+      "org": "MONA (Museum of Old and New Art)",
+      "city": "Hobart",
+      "country": "Australia",
+      "region": "Oceania",
+      "category": "spectacle",
+      "tier": "major",
+      "website": "https://darkmofo.net.au/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, curator-led",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Mid-June (Southern Hemisphere winter solstice period)",
+      "money": "Budget not published; privately funded by David Walsh and known for well-resourced, ambitious commissions",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "MONA's annual dark/experimental winter festival of fire, light, performance art and large-scale spectacle, curated for shock, awe and ritual rather than family-friendly light-trail aesthetics.",
+      "selection": "invitation-only, no open call",
+      "scale": "Multi-week festival, large-scale outdoor and venue-based works",
+      "requirements": "Bold, visually arresting, often dark/ritualistic spectacle work",
+      "intel": "No evidence of a public submissions process; programming driven by Creative Director Chris Twite (confirmed as of 2025) scouting internationally. Dark Mofo skews darker than Singularity's current framing, so a pitch would likely need a 'ritual' reframe of the drone circus piece or lean into the sphere's uncanny potential. Approach via MONA's general info channel 8-10 months ahead.",
+      "warning": "Festival brand is intentionally edgy/provocative; worth understanding tone before pitching.",
+      "spec": {
+        "mediums": [
+          "light",
+          "spectacle",
+          "performance",
+          "installation"
+        ],
+        "format": "either",
+        "env": "either",
+        "runDays": 10,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [
+          "ritual",
+          "darkness",
+          "transgression"
+        ],
+        "needs": "Work adaptable to a darker/experimental curatorial frame",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists commissioned regularly"
+        }
+      },
+      "sources": [
+        "https://darkmofo.net.au/info",
+        "https://www.abc.net.au/news/2025-04-04/dark-mofo-events-2025-mona-tasmania-chris-twite/105117620",
+        "https://en.wikipedia.org/wiki/Dark_Mofo"
+      ]
+    },
+    {
+      "id": "sharjah-light-festival",
+      "name": "Sharjah Light Festival",
+      "org": "Sharjah City Municipality / Sharjah Events",
+      "city": "Sharjah",
+      "country": "UAE",
+      "region": "Gulf",
+      "category": "light",
+      "tier": "major",
+      "website": "https://www.sharjahlightfestival.ae/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, government-curated",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Typically February",
+      "money": "Budget not published; government-funded UAE light festival with multi-site programming",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Annual government-produced light and projection-mapping festival illuminating landmarks and public spaces across Sharjah, featuring international light artists and production companies.",
+      "selection": "invitation-only, no open call",
+      "scale": "Multi-site, citywide, roughly two-week run",
+      "requirements": "Large-scale projection/light work suitable for architectural facades and public plazas",
+      "intel": "Distinct from the already-tracked Sharjah Art Foundation open calls — the Light Festival has no public EOI process; artists are selected and contracted directly by the municipal body. Sits in the same Gulf ecosystem as Noor Riyadh and Manar Abu Dhabi (already tracked) — relationship-building with Gulf light-festival producers generally opens multiple doors. Outreach 9-12 months ahead is most likely to land before production contracts are finalized.",
+      "warning": "No named curator found publicly; outreach likely goes through a general events/tourism inquiry channel.",
+      "spec": {
+        "mediums": [
+          "light",
+          "projection"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": 14,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [],
+        "needs": "Projection/light work for architectural facades and public space",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists commissioned yearly"
+        }
+      },
+      "sources": [
+        "https://www.sharjahlightfestival.ae/",
+        "https://en.wikipedia.org/wiki/Sharjah_Light_Festival",
+        "https://en.aletihad.ae/news/culture/4463933/sharjah-light-festival-narrates-stories-with-global-artists"
+      ]
+    },
+    {
+      "id": "hyde-park-winter-wonderland",
+      "name": "Hyde Park Winter Wonderland",
+      "org": "Mari Group (operator, Royal Parks partnership)",
+      "city": "London",
+      "country": "UK",
+      "region": "Europe",
+      "category": "circus",
+      "tier": "major",
+      "website": "https://hydeparkwinterwonderland.com/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, direct entertainment booking",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Mid-November to early January",
+      "money": "Budget not published; one of Europe's largest Christmas events, millions of visitors over a 6-week run",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "London's largest Christmas event, running rides, markets and a dedicated circus big top (Show Town) with touring circus and variety performances each season, alongside illuminated attractions.",
+      "selection": "invitation-only, no open call",
+      "scale": "Six-week run, multiple performance venues on-site",
+      "requirements": "Touring circus/variety act suitable for a big-top or festive-village setting; family-friendly",
+      "intel": "No public casting/booking process found; circus program is booked directly by Mari Group. No dedicated talent-booking contact publicly listed — sponsorship/partnerships contact (James Goode) is the best available routing point. Cold pitches should go in by spring for a November opening.",
+      "warning": "No named entertainment-booking contact found; confirm routing before investing in a full pitch deck.",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance",
+          "light"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "runDays": 45,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [
+          "Christmas",
+          "family entertainment"
+        ],
+        "needs": "Big-top-scale circus/aerial act or illuminated spectacle for a festive setting",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Touring international circus acts booked regularly"
+        }
+      },
+      "sources": [
+        "https://hydeparkwinterwonderland.com/contact-us/",
+        "https://hydeparkwinterwonderland.com/package/show-town-spectacular-package/"
+      ]
+    },
+    {
+      "id": "la-soiree",
+      "name": "La Soirée",
+      "org": "La Soirée Touring Productions",
+      "city": "touring (UK/Australia-based production)",
+      "country": "UK",
+      "region": "Europe",
+      "category": "circus",
+      "tier": "mid",
+      "website": "https://www.lasoiree.co.uk/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, producer-scouted",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Year-round touring (Edinburgh Fringe, London West End, Sydney Festival, Off-Broadway)",
+      "money": "Budget not published; long-running international touring cabaret with West End/Broadway-level production",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Internationally touring circus-cabaret variety show built entirely around a rotating roster of world-class specialty circus acts, run by creative producer Brett Haylock.",
+      "selection": "invitation-only, no open call",
+      "scale": "Single rotating cast, touring to major festival and West End/Broadway venues",
+      "requirements": "A standalone, highly polished specialty circus act (3-8 minutes), not a full production",
+      "intel": "Haylock has built the show's 20+ year run by personally scouting standout specialty acts at circus festivals and via reputation rather than a casting call. Best-targeted fit in this list for StarBalancer specifically, since the show format is built from individual balance/strength/aerial acts. Visibility at circus festivals (Festival Mondial du Cirque de Demain, Monte-Carlo — already tracked) plus a tight act reel is the realistic path in. Casting cycles firm up 6-9 months before a new season opens.",
+      "warning": "This fits StarBalancer as a standalone act only, not Singularity or the LED sphere.",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance"
+        ],
+        "format": "performance",
+        "env": "indoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [
+          "cabaret",
+          "variety"
+        ],
+        "needs": "A single standalone specialty circus act",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International touring performers are the show's core model"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/La_Soir%C3%A9e",
+        "https://www.broadwayworld.com/people/Brett-Haylock/"
+      ]
+    },
+    {
+      "id": "underbelly-productions",
+      "name": "Underbelly Productions",
+      "org": "Underbelly Limited",
+      "city": "London / Edinburgh",
+      "country": "UK",
+      "region": "Europe",
+      "category": "circus",
+      "tier": "mid",
+      "website": "https://underbelly.co.uk/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, direct programming by co-directors",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Underbelly Festival (summer, London), Edinburgh Fringe (August), festive programming (winter)",
+      "money": "Budget not published; major UK live-events promoter running multiple annual festivals and venues",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "UK events promoter running Underbelly Festival (a touring spiegeltent circus/variety/cabaret festival), large Edinburgh Fringe venue operations, and festive programming, with circus/variety/spectacle acts programmed directly by co-directors Ed Bartlam and Charlie Wood.",
+      "selection": "invitation-only, no open call",
+      "scale": "Multiple venues/festivals annually across UK cities",
+      "requirements": "Touring circus/variety/spectacle act suited to a spiegeltent or festival-village setting",
+      "intel": "No public submissions route exists for the curated programming strand (distinct from the Fringe venue-hire rental business). Best approach: build visibility on the European circus-festival circuit and pitch the co-directors' office 6-8 months before a summer season opens.",
+      "warning": "Distinguish carefully between Underbelly's Fringe venue-hire business (paid rental, not a curated commission) and its own curated programming (invitation-only).",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance",
+          "spectacle"
+        ],
+        "format": "performance",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [
+          "cabaret",
+          "variety",
+          "festival"
+        ],
+        "needs": "Touring-ready circus/variety act or spectacle piece",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Unconfirmed whether US acts are regularly booked"
+        }
+      },
+      "sources": [
+        "https://underbelly.co.uk/about-us/",
+        "https://en.wikipedia.org/wiki/Underbelly_(events_promoter)"
+      ]
+    },
+    {
+      "id": "lightroom-london",
+      "name": "Lightroom",
+      "org": "Lightroom (80 Strand/Lightroom Ltd)",
+      "city": "London",
+      "country": "UK",
+      "region": "Europe",
+      "category": "immersive",
+      "tier": "mid",
+      "website": "https://lightroom.uk/",
+      "applyUrl": "",
+      "applyLabel": "no public application — invitation only, curator-commissioned exhibitions",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "none",
+      "predictedDeadline": "",
+      "predictedConfidence": "low",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Rolling exhibition seasons, several months each",
+      "money": "Budget not published; large-format immersive venue with major-artist exhibitions (e.g. David Hockney)",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "A purpose-built large-format immersive exhibition space in King's Cross staging curated, floor-to-ceiling digital exhibitions, with new exhibitions commissioned periodically.",
+      "selection": "invitation-only, no open call",
+      "scale": "Single large venue, one exhibition run at a time",
+      "requirements": "Content built for the venue's wraparound projection format, typically artist-led rather than performance-based",
+      "intel": "Lightroom's own site states it does not take unsolicited artist submissions or forward inquiries to artists — fully curator-driven. Best suited to a reframed, screen-based cut of LED sphere or StarBalancer content rather than Singularity's live drone/circus format. Long-lead relationship-building, not a near-term pitch.",
+      "warning": "Format fit is weak for live works; this is really a next-exhibition pitch for sphere-derived visual content and may be a stretch fit overall.",
+      "spec": {
+        "mediums": [
+          "immersive",
+          "installation",
+          "digital"
+        ],
+        "format": "screen",
+        "env": "indoor",
+        "runDays": 90,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": true,
+        "payNote": "Unconfirmed",
+        "themes": [],
+        "needs": "Large-format digital content built for a wraparound projection venue",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Unconfirmed track record with US-based artists"
+        }
+      },
+      "sources": [
+        "https://lightroom.uk/about/",
+        "https://lightroom.uk/contact-us/"
+      ]
+    },
+    {
+      "id": "fwc26-dallas-business-connect",
+      "name": "North Texas Business Connect Program",
+      "org": "Dallas FIFA World Cup 2026 Host Committee / Dallas EDC",
+      "city": "Dallas/Arlington",
+      "country": "USA",
+      "region": "Americas",
+      "category": "megaevent",
+      "tier": "major",
+      "website": "https://www.dallasfwc26.com/",
+      "applyUrl": "https://www.dallasfwc26.com/north-texas-business-connect-program/",
+      "applyLabel": "Register company for vendor/contractor database",
+      "status": "open",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "June-July 2026 (World Cup group stage + knockout matches at AT&T Stadium, Arlington)",
+      "money": "Budget not published — individual RFP/contract values vary",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "Regional vendor/supplier registration database feeding FIFA World Cup 2026 event production, FIFA Fan Festival and related North Texas host-committee contracting opportunities.",
+      "selection": "Self-registration into a supplier database; selection for specific RFPs happens separately once posted",
+      "scale": "Dallas-Fort Worth metro, multiple match days plus fan festival programming",
+      "requirements": "North Texas-based or regionally capable business; event production/entertainment/AV categories explicitly listed as eligible",
+      "intel": "Closest major-money mega-event opportunity to Austin (3hr drive). Register now before RFPs for fan-festival entertainment/production post — pre-vetting is reportedly a prerequisite for bidding.",
+      "warning": "No live entertainment-specific RFP has posted yet; registration is a prerequisite step, not a guaranteed booking.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "drone",
+          "led",
+          "light"
+        ],
+        "format": "proposal",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Contract-by-contract, not yet published",
+        "themes": [
+          "World Cup",
+          "civic celebration",
+          "fan festival"
+        ],
+        "needs": "Event production / entertainment / AV / staging vendors",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Regional (North Texas) preference likely for some categories; others open to any qualified vendor"
+        }
+      },
+      "sources": [
+        "https://dallasedc.com/dallas-x-fifa-world-cup-26/",
+        "https://www.dallasfwc26.com/north-texas-business-connect-program/"
+      ]
+    },
+    {
+      "id": "fwc26-miami-local-impact",
+      "name": "FWC26 Local Impact Supplier Program",
+      "org": "Miami FIFA World Cup 2026 Host Committee",
+      "city": "Miami",
+      "country": "USA",
+      "region": "Americas",
+      "category": "megaevent",
+      "tier": "major",
+      "website": "https://miamifwc26.com/local-impact-supplier-program/",
+      "applyUrl": "https://miamifwc26.com/local-impact-supplier-program/",
+      "applyLabel": "Submit to Local Impact Supplier Guide / respond to posted RFPs",
+      "status": "open",
+      "deadline": "",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Rolling program; individual RFPs dated (e.g. Video Production RFP closed Mar 7 2026, Sponsorship Activation RFP due May 4 2026) — both past, newer RFPs post on an ongoing basis.",
+      "opensDate": "",
+      "eventWindow": "June-July 2026",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "South Florida supplier program vetting local businesses for World Cup 2026 event production, video/creative services and sponsorship activation contracts tied to the FIFA Fan Festival.",
+      "selection": "Vetted/certified with Miami-Dade County and/or the program; then eligible to bid on specific RFPs/RFIs",
+      "scale": "Miami metro, FIFA Fan Festival plus satellite events",
+      "requirements": "South Florida-based business preferred; event production and creative/video services explicitly eligible categories",
+      "intel": "Program explicitly states it exists to help local vendors 'compete for similar large-scale event opportunities coming to our area beyond World Cup 2026' — a door into the broader South Florida mega-event vendor pool.",
+      "warning": "Likely favors Florida-registered/certified businesses; MindWorks would need a Florida presence or local partner.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "led",
+          "drone",
+          "newmedia"
+        ],
+        "format": "proposal",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Per-RFP, not published",
+        "themes": [
+          "World Cup",
+          "civic celebration"
+        ],
+        "needs": "Event production, video/creative, entertainment vendors",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Regional/county certification may be required for some categories"
+        }
+      },
+      "sources": [
+        "https://miamifwc26.com/local-impact-supplier-program/"
+      ]
+    },
+    {
+      "id": "showcase-atlanta-fwc26",
+      "name": "Showcase Atlanta Supplier Network",
+      "org": "Atlanta FIFA World Cup 2026 Host Committee",
+      "city": "Atlanta",
+      "country": "USA",
+      "region": "Americas",
+      "category": "megaevent",
+      "tier": "mid",
+      "website": "https://showcaseatlanta.com/",
+      "applyUrl": "https://showcaseatlanta.com/get-involved",
+      "applyLabel": "Register for supplier/business directory",
+      "status": "open",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "June-July 2026",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Atlanta host-committee program registering local artists, performers and production companies into a supplier/business directory for World Cup 2026 contract opportunities.",
+      "selection": "Self-registration into directory; contract award separate and not detailed publicly",
+      "scale": "Atlanta metro",
+      "requirements": "Not fully specified; page explicitly invites artists, performers or production companies",
+      "intel": "The only host-city program whose public copy explicitly names artists and performers (not just general contractors) as intended registrants — worth a direct submission even without Georgia ties.",
+      "warning": "Low transparency on deadlines/selection criteria; treat as a long-shot registration.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "led",
+          "drone"
+        ],
+        "format": "proposal",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Not stated",
+        "themes": [
+          "World Cup",
+          "civic celebration"
+        ],
+        "needs": "Performers, production companies",
+        "gates": {
+          "residency": "USA-ok",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://showcaseatlanta.com/get-involved",
+        "https://discoveratlanta.com/events/fifa-world-cup-2026-partner-and-vendor-toolkit/"
+      ]
+    },
+    {
+      "id": "base-entertainment-vegas",
+      "name": "BASE Entertainment — Resident Show Development",
+      "org": "BASE Entertainment",
+      "city": "Las Vegas, NY, LA",
+      "country": "USA",
+      "region": "Americas",
+      "category": "spectacle",
+      "tier": "major",
+      "website": "https://www.baseentertainment.com/",
+      "applyUrl": "https://www.baseentertainment.com/contact/",
+      "applyLabel": "Business development inquiry (no public open call)",
+      "status": "restricted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Ongoing resident-show venues (Absinthe, Blue Man Group Vegas, V Theater productions)",
+      "money": "Resident-show deals typically multi-year, percentage-of-gross; figures not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Major Las Vegas/national live-entertainment producer that develops, produces and operates resident spectacle shows in casino-resort venues.",
+      "selection": "Closed — shows developed in-house or acquired via producer relationships, not open submission",
+      "scale": "Full theater runs, often years-long residencies",
+      "requirements": "Established touring/resident show IP, usually with an existing producing partner",
+      "intel": "No open call exists. Realistic path in is relationship-building with their development/production team (founded by Scott Zeiger, ex-Clear Channel Entertainment) via TEA/IAAPA/LDI networking. Treat as a long-game named-contact target, not an application.",
+      "warning": "Confirmed closed-shop for show concepts; outside artists get in via casting for existing shows, not concept pitches.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "led"
+        ],
+        "format": "performance",
+        "env": "indoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Unpublished, deal-based",
+        "themes": [
+          "Las Vegas resident show"
+        ],
+        "needs": "Full show concepts or specialty acts with existing production partner",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Closed shop for new concepts"
+        }
+      },
+      "sources": [
+        "https://www.baseentertainment.com/",
+        "https://en.wikipedia.org/wiki/Absinthe_(show)"
+      ]
+    },
+    {
+      "id": "pgav-destinations-themed",
+      "name": "PGAV Destinations — Themed Entertainment Design",
+      "org": "PGAV Destinations",
+      "city": "St. Louis, MO (Orlando studio)",
+      "country": "USA",
+      "region": "Americas",
+      "category": "spectacle",
+      "tier": "major",
+      "website": "https://pgavdestinations.com/our-work/themed-entertainment/",
+      "applyUrl": "https://pgavdestinations.com/contact/",
+      "applyLabel": "Direct inquiry (spot@pgav.com)",
+      "status": "uncertain",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Project-based, ongoing",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "60-year-old themed-entertainment design firm (theme parks, water parks, attractions) working for clients including Disney Imagineering and Universal Parks — they design experiences needing content/show vendors.",
+      "selection": "No public RFP process; subcontractor relationships via direct outreach and trade-show networking",
+      "scale": "Major theme park and attraction projects nationally/internationally",
+      "requirements": "Not specified; likely an established portfolio in attraction-scale fabrication/show content",
+      "intel": "Confirmed named contact email (spot@pgav.com). As a design firm (not an operator), PGAV subcontracts specialty show elements — a drone/LED/immersive capability one-pager is the realistic entry, paired with an IAAPA/TEA introduction if possible.",
+      "warning": "No evidence of an open submission process; cold-outreach territory.",
+      "spec": {
+        "mediums": [
+          "led",
+          "light",
+          "spectacle",
+          "immersive"
+        ],
+        "format": "proposal",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Not stated",
+        "themes": [
+          "theme parks",
+          "attractions"
+        ],
+        "needs": "Specialty show content vendors for attraction design projects",
+        "gates": {
+          "residency": "USA-ok",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://pgavdestinations.com/our-work/themed-entertainment/",
+        "https://pgavdestinations.com/news/pgav-celebrates-60-years-of-designing-destinations-that-inspire-wonder/"
+      ]
+    },
+    {
+      "id": "george-p-johnson-gpj",
+      "name": "GPJ (George P. Johnson) — Experience Marketing",
+      "org": "GPJ",
+      "city": "Auburn Hills, MI (HQ); offices nationwide",
+      "country": "USA",
+      "region": "Americas",
+      "category": "spectacle",
+      "tier": "major",
+      "website": "https://www.gpj.com/",
+      "applyUrl": "https://www.gpj.com/contact/",
+      "applyLabel": "General business inquiry (no vendor-specific intake found)",
+      "status": "uncertain",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Ongoing — corporate activations, brand experiences, sports activation",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "One of the largest global experience-marketing agencies (brand activations, trade show builds, sports/entertainment activations) — a major buyer of spectacle-adjacent production (drone shows, LED installs, immersive content) for corporate clients.",
+      "selection": "No public submission process; production vendors sourced through internal producer relationships",
+      "scale": "Large corporate activation budgets (Fortune 500 clients)",
+      "requirements": "Not specified; general contact and careers pages only",
+      "intel": "Recently built a dedicated Sports Activation practice (2024 hire of Jenn Houston as Executive Director) — a natural fit for drone-show/LED-sphere pitches tied to stadium or franchise activations. No open portal; route is a direct capabilities pitch to their production/sports-activation team.",
+      "warning": "Generic experiential agencies rarely respond to cold inbound; success rate likely low without a referral.",
+      "spec": {
+        "mediums": [
+          "led",
+          "drone",
+          "spectacle",
+          "immersive"
+        ],
+        "format": "proposal",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Not stated",
+        "themes": [
+          "brand activation",
+          "sports marketing"
+        ],
+        "needs": "Spectacle/drone/LED production subcontractors for client activations",
+        "gates": {
+          "residency": "USA-ok",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://www.gpj.com/brand-marketing/",
+        "https://www.globenewswire.com/news-release/2024/7/9/2910452/0/en/Experience-Marketing-Agency-George-P-Johnson-Announces-Hiring-of-Jenn-Houston-as-Executive-Director-Sports-Activation.html"
+      ]
+    },
+    {
+      "id": "illuminarium-experiences",
+      "name": "Illuminarium Experiences — Immersive Venue Chain",
+      "org": "Illuminarium Experiences",
+      "city": "Atlanta, GA (HQ); venues in Atlanta, Las Vegas, Miami, Denver",
+      "country": "USA",
+      "region": "Americas",
+      "category": "immersive",
+      "tier": "mid",
+      "website": "https://www.illuminarium.com/",
+      "applyUrl": "https://www.radicalmedia.com/contact",
+      "applyLabel": "Content/production inquiry via parent studio RadicalMedia",
+      "status": "uncertain",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Rotating permanent-venue content, multi-month runs",
+      "money": "$100M+ raised (2021 funding round); per-show content budgets not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Permanent immersive-entertainment venue operator (floor-to-ceiling projection, spatial audio) built by RadicalMedia and Rockwell Group, backed by Eldridge; programs rotating large-format immersive shows across multiple US cities.",
+      "selection": "Content built/co-produced by parent studio RadicalMedia and partners; no public open call",
+      "scale": "Multi-city permanent venue network, large-format immersive installs",
+      "requirements": "Not specified; closed content pipeline so far",
+      "intel": "Genuine new-media/immersive buyer category not covered by arts-aggregator platforms, but the content pipeline runs through RadicalMedia's own production relationships. Realistic approach is pitching RadicalMedia directly as a specialty content/technology contributor.",
+      "warning": "No evidence of external vendor/artist intake; likely closed-shop, worth monitoring as venue count grows.",
+      "spec": {
+        "mediums": [
+          "immersive",
+          "newmedia",
+          "led",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "indoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": true,
+        "payNote": "Not stated",
+        "themes": [
+          "immersive entertainment"
+        ],
+        "needs": "Large-format immersive content, possibly live-performance integration",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Closed content pipeline via RadicalMedia"
+        }
+      },
+      "sources": [
+        "https://www.radicalmedia.com/work/illuminarium-experiences",
+        "https://blooloop.com/brands-ip/in-depth/illuminarium-experiences/",
+        "https://www.prnewswire.com/news-releases/illuminarium-experiences-reaches-100-million-in-initial-funding-with-strategic-investment-from-eldridge-301303523.html"
+      ]
+    },
+    {
+      "id": "apap-nyc",
+      "name": "APAP|NYC Conference",
+      "org": "Association of Performing Arts Professionals (APAP)",
+      "city": "New York, NY",
+      "country": "USA",
+      "region": "Americas",
+      "category": "performance",
+      "tier": "flagship",
+      "website": "https://apap365.org/",
+      "applyUrl": "https://apap365.org/conference/exhibit/",
+      "applyLabel": "Reserve EXPO booth / registration",
+      "status": "open",
+      "deadline": "Booth selection runs July 16 – Aug 12, 2026 (tiered by exhibitor seniority)",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "January 15-19, 2027 (70th anniversary)",
+      "money": "Not a paid gig — it's a marketplace; booth costs $500 (half) / $895 (full), additional badges $320",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "The largest US performing-arts presenter/booking marketplace — 300+ EXPO booths, showcases and thousands of presenters/agents who book touring work for theaters, festivals and performing arts centers nationwide.",
+      "selection": "Requires active APAP organizational membership plus full conference registration; EXPO booths allocated by exhibiting-history tier, not juried.",
+      "scale": "Thousands of attendees; major US touring/booking hub",
+      "requirements": "Org membership, registration fee, booth fee if exhibiting",
+      "intel": "Not a grant/commission — a sales floor where US presenters discover touring acts. Best use: a booth or showcase slot to pitch Singularity/StarBalancer directly to theater and festival presenters. Budget for it like trade-show spend.",
+      "warning": "Use phone (202) 833-2787 or the site contact form to confirm the current showcase application process (not fully detailed on the exhibit page).",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance",
+          "variety"
+        ],
+        "format": "either",
+        "env": "indoor",
+        "runDays": 5,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Marketplace — exhibitors pay to attend; booking deals negotiated separately with presenters",
+        "themes": [],
+        "needs": "Touring-ready act with reel, tech rider and booking fee structure",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "US-based org, ideal for US applicants"
+        }
+      },
+      "sources": [
+        "https://apap365.org/conference/exhibit/",
+        "https://apap365.org/About/Contact/"
+      ]
+    },
+    {
+      "id": "cinars-biennale",
+      "name": "CINARS Biennale",
+      "org": "CINARS (Commerce international des arts de la scène)",
+      "city": "Montreal, QC",
+      "country": "Canada",
+      "region": "Americas",
+      "category": "performance",
+      "tier": "flagship",
+      "website": "https://cinars.org/en/about-the-biennale",
+      "applyUrl": "https://cinars.org/en/agents-and-companies",
+      "applyLabel": "Pitch Session / exhibitor registration (next cycle)",
+      "status": "at_risk",
+      "deadline": "2026 edition: Pitch Session deadline was June 3, 2026 (passed); booths for Nov 12-14, 2026 event now fully booked",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "2028-06",
+      "predictedConfidence": "low",
+      "basis": "Inferred from the biennial (every-2-years) pattern.",
+      "opensDate": "",
+      "eventWindow": "November 9-14, 2026 (current edition, ~1,400 participants, 329 programmers, 47 countries)",
+      "money": "Marketplace — Pitch Session application fee $50 CAD (non-refundable); no prize money",
+      "moneyTier": "unknown",
+      "fit": 4,
+      "what": "North America's premier francophone/international performing-arts biennale market, with Circus Arts as an explicit featured discipline alongside dance, theatre and new music.",
+      "selection": "Pitch Session: 8 slots selected competitively; general exhibiting requires booth registration, and OFF-CINARS producers cover their own production/transport costs.",
+      "scale": "340 exhibitors, 122 shows presented (2024 edition)",
+      "requirements": "Exhibitor registration + booth rental; OFF-CINARS requires ticketing and full cost coverage",
+      "intel": "Current cycle is closed to new booth entries. Set a flag for the 2028 call (Pitch Session typically opens ~1 year prior with a spring deadline). Strong fit for Singularity/StarBalancer given circus-arts track record and heavy agent/presenter attendance.",
+      "warning": "No explicit statement on US company eligibility found; historically open to international companies but confirm directly before the 2028 cycle.",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance"
+        ],
+        "format": "either",
+        "env": "indoor",
+        "runDays": 3,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Pay negotiated post-market with booking presenters, not from CINARS itself",
+        "themes": [],
+        "needs": "Pitch deck, video excerpt, booth budget",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Not explicitly restricted; verify for 2028"
+        }
+      },
+      "sources": [
+        "https://cinars.org/en/about-the-biennale",
+        "https://cinars.org/en/agents-and-companies"
+      ]
+    },
+    {
+      "id": "hurjaruuth-winter-circus",
+      "name": "Winter Circus — Open Call for Circus Artists",
+      "org": "Dance Theatre Hurjaruuth",
+      "city": "Helsinki",
+      "country": "Finland",
+      "region": "Europe",
+      "category": "circus",
+      "tier": "mid",
+      "website": "https://hurjaruuth.fi/en/",
+      "applyUrl": "https://hurjaruuth.fi/en/winter-circus-202526-open-call-for-circus-artists/",
+      "applyLabel": "Microsoft Forms application",
+      "status": "open",
+      "deadline": "2026-11-15",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Deadline for the 2027-28 edition, stated on the organizer's own site.",
+      "opensDate": "",
+      "eventWindow": "Rehearsals late Sept 2027 through performances ending late Jan 2028",
+      "money": "Budget not published — no fee/payment info disclosed in the call",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Annual family-friendly Winter Circus production (30+ year running show) casting individual circus artists and clowns, open internationally.",
+      "selection": "Open call reviewed by the production team; organizers are particularly seeking beach/holiday-themed acts and mechanical chain-reaction (domino) specialists this cycle.",
+      "scale": "Single production, multi-week engagement in Helsinki",
+      "requirements": "Act reel, availability for the full rehearsal/performance window in Finland",
+      "intel": "A casting call for individual performers/acts (e.g. an acrobat from the Singularity roster), not a company-level booking — useful mainly as a route for individual performers to get extended European stage time.",
+      "warning": "No pay rate disclosed — confirm compensation and travel coverage before committing.",
+      "spec": {
+        "mediums": [
+          "circus",
+          "performance",
+          "variety"
+        ],
+        "format": "performance",
+        "env": "indoor",
+        "runDays": 49,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Unconfirmed — not stated in call",
+        "themes": [
+          "beach/holiday themes",
+          "mechanical chain reactions"
+        ],
+        "needs": "Individual acrobat/circus act available for a multi-month Helsinki residency",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Explicitly international — 'from Finland and all around the world'"
+        }
+      },
+      "sources": [
+        "https://circuscentrum.be/nl/kansen/winter-circus-2027-28-open-call-circus-artists",
+        "https://hurjaruuth.fi/en/winter-circus-202526-open-call-for-circus-artists/"
+      ]
+    },
+    {
+      "id": "la-strada-graz",
+      "name": "La Strada Graz",
+      "org": "La Strada Graz / Verein freiraum",
+      "city": "Graz",
+      "country": "Austria",
+      "region": "Europe",
+      "category": "streetarts",
+      "tier": "major",
+      "website": "https://www.lastrada.at/",
+      "applyUrl": "https://www.lastrada.at/abouten",
+      "applyLabel": "Direct contact — no public open call found",
+      "status": "uncertain",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "July 31 – August 8, 2026",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Cross-disciplinary street-arts festival across indoor stages, public space and curated venues in Graz; a co-organizing member of IN SITU, the European network for artistic creation in public space.",
+      "selection": "No public submission portal found; programming appears curated through direct relationships and the IN SITU network.",
+      "scale": "Multi-venue citywide festival",
+      "requirements": "Unconfirmed",
+      "intel": "No open-call mechanism surfaced — approach via direct email/phone to pitch Singularity's outdoor/ground version or the LED sphere, framed through the IN SITU public-space-art network.",
+      "warning": "Could not verify a submission process, deadline or fee — treat as a cold-outreach lead only.",
+      "spec": {
+        "mediums": [
+          "streetarts",
+          "spectacle",
+          "led",
+          "circus"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "runDays": 9,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Unconfirmed",
+        "themes": [
+          "everyday life",
+          "public space"
+        ],
+        "needs": "Direct pitch; no stated submission format",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists featured historically via IN SITU network"
+        }
+      },
+      "sources": [
+        "https://www.lastrada.at/abouten",
+        "https://www.circostrada.org/en/members/strada-graz"
+      ]
+    },
+    {
+      "id": "gsa-art-in-architecture-registry",
+      "name": "Art in Architecture — National Artist Registry",
+      "org": "U.S. General Services Administration",
+      "city": "Washington, DC",
+      "country": "USA",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "major",
+      "website": "https://www.gsa.gov/real-estate/fine-arts/art-in-architecture-program",
+      "applyUrl": "mailto:NationalArtistRegistry@gsa.gov",
+      "applyLabel": "Join the National Artist Registry",
+      "status": "rolling",
+      "deadline": "None — rolling 10-year registry; project RFQs post on SAM.gov as federal buildings are commissioned",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Not stated",
+      "opensDate": "",
+      "eventWindow": "Ongoing — tied to federal courthouse/building construction schedule",
+      "money": "0.5% of federal building construction cost reserved for art program-wide; per-project budgets not published until a specific SAM.gov solicitation posts, but major federal buildings have historically funded six-figure commissions",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Permanent site-specific artwork commissioned for new or renovated U.S. federal buildings and courthouses nationwide, selected via artist panels from a standing registry.",
+      "selection": "Peer/agency panel reviews registry submissions and SAM.gov respondents per project; GSA regional offices run individual competitions.",
+      "scale": "Varies by building — lobby, plaza or exterior-scale works; durable/permanent installations.",
+      "requirements": "US citizen or lawful permanent resident; register with work samples; respond to specific SAM.gov notices as they post.",
+      "intel": "The most durable, non-expiring federal percent-for-art mechanism in the US and completely open by state — a Texas-based studio is not disadvantaged. Light/kinetic/digital media has been accepted on past GSA commissions even though not explicitly enumerated. Getting into the registry now positions MindWorks for the next wave of courthouse/land-port solicitations.",
+      "warning": "US citizens/lawful permanent residents only — no international eligibility.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "digital",
+          "newmedia"
+        ],
+        "format": "installation",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Set per project once a specific SAM.gov solicitation posts",
+        "themes": [],
+        "needs": "Permanent, durable, site-specific artwork suited to a federal building's public areas",
+        "gates": {
+          "residency": "USA citizens/LPR only",
+          "note": "No state-of-residence restriction"
+        }
+      },
+      "sources": [
+        "https://www.gsa.gov/real-estate/fine-arts/art-in-architecture-program",
+        "https://www.gsa.gov/real-estate/design-and-construction/art-in-architecturefine-arts"
+      ]
+    },
+    {
+      "id": "nea-our-town",
+      "name": "Our Town",
+      "org": "National Endowment for the Arts",
+      "city": "Washington, DC",
+      "country": "USA",
+      "region": "Americas",
+      "category": "grant",
+      "tier": "major",
+      "website": "https://www.arts.gov/grants/our-town",
+      "applyUrl": "https://www.grants.gov",
+      "applyLabel": "Apply via Grants.gov (two-part application)",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "2027-02",
+      "predictedConfidence": "medium",
+      "basis": "Our Town has run twice-yearly (Feb/Jul) deadlines every year since the program's 2011 relaunch; FY26 cycles (Feb and Jul 2026) have both closed.",
+      "opensDate": "",
+      "eventWindow": "National, year-round creative placemaking projects",
+      "money": "$10,000-$100,000 per award, with mandatory 1:1 non-federal cost share (min $10,000 cash/in-kind); total project cost must reach at least $20,000",
+      "moneyTier": "medium",
+      "fit": 4,
+      "what": "Creative placemaking grants integrating arts, culture and design into community and public-space projects; has funded public light/media installations as part of broader placemaking work.",
+      "selection": "NEA panel review of two-part Grants.gov application.",
+      "scale": "Local/regional creative placemaking, typically a single site or corridor.",
+      "requirements": "Applicant must be a nonprofit, unit of local government, or federally recognized tribe with 5+ years of prior arts programming — MindWorks cannot apply directly and would need to be subcontracted by an eligible city arts department or nonprofit presenter.",
+      "intel": "Best approached by finding a city/nonprofit partner (e.g. an Austin or Texas municipality) willing to be the applicant and commission Singularity or an LED Sphere installation as the placemaking centerpiece, with MindWorks named as the artist/vendor in the budget.",
+      "warning": "MindWorks is not an eligible direct applicant; needs a nonprofit/government partner to apply on its behalf.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "spectacle",
+          "digital"
+        ],
+        "format": "either",
+        "env": "either",
+        "runDays": null,
+        "payMin": 10000,
+        "payMax": 100000,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Requires 1:1 non-federal match from the applicant organization",
+        "themes": [
+          "creative placemaking",
+          "community design"
+        ],
+        "needs": "A public or nonprofit applicant partner to submit on MindWorks' behalf",
+        "gates": {
+          "residency": "USA-ok (as subcontractor only; applicant must be a US nonprofit/government/tribal entity)",
+          "note": "Not open to individual artists or for-profit studios as direct applicants"
+        }
+      },
+      "sources": [
+        "https://www.arts.gov/sites/default/files/fy27-gap-design-our-town-instructions.pdf",
+        "https://www.arts.gov/grants"
+      ]
+    },
+    {
+      "id": "us-state-dept-arts-envoy",
+      "name": "Arts Envoy Program",
+      "org": "U.S. Department of State, Bureau of Educational and Cultural Affairs",
+      "city": "Washington, DC",
+      "country": "USA",
+      "region": "Global",
+      "category": "grant",
+      "tier": "mid",
+      "website": "https://americanspaces.state.gov/category/strategy/us-excellence/performing-arts/",
+      "applyUrl": "http://www.usembassy.gov/",
+      "applyLabel": "Contact a specific US Embassy's Public Affairs Section directly",
+      "status": "rolling",
+      "deadline": "",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "No fixed deadline — proposals are initiated embassy-by-embassy on an as-needed basis.",
+      "opensDate": "",
+      "eventWindow": "5 days to 6 weeks per engagement, any time of year",
+      "money": "Covers travel, per diem and activity costs for the engagement; grant size not published and is assessed per proposal",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Sends vetted US performing artists abroad via US embassies for performances, workshops and mentorship as public diplomacy.",
+      "selection": "Individual US embassies select artists/groups in coordination with ECA; no centralized jury.",
+      "scale": "Single-country or short regional tour, embassy-hosted.",
+      "requirements": "No standard application form — a US artist/company pitches a specific embassy directly.",
+      "intel": "Genuinely open to a US studio touring Singularity or circus/light work abroad, but entirely relationship-driven and slow; best used opportunistically when MindWorks already has a target country/market in mind.",
+      "warning": "No portal or deadline; success depends on cultivating a specific embassy relationship.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "light",
+          "drone"
+        ],
+        "format": "performance",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Travel/per diem/activity costs covered per engagement; amount not published",
+        "themes": [
+          "cultural diplomacy"
+        ],
+        "needs": "A specific country/embassy relationship to pitch into",
+        "gates": {
+          "residency": "USA-ok (program is specifically for US-based artists)",
+          "note": "Decentralized — no single national application"
+        }
+      },
+      "sources": [
+        "https://americanorchestras.org/funding-opportunities-u-s-department-of-state/",
+        "https://americanspaces.state.gov/category/strategy/us-excellence/performing-arts/"
+      ]
+    },
+    {
+      "id": "sound-transit-start",
+      "name": "STart — Sound Transit Art Program",
+      "org": "Sound Transit",
+      "city": "Seattle, WA",
+      "country": "USA",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "mid",
+      "website": "https://www.soundtransit.org/system-expansion/creating-vibrant-stations/start-sound-transit-art-program",
+      "applyUrl": "https://public.govdelivery.com/accounts/WASOUND/subscriber/new?topic_id=WASOUND_165",
+      "applyLabel": "Subscribe for call-for-artist alerts",
+      "status": "rolling",
+      "deadline": "",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "No open call as of Oct 2026.",
+      "opensDate": "",
+      "eventWindow": "Tied to light-rail station construction schedule",
+      "money": "Funded via 1% of light-rail construction budgets (excluding tunneling); per-project artist budgets not published and are announced per call",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Permanent and integrated artwork commissions for Sound Transit light-rail stations and transit facilities.",
+      "selection": "Community/creative-leader panel per project.",
+      "scale": "Single-station or multi-station artwork, often permanent.",
+      "requirements": "National callouts; no Washington residency requirement stated.",
+      "intel": "Confirmed nationally open rather than WA-only, unusual for a percent-for-art program — worth watching given Sound Transit's large ongoing expansion.",
+      "warning": "No live call right now; purely a mailing-list watch item.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Not stated",
+        "themes": [],
+        "needs": "Not stated",
+        "gates": {
+          "residency": "USA-ok, no state restriction stated",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://www.soundtransit.org/system-expansion/creating-vibrant-stations/start-sound-transit-art-program"
+      ]
+    },
+    {
+      "id": "nyc-ddc-percent-for-art",
+      "name": "NYC Percent for Art Program",
+      "org": "NYC Department of Design and Construction",
+      "city": "New York, NY",
+      "country": "USA",
+      "region": "Americas",
+      "category": "publicart",
+      "tier": "major",
+      "website": "https://www.nyc.gov/site/borojails/about/Percent-for-art.page",
+      "applyUrl": "https://bit.ly/4cZSRvH",
+      "applyLabel": "Respond to current/next RFQ via online form",
+      "status": "rolling",
+      "deadline": "",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Most recent cycle (Borough-Based Jails facilities) closed April 20, 2026; new RFQs open periodically year-round.",
+      "opensDate": "",
+      "eventWindow": "Ongoing — tied to NYC capital construction projects",
+      "money": "Program funds commissions from a percentage of NYC capital construction budgets; comparable DDC commissions have historically ranged roughly $25,000 to $400,000+ depending on the facility",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Acquires, commissions or restores artwork for NYC-owned facilities (libraries, firehouses, correctional facilities, etc.) citywide.",
+      "selection": "Agency/community panel per facility; applicants submit bio, statement and 10 work images via online form.",
+      "scale": "Single-facility permanent commission.",
+      "requirements": "Open to all visual artists with no stated residency restriction in the current call; apply per-solicitation.",
+      "intel": "DDC explicitly states this round is open to all visual artists with no NYC-residency requirement — contrary to the common assumption that percent-for-art is local-only. Worth a recurring check since DDC runs several RFQs per year.",
+      "warning": "No current open call as of Oct 2026; the Borough-Based Jails round closed in April.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation",
+          "digital"
+        ],
+        "format": "installation",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": true,
+        "contentOnly": false,
+        "payNote": "Not stated",
+        "themes": [],
+        "needs": "Not stated",
+        "gates": {
+          "residency": "USA-ok, no NYC residency requirement stated in current call",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://www.nyc.gov/site/borojails/about/Percent-for-art.page"
+      ]
+    },
+    {
+      "id": "arts-midwest-gig-fund",
+      "name": "GIG Fund: Interstate Touring",
+      "org": "Arts Midwest",
+      "city": "Minneapolis, MN",
+      "country": "USA",
+      "region": "Americas",
+      "category": "grant",
+      "tier": "small",
+      "website": "https://artsmidwest.org/get-support/gig-fund/",
+      "applyUrl": "https://artsmidwest.org/get-support/gig-fund/",
+      "applyLabel": "Presenter applies on touring artist's behalf",
+      "status": "open",
+      "deadline": "2026-11-17",
+      "deadlineConfidence": "confirmed",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "Intent to apply Nov 4, 2026; full application Nov 17, 2026.",
+      "opensDate": "",
+      "eventWindow": "Touring engagements booked for the 2026-27 season",
+      "money": "$2,000-$10,000 per grant, 1:1 match required (federal funds cannot be used as match)",
+      "moneyTier": "low",
+      "fit": 3,
+      "what": "Subsidizes presenter fees for touring artists/companies performing in a 9-state Midwest region, when the artist lives outside the presenting organization's state.",
+      "selection": "Arts Midwest staff review of presenter applications.",
+      "scale": "Single-engagement touring fee support.",
+      "requirements": "Applicant must be a 501(c)(3) (budget under $2M) or tribal organization based in IL, IN, IA, MI, MN, ND, OH, SD or WI; MindWorks itself cannot apply — a presenter in that region must book Singularity or StarBalancer and apply.",
+      "intel": "Small money relative to Singularity's $7k-$66k range, but a useful gap-filler/incentive to offer a hesitant Midwest presenter to help close a booking.",
+      "warning": "MindWorks cannot apply directly; must be booked by an eligible Midwest presenter who then applies for the subsidy.",
+      "spec": {
+        "mediums": [
+          "spectacle",
+          "drone",
+          "light"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "runDays": 1,
+        "payMin": 2000,
+        "payMax": 10000,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "1:1 match required from presenter",
+        "themes": [],
+        "needs": "A Midwest-based 501(c)(3) presenter willing to book and co-apply",
+        "gates": {
+          "residency": "USA-ok as touring artist; presenting organization must be based in the 9-state region",
+          "note": "Presenter, not artist, is the applicant"
+        }
+      },
+      "sources": [
+        "https://artsmidwest.org/grant-opportunities/gig-fund-interstate-touring/"
+      ]
+    },
+    {
+      "id": "expo-2030-riyadh-usa-pavilion",
+      "name": "Expo 2030 Riyadh — USA Pavilion (Vita Motus / Trivandi USA)",
+      "org": "U.S. Department of State / Vita Motus / Trivandi USA",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "region": "Gulf",
+      "category": "megaevent",
+      "tier": "flagship",
+      "website": "https://www.trivandi.com",
+      "applyUrl": "https://www.trivandi.com/en/contact",
+      "applyLabel": "Direct outreach to Trivandi USA / Vita Motus — no open call",
+      "status": "invitation",
+      "deadline": "",
+      "deadlineConfidence": "confirmed-no-rfp",
+      "predictedDeadline": "",
+      "predictedConfidence": "",
+      "basis": "No solicitation exists; early relationship-building lead.",
+      "opensDate": "",
+      "eventWindow": "Expo 2030 Riyadh runs Oct 2030-Mar 2031; subcontractor build-out likely 2028-2030",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "Same design firm (Vita Motus) and operations partner (Trivandi USA) confirmed for both the USA Pavilion at Expo 2027 Belgrade and Expo 2030 Riyadh, suggesting a reusable content/subcontractor network.",
+      "selection": "No public process; direct vendor relationships.",
+      "scale": "National pavilion scale, multi-year.",
+      "requirements": "No formal requirements; cold outreach as a potential drone/light/media subcontractor for either expo.",
+      "intel": "Pure business development: reaching out now to Vita Motus (design) and Trivandi USA (ops, which flagged 'sport and entertainment' as the Belgrade pavilion's theme) could position MindWorks ahead of any formal RFP for pavilion content, given Trivandi's confirmed presence on two consecutive USA pavilions.",
+      "warning": "Speculative — no named Commissioner General for either pavilion, no open RFP, and timeline is years out for Riyadh.",
+      "spec": {
+        "mediums": [
+          "drone",
+          "light",
+          "spectacle",
+          "digital"
+        ],
+        "format": "either",
+        "env": "either",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": true,
+        "payNote": "Not stated",
+        "themes": [
+          "sport and entertainment (confirmed theme for Belgrade pavilion)"
+        ],
+        "needs": "Cold outreach only",
+        "gates": {
+          "residency": "USA-ok",
+          "note": ""
+        }
+      },
+      "sources": [
+        "https://www.trivandi.com/en/media/post/trivandi-appointed-as-operations-partner-for-usa-pavilions-at-expo-2027-belgrade-and-expo-2030-riyadh",
+        "https://www.miragenews.com/state-dept-awards-contracts-for-usa-pavilion-at-1681305/"
+      ]
+    },
+    {
+      "id": "city-of-light-jyvaskyla",
+      "name": "City of Light Festival — Open Call for Light Artists",
+      "org": "City of Jyväskylä",
+      "city": "Jyväskylä",
+      "country": "Finland",
+      "region": "Europe",
+      "category": "light",
+      "tier": "mid",
+      "website": "https://valonkaupunki.jyvaskyla.fi/en/city-light-jyvaskyla/events/city-light-festival/open-call-light-artists",
+      "applyUrl": "https://valonkaupunki.jyvaskyla.fi/en/city-light-jyvaskyla/events/city-light-festival/open-call-light-artists",
+      "applyLabel": "Open call page (watch for 2027 link)",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2027-01-15",
+      "predictedConfidence": "medium",
+      "basis": "Site states call for next edition opens January 2027, event September 2027; prior call drew 210 proposals from 36 countries.",
+      "opensDate": "2027-01",
+      "eventWindow": "September 2027",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 3,
+      "what": "Temporary light-art installations sited in parks, projected on building walls, green spaces, or near water in Jyväskylä.",
+      "selection": "Open international call reviewed by city light-festival coordinators.",
+      "scale": "Mid-size city light festival, dozens of works.",
+      "requirements": "Site-specific outdoor light installation proposal; international artists eligible.",
+      "intel": "Not yet live for the 2027 cycle at time of research (Oct 2026) — site shows prior-cycle details and states the next call opens Jan 2027. Re-check in January.",
+      "warning": "Deadline and fee/budget details not yet published for the upcoming cycle.",
+      "spec": {
+        "mediums": [
+          "light",
+          "installation"
+        ],
+        "format": "installation",
+        "env": "outdoor",
+        "runDays": null,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Not stated for the festival track (a separate residency track in a past cycle offered travel/accommodation + up to €3,000 for materials).",
+        "themes": [],
+        "needs": "Site-specific light artwork proposal",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists explicitly eligible per prior cycle (36 countries)"
+        }
+      },
+      "sources": [
+        "https://valonkaupunki.jyvaskyla.fi/en/city-light-jyvaskyla/events/city-light-festival/open-call-light-artists",
+        "https://www.luciassociation.org/city-of-light-jyvaskyla-open-call-for-light-festival-and-residency-artists/"
+      ]
+    },
+    {
+      "id": "artprize-grand-rapids",
+      "name": "ArtPrize",
+      "org": "ArtPrize / Kendall College of Art and Design (DeVos Family)",
+      "city": "Grand Rapids",
+      "country": "USA",
+      "region": "Americas",
+      "category": "installation",
+      "tier": "major",
+      "website": "https://www.artprize.org/",
+      "applyUrl": "https://www.artprize.org/artist-info",
+      "applyLabel": "Artist Registration",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2027-06",
+      "predictedConfidence": "high",
+      "basis": "2026 registration closed June 11, 2026; program runs on an annual cycle.",
+      "opensDate": "",
+      "eventWindow": "September 17 – October 3, 2027 (predicted, matching 2026 dates)",
+      "money": "$600,000 total prize pool: $100,000 public-vote grand prize, $100,000 juried grand prize, 12x $10,000 category prizes; $65 (solo) / $130 (collaborative) entry fee",
+      "moneyTier": "top",
+      "fit": 3,
+      "what": "World's largest open art competition — downtown Grand Rapids (4.5 sq mi) becomes a city-wide gallery for ~3 weeks; artists self-register and pair with a participating venue.",
+      "selection": "Open registration (no formal jury to enter) then public vote + separate juried prize tracks per category.",
+      "scale": "Downtown Grand Rapids, 4.5 square miles, hundreds of venues, 3-week run.",
+      "requirements": "Entry fee required; artist arranges own venue via Connections system; no production budget provided by ArtPrize.",
+      "intel": "New Media category explicitly covers projection mapping, VR/AR and generative/digital work, and Installation/Time-Based categories could fit a sphere or drone-film piece, but the venue model is building-based display rather than open-air spectacle, so a live drone show is a poor logistical fit; the interactive LED sphere or a filmed/looping Singularity piece is the better match.",
+      "warning": "Artist fully funds production and must find/negotiate own venue; prize money is competitive, not guaranteed.",
+      "spec": {
+        "mediums": [
+          "installation",
+          "newmedia",
+          "digital",
+          "interactive"
+        ],
+        "format": "installation",
+        "env": "either",
+        "runDays": 17,
+        "payMin": 10000,
+        "payMax": 100000,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Prize money only if selected as winner; entry fee and production costs are the artist's own",
+        "themes": [],
+        "needs": "Artist secures own display venue in downtown Grand Rapids",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists explicitly welcome, no geographic restriction"
+        }
+      },
+      "sources": [
+        "https://www.artprize.org/artist-info",
+        "https://www.artprize.org/grants"
+      ]
+    },
+    {
+      "id": "nuit-blanche-paris",
+      "name": "Nuit Blanche Paris — Appel à projets artistes",
+      "org": "Ville de Paris",
+      "city": "Paris",
+      "country": "France",
+      "region": "Europe",
+      "category": "immersive",
+      "tier": "flagship",
+      "website": "https://www.paris.fr/",
+      "applyUrl": "mailto:NuitBlanche@paris.fr",
+      "applyLabel": "Email submission (PDF dossier)",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2026-10-17",
+      "predictedConfidence": "high",
+      "basis": "2026-edition call ran Sept 15-Oct 17, 2025; 2027 call should follow the same Sept-Oct 2026 window and may already be open.",
+      "opensDate": "2026-09",
+      "eventWindow": "One night, early June 2027 (predicted; 2026 edition was June 6, 2026, 7pm-2am)",
+      "money": "€1,000-€7,000 (~$1,100-$7,600) partial production funding per selected project",
+      "moneyTier": "low",
+      "fit": 3,
+      "what": "City-wide, one-night contemporary art festival across Paris (installation, performance, video projection, digital/hybrid work) open to French and international artists.",
+      "selection": "Submit a PDF dossier (form, budget, CV, portfolio max 20 pages, visuals) to NuitBlanche@paris.fr by deadline.",
+      "scale": "Citywide Paris, single night 7pm-2am, dozens of sites/partner institutions.",
+      "requirements": "Artist must be technically and logistically self-sufficient; funding is partial, remainder from own resources/sponsors.",
+      "intel": "Explicitly lists performance, installation, video projection and hybrid digital practices as eligible — good category match for an interactive LED sphere piece or a scaled-down Singularity segment; international artists explicitly eligible. This call may be live right now — check immediately.",
+      "warning": "Funding is modest and described as partial — won't cover full touring/production costs of a drone show from the US; best suited to the sphere or a contained installation piece.",
+      "spec": {
+        "mediums": [
+          "installation",
+          "immersive",
+          "interactive",
+          "newmedia",
+          "digital",
+          "led"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "runDays": 1,
+        "payMin": 1100,
+        "payMax": 7600,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Partial financial assistance; artist supplements via sponsorship/own funds",
+        "themes": [],
+        "needs": "Site-specific contemporary art proposal suited to one overnight public presentation",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists and collectives explicitly welcome"
+        }
+      },
+      "sources": [
+        "https://cdn.paris.fr/paris/2025/09/25/formulaire-artiste-nuit-blanche-2026-1-oX6c.pdf",
+        "https://parisjetaime.com/eng/event/nuit-blanche-in-paris-e015"
+      ]
+    },
+    {
+      "id": "columbus-arts-festival",
+      "name": "Columbus Arts Festival",
+      "org": "Greater Columbus Arts Council",
+      "city": "Columbus",
+      "country": "USA",
+      "region": "Americas",
+      "category": "performance",
+      "tier": "mid",
+      "website": "https://www.columbusartsfestival.org/",
+      "applyUrl": "https://www.columbusartsfestival.org/apply/performing-artists",
+      "applyLabel": "Performing Artists application",
+      "status": "opens_soon",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2027-02",
+      "predictedConfidence": "medium",
+      "basis": "2026 cycle's performing-artist window ran Jan-Feb 2026.",
+      "opensDate": "2026-09",
+      "eventWindow": "Early-mid June 2027 (predicted; 2026 edition was June 12-14, 2026)",
+      "money": "Budget not published",
+      "moneyTier": "unknown",
+      "fit": 2,
+      "what": "Top-10-ranked, 3-day downtown riverfront arts festival in Columbus, OH with separate juried visual-artist and performing-artist (music/dance/theater/poetry) application tracks.",
+      "selection": "Separate online applications for Visual Artists and Performing Artists via columbusartsfestival.org.",
+      "scale": "Downtown Columbus riverfront, 3 days, historically several hundred thousand attendees.",
+      "requirements": "Juried; draws artists from across the US.",
+      "intel": "Could not confirm whether performing artists receive a stipend/guarantee or only a stage slot — flagged as unconfirmed rather than assuming payment; the visual-artist track mentions unspecified cash awards. Worth a direct email to confirm pay terms before applying.",
+      "warning": "Money/pay structure unconfirmed on public pages — verify directly before applying.",
+      "spec": {
+        "mediums": [
+          "performance",
+          "installation"
+        ],
+        "format": "either",
+        "env": "outdoor",
+        "runDays": 3,
+        "payMin": null,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "Unconfirmed — public materials do not state performer compensation",
+        "themes": [],
+        "needs": "Not stated",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "Draws juried artists from across the US"
+        }
+      },
+      "sources": [
+        "https://www.columbusartsfestival.org/apply/performing-artists",
+        "https://www.columbusnavigator.com/want-to-be-part-of-the-columbus-arts-festival-heres-how-to-apply/"
+      ]
+    },
+    {
+      "id": "rising-melbourne-call-to-artists",
+      "name": "RISING Melbourne — Call to Artists",
+      "org": "RISING (Melbourne International Arts Festival successor)",
+      "city": "Melbourne",
+      "country": "Australia",
+      "region": "Oceania",
+      "category": "performance",
+      "tier": "mid",
+      "website": "https://rising.melbourne/",
+      "applyUrl": "https://rising.melbourne/about/call-to-artists",
+      "applyLabel": "Call to Artists EOI form",
+      "status": "restricted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2027-07",
+      "predictedConfidence": "medium",
+      "basis": "Past cycle closed early July.",
+      "opensDate": "",
+      "eventWindow": "Late May-early June, annually (2026 edition: May 27-June 8, 2026)",
+      "money": "AU$2,000 development fee for shortlisted EOIs; commission fee negotiated per project (1-3 projects commissioned per cycle)",
+      "moneyTier": "low",
+      "fit": 2,
+      "what": "Melbourne's major winter multidisciplinary festival (successor to White Night) runs an open EOI call for bold, site-specific outdoor performance/public art.",
+      "selection": "300-word concept + bio + practice statement via online form; shortlist gets AU$2,000 to develop interview materials, then 1-3 commissioned at negotiated budget.",
+      "scale": "Citywide Melbourne (Naarm), ~2-week festival window.",
+      "requirements": "Lead artist must be Australia-based or currently residing in Australia; overseas collaborators permitted if an Australia-based partner leads and the team can deliver in Melbourne.",
+      "intel": "Explicitly excludes 'tech-only' and commercial/curatorial proposals, so framing a drone/circus piece as social/experiential outdoor performance would be important; eligibility is the main barrier for a US-led application.",
+      "warning": "Eligibility favors Australia-based lead artists — a US studio would need a credible AU-based creative partner to lead.",
+      "spec": {
+        "mediums": [
+          "performance",
+          "installation",
+          "circus"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "runDays": 14,
+        "payMin": 2000,
+        "payMax": null,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "AU$2,000 (~US$1,300) development fee at shortlist stage; full commission fee negotiated case-by-case",
+        "themes": [],
+        "needs": "Site-specific, socially-engaged outdoor performance or public art, not purely technological spectacle",
+        "gates": {
+          "residency": "restricted",
+          "note": "Requires Australia-based or Australia-residing lead artist; international collaboration allowed under that lead"
+        }
+      },
+      "sources": [
+        "https://2022.rising.melbourne/wormhole/rising-call-to-artists",
+        "https://rising.melbourne/about/call-to-artists"
+      ]
+    },
+    {
+      "id": "imaginarius-santa-maria-da-feira",
+      "name": "Imaginarius — International Street Theatre Festival",
+      "org": "Câmara Municipal de Santa Maria da Feira",
+      "city": "Santa Maria da Feira",
+      "country": "Portugal",
+      "region": "Europe",
+      "category": "streetarts",
+      "tier": "small",
+      "website": "https://imaginarius.pt/en/",
+      "applyUrl": "https://imaginarius.pt/en/international-open-call/",
+      "applyLabel": "International Open Call",
+      "status": "predicted",
+      "deadline": "",
+      "deadlineConfidence": "unconfirmed",
+      "predictedDeadline": "2027-07",
+      "predictedConfidence": "medium",
+      "basis": "2027-edition call closed July 30, 2026.",
+      "opensDate": "",
+      "eventWindow": "Mid-late May, annually (2027 edition: May 20-22, 2027)",
+      "money": "Travel support only: €150 (mainland Portugal), €400 (other Europe/Madeira/Azores/North Africa), €1,200 (other countries incl. USA) per person; no production fee",
+      "moneyTier": "low",
+      "fit": 2,
+      "what": "International festival of performing arts in public space — theatre, dance, music, circus, performance art, installations and new media in urban settings; ~18 projects selected for 3-5 performances each.",
+      "selection": "Submit proposal, concept, public-space engagement plan, technical rider, team info and past work via online call.",
+      "scale": "Urban public spaces across Santa Maria da Feira, 3-day festival.",
+      "requirements": "No audience donations may be collected during presentations; travel-only compensation.",
+      "intel": "This cycle's deadline (May 2027 edition) already passed July 30, 2026, so this is a predicted-next-cycle entry (2028 edition). Explicitly welcomes circus and multidisciplinary/public-space work, but money is travel-only and won't offset US shipping/logistics for a drone or sphere production — realistically only viable for a stripped-down circus/performance piece.",
+      "warning": "Deadline for the nearer (2027) edition has already passed; money does not cover production, only modest per-person travel.",
+      "spec": {
+        "mediums": [
+          "streetarts",
+          "performance",
+          "circus",
+          "installation",
+          "newmedia"
+        ],
+        "format": "performance",
+        "env": "outdoor",
+        "runDays": 3,
+        "payMin": 1200,
+        "payMax": 1200,
+        "coversCosts": false,
+        "contentOnly": false,
+        "payNote": "€1,200/person travel stipend for non-European artists; no fee for the work itself",
+        "themes": [],
+        "needs": "Public-space, community-engaging performance work; 3-5 performances over the festival",
+        "gates": {
+          "residency": "USA-ok",
+          "note": "International artists explicitly eligible; highest travel-support tier applies to non-European countries including USA"
+        }
+      },
+      "sources": [
+        "https://www2.fundsforngos.org/individuals/open-call-for-artistic-projects-at-imaginarius-2027/",
+        "https://imaginarius.pt/en/international-open-call/"
       ]
     }
   ],
@@ -2950,6 +5088,35 @@
       ],
       "url": null,
       "added": "2026-09-28"
+    },
+    {
+      "id": "hogikyan-answer-the-questions",
+      "title": "Answer exactly what the jury asks",
+      "who": "Edward A. Hogikyan",
+      "role": "Former Executive Director, NYCxDESIGN",
+      "quote": "For the description, be sure to answer the questions that are asked. What inspired the proposed concept? What are examples of any collaborative process used? What techniques/innovations were used in the creation of the work? Take the time to share your journey and process so the judges get a full appreciation for your work.",
+      "body": "From CODAworx's journal piece aggregating advice from past CODAawards jurors and advisors on what makes a winning entry.",
+      "tags": [
+        "strategy",
+        "writing",
+        "documentation"
+      ],
+      "url": "https://knowledge.codaworx.com/codazine/how-to-win-the-codaawards",
+      "added": "2026-10-01"
+    },
+    {
+      "id": "simon-show-interaction",
+      "title": "Show people interacting with the work",
+      "who": "Debra Simon",
+      "role": "Arts Consultant",
+      "quote": "The strongest images of public art are those that show how people interact with and respond to the art. There is an authenticity when the connection is successful.",
+      "body": "Same CODAworx journal roundup of juror/consultant advice on submission imagery and documentation for public art commissions and awards.",
+      "tags": [
+        "strategy",
+        "documentation"
+      ],
+      "url": "https://knowledge.codaworx.com/codazine/how-to-win-the-codaawards",
+      "added": "2026-10-01"
     }
   ],
   "newClients": [
@@ -4938,6 +7105,322 @@
         "type": "email",
         "note": "Published on etenders.gov.za"
       }
+    ],
+    "cn-shanghai-intl-light-festival": [
+      {
+        "name": "Jin Lu (金璐)",
+        "role": "Shanghai International Light Festival program contact, Shanghai Greening and City Appearance Administration Bureau",
+        "channel": "shilf@lhsr.sh.gov.cn",
+        "type": "email",
+        "note": "Dedicated project mailbox confirmed on the bureau's own domain"
+      },
+      {
+        "name": "Shanghai International Light Festival Office",
+        "role": "Program office",
+        "channel": "+86-21-52567417",
+        "type": "phone",
+        "note": "Office landline listed on the official call page"
+      }
+    ],
+    "cn-guangzhou-intl-light-festival": [
+      {
+        "name": "Guangzhou International Light Festival Office",
+        "role": "Submissions mailbox",
+        "channel": "gz_lights@163.com",
+        "type": "email",
+        "note": "Sourced via secondary aggregator, not the bureau's own domain"
+      }
+    ],
+    "cn-chongqing-xian-oct-drone-tender": [
+      {
+        "name": "Wang Ziyi (汪子意)",
+        "role": "Procurement contact, Chongqing Happy Valley Cultural Tourism Development Co. (OCT)",
+        "channel": "wangziyi03@chinaoct.com",
+        "type": "email",
+        "note": "Corporate domain email; for reference only given domestic-bidder restriction"
+      }
+    ],
+    "artichoke-lumiere": [
+      {
+        "name": "Artichoke (general programming office)",
+        "role": "Producer/Artistic Direction office",
+        "channel": "https://www.artichoke.uk.com/contact/",
+        "type": "web",
+        "note": "No named public curator email found"
+      }
+    ],
+    "mona-dark-mofo": [
+      {
+        "name": "Chris Twite",
+        "role": "Creative Director, Dark Mofo",
+        "channel": "via MONA general info / Dark Mofo site",
+        "type": "route",
+        "note": "Named per ABC News (2025); no direct public email confirmed"
+      }
+    ],
+    "sharjah-light-festival": [
+      {
+        "name": "Sharjah Events / Sharjah City Municipality",
+        "role": "Organizing body",
+        "channel": "https://sharjahevents.ae/",
+        "type": "web",
+        "note": "No named individual curator found publicly"
+      }
+    ],
+    "hyde-park-winter-wonderland": [
+      {
+        "name": "James Goode",
+        "role": "Sponsorship & Partnerships, Mari Group",
+        "channel": "james.goode@marigrp.com",
+        "type": "email",
+        "note": "Confirmed on official contact page; dedicated talent-booking contact not publicly listed"
+      }
+    ],
+    "la-soiree": [
+      {
+        "name": "Brett Haylock",
+        "role": "Creative Producer, La Soirée",
+        "channel": "https://www.lasoiree.co.uk/",
+        "type": "web",
+        "note": "No direct public email found"
+      }
+    ],
+    "underbelly-productions": [
+      {
+        "name": "Ed Bartlam and Charlie Wood",
+        "role": "Co-Directors, Underbelly",
+        "channel": "https://underbelly.co.uk/about-us/",
+        "type": "web",
+        "note": "No direct public email found for programming"
+      }
+    ],
+    "lightroom-london": [
+      {
+        "name": "Lightroom general enquiries",
+        "role": "Programming/partnerships (general inbox)",
+        "channel": "contact@lightroom.uk",
+        "type": "email",
+        "note": "Site states it does not forward artist fan mail"
+      }
+    ],
+    "fwc26-dallas-business-connect": [
+      {
+        "name": "Dallas FIFA World Cup 26 Host Committee",
+        "role": "Business/vendor registration",
+        "channel": "https://www.dallasfwc26.com/north-texas-business-connect-program/",
+        "type": "web",
+        "note": "Contact details listed as 'coming soon' as of this check"
+      }
+    ],
+    "fwc26-miami-local-impact": [
+      {
+        "name": "Ashley Zohn",
+        "role": "Local Impact Supplier Program contact, Miami Host Committee",
+        "channel": "web form at miamifwc26.com/local-impact-supplier-program/",
+        "type": "form",
+        "note": "Named in program materials; direct email redacted on the page"
+      }
+    ],
+    "showcase-atlanta-fwc26": [
+      {
+        "name": "Showcase Atlanta",
+        "role": "Supplier network intake",
+        "channel": "https://showcaseatlanta.com/get-involved",
+        "type": "form",
+        "note": ""
+      }
+    ],
+    "base-entertainment-vegas": [
+      {
+        "name": "BASE Entertainment, Inc.",
+        "role": "Business development / corporate office",
+        "channel": "https://www.baseentertainment.com/contact/",
+        "type": "web",
+        "note": "General corporate contact only"
+      }
+    ],
+    "pgav-destinations-themed": [
+      {
+        "name": "PGAV Destinations",
+        "role": "General project inquiries",
+        "channel": "spot@pgav.com",
+        "type": "email",
+        "note": "Published on official site"
+      }
+    ],
+    "george-p-johnson-gpj": [
+      {
+        "name": "GPJ",
+        "role": "General business inquiry",
+        "channel": "https://www.gpj.com/contact/",
+        "type": "form",
+        "note": "No vendor-specific intake identified"
+      },
+      {
+        "name": "Jenn Houston",
+        "role": "Executive Director, Sports Activation",
+        "channel": "via GPJ general contact (no direct email published)",
+        "type": "route",
+        "note": "Named exec relevant to drone/LED stadium activation pitches"
+      }
+    ],
+    "illuminarium-experiences": [
+      {
+        "name": "RadicalMedia",
+        "role": "Parent production studio / content partner",
+        "channel": "https://www.radicalmedia.com/contact",
+        "type": "form",
+        "note": "Illuminarium content is produced through RadicalMedia relationships"
+      }
+    ],
+    "apap-nyc": [
+      {
+        "name": "APAP General Office",
+        "role": "Membership/Exhibitor inquiries",
+        "channel": "(202) 833-2787",
+        "type": "phone",
+        "note": "Also see apap365.org/About/Contact"
+      }
+    ],
+    "cinars-biennale": [
+      {
+        "name": "CINARS Agents & Companies Office",
+        "role": "CINARS staff contact",
+        "channel": "https://cinars.org/en/agents-and-companies",
+        "type": "web",
+        "note": "Use site contact form"
+      }
+    ],
+    "ispa-congress-ny": [
+      {
+        "name": "Magda Mazurek",
+        "role": "Registration/membership",
+        "channel": "mmazurek@ispa.org",
+        "type": "email",
+        "note": ""
+      },
+      {
+        "name": "ISPA Office",
+        "role": "General",
+        "channel": "1-212-206-8490",
+        "type": "phone",
+        "note": ""
+      }
+    ],
+    "hurjaruuth-winter-circus": [
+      {
+        "name": "Winter Circus Casting",
+        "role": "Open call inbox",
+        "channel": "wintercircus@hurjaruuth.fi",
+        "type": "email",
+        "note": ""
+      }
+    ],
+    "la-strada-graz": [
+      {
+        "name": "La Strada Graz Office",
+        "role": "General inquiries",
+        "channel": "info@lastrada.at",
+        "type": "email",
+        "note": "No named staff contact found on site"
+      }
+    ],
+    "gsa-art-in-architecture-registry": [
+      {
+        "name": "National Artist Registry",
+        "role": "Program intake",
+        "channel": "NationalArtistRegistry@gsa.gov",
+        "type": "email",
+        "note": ""
+      }
+    ],
+    "sound-transit-start": [
+      {
+        "name": "STart Program",
+        "role": "Public art program office",
+        "channel": "start@soundtransit.org",
+        "type": "email",
+        "note": ""
+      }
+    ],
+    "nyc-ddc-percent-for-art": [
+      {
+        "name": "Percent for Art Program (current cycle)",
+        "role": "Program intake",
+        "channel": "pfa@bbjnyc.com",
+        "type": "email",
+        "note": "May change per cycle"
+      }
+    ],
+    "arts-midwest-gig-fund": [
+      {
+        "name": "Arts Midwest",
+        "role": "Program office",
+        "channel": "612-341-0755",
+        "type": "phone",
+        "note": "MindWorks should approach via a Midwest presenter, not directly"
+      }
+    ],
+    "expo-2030-riyadh-usa-pavilion": [
+      {
+        "name": "Trivandi USA",
+        "role": "Operations partner, USA Pavilion (Expo 2027 Belgrade & Expo 2030 Riyadh)",
+        "channel": "https://www.trivandi.com/en/contact",
+        "type": "web",
+        "note": "Confirmed on two consecutive USA pavilions"
+      }
+    ],
+    "artprize-grand-rapids": [
+      {
+        "name": "ArtPrize Exhibitions Team",
+        "role": "Artist participation",
+        "channel": "exhibitions@artprize.org",
+        "type": "email",
+        "note": ""
+      },
+      {
+        "name": "ArtPrize Support",
+        "role": "General inquiries",
+        "channel": "support@artprize.org",
+        "type": "email",
+        "note": ""
+      }
+    ],
+    "nuit-blanche-paris": [
+      {
+        "name": "Nuit Blanche Artist Call",
+        "role": "Submissions",
+        "channel": "NuitBlanche@paris.fr",
+        "type": "email",
+        "note": ""
+      }
+    ],
+    "columbus-arts-festival": [
+      {
+        "name": "Columbus Arts Festival",
+        "role": "General/press",
+        "channel": "https://www.columbusartsfestival.org/contact-us/",
+        "type": "web",
+        "note": "No named contact found"
+      }
+    ],
+    "rising-melbourne-call-to-artists": [
+      {
+        "name": "RISING Call to Artists",
+        "role": "Submissions/inquiries",
+        "channel": "askus@rising.melbourne",
+        "type": "email",
+        "note": "Phone (03) 9662 4242"
+      }
+    ],
+    "imaginarius-santa-maria-da-feira": [
+      {
+        "name": "Imaginarius International Open Call",
+        "role": "Submissions",
+        "channel": "https://imaginarius.pt/en/international-open-call/",
+        "type": "web",
+        "note": ""
+      }
     ]
   },
   "pitchWindows": {
@@ -5385,6 +7868,61 @@
       ],
       "label": "July-September",
       "why": "Metro festive-season packages are advertised in late winter for November-January delivery."
+    },
+    "artichoke-lumiere": {
+      "months": [
+        1,
+        2,
+        3
+      ],
+      "label": "Jan-Mar",
+      "why": "Lumiere Durham is biennial in November; programming for international artists is largely locked roughly a year out."
+    },
+    "mona-dark-mofo": {
+      "months": [
+        8,
+        9,
+        10
+      ],
+      "label": "Aug-Oct",
+      "why": "Dark Mofo runs mid-June; line-up curation firms up in the preceding Southern Hemisphere spring."
+    },
+    "sharjah-light-festival": {
+      "months": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "label": "Mar-Jun (prior year)",
+      "why": "UAE government event budget cycles are generally set well ahead of a Q1 festival date."
+    },
+    "hyde-park-winter-wonderland": {
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "label": "Apr-Jun",
+      "why": "Entertainment programming is believed finalized by late summer, based on seasonal show announcements."
+    },
+    "la-soiree": {
+      "months": [
+        9,
+        10,
+        11
+      ],
+      "label": "Sep-Nov",
+      "why": "Casting for a new touring season is scouted in the preceding autumn/winter."
+    },
+    "underbelly-productions": {
+      "months": [
+        10,
+        11,
+        12
+      ],
+      "label": "Oct-Dec",
+      "why": "Underbelly Festival programming is typically announced in spring."
     }
   }
 }
